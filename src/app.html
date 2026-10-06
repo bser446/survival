@@ -538,13 +538,18 @@ function vAid(id){
   const fa = DATA.firstaid || {}, t = AID.find(x=>x.id===id), src = Object.fromEntries((fa.sources||[]).map(x=>[x.id,x]));
   const chips = ids => (ids||[]).filter(i=>src[i]).map(i=>`<span class="chip">${esc(src[i].org)}</span>`).join("");
   if(!t){
-    const groups = []; for(const x of AID) if(!groups.includes(x.group)) groups.push(x.group);
+    // ลำดับหมวดตาม firstaid.groups ถ้ามี หมวดที่ไม่อยู่ในรายการต่อท้ายตามลำดับที่พบ
+    const groups = (fa.groups||[]).filter(g=>AID.some(x=>x.group===g)); for(const x of AID) if(!groups.includes(x.group)) groups.push(x.group);
     return `<a class="back" href="#sos">‹ กลับ</a><h1>⛑️ ปฐมพยาบาล</h1><p class="mute">${esc(fa.intro)}</p>
     <a class="btn pri" style="display:block;text-align:center;text-decoration:none" href="tel:1669">โทร 1669 เจ็บป่วยฉุกเฉิน</a>
-    ${groups.map(g=>`<h2>${esc(g)}</h2><div class="card" style="padding:0">${AID.filter(x=>x.group===g).map(x=>`<a class="hrow" style="text-decoration:none;color:inherit" href="#aid/${esc(x.id)}"><span class="grow">${esc(x.title)}</span><span class="mute">›</span></a>`).join("")}</div>`).join("")}
+    <div class="seg">${groups.map((g,i)=>`<a href="#aid" data-jump="aidg${i}">${esc(g)}</a>`).join("")}</div>
+    ${groups.map((g,i)=>`<h2 id="aidg${i}">${esc(g)} <small class="mute">${AID.filter(x=>x.group===g).length} เรื่อง</small></h2><div class="card" style="padding:0">${AID.filter(x=>x.group===g).map(x=>`<a class="hrow" style="text-decoration:none;color:inherit" href="#aid/${esc(x.id)}"><span class="grow">${esc(x.title)}</span><span class="mute">›</span></a>`).join("")}</div>`).join("")}
     ${(fa.sources||[]).length?`<h2>แหล่งที่มา</h2><div class="card src"><ul class="plain">${fa.sources.map(x=>`<li>${esc(x.org)}: ${esc(x.title)}${/^https?:\/\//.test(x.url||"")?`<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a>`:""}</li>`).join("")}</ul></div>`:""}`;
   }
-  const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${esc(i.text)}</div>${i.detail?`<div class="d">${esc(i.detail)}</div>`:""}${chips(i.src)}</li>`).join("")}</ol>`;
+  // "ดูหัวข้อ <ชื่อย่อ>" ในเนื้อหา กลายเป็นลิงก์ไปหัวข้อนั้น (ชื่อย่อ = ชื่อหัวข้อก่อนวงเล็บหรือโคลอน)
+  const refs = AID.filter(x=>x.id!==t.id).map(x=>[esc(x.title.split(/\s*[(:]/)[0]), x.id]).sort((a,b)=>b[0].length-a[0].length);
+  const xref = s => { let h = esc(s); for(const [name,id] of refs){ const k = "ดูหัวข้อ "+name; if(h.includes(k)){ h = h.replace(k, `ดูหัวข้อ <a href="#aid/${esc(id)}">${name}</a>`); break; } } return h; };
+  const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${xref(i.text)}</div>${i.detail?`<div class="d">${xref(i.detail)}</div>`:""}${chips(i.src)}</li>`).join("")}</ol>`;
   return `<a class="back" href="#aid">‹ ปฐมพยาบาลทั้งหมด</a><h1>${esc(t.title)}</h1>
   ${t.signs?`<p class="mute">${esc(t.signs)}</p>`:""}
   ${t.call?`<div class="alert bad"><b>โทร 1669:</b> ${esc(t.call)} <a href="tel:1669">แตะเพื่อโทร</a></div>`:""}
@@ -610,8 +615,9 @@ document.addEventListener("submit", async e=>{
   render(true);
 });
 document.addEventListener("click", async e=>{
-  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del],[data-use]"); if(!t) return;
+  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del],[data-use],[data-jump]"); if(!t) return;
   const d = t.dataset, h = H();
+  if(d.jump){ e.preventDefault(); const el = $(d.jump); if(el) el.scrollIntoView({behavior:"smooth", block:"start"}); return; }
   if(d.step){ const [k,n] = d.step.split(":"); put("p."+k, S.profile[k]+Number(n)); }
   else if(d.days){ e.preventDefault(); put("p.days", Number(d.days)); }
   else if(d.home){ e.preventDefault(); put("p.home", d.home); DB.ui.showAll = false; }

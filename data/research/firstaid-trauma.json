@@ -1,0 +1,2829 @@
+{
+  "sources": [
+    {
+      "id": "erc-fa-2025",
+      "org": "European Resuscitation Council (ERC)",
+      "title": "European Resuscitation Council Guidelines 2025: First Aid (Resuscitation 215 (2025) 110752)",
+      "url": "https://www.erc.edu/media/i2vllpae/gl2025-12-faid-e.pdf",
+      "country": "EU"
+    },
+    {
+      "id": "who-cfar",
+      "org": "องค์การอนามัยโลก (WHO)",
+      "title": "Community First Aid Response (CFAR) Pocket Guide",
+      "url": "https://cdn.who.int/media/docs/default-source/integrated-health-services-(ihs)/csy/cfar-pocketguide.pdf",
+      "country": "INT"
+    },
+    {
+      "id": "stb-course",
+      "org": "American College of Surgeons, STOP THE BLEED",
+      "title": "Save a Life: STOP THE BLEED Course version 2 (สไลด์สำหรับประชาชน)",
+      "url": "https://stopthebleed.org/media/qk5jgpgs/lay-public-stop-the-bleed-presentation-pdf.pdf",
+      "country": "US"
+    },
+    {
+      "id": "sta-chest",
+      "org": "Safety Training Awards / Swimming Teachers' Association (สหราชอาณาจักร)",
+      "title": "Penetrating Chest Injury / Sucking Chest Wound Treatment Guidance v20.1",
+      "url": "https://www.sta.co.uk/wp-content/uploads/2020/03/Penetrating-Chest-Injury-Sucking-Chest-Wound-Treatment-Guidance-v20.1.pdf",
+      "country": "GB"
+    },
+    {
+      "id": "protectuk-fa",
+      "org": "Counter Terrorism Policing, ProtectUK (สหราชอาณาจักร)",
+      "title": "First Aid During a Terrorist Attack",
+      "url": "https://www.protectuk.police.uk/sites/default/files/2021-11/First%20Aid%20PowerPoint.pdf",
+      "country": "GB"
+    },
+    {
+      "id": "brc-bleeding",
+      "org": "British Red Cross",
+      "title": "First aid for someone who is bleeding heavily",
+      "url": "https://www.redcross.org.uk/first-aid/learn-first-aid/bleeding-heavily",
+      "country": "GB"
+    },
+    {
+      "id": "sja-traffic",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to manage a traffic accident",
+      "url": "https://www.sja.org.uk/first-aid-advice/traffic-collision/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-dislocation",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Dislocation",
+      "url": "https://www.sja.org.uk/first-aid-advice/dislocated-joints/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-baby-head",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Head injuries in babies and children",
+      "url": "https://www.sja.org.uk/first-aid-advice/baby-head-injury/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-arm-sling",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to make an arm sling",
+      "url": "https://www.sja.org.uk/first-aid-advice/arm-sling/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-splinter",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Splinters",
+      "url": "https://www.sja.org.uk/first-aid-advice/splinter/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-head",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Head injury and concussion",
+      "url": "https://www.nhs.uk/conditions/head-injury-and-concussion/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-tooth",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Knocked-out tooth",
+      "url": "https://www.nhs.uk/conditions/knocked-out-tooth/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-cuts",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Cuts and grazes",
+      "url": "https://www.nhs.uk/conditions/cuts-and-grazes/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-shoulder",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Dislocated shoulder",
+      "url": "https://www.nhs.uk/conditions/dislocated-shoulder/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-broken-leg",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Broken leg",
+      "url": "https://www.nhs.uk/conditions/broken-leg/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-broken-arm",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Broken arm or wrist",
+      "url": "https://www.nhs.uk/conditions/broken-arm-or-wrist/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-ribs",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Broken or bruised ribs",
+      "url": "https://www.nhs.uk/conditions/broken-or-bruised-ribs/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-tetanus",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Tetanus",
+      "url": "https://www.nhs.uk/conditions/tetanus/",
+      "country": "GB"
+    },
+    {
+      "id": "sjnz-bleeding",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Bleeding (รวม ของปักคา อวัยวะขาด ถูกทับ)",
+      "url": "https://www.stjohn.org.nz/first-aid/first-aid-library/bleeding/",
+      "country": "NZ"
+    },
+    {
+      "id": "sjnz-abdominal",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Abdominal Injuries",
+      "url": "https://www.stjohn.org.nz/First-Aid/First-Aid-Library/Abdominal-Injuries",
+      "country": "NZ"
+    },
+    {
+      "id": "sjnz-tooth",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Mouth and tooth injuries",
+      "url": "https://www.stjohn.org.nz/first-aid/first-aid-library/mouth-and-tooth-injuries/",
+      "country": "NZ"
+    },
+    {
+      "id": "sjnz-fracture",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Fractures & dislocations",
+      "url": "https://www.stjohn.org.nz/first-aid/first-aid-library/fractures-and-dislocations/",
+      "country": "NZ"
+    },
+    {
+      "id": "sjnz-move",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Emergency procedures (การเคลื่อนย้ายผู้ป่วยในภาวะฉุกเฉิน)",
+      "url": "https://www.stjohn.org.nz/first-aid/first-aid-library/immediate-first-aid1/emergency-procedures/",
+      "country": "NZ"
+    },
+    {
+      "id": "sjnz-scene",
+      "org": "Hato Hone St John (นิวซีแลนด์)",
+      "title": "First Aid Library: Environmental safety (อุบัติเหตุบนถนน การถอดหมวกกันน็อก)",
+      "url": "https://www.stjohn.org.nz/first-aid/first-aid-library/immediate-first-aid1/environmental-safety/",
+      "country": "NZ"
+    },
+    {
+      "id": "slsa-crush",
+      "org": "Surf Life Saving Australia",
+      "title": "Crush Injuries (เอกสารปฐมพยาบาล)",
+      "url": "https://res.cloudinary.com/heuxd5aqg/raw/upload/v1637624724/media/Crush_Injuries.pdf",
+      "country": "AU"
+    },
+    {
+      "id": "nsw-moto",
+      "org": "NSW Government (รัฐนิวเซาท์เวลส์ ออสเตรเลีย)",
+      "title": "Motorcycles and scooters: First aid",
+      "url": "https://www.nsw.gov.au/driving-boating-and-transport/roads-safety-and-rules/motorcycles-and-scooters/first-aid",
+      "country": "AU"
+    },
+    {
+      "id": "th-vibhavadi-amputation",
+      "org": "ศัลยแพทย์กระดูกและข้อ โรงพยาบาลวิภาวดี (ข่าวจาก Thai PBS)",
+      "title": "เก็บอย่างไรให้ต่อได้? การปฐมพยาบาลเบื้องต้นผู้ป่วย \"อวัยวะขาด\"",
+      "url": "https://www.thaipbs.or.th/news/content/329261",
+      "country": "TH"
+    },
+    {
+      "id": "mu-tm-firstaid",
+      "org": "โรงพยาบาลเวชศาสตร์เขตร้อน คณะเวชศาสตร์เขตร้อน มหาวิทยาลัยมหิดล (อ้างคู่มือของกรมแพทย์ทหารเรือ)",
+      "title": "First Aid: สไลด์อบรมการปฐมพยาบาล การห้ามเลือด บาดแผล กระดูกหัก และการเคลื่อนย้าย",
+      "url": "https://www.tm.mahidol.ac.th/nursing/wp-content/uploads/sites/70/2024/06/First-Aid.pdf",
+      "country": "TH"
+    },
+    {
+      "id": "bkk-trauma-road",
+      "org": "ศูนย์อุบัติเหตุ โรงพยาบาลกรุงเทพ (บทความจาก PPTV HD36)",
+      "title": "แพทย์ศูนย์อุบัติเหตุ แนะวิธีป้องกัน-รับมือเหตุบนท้องถนน",
+      "url": "https://www.pptvhd36.com/health/care/473",
+      "country": "TH"
+    },
+    {
+      "id": "th-emergency-numbers",
+      "org": "PPTV HD36",
+      "title": "รวม \"เบอร์โทรฉุกเฉิน\" ขอความช่วยเหลือรับ \"สงกรานต์ 2569\"",
+      "url": "https://www.pptvhd36.com/news/%E0%B9%84%E0%B8%A5%E0%B8%9F%E0%B9%8C%E0%B8%AA%E0%B9%84%E0%B8%95%E0%B8%A5%E0%B9%8C/220982",
+      "country": "TH"
+    }
+  ],
+  "groups": [
+    "ช่วยชีวิต",
+    "ห้ามเลือดและบาดแผลรุนแรง",
+    "กระดูก ข้อ ศีรษะ และหลัง",
+    "อุบัติเหตุจราจรและตกจากที่สูง",
+    "แผลทั่วไป ตา จมูก ฟัน",
+    "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "อาการป่วยเฉียบพลัน",
+    "สัตว์และพิษ"
+  ],
+  "regroup": {
+    "scene-call-1669": "ช่วยชีวิต",
+    "cpr-adult": "ช่วยชีวิต",
+    "cpr-child": "ช่วยชีวิต",
+    "cpr-infant": "ช่วยชีวิต",
+    "aed": "ช่วยชีวิต",
+    "choking-adult-child": "ช่วยชีวิต",
+    "choking-infant": "ช่วยชีวิต",
+    "drowning": "ช่วยชีวิต",
+    "recovery-position": "ช่วยชีวิต",
+    "severe-bleeding": "ห้ามเลือดและบาดแผลรุนแรง",
+    "shock": "ห้ามเลือดและบาดแผลรุนแรง",
+    "spinal-head-injury": "กระดูก ข้อ ศีรษะ และหลัง",
+    "fracture-sprain": "กระดูก ข้อ ศีรษะ และหลัง",
+    "eye-injury": "แผลทั่วไป ตา จมูก ฟัน",
+    "nosebleed": "แผลทั่วไป ตา จมูก ฟัน",
+    "minor-wound": "แผลทั่วไป ตา จมูก ฟัน",
+    "burns": "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "electric-shock": "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "smoke-co": "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "heat-stroke": "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "poison-chemical": "ความร้อน ไฟ ไฟฟ้า และสารเคมี",
+    "heart-attack": "อาการป่วยเฉียบพลัน",
+    "stroke": "อาการป่วยเฉียบพลัน",
+    "anaphylaxis": "อาการป่วยเฉียบพลัน",
+    "asthma-attack": "อาการป่วยเฉียบพลัน",
+    "seizure": "อาการป่วยเฉียบพลัน",
+    "low-blood-sugar": "อาการป่วยเฉียบพลัน",
+    "fainting": "อาการป่วยเฉียบพลัน",
+    "diarrhoea-dehydration": "อาการป่วยเฉียบพลัน",
+    "snake-bite": "สัตว์และพิษ",
+    "animal-bite-rabies": "สัตว์และพิษ",
+    "stings-jellyfish-centipede": "สัตว์และพิษ"
+  },
+  "replace": [
+    {
+      "id": "severe-bleeding",
+      "title": "เลือดออกมาก",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "เลือดพุ่ง ไหลไม่หยุด หรือชุ่มผ้าอย่างรวดเร็ว",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงขณะกดแผล",
+      "steps": [
+        {
+          "text": "สวมถุงมือถ้ามี เพื่อลดการติดเชื้อ",
+          "detail": "ถ้าไม่มีถุงมือ ใช้ถุงพลาสติกสวมมือแทน",
+          "src": [
+            "sja-bleeding",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ถอดหรือตัดเสื้อผ้าให้เห็นแผล แล้วใช้ผ้าสะอาดกดลงบนแผลตรง ๆ ให้แน่น",
+          "detail": "กดค้างไว้ต่อเนื่อง ผู้บาดเจ็บช่วยกดเองได้ถ้ายังมีแรง",
+          "src": [
+            "sja-bleeding",
+            "erc-2025",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "พันผ้าทับให้แน่นพอคงแรงกด แต่ปลายมือปลายเท้ายังมีเลือดไหลเวียน",
+          "detail": "กดเล็บ 5 วินาที ถ้าสีไม่กลับใน 2 วินาที แปลว่าพันแน่นเกิน",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "เลือดซึมทะลุ: เปลี่ยนผ้าผืนใหม่แล้วกดให้แน่นอีกครั้ง",
+          "src": [
+            "sja-bleeding",
+            "brc-bleeding"
+          ]
+        },
+        {
+          "text": "แผลลึกที่กดแล้วไม่หยุด: อัดผ้าสะอาดลงในแผลให้แน่น แล้วกดทับต่อ",
+          "detail": "กดค้างไว้อย่างน้อย 5 นาที ดูหัวข้อ อุดแผลลึกห้ามเลือด",
+          "src": [
+            "sja-life-bleed",
+            "stb-course"
+          ]
+        },
+        {
+          "text": "แขนขาเลือดพุ่งไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผล 5-7 ซม. (2-3 นิ้ว)",
+          "detail": "รัดระหว่างแผลกับลำตัว ถ้าตรงกับข้อให้เลื่อนขึ้นเหนือข้อ ขันจนเลือดหยุด จะเจ็บมาก ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "stb-tourniquet",
+            "sja-life-bleed",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "จดเวลาที่รัดสายรัด แล้วบอกทีมกู้ชีพ",
+          "detail": "ถ้าไม่มีสายรัด เจ้าหน้าที่ 1669 จะบอกวิธีใช้ผ้าสามเหลี่ยม ผ้าพันคอ หรือเข็มขัดแทน",
+          "src": [
+            "sja-life-bleed",
+            "sja-bleeding",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ยกขาสูง ห่มผ้าให้อุ่น เฝ้าดูการรู้สึกตัว",
+          "detail": "ป้องกันภาวะช็อกจากการเสียเลือด ดูหัวข้อ ภาวะช็อก",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ถูกยิง ถูกแทง ของปักคา หรืออวัยวะขาด: ดูหัวข้อเฉพาะของเรื่องนั้น",
+          "src": [
+            "sja-bleeding",
+            "erc-fa-2025"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าดึงของที่ปักคาแผลออก",
+          "detail": "ของนั้นอาจอุดเลือดอยู่ ให้กดสองข้างของแผลแทน ดูหัวข้อ ของปักคาในแผล",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "อย่าคลายหรือถอดสายรัดห้ามเลือดเอง",
+          "detail": "เลือดจะกลับมาออกอีก ให้ทีมแพทย์เป็นผู้ถอด",
+          "src": [
+            "stb-tourniquet",
+            "sja-life-bleed",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่ารัดสายรัดห้ามเลือดทับข้อศอก ข้อเข่า หรือข้ออื่น",
+          "src": [
+            "sja-life-bleed",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าใช้สายรัดถ้ากดแผลแล้วเลือดหยุดได้",
+          "detail": "เลือดออกส่วนใหญ่หยุดได้ด้วยการกดตรงแผล",
+          "src": [
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่ากดที่จุดชีพจรเหนือแผลแทนการกดลงบนแผล",
+          "detail": "แนวทางยุโรปปี 2025 ให้กดลงบนแผลโดยตรง ไม่แนะนำการกดจุดชีพจร",
+          "src": [
+            "erc-fa-2025"
+          ]
+        }
+      ],
+      "src": [
+        "sja-bleeding",
+        "sja-life-bleed",
+        "stb-tourniquet",
+        "erc-2025",
+        "erc-fa-2025"
+      ]
+    },
+    {
+      "id": "shock",
+      "title": "ภาวะช็อก (เลือดไปเลี้ยงร่างกายไม่พอ)",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "ซีด ตัวเย็นชื้น เหงื่อแตก ชีพจรเร็ว หายใจเร็วตื้น กระสับกระส่าย",
+      "call": "โทร 1669 ทันที บอกว่าสงสัยภาวะช็อกและสาเหตุที่เห็น",
+      "steps": [
+        {
+          "text": "แก้สาเหตุที่เห็นก่อน เช่น กดห้ามเลือด",
+          "detail": "ดูหัวข้อ เลือดออกมาก",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "ให้นอนราบบนผ้าหรือเสื่อ ยกขาสูงพาดเก้าอี้",
+          "detail": "ช่วยให้เลือดกลับไปเลี้ยงอวัยวะสำคัญ ถ้าบาดเจ็บรุนแรง ให้นอนราบโดยไม่ต้องยกขา",
+          "src": [
+            "sja-shock",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "โทร 1669 บอกว่าสงสัยภาวะช็อก",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "คลายเสื้อผ้าที่รัดคอ อก และเอว",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "ห่มผ้าหรือเสื้อคลุมให้อุ่น พูดปลอบให้สงบ",
+          "detail": "ความกลัวและความเจ็บปวดทำให้ช็อกแย่ลง",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการรู้สึกตัวและการหายใจ ถ้าไม่หายใจให้ปั๊มหัวใจ",
+          "src": [
+            "sja-shock",
+            "sja-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ายกขาถ้าสงสัยขาหัก สะโพกหรือเชิงกรานบาดเจ็บ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่ารอให้อาการดีขึ้นเอง",
+          "detail": "ภาวะช็อกอันตรายถึงชีวิต ต้องถึงมือแพทย์โดยเร็ว",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร ถ้าบาดเจ็บหรือสงสัยเลือดออกภายใน",
+          "src": [
+            "sjnz-bleeding"
+          ]
+        }
+      ],
+      "src": [
+        "sja-shock",
+        "erc-fa-2025"
+      ]
+    },
+    {
+      "id": "spinal-head-injury",
+      "title": "สงสัยคอหรือหลังบาดเจ็บ (กระดูกสันหลัง)",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "ตกจากที่สูง รถชน ของหนักทับ ปวดคอหรือหลัง แขนขาชาหรืออ่อนแรง ซึมลง",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "บอกให้อยู่นิ่ง อย่าขยับ และโทร 1669",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "รู้สึกตัวดี: ให้ประคองคอตัวเองในท่าที่สบายและนิ่ง",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "คุกเข่าเหนือศีรษะ ใช้สองมือประคองศีรษะให้อยู่แนวตรงกับคอและหลัง",
+          "detail": "วางศอกบนพื้นให้มั่น กางนิ้วไม่ปิดหูผู้บาดเจ็บ ประคองไว้จนกู้ชีพมารับช่วง",
+          "src": [
+            "sja-spinal",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ให้คนช่วยเอาผ้าม้วนหรือเสื้อวางขนาบสองข้างศีรษะ",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ถ้าหมดสติ: เปิดทางเดินหายใจโดยยกขากรรไกร ไม่เงยคอ",
+          "detail": "วางปลายนิ้วที่มุมขากรรไกรสองข้างแล้วยกขึ้นเบา ๆ",
+          "src": [
+            "sja-spinal",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ถ้าไม่หายใจ: ปั๊มหัวใจทันที และให้คนไปเอาเครื่อง AED",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "นอนคว่ำและต้องเปิดทางเดินหายใจ: ให้หลายคนช่วยพลิกทั้งตัวพร้อมกัน",
+          "detail": "ให้คออยู่แนวเดียวกับลำตัวและนิ่งที่สุดตลอดการพลิก",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ศีรษะกระแทก: ดูหัวข้อ ศีรษะกระแทก สมองกระทบกระเทือน",
+          "detail": "ถ้าซึม สับสน อาเจียนซ้ำ ชัก ปวดหัวมาก มีเลือดหรือน้ำใสออกหูจมูก ให้โทร 1669",
+          "src": [
+            "sja-head"
+          ]
+        },
+        {
+          "text": "สวมหมวกกันน็อกอยู่: ดูหัวข้อ มอเตอร์ไซค์ล้ม: หมวกกันน็อกและแผลถลอก",
+          "src": [
+            "nsw-moto"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเคลื่อนย้าย เว้นแต่ที่ตรงนั้นอันตรายถึงชีวิต",
+          "src": [
+            "sja-spinal",
+            "sja-head",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าเงยคอหรือบิดศีรษะ",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "อย่าฝืนจัดท่าคนที่ดิ้นหรือไม่ให้ความร่วมมือ",
+          "detail": "อาจทำให้บาดเจ็บมากขึ้น",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าใส่เฝือกคอเองถ้าไม่ได้รับการฝึกมา",
+          "detail": "แนวทางยุโรปปี 2025 ไม่แนะนำให้ผู้ปฐมพยาบาลทั่วไปใช้เฝือกคอ ให้ใช้มือประคองแทน",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าให้กลับไปเล่นกีฬาจนกว่าบุคลากรทางการแพทย์จะตรวจแล้ว",
+          "src": [
+            "sja-head",
+            "erc-2025"
+          ]
+        }
+      ],
+      "src": [
+        "sja-spinal",
+        "sja-head",
+        "erc-2025",
+        "erc-fa-2025"
+      ]
+    },
+    {
+      "id": "fracture-sprain",
+      "title": "กระดูกหัก ข้อเคล็ด ข้อแพลง: หลักทั่วไป",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "ปวด บวม ช้ำ ผิดรูป ขยับไม่ได้ หรือเห็นกระดูกโผล่",
+      "call": "โทร 1669 ถ้ากระดูกโผล่ ต้นขา สะโพก เชิงกราน คอ หรือหลังหัก",
+      "steps": [
+        {
+          "text": "ให้อยู่นิ่ง ประคองส่วนที่เจ็บโดยจับข้อเหนือและใต้จุดที่เจ็บ",
+          "src": [
+            "sja-fracture",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "ถอดแหวน นาฬิกา ของรัดออกก่อนบวม",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "มีแผลหรือกระดูกโผล่: คลุมด้วยผ้าสะอาด กดรอบแผลเพื่อห้ามเลือด",
+          "detail": "ดูหัวข้อ กระดูกหักแบบมีแผลเปิด",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ใช้ผ้านุ่มหรือหมอนหนุนรอบส่วนที่เจ็บให้อยู่นิ่ง",
+          "detail": "แขนใช้ผ้าคล้องคอ ขาใช้ผ้าพับกว้างพันประคอง ดูหัวข้อ แขนหัก ข้อมือหัก และ ขาหัก สะโพกหัก",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ถามว่าชา เย็น หรือไม่รู้สึกที่ปลายมือปลายเท้าหรือไม่ แล้วบอกกู้ชีพ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ข้อผิดรูป สงสัยข้อหลุด: ดูหัวข้อ ข้อหลุด ไหล่หลุด",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "ข้อเคล็ด: พักส่วนที่เจ็บ และยกสูง",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "ข้อเคล็ด: ประคบเย็นด้วยน้ำแข็งห่อผ้า ครั้งละไม่เกิน 20 นาที",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "ปวดมากหรือขยับไม่ได้ ให้ไปพบแพทย์",
+          "src": [
+            "sja-sprain"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ากดลงบนกระดูกที่โผล่หรือจุดที่สงสัยว่าหัก",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ห้ามดึงหรือดันกระดูกที่โผล่กลับเข้าที่",
+          "detail": "จะทำให้เนื้อเยื่อบาดเจ็บเพิ่ม",
+          "src": [
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้ายก่อนส่วนที่เจ็บถูกประคองให้นิ่ง เว้นแต่อันตราย",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าวางน้ำแข็งบนผิวหนังโดยตรง",
+          "detail": "ห่อด้วยผ้าก่อนเสมอ",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "อย่าให้ยาแอสไพรินแก่เด็กอายุต่ำกว่า 16 ปี",
+          "src": [
+            "sja-sprain"
+          ]
+        }
+      ],
+      "src": [
+        "sja-fracture",
+        "sja-sprain",
+        "trc-bfa-2565"
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "gunshot-wound",
+      "title": "ถูกยิง (แผลกระสุนปืน)",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "มีเสียงปืน มีรูแผล เลือดออก อาจมีแผลมากกว่าหนึ่งแห่งและถูกเสื้อผ้าบังไว้",
+      "call": "เมื่อตัวคุณปลอดภัยแล้ว โทร 1669 และแจ้งตำรวจ 191 ทันที",
+      "steps": [
+        {
+          "text": "หนีให้พ้นอันตรายก่อน เข้าช่วยเมื่อคนร้ายไปแล้วและตัวคุณปลอดภัยเท่านั้น",
+          "detail": "ให้ถือว่าที่เกิดเหตุยังไม่ปลอดภัย มองหาทางหนีไว้เสมอ ถ้าสถานการณ์เปลี่ยน ให้หยุดแล้วไปที่ปลอดภัย พาผู้บาดเจ็บไปด้วยถ้าทำได้",
+          "src": [
+            "protectuk-fa",
+            "stb-course"
+          ]
+        },
+        {
+          "text": "โทร 1669 และ 191 บอกสถานที่ จำนวนคนเจ็บ และบอกว่ามีการยิงกัน",
+          "src": [
+            "stb-course",
+            "niems-1669",
+            "th-emergency-numbers"
+          ]
+        },
+        {
+          "text": "เปิดหรือตัดเสื้อผ้า ตรวจให้ทั่วทั้งตัว หาแผลให้ครบทุกแห่ง",
+          "detail": "อาจมีแผลหลายแห่ง ทั้งศีรษะ คอ ลำตัว แขนขา และเสื้อผ้าอาจบังแผลที่เลือดออกมาก ให้กดแผลที่เลือดออกมากที่สุดก่อน",
+          "src": [
+            "stb-course",
+            "erc-fa-2025",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ใช้ผ้าสะอาดกดลงบนแผลตรง ๆ ให้แน่น กดค้างไว้ไม่ปล่อย",
+          "src": [
+            "erc-fa-2025",
+            "stb-course",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แขนขาเลือดพุ่ง กดแล้วไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผล",
+          "detail": "ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "erc-fa-2025",
+            "stb-course",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แผลลึกที่ขาหนีบ รักแร้ ไหล่ คอ: อัดผ้าลงในแผลให้แน่นแล้วกดทับ",
+          "detail": "ดูหัวข้อ อุดแผลลึกห้ามเลือด",
+          "src": [
+            "stb-course",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แผลที่หน้าอก: ปล่อยให้แผลเปิดโล่ง ไม่ต้องปิดทับ",
+          "detail": "ดูหัวข้อ แผลทะลุหน้าอก",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ห่มผ้าให้อุ่น พูดปลอบ เฝ้าดูการหายใจ",
+          "detail": "ถ้าหมดสติและไม่หายใจ ให้ปั๊มหัวใจทันที",
+          "src": [
+            "who-cfar",
+            "protectuk-fa"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าพยายามแคะหรือเอาหัวกระสุนและเศษของในแผลออก",
+          "detail": "การเอาของออกจากแผลทำให้เลือดออกมากขึ้น ให้กดห้ามเลือดแทน",
+          "src": [
+            "who-cfar",
+            "brc-bleeding"
+          ]
+        },
+        {
+          "text": "อย่าปิดแผลทะลุหน้าอกด้วยพลาสติกหรือผ้าปิดแผลแบบกันอากาศ",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร",
+          "src": [
+            "sjnz-bleeding",
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "อย่าขวางการทำงานของตำรวจ ถ้าถูกสั่งให้ออกจากพื้นที่ต้องออกทันที",
+          "src": [
+            "protectuk-fa"
+          ]
+        }
+      ],
+      "src": [
+        "erc-fa-2025",
+        "stb-course",
+        "who-cfar",
+        "protectuk-fa",
+        "sta-chest"
+      ]
+    },
+    {
+      "id": "stab-wound",
+      "title": "ถูกแทง ถูกฟัน",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "แผลจากมีดหรือของมีคม เลือดออกมาก อาจมีมีดปักคาอยู่",
+      "call": "โทร 1669 ทันที และแจ้งตำรวจ 191 ถ้าเป็นเหตุทำร้ายร่างกาย",
+      "steps": [
+        {
+          "text": "ดูว่าคนร้ายไปแล้วและตัวคุณปลอดภัย แล้วโทร 1669",
+          "src": [
+            "protectuk-fa",
+            "stb-course",
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "ไม่มีของปักคา: ใช้ผ้าสะอาดกดบนแผลตรง ๆ ให้แน่น กดค้างไว้",
+          "detail": "ใช้ผ้าอะไรก็ได้ที่สะอาด เช่น เสื้อ ผ้าเช็ดตัว สวมถุงมือถ้ามี ไม่มีให้ใช้ถุงพลาสติกสวมมือแทน",
+          "src": [
+            "brc-bleeding",
+            "protectuk-fa",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "มีดยังปักอยู่: ห้ามดึงออก ให้กดที่สองข้างของมีดแทน",
+          "detail": "ดูหัวข้อ ของปักคาในแผล",
+          "src": [
+            "sja-bleeding",
+            "sjnz-bleeding",
+            "brc-bleeding"
+          ]
+        },
+        {
+          "text": "เลือดซึมทะลุผ้า: เปลี่ยนผ้าผืนใหม่แล้วกดให้แน่นอีกครั้ง",
+          "src": [
+            "sja-bleeding",
+            "brc-bleeding"
+          ]
+        },
+        {
+          "text": "แผลที่แขนขาเลือดพุ่ง กดแล้วไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผล",
+          "detail": "ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "erc-fa-2025",
+            "protectuk-fa",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แผลลึกที่คอ ไหล่ รักแร้ ขาหนีบ: อัดผ้าลงในแผลให้แน่นแล้วกดทับ",
+          "detail": "ดูหัวข้อ อุดแผลลึกห้ามเลือด",
+          "src": [
+            "stb-course",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แผลแทงที่หน้าอก: ปล่อยแผลเปิดโล่ง ถ้าเลือดออกให้กดที่ขอบรอบแผล",
+          "detail": "อย่าอุดรูแผล ดูหัวข้อ แผลทะลุหน้าอก",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "แผลที่ท้อง: ให้นอนชันเข่า คลุมแผลด้วยผ้าสะอาดชุบน้ำ",
+          "detail": "ดูหัวข้อ แผลทะลุช่องท้อง ลำไส้ทะลัก",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ห่มผ้าให้อุ่น เฝ้าดูการรู้สึกตัวและการหายใจ",
+          "src": [
+            "who-cfar",
+            "sja-bleeding"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามดึงมีดหรือของที่ปักคาออก",
+          "detail": "ของนั้นอุดรูแผลอยู่ ดึงออกแล้วเลือดจะออกมากขึ้น และอวัยวะข้างเคียงอาจบาดเจ็บเพิ่ม",
+          "src": [
+            "brc-bleeding",
+            "mu-tm-firstaid",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "อย่าล้างแผลที่กว้างหรือลึก",
+          "detail": "จะทำให้เลือดออกอีก ให้ห้ามเลือดแล้วรีบส่งโรงพยาบาล",
+          "src": [
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร",
+          "src": [
+            "sjnz-bleeding",
+            "sjnz-abdominal"
+          ]
+        }
+      ],
+      "src": [
+        "brc-bleeding",
+        "sja-bleeding",
+        "sjnz-bleeding",
+        "erc-fa-2025",
+        "who-cfar",
+        "protectuk-fa"
+      ]
+    },
+    {
+      "id": "impaled-object",
+      "title": "ของปักคาในแผล",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "มีมีด เหล็ก ไม้ เศษแก้วชิ้นใหญ่ หรือของอื่นปักคาอยู่ในร่างกาย",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "บอกให้อยู่นิ่ง อย่าขยับ และห้ามดึงของออก",
+          "src": [
+            "sja-bleeding",
+            "who-cfar",
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "กดห้ามเลือดที่สองข้างของของที่ปักคา ไม่กดลงบนตัวของ",
+          "src": [
+            "sja-bleeding",
+            "sjnz-bleeding",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ใช้ผ้าม้วนหรือผ้าก้อนวางขนาบรอบของที่ปักคา ไม่ให้ขยับ",
+          "src": [
+            "sjnz-bleeding",
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "พันผ้ารอบ ๆ ยึดผ้าที่ขนาบไว้ให้แน่น โดยไม่กดทับของที่ปักคา",
+          "src": [
+            "mu-tm-firstaid",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ของยาวหรือติดกับของชิ้นใหญ่: ประคองไว้ไม่ให้แกว่ง รอกู้ภัยมาตัด",
+          "detail": "อาจต้องใช้เครื่องมือตัดของนั้นออกจากส่วนอื่น โดยส่วนที่ติดกับผู้บาดเจ็บต้องไม่ถูกดึงหรือขยับ",
+          "src": [
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น พูดปลอบ เฝ้าดูการรู้สึกตัวและการหายใจ",
+          "src": [
+            "who-cfar",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ของปักคาที่ตา: ปิดตาด้วยผ้าสะอาด ดูหัวข้อ ตาบาดเจ็บ หรือสารเคมีเข้าตา",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ของชิ้นเล็กอยู่ตื้น เช่น เสี้ยน: ใช้แหนบจับชิดผิว ดึงออกตามแนวที่เข้า",
+          "detail": "ถ้าฝังลึกหรือเอาออกยาก ให้ปล่อยไว้แล้วไปพบแพทย์",
+          "src": [
+            "sja-splinter",
+            "sjnz-bleeding"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามดึง โยก หรือหมุนของที่ปักคา",
+          "detail": "ของนั้นอุดรูแผลอยู่ การดึงออกทำให้เลือดออกมากขึ้นและอวัยวะข้างเคียงบาดเจ็บ",
+          "src": [
+            "brc-bleeding",
+            "mu-tm-firstaid",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "อย่ากดลงบนของที่ปักคาโดยตรง",
+          "src": [
+            "sja-bleeding",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร",
+          "src": [
+            "sjnz-bleeding",
+            "sjnz-abdominal"
+          ]
+        }
+      ],
+      "src": [
+        "sja-bleeding",
+        "sjnz-bleeding",
+        "who-cfar",
+        "mu-tm-firstaid",
+        "brc-bleeding"
+      ]
+    },
+    {
+      "id": "chest-wound-open",
+      "title": "แผลทะลุหน้าอก",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "มีแผลถูกยิง ถูกแทง หรือของทิ่มทะลุที่หน้าอก หายใจลำบาก หายใจเร็ว",
+      "call": "โทร 1669 ทันที บอกว่ามีแผลทะลุที่หน้าอก",
+      "steps": [
+        {
+          "text": "โทร 1669 ทันที บอกว่ามีแผลทะลุที่หน้าอก",
+          "src": [
+            "sta-chest",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ปล่อยให้แผลเปิดโล่ง ไม่ต้องปิดผ้าหรือคลุมแผล",
+          "detail": "ให้อากาศออกจากแผลได้ ถ้าปิดจนอากาศออกไม่ได้ อาจเกิดภาวะลมดันในช่องอก (ลมค้างในอกจนกดปอด) ซึ่งอันตรายถึงชีวิต",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "ถ้าแผลเลือดออกมาก: กดที่ขอบรอบแผล โดยไม่อุดรูแผล",
+          "detail": "ใช้นิ้วกดตรงขอบแผล ไม่ปิดทับรู",
+          "src": [
+            "sta-chest",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "รู้สึกตัวดี: ให้นั่งตัวตรง เอนไปทางข้างที่บาดเจ็บ",
+          "detail": "ช่วยให้หายใจง่ายขึ้น",
+          "src": [
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "หมดสติแต่ยังหายใจ: จัดนอนตะแคงพักฟื้น ให้ข้างที่บาดเจ็บอยู่ด้านล่าง",
+          "detail": "ช่วยปกป้องปอดข้างที่ดี",
+          "src": [
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "คอยดูแผลตลอด อย่าให้เลือดหรือลิ่มเลือดอุดรูแผลจนอากาศออกไม่ได้",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ถ้าเคยอบรมและมีแผ่นปิดแผลหน้าอกแบบมีวาล์วระบายลม ใช้ได้",
+          "detail": "ต้องให้อากาศไหลออกได้ตอนหายใจออก",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจ ถ้าหมดสติและไม่หายใจ ให้ปั๊มหัวใจทันที",
+          "src": [
+            "sta-chest",
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "มีของปักคาที่หน้าอก: ห้ามดึงออก ดูหัวข้อ ของปักคาในแผล",
+          "src": [
+            "sja-bleeding",
+            "who-cfar"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าปิดแผลด้วยพลาสติก เทปกาว หรือผ้าปิดแผลแบบกันอากาศ",
+          "detail": "รวมถึงการปิดเทป 3 ด้าน เพราะผ้าปิดแผลมักกลายเป็นปิดสนิทโดยไม่ตั้งใจ",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "อย่าอัดผ้าหรือของใด ๆ เข้าไปอุดรูแผลที่หน้าอก",
+          "src": [
+            "sta-chest",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร",
+          "src": [
+            "sjnz-bleeding"
+          ]
+        }
+      ],
+      "src": [
+        "erc-fa-2025",
+        "sta-chest"
+      ]
+    },
+    {
+      "id": "abdominal-wound",
+      "title": "แผลทะลุช่องท้อง ลำไส้ทะลัก",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "มีแผลลึกที่ท้อง ปวดท้องมาก คลื่นไส้ ตัวเย็น เหงื่อแตก อาจเห็นลำไส้โผล่",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "โทร 1669 ทันที",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "ให้นั่งหรือนอน งอเข่าขึ้น ในท่าที่สบายที่สุด",
+          "detail": "ใช้หมอนหรือผ้าห่มช่วยหนุนให้สบายขึ้น",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "คลายเสื้อผ้าที่รัดเอวและคอ",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "ถ้าเห็นลำไส้หรืออวัยวะภายใน: ปล่อยไว้อย่างนั้น ไม่ต้องจับ",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "คลุมแผลด้วยผ้าสะอาดชุบน้ำอุ่น หรือฟิล์มถนอมอาหาร",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "ไม่มีอวัยวะโผล่และแผลเลือดออก: จับขอบแผลให้ชิดกันเพื่อช่วยห้ามเลือด",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น พูดปลอบ เฝ้าดูการรู้สึกตัวและการหายใจ",
+          "src": [
+            "who-cfar",
+            "sjnz-bleeding"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าแตะต้องหรือดันอวัยวะที่โผล่ออกมากลับเข้าไป",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "อย่าให้กิน ดื่ม หรือสูบบุหรี่",
+          "src": [
+            "sjnz-abdominal"
+          ]
+        },
+        {
+          "text": "อย่าดึงของที่ปักคาออก",
+          "src": [
+            "sja-bleeding",
+            "who-cfar"
+          ]
+        }
+      ],
+      "src": [
+        "sjnz-abdominal",
+        "who-cfar"
+      ]
+    },
+    {
+      "id": "amputation",
+      "title": "อวัยวะขาด นิ้วขาด",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "นิ้ว มือ แขน ขา หรือส่วนของร่างกายขาดออกจากตัว",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "ห้ามเลือดก่อนเป็นอันดับแรก: ใช้ผ้าสะอาดกดที่แผลให้แน่น",
+          "detail": "ยกส่วนที่บาดเจ็บให้สูงขึ้น",
+          "src": [
+            "erc-fa-2025",
+            "sjnz-bleeding",
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "แขนขาขาด เลือดพุ่ง กดแล้วไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผลทันที",
+          "detail": "ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "โทร 1669 ให้นอนราบ ห่มผ้าให้อุ่น",
+          "src": [
+            "th-vibhavadi-amputation",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "เก็บส่วนที่ขาดให้เร็วที่สุด ห่อด้วยผ้าก๊อซหรือผ้าสะอาดชุบน้ำหมาด ๆ",
+          "detail": "ชุบด้วยน้ำเกลือหรือน้ำสะอาด",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ใส่ถุงพลาสติกสะอาดที่กันน้ำได้ ปิดปากถุงให้แน่น",
+          "src": [
+            "erc-fa-2025",
+            "mu-tm-firstaid",
+            "th-vibhavadi-amputation",
+            "sjnz-bleeding"
+          ]
+        },
+        {
+          "text": "วางถุงนั้นในถุงหรือภาชนะอีกใบที่ใส่น้ำผสมน้ำแข็ง",
+          "detail": "ให้เย็นตลอดเวลาแต่ไม่ถึงกับแข็ง ถ้าไม่มีน้ำแข็ง ใช้กระติกกับถุงเจลเย็นแทนได้",
+          "src": [
+            "erc-fa-2025",
+            "sjnz-bleeding",
+            "mu-tm-firstaid",
+            "th-vibhavadi-amputation"
+          ]
+        },
+        {
+          "text": "เขียนชื่อผู้บาดเจ็บและเวลาที่เก็บ ติดไว้ที่ถุงหรือภาชนะ",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ส่งส่วนที่ขาดไปโรงพยาบาลเดียวกันพร้อมผู้บาดเจ็บ ให้เร็วที่สุด",
+          "detail": "ศัลยแพทย์ไทยแนะนำ: ถึงโรงพยาบาลภายใน 2-3 ชั่วโมงช่วยเพิ่มโอกาสต่อสำเร็จ แขนขาควรได้ผ่าตัดภายใน 6 ชั่วโมง ส่วนนิ้วเก็บได้นานกว่านั้น",
+          "src": [
+            "erc-fa-2025",
+            "th-vibhavadi-amputation",
+            "mu-tm-firstaid"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าให้ส่วนที่ขาดสัมผัสน้ำแข็งโดยตรง และอย่าให้แข็ง",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าใช้ยาฆ่าเชื้อกับส่วนที่ขาด",
+          "src": [
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "อย่ามัวหาส่วนที่ขาดจนห้ามเลือดช้า",
+          "detail": "การห้ามเลือดและช่วยชีวิตสำคัญที่สุด ให้คนอื่นช่วยเก็บส่วนที่ขาด",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าใช้เชือกหรือสายเส้นเล็กรัดห้ามเลือด ให้ใช้ผ้าแผ่นกว้าง",
+          "src": [
+            "th-vibhavadi-amputation"
+          ]
+        },
+        {
+          "text": "อย่าให้กินอาหาร เผื่อต้องผ่าตัด",
+          "src": [
+            "th-vibhavadi-amputation",
+            "nhs-broken-arm"
+          ]
+        }
+      ],
+      "src": [
+        "erc-fa-2025",
+        "th-vibhavadi-amputation",
+        "mu-tm-firstaid",
+        "sjnz-bleeding"
+      ]
+    },
+    {
+      "id": "tourniquet-howto",
+      "title": "ใช้สายรัดห้ามเลือด (ทูร์นิเกต์)",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "แขนหรือขาเลือดพุ่งหรือไหลไม่หยุด กดแผลแล้วไม่อยู่ หรือแขนขาขาด",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงขณะห้ามเลือด",
+      "steps": [
+        {
+          "text": "ใช้เมื่อแขนขาเลือดออกจนอันตรายถึงชีวิต และกดแผลตรง ๆ แล้วไม่หยุด",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "พันสายรัดรอบแขนหรือขา เหนือแผล 5-7 ซม. (2-3 นิ้ว) ด้านใกล้ลำตัว",
+          "detail": "ถ้าตรงกับข้อศอกหรือข้อเข่า ให้เลื่อนขึ้นไปเหนือข้อ รัดทับเสื้อผ้าได้",
+          "src": [
+            "erc-fa-2025",
+            "stb-tourniquet",
+            "stb-course"
+          ]
+        },
+        {
+          "text": "ดึงปลายสายให้ตึงที่สุด แล้วติดแถบยึดกลับเข้ากับตัวสาย",
+          "detail": "เมื่อตึงแล้ว ต้องสอดนิ้ว 3 นิ้วเข้าใต้สายไม่ได้",
+          "src": [
+            "stb-tourniquet",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "หมุนแกนขันไปเรื่อย ๆ จนเลือดหยุด แล้วล็อกแกนไว้ไม่ให้คลาย",
+          "detail": "จะเจ็บมาก ถือเป็นเรื่องปกติ ให้บอกผู้บาดเจ็บไว้ก่อน",
+          "src": [
+            "stb-tourniquet",
+            "erc-fa-2025",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "จดเวลาที่รัดไว้บนสายรัดและบนตัวผู้บาดเจ็บ แล้วบอกทีมกู้ชีพ",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "เลือดยังไม่หยุด: รัดเส้นที่สองเหนือเส้นแรก ชิดไปทางลำตัว",
+          "src": [
+            "stb-tourniquet",
+            "erc-fa-2025",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "ไม่มีสายรัดสำเร็จรูป: ใช้ผ้าแถบกว้าง เช่น ผ้าสามเหลี่ยม ผ้าพันคอ เนกไท",
+          "detail": "ผูกรอบแขนขาเหนือแผล สอดไม้ ปากกา หรือส้อม แล้วหมุนขันจนเลือดหยุด ยึดไม้ไว้ไม่ให้คลาย สายรัดสำเร็จรูปรัดได้ผลดีกว่า จึงใช้ของทำเองเมื่อไม่มีเท่านั้น",
+          "src": [
+            "sja-life-bleed",
+            "who-cfar",
+            "protectuk-fa",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "เฝ้าดูและปลอบผู้บาดเจ็บ รีบส่งโรงพยาบาลให้เร็วที่สุด",
+          "src": [
+            "stb-tourniquet",
+            "who-cfar"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าคลายหรือถอดสายรัดเอง",
+          "detail": "เลือดจะกลับมาออกอีก ให้บุคลากรทางการแพทย์เป็นผู้ถอดเท่านั้น",
+          "src": [
+            "erc-fa-2025",
+            "stb-tourniquet",
+            "who-cfar",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่ารัดทับข้อศอก ข้อเข่า หรือข้ออื่น",
+          "src": [
+            "erc-fa-2025",
+            "stb-course",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่าใช้เชือกหรือสายเส้นเล็ก ให้ใช้ผ้าแผ่นกว้างหรือผ้าหนา",
+          "src": [
+            "th-vibhavadi-amputation",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "อย่าใช้ถ้ากดแผลแล้วเลือดหยุด หรือแผลไม่ได้อยู่ที่แขนขา",
+          "detail": "สายรัดตัดเลือดที่ไปเลี้ยงแขนขา จึงใช้เฉพาะเมื่อเลือดออกจนอันตรายถึงชีวิต แผลที่ลำตัวให้กดแผลตรง ๆ ให้แน่น",
+          "src": [
+            "who-cfar",
+            "stb-tourniquet",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่าใช้สายรัดกับแผลงูกัด",
+          "src": [
+            "erc-fa-2025",
+            "moph-snake"
+          ]
+        }
+      ],
+      "src": [
+        "erc-fa-2025",
+        "stb-tourniquet",
+        "stb-course",
+        "sja-life-bleed",
+        "who-cfar"
+      ]
+    },
+    {
+      "id": "wound-packing",
+      "title": "อุดแผลลึกห้ามเลือด",
+      "group": "ห้ามเลือดและบาดแผลรุนแรง",
+      "signs": "แผลลึกเป็นโพรง เลือดออกมากที่ขาหนีบ รักแร้ ไหล่ คอ หรือจุดที่ใช้สายรัดไม่ได้",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงขณะห้ามเลือด",
+      "steps": [
+        {
+          "text": "เปิดเสื้อผ้าให้เห็นแผล หาจุดที่เลือดออกมากที่สุด",
+          "src": [
+            "stb-course",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ใช้ผ้าก๊อซหรือผ้าสะอาด อัดลงไปในแผลให้แน่นจนเลือดหยุด",
+          "detail": "ถ้ามีผ้าก๊อซห้ามเลือด (ผ้าเคลือบสารช่วยให้เลือดแข็งตัว) ให้ใช้ก่อน ไม่มีก็ใช้ผ้าก๊อซธรรมดาหรือผ้าสะอาด",
+          "src": [
+            "stb-course",
+            "who-cfar",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "กดทับลงบนผ้าที่อัดไว้ให้แน่น",
+          "src": [
+            "stb-course",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "กดค้างไว้ต่อเนื่องจนกู้ชีพมาถึง",
+          "detail": "ผ้าก๊อซห้ามเลือดต้องกดค้างไว้อย่างน้อย 5 นาที",
+          "src": [
+            "stb-course",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "เมื่อเลือดหยุดแล้ว พันผ้าทับให้แน่นเพื่อคงแรงกดไว้",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "แผลอยู่ที่แขนขาและเลือดยังไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผล",
+          "detail": "ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ห่มผ้าให้อุ่น พูดปลอบ เฝ้าดูการรู้สึกตัว",
+          "src": [
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "เด็ก: อุดแผลลึกได้ด้วยวิธีเดียวกับผู้ใหญ่",
+          "src": [
+            "stb-course"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าอัดผ้าเข้าไปในแผลทะลุหน้าอก",
+          "detail": "แผลหน้าอกต้องปล่อยให้อากาศออกได้ ดูหัวข้อ แผลทะลุหน้าอก",
+          "src": [
+            "erc-fa-2025",
+            "sta-chest"
+          ]
+        },
+        {
+          "text": "อย่าแค่วางผ้าปิดปากแผลที่ใหญ่และลึก",
+          "detail": "การกดแค่ผิวนอกห้ามเลือดจากแผลลึกไม่อยู่",
+          "src": [
+            "stb-course"
+          ]
+        },
+        {
+          "text": "อย่าดึงของที่ปักคาออกเพื่ออุดแผล",
+          "src": [
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "อย่ากดที่จุดชีพจรเหนือแผลแทนการกดลงบนแผล",
+          "detail": "แนวทางยุโรปปี 2025 ให้กดลงบนแผลโดยตรง ไม่แนะนำการกดจุดชีพจร",
+          "src": [
+            "erc-fa-2025"
+          ]
+        }
+      ],
+      "src": [
+        "stb-course",
+        "who-cfar",
+        "erc-fa-2025",
+        "sja-life-bleed"
+      ]
+    },
+    {
+      "id": "fracture-arm",
+      "title": "แขนหัก ข้อมือหัก",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "ปวด บวม ช้ำ ผิดรูป ขยับแขนหรือข้อมือไม่ได้ หลังล้มหรือถูกกระแทก",
+      "call": "ไปห้องฉุกเฉิน โทร 1669 ถ้ากระดูกโผล่ แขนผิดรูป ชา หรือเลือดออกมาก",
+      "steps": [
+        {
+          "text": "ให้นั่งนิ่ง ๆ ใช้มืออีกข้างประคองแขนที่เจ็บไว้",
+          "src": [
+            "sja-arm-sling",
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ถอดแหวน นาฬิกา กำไล ออกก่อนบวม",
+          "src": [
+            "nhs-broken-arm",
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "คล้องแขนด้วยผ้าสามเหลี่ยม ให้ผ้ารองตั้งแต่ศอกถึงนิ้วก้อย",
+          "detail": "สอดผ้าใต้แขน ปลายแหลมอยู่ที่ศอก ชายบนอ้อมหลังคอ พับชายล่างขึ้นมาผูกปมเหนือไหปลาร้า ไม่มีผ้าสามเหลี่ยมใช้ผ้าเช็ดตัวคล้องแทนได้",
+          "src": [
+            "sja-arm-sling",
+            "nhs-broken-arm"
+          ]
+        },
+        {
+          "text": "ถ้าต้องดาม: ใช้วัสดุแข็งที่ยาวกว่าส่วนที่หัก รองผ้านุ่มก่อน",
+          "detail": "อย่าวางวัสดุดามลงบนจุดที่หักโดยตรง มัดให้แน่นพอควร ไม่แน่นเกินไป",
+          "src": [
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "ประคบเย็นด้วยน้ำแข็งห่อผ้า ครั้งละไม่เกิน 20 นาที",
+          "src": [
+            "nhs-broken-arm"
+          ]
+        },
+        {
+          "text": "กดเล็บ 5 วินาทีแล้วปล่อย สีต้องกลับมาใน 2 วินาที ตรวจทุก 10 นาที",
+          "detail": "ถ้าสีไม่กลับ แปลว่าผ้าที่พันหรือผูกไว้แน่นเกิน ให้คลายออก",
+          "src": [
+            "sja-arm-sling",
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "มีแผลเลือดออก: ใช้ผ้าสะอาดกดห้ามเลือด",
+          "detail": "ถ้ากระดูกโผล่ ดูหัวข้อ กระดูกหักแบบมีแผลเปิด",
+          "src": [
+            "nhs-broken-arm",
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ให้คนอื่นพาไปโรงพยาบาล",
+          "src": [
+            "nhs-broken-arm"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าใช้งานหรือขยับแขนข้างที่เจ็บ",
+          "src": [
+            "nhs-broken-arm",
+            "trc-bfa-2565",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "อย่ากินหรือดื่มอะไร เผื่อต้องผ่าตัด",
+          "src": [
+            "nhs-broken-arm",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่าวางน้ำแข็งบนผิวหนังโดยตรง",
+          "src": [
+            "nhs-broken-arm",
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "อย่าขับรถไปโรงพยาบาลเอง",
+          "src": [
+            "nhs-broken-arm"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-broken-arm",
+        "sja-arm-sling",
+        "sja-fracture",
+        "mu-tm-firstaid"
+      ]
+    },
+    {
+      "id": "fracture-leg",
+      "title": "ขาหัก สะโพกหัก",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "ขาผิดรูป บิด หรือสั้นลง ปวดมาก ขยับหรือลงน้ำหนักไม่ได้",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "โทร 1669 ให้นอนนิ่ง ๆ อย่าขยับขาและอย่าลงน้ำหนัก",
+          "src": [
+            "nhs-broken-leg",
+            "sja-fracture",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "ประคองข้อเหนือและใต้จุดที่เจ็บให้นิ่ง",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ใช้ผ้าห่ม เสื้อผ้า หรือหมอน หนุนขนาบรอบขาให้อยู่นิ่ง",
+          "src": [
+            "nhs-broken-leg",
+            "sja-fracture",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "ถ้าต้องดาม: ใช้ผ้าพับกว้างพันประคองขา ไม่แน่นเกินไป",
+          "detail": "วัสดุที่ใช้ดามต้องยาวกว่าส่วนที่หัก รองผ้านุ่มก่อน อย่าวางลงบนจุดที่หักโดยตรง",
+          "src": [
+            "sja-fracture",
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "มีแผลเลือดออก: ใช้ผ้าสะอาดกดห้ามเลือด",
+          "detail": "ถ้ากระดูกโผล่ ดูหัวข้อ กระดูกหักแบบมีแผลเปิด",
+          "src": [
+            "nhs-broken-leg"
+          ]
+        },
+        {
+          "text": "ถามว่าปลายเท้าชา เย็น หรือเป็นเหน็บหรือไม่ แล้วบอกกู้ชีพ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น เฝ้าดูอาการช็อก: ซีด ตัวเย็นชื้น ชีพจรเร็ว หายใจเร็ว",
+          "detail": "กระดูกต้นขา สะโพก หรือเชิงกรานหัก มักมีอาการช็อกร่วมด้วย",
+          "src": [
+            "sja-fracture",
+            "nhs-broken-leg"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ายกขาสูง แม้จะมีอาการช็อก",
+          "src": [
+            "sja-fracture",
+            "nhs-broken-leg"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้ายก่อนขาถูกประคองให้นิ่ง เว้นแต่ที่ตรงนั้นอันตราย",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร เผื่อต้องผ่าตัด",
+          "src": [
+            "nhs-broken-leg",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่าให้ลองยืนหรือเดิน",
+          "src": [
+            "nhs-broken-leg"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-broken-leg",
+        "sja-fracture",
+        "mu-tm-firstaid"
+      ]
+    },
+    {
+      "id": "fracture-open",
+      "title": "กระดูกหักแบบมีแผลเปิด (กระดูกโผล่)",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "มีแผลตรงจุดที่หัก เห็นกระดูกโผล่ หรือเลือดออกตรงที่แขนขาผิดรูป",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "โทร 1669 ทันที ให้ผู้บาดเจ็บอยู่นิ่ง",
+          "src": [
+            "sja-fracture",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "สวมถุงมือถ้ามี คลุมแผลและกระดูกด้วยผ้าปิดแผลหรือผ้าสะอาดไม่มีขุย",
+          "src": [
+            "sja-fracture",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "กดห้ามเลือดที่รอบ ๆ แผล ไม่กดลงบนกระดูก",
+          "src": [
+            "sja-fracture",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "พันผ้ายึดผ้าคลุมแผลไว้ ไม่แน่นจนเลือดไม่ไหลเวียน",
+          "src": [
+            "sja-fracture",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ประคองข้อเหนือและใต้จุดที่หัก หนุนผ้ารอบ ๆ ไม่ขยับส่วนที่หัก",
+          "src": [
+            "sja-fracture",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "เลือดพุ่งไม่หยุดจนอันตรายถึงชีวิต: รัดสายรัดห้ามเลือดเหนือแผล",
+          "detail": "ดูหัวข้อ ใช้สายรัดห้ามเลือด",
+          "src": [
+            "erc-fa-2025",
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ถามว่าปลายมือปลายเท้าชา เย็น หรือเป็นเหน็บหรือไม่ แล้วบอกกู้ชีพ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น เฝ้าดูอาการช็อก",
+          "src": [
+            "sja-fracture"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามดึงหรือดันกระดูกที่โผล่กลับเข้าที่",
+          "detail": "จะทำให้เนื้อเยื่อบาดเจ็บเพิ่ม",
+          "src": [
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่ากดลงบนกระดูกที่โผล่",
+          "src": [
+            "sja-fracture",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "อย่าให้กิน ดื่ม หรือกินยาทางปาก",
+          "src": [
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่ายกขาสูงถ้าขาหัก",
+          "src": [
+            "sja-fracture"
+          ]
+        }
+      ],
+      "src": [
+        "sja-fracture",
+        "trc-bfa-2565",
+        "sjnz-fracture"
+      ]
+    },
+    {
+      "id": "dislocation",
+      "title": "ข้อหลุด ไหล่หลุด",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "ปวดรุนแรง ข้อผิดรูป บวมช้ำ ขยับข้อนั้นไม่ได้",
+      "call": "ไปห้องฉุกเฉินทันที ถ้าไปเองไม่ได้ให้โทร 1669",
+      "steps": [
+        {
+          "text": "ให้อยู่นิ่ง ประคองข้อไว้ในท่าที่เจ็บน้อยที่สุด",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "ถอดแหวนและนาฬิกาออกก่อนบวม",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "ไหล่หรือศอกหลุด: คล้องแขน แล้วพันผ้ากว้างรอบอกยึดแขนไว้กับตัว",
+          "detail": "ไม่มีผ้าสามเหลี่ยม ใช้ผ้าเช็ดตัวประคองแขนแทนได้",
+          "src": [
+            "sja-dislocation",
+            "nhs-shoulder"
+          ]
+        },
+        {
+          "text": "ข้อเท้า เข่า สะโพกหลุด: หนุนผ้านุ่ม พันผ้ากว้างประคอง ห้ามลงน้ำหนัก",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "ประคบเย็นด้วยน้ำแข็งห่อผ้า ครั้งละไม่เกิน 20 นาที",
+          "src": [
+            "nhs-shoulder"
+          ]
+        },
+        {
+          "text": "ตรวจเลือดไหลเวียนที่ปลายมือปลายเท้าทุก 10 นาที แน่นไปให้คลายผ้า",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "ให้คนอื่นพาไปโรงพยาบาล ระหว่างนั้นเฝ้าดูอาการช็อก",
+          "src": [
+            "sja-dislocation",
+            "nhs-shoulder"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามดึงหรือดันข้อให้กลับเข้าที่เอง",
+          "detail": "อาจทำให้บาดเจ็บมากขึ้น",
+          "src": [
+            "sja-dislocation",
+            "nhs-shoulder",
+            "sjnz-fracture"
+          ]
+        },
+        {
+          "text": "อย่าขยับต้นแขนข้างที่ไหล่หลุด",
+          "src": [
+            "nhs-shoulder"
+          ]
+        },
+        {
+          "text": "อย่ายกขาข้างที่บาดเจ็บ",
+          "src": [
+            "sja-dislocation"
+          ]
+        },
+        {
+          "text": "อย่าขับรถไปโรงพยาบาลเอง",
+          "src": [
+            "nhs-shoulder"
+          ]
+        }
+      ],
+      "src": [
+        "sja-dislocation",
+        "nhs-shoulder",
+        "sjnz-fracture"
+      ]
+    },
+    {
+      "id": "rib-pelvis-injury",
+      "title": "อกกระแทก ซี่โครงหัก หรือสงสัยเชิงกรานหัก",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "เจ็บหน้าอกเวลาหายใจหรือไอหลังถูกกระแทก หรือปวดสะโพก เชิงกราน ขยับขาไม่ได้",
+      "call": "โทร 1669 ถ้าเกิดจากอุบัติเหตุรุนแรง หายใจลำบากขึ้น ไอเป็นเลือด หรือสงสัยเชิงกรานหัก",
+      "steps": [
+        {
+          "text": "อกกระแทกจากอุบัติเหตุรุนแรง เช่น รถชน: โทร 1669 หรือไปห้องฉุกเฉิน",
+          "src": [
+            "nhs-ribs"
+          ]
+        },
+        {
+          "text": "ให้อยู่ในท่าที่หายใจสบายที่สุด",
+          "src": [
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "โทร 1669 ถ้าหายใจลำบากขึ้น เจ็บอกมากขึ้น หรือไอเป็นเลือด",
+          "detail": "รวมถึงเมื่อปวดท้องหรือปวดไหล่ร่วมด้วย",
+          "src": [
+            "nhs-ribs"
+          ]
+        },
+        {
+          "text": "เวลาไอ ให้กอดหมอนแนบหน้าอกไว้",
+          "src": [
+            "nhs-ribs"
+          ]
+        },
+        {
+          "text": "ประคบเย็นด้วยน้ำแข็งห่อผ้า หายใจตามปกติ และไอเมื่อจำเป็น",
+          "src": [
+            "nhs-ribs"
+          ]
+        },
+        {
+          "text": "สงสัยเชิงกรานหรือสะโพกหัก: โทร 1669 ให้นอนนิ่ง ห้ามลุกเดิน",
+          "src": [
+            "sja-fracture",
+            "nhs-broken-leg"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น เฝ้าดูอาการช็อก: ซีด ตัวเย็นชื้น ชีพจรเร็ว",
+          "src": [
+            "sja-fracture",
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "มีแผลทะลุที่หน้าอก: ดูหัวข้อ แผลทะลุหน้าอก",
+          "src": [
+            "erc-fa-2025"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ายกขาสูงถ้าสงสัยเชิงกรานหรือสะโพกหัก",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้ายผู้ที่สงสัยเชิงกรานหัก เว้นแต่ที่ตรงนั้นอันตราย",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไรถ้าสงสัยกระดูกหัก",
+          "src": [
+            "nhs-broken-leg",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "ซี่โครงช้ำหรือร้าว: อย่านอนนิ่งหรืออยู่เฉยนาน ๆ",
+          "detail": "ให้ลุกเดินบ้าง และหายใจลึกช้า ๆ เป็นระยะเพื่อช่วยให้ปอดโล่ง",
+          "src": [
+            "nhs-ribs"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-ribs",
+        "sja-fracture",
+        "who-cfar"
+      ]
+    },
+    {
+      "id": "head-injury-concussion",
+      "title": "ศีรษะกระแทก สมองกระทบกระเทือน",
+      "group": "กระดูก ข้อ ศีรษะ และหลัง",
+      "signs": "หัวโน ปวดหัว มึนงง คลื่นไส้ สับสน หรือจำเหตุการณ์ไม่ได้ หลังศีรษะถูกกระแทก",
+      "call": "โทร 1669 ถ้าหมดสติแม้ชั่วครู่ ชัก ซึมลง สับสน อาเจียน หรือมีเลือดหรือน้ำใสออกหูจมูก",
+      "steps": [
+        {
+          "text": "ให้นั่งพัก ประคบเย็นตรงที่กระแทกด้วยน้ำแข็งห่อผ้า",
+          "src": [
+            "sja-head",
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "มีแผลเลือดออก: ใช้ผ้าสะอาดกดบนแผล",
+          "src": [
+            "sja-head"
+          ]
+        },
+        {
+          "text": "ดูการรู้สึกตัว: ลืมตาเองไหม ตอบคำถามได้ไหม สับสนหรือไม่",
+          "src": [
+            "sja-head"
+          ]
+        },
+        {
+          "text": "โทร 1669 ทันทีถ้ามีอาการอันตรายอย่างใดอย่างหนึ่ง",
+          "detail": "หมดสติหรือปลุกไม่ตื่น ชัก ง่วงซึมมากขึ้น สับสน อาเจียน เห็นภาพซ้อน พูดหรือเดินลำบาก แขนขาชาหรืออ่อนแรง มีเลือดหรือน้ำใสออกหูจมูก รูม่านตาสองข้างไม่เท่ากัน",
+          "src": [
+            "sja-head",
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "โทร 1669 ด้วย ถ้าตกสูงเกิน 1 เมตร ตกบันไดเกิน 5 ขั้น หรือชนความเร็วสูง",
+          "src": [
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "พบแพทย์ถ้าอายุเกิน 65 ปี กินยาต้านเลือดแข็งตัว ดื่มสุรา หรือเคยผ่าตัดสมอง",
+          "src": [
+            "sja-head",
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "อาการเบา: ให้ผู้ใหญ่อยู่เฝ้าดูอาการ 24 ชั่วโมง และพักผ่อน",
+          "detail": "ถ้าอาการแย่ลงในช่วงนี้ ให้ไปโรงพยาบาลหรือโทร 1669 ทันที",
+          "src": [
+            "nhs-head",
+            "sja-head"
+          ]
+        },
+        {
+          "text": "เด็กและทารก: โทร 1669 ถ้าซึม อาเจียน ชัก หรือพฤติกรรมเปลี่ยนไป",
+          "detail": "เช่น งอแงผิดปกติ หรือไม่สนใจสิ่งรอบตัว ทารกอายุต่ำกว่า 1 ปีที่มีรอยช้ำ บวม หรือแผลใหญ่ที่ศีรษะ ต้องไปโรงพยาบาลทันที",
+          "src": [
+            "sja-baby-head",
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "หยุดเล่นกีฬาทันที ให้บุคลากรทางการแพทย์ตรวจก่อนกลับไปเล่น",
+          "src": [
+            "erc-fa-2025",
+            "sja-head"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าปล่อยให้อยู่คนเดียวใน 24 ชั่วโมงแรก",
+          "src": [
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "อย่าดื่มสุรา และอย่ากินยานอนหลับเว้นแต่แพทย์สั่ง",
+          "src": [
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "อย่าขับรถจนกว่าจะหายดี และงดกีฬาที่มีการปะทะอย่างน้อย 3 สัปดาห์",
+          "src": [
+            "nhs-head"
+          ]
+        },
+        {
+          "text": "อย่าขยับตัวผู้ที่ศีรษะบาดเจ็บรุนแรง เว้นแต่อยู่ในอันตราย",
+          "detail": "คอหรือหลังอาจบาดเจ็บร่วมด้วย",
+          "src": [
+            "sja-head"
+          ]
+        }
+      ],
+      "src": [
+        "sja-head",
+        "nhs-head",
+        "sja-baby-head",
+        "erc-fa-2025"
+      ]
+    },
+    {
+      "id": "road-crash-scene",
+      "title": "พบอุบัติเหตุจราจร",
+      "group": "อุบัติเหตุจราจรและตกจากที่สูง",
+      "signs": "รถชน รถคว่ำ หรือมีผู้บาดเจ็บบนถนน",
+      "call": "โทร 1669 ทันที และแจ้งตำรวจ 191 หรือตำรวจทางหลวง 1193",
+      "steps": [
+        {
+          "text": "จอดรถให้ปลอดภัยและห่างจากจุดเกิดเหตุ เปิดไฟฉุกเฉิน",
+          "detail": "สวมเสื้อสะท้อนแสงถ้ามี ขอให้รถคันอื่นจอดเปิดไฟฉุกเฉินกันรถทั้งสองทิศทาง",
+          "src": [
+            "sja-traffic",
+            "bkk-trauma-road"
+          ]
+        },
+        {
+          "text": "วางป้ายสามเหลี่ยมหรือกรวยเตือน ห่างจากรถตามความเร็วของถนน",
+          "detail": "ศูนย์อุบัติเหตุ รพ.กรุงเทพ: ถนนที่รถวิ่ง 40 กม./ชม. วางห่างไม่ต่ำกว่า 40 เมตร 60 กม./ชม. 60 เมตร 80 กม./ชม. 80 เมตร และเกิน 100 กม./ชม. อย่างน้อย 100 เมตร",
+          "src": [
+            "bkk-trauma-road",
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "โทร 1669 บอกจุดเกิดเหตุ จำนวนผู้บาดเจ็บ และอันตรายที่ยังมีอยู่",
+          "detail": "เช่น น้ำมันรั่ว สายไฟขาด มีคนติดอยู่ในรถ หรือรถบรรทุกสารอันตราย",
+          "src": [
+            "sja-traffic",
+            "niems-1669",
+            "th-emergency-numbers"
+          ]
+        },
+        {
+          "text": "ดับเครื่องยนต์รถทุกคัน ดึงเบรกมือ ห้ามสูบบุหรี่ใกล้ที่เกิดเหตุ",
+          "src": [
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "ดูคนที่นิ่งเงียบไม่ตอบสนอง และคนที่เลือดออกมาก ก่อนคนอื่น",
+          "detail": "คนไม่ตอบสนอง: ตรวจการหายใจ ถ้าไม่หายใจให้ปั๊มหัวใจ คนเลือดออกมาก: กดห้ามเลือด ช่วยทีละคน",
+          "src": [
+            "protectuk-fa",
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "ช่วยผู้บาดเจ็บในท่าที่พบ ประคองศีรษะและคอไว้ตลอด",
+          "detail": "ให้ถือว่าทุกคนในอุบัติเหตุอาจคอหรือหลังบาดเจ็บ",
+          "src": [
+            "sja-traffic",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "มองหาผู้บาดเจ็บคนอื่นรอบที่เกิดเหตุให้ครบ",
+          "src": [
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "ต้องย้ายเพราะอันตรายถึงชีวิต: ลากตามแนวยาวของลำตัว ให้ตัวตรง",
+          "detail": "ย่อตัวจับข้อเท้าสองข้างแล้วเอนตัวลากถอยหลัง ถ้าขาเจ็บ ให้จับแขนเหยียดเหนือศีรษะ ใช้ข้อศอกของผู้บาดเจ็บหนีบประคองศีรษะไว้ มีคนช่วยให้ช่วยกันรักษาแนวกระดูกสันหลังให้ตรง",
+          "src": [
+            "sjnz-move",
+            "sjnz-scene",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น เฝ้าดูการหายใจและการรู้สึกตัวจนกู้ชีพมาถึง",
+          "src": [
+            "sja-traffic",
+            "who-cfar"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเคลื่อนย้ายผู้บาดเจ็บ เว้นแต่ที่ตรงนั้นอันตรายถึงชีวิต",
+          "src": [
+            "sja-traffic",
+            "sjnz-move",
+            "trc-bfa-2565",
+            "bkk-trauma-road"
+          ]
+        },
+        {
+          "text": "อย่าเข้าช่วยกลางถนนโดยยังไม่มีสัญญาณเตือนรถที่ตามมา",
+          "src": [
+            "sja-traffic",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "อย่าพยายามดึงคนที่ติดอยู่ในรถออกเอง",
+          "detail": "อาจทำให้บาดเจ็บเพิ่ม ให้แจ้ง 1669 ว่ามีคนติดในรถ เพื่อส่งทีมกู้ภัยมา",
+          "src": [
+            "sja-traffic",
+            "protectuk-fa"
+          ]
+        },
+        {
+          "text": "อย่าเข้าใกล้ถ้าสายไฟขาด น้ำมันรั่ว หรือรถบรรทุกสารอันตราย",
+          "detail": "แจ้งเจ้าหน้าที่แล้วรอ",
+          "src": [
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "อย่าถอดหมวกกันน็อกผู้บาดเจ็บโดยไม่จำเป็น",
+          "detail": "ดูหัวข้อ มอเตอร์ไซค์ล้ม: หมวกกันน็อกและแผลถลอก",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        }
+      ],
+      "src": [
+        "sja-traffic",
+        "bkk-trauma-road",
+        "protectuk-fa",
+        "sjnz-move",
+        "niems-1669"
+      ]
+    },
+    {
+      "id": "motorcycle-helmet",
+      "title": "มอเตอร์ไซค์ล้ม: หมวกกันน็อกและแผลถลอก",
+      "group": "อุบัติเหตุจราจรและตกจากที่สูง",
+      "signs": "ผู้ขี่หรือผู้ซ้อนล้ม ยังสวมหมวกกันน็อก อาจมีแผลถลอก กระดูกหัก หรือคอบาดเจ็บ",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "ดูว่าเข้าไปได้อย่างปลอดภัย เตือนรถที่ตามมา แล้วโทร 1669",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "รู้สึกตัว หายใจได้: ให้สวมหมวกกันน็อกไว้ บอกให้อยู่นิ่ง",
+          "detail": "ถ้าผู้ขี่ต้องการถอดเอง ให้เขาถอดเองได้",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "ประคองศีรษะและคอให้นิ่ง อยู่ในแนวตรงกับลำตัว",
+          "src": [
+            "sja-spinal",
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "ถอดหมวกเฉพาะเมื่อไม่หายใจ หรือทางเดินหายใจไม่โล่ง",
+          "detail": "เช่น หมดสติและหายใจไม่ปกติ จำเป็นต้องเปิดทางเดินหายใจหรือปั๊มหัวใจ",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "ถอดหมวกใช้อย่างน้อย 2 คน: คนแรกประคองคอและฐานศีรษะให้นิ่ง",
+          "detail": "หันหน้าเข้าหาผู้บาดเจ็บ วางมือสองข้างรอบต้นคอ กางนิ้วรองฐานศีรษะไว้",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "คนที่สองถ่างข้างหมวกออก แล้วค่อย ๆ ถอด ให้ศีรษะขยับน้อยที่สุด",
+          "detail": "ถ่างด้านข้างหมวกให้พ้นใบหู แล้วเอียงหมวกไปข้างหน้าให้พ้นท้ายทอย",
+          "src": [
+            "sjnz-scene",
+            "nsw-moto"
+          ]
+        },
+        {
+          "text": "หมดสติแต่ยังหายใจ: พลิกตะแคง โดยประคองคอให้นิ่งตลอดขณะพลิก",
+          "src": [
+            "nsw-moto"
+          ]
+        },
+        {
+          "text": "เลือดออก: ใช้ผ้ากดบนแผลตรง ๆ ระวังแผลที่ซ่อนอยู่ใต้ชุดขี่รถ",
+          "src": [
+            "nsw-moto"
+          ]
+        },
+        {
+          "text": "แผลถลอกจากพื้นถนน: ล้างด้วยน้ำสะอาดไหลผ่าน ซับแห้ง ปิดผ้าสะอาด",
+          "detail": "ถ้าล้างแล้วยังมีดินหรือเศษของค้างในแผล หรือไม่แน่ใจเรื่องวัคซีนบาดทะยัก ให้ไปพบแพทย์ ดูหัวข้อ แผลถลอก แผลบาดเล็กน้อย",
+          "src": [
+            "sja-cuts",
+            "nhs-tetanus"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าถอดหมวกกันน็อกถ้ายังรู้สึกตัวและหายใจได้",
+          "src": [
+            "nsw-moto",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "อย่าถอดหมวกคนเดียวถ้ามีคนช่วยได้",
+          "src": [
+            "nsw-moto"
+          ]
+        },
+        {
+          "text": "อย่าขยับหรือเคลื่อนย้ายผู้บาดเจ็บ เว้นแต่อยู่ในอันตราย",
+          "src": [
+            "sja-traffic",
+            "sjnz-scene"
+          ]
+        },
+        {
+          "text": "อย่าดึงเสื้อผ้าที่ติดแผลไหม้ออก ให้ตัดรอบ ๆ แทน",
+          "src": [
+            "nsw-moto"
+          ]
+        }
+      ],
+      "src": [
+        "nsw-moto",
+        "sjnz-scene",
+        "sja-traffic",
+        "sja-cuts"
+      ]
+    },
+    {
+      "id": "fall-from-height",
+      "title": "ตกจากที่สูง",
+      "group": "อุบัติเหตุจราจรและตกจากที่สูง",
+      "signs": "ตกจากบันได หลังคา ต้นไม้ หรือนั่งร้าน อาจปวดคอหรือหลัง แขนขาชาหรืออ่อนแรง",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "ดูว่าที่ตรงนั้นปลอดภัย แล้วโทร 1669",
+          "src": [
+            "erc-2025",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ให้ถือว่าคอและหลังบาดเจ็บไว้ก่อน บอกให้อยู่นิ่ง อย่าลุก",
+          "src": [
+            "erc-fa-2025",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "รู้สึกตัวดี: ให้ประคองคอตัวเองในท่าที่สบายและนิ่ง หรือช่วยประคองให้",
+          "src": [
+            "erc-fa-2025",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "หมดสตินอนหงาย: คุกเข่าเหนือศีรษะ ใช้สองมือประคองศีรษะให้นิ่ง",
+          "detail": "วางศอกบนพื้นหรือบนเข่าให้มั่น นิ้วหัวแม่มืออยู่เหนือหู นิ้วอื่นอยู่ใต้หู ไม่ปิดหูผู้บาดเจ็บ",
+          "src": [
+            "erc-fa-2025",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "เปิดทางเดินหายใจโดยยกขากรรไกร ไม่เงยคอ แล้วดูการหายใจ 10 วินาที",
+          "src": [
+            "sja-spinal",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "ไม่หายใจ: ปั๊มหัวใจทันที และให้คนไปเอาเครื่อง AED",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "นอนคว่ำและต้องเปิดทางเดินหายใจ: ให้หลายคนช่วยพลิกทั้งตัวพร้อมกัน",
+          "detail": "ให้คออยู่แนวเดียวกับลำตัวและนิ่งที่สุดตลอดการพลิก",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "กดห้ามเลือดแผลที่เลือดออกมาก ประคองแขนขาที่ผิดรูปไว้ไม่ขยับ",
+          "src": [
+            "erc-fa-2025",
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ห่มผ้าให้อุ่น เฝ้าดูการหายใจและการรู้สึกตัวจนกู้ชีพมาถึง",
+          "src": [
+            "who-cfar",
+            "sja-spinal"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเคลื่อนย้าย อุ้ม หรือพยุงให้ลุก เว้นแต่ที่ตรงนั้นอันตรายถึงชีวิต",
+          "src": [
+            "sja-spinal",
+            "erc-fa-2025",
+            "trc-bfa-2565"
+          ]
+        },
+        {
+          "text": "อย่าพลิกตะแคง เว้นแต่ทางเดินหายใจไม่โล่ง",
+          "detail": "ผู้บาดเจ็บจากอุบัติเหตุไม่ควรจัดท่านอนตะแคงพักฟื้นตามปกติ",
+          "src": [
+            "erc-fa-2025",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "อย่าฝืนจัดท่าคนที่ดิ้นหรือไม่ให้ความร่วมมือ",
+          "detail": "อาจทำให้บาดเจ็บมากขึ้น",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าให้กินหรือดื่มอะไร",
+          "src": [
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "ศีรษะกระแทกจากการตกสูงเกิน 1 เมตร อย่ารอดูอาการ ให้โทร 1669",
+          "src": [
+            "nhs-head"
+          ]
+        }
+      ],
+      "src": [
+        "erc-fa-2025",
+        "sja-spinal",
+        "who-cfar"
+      ]
+    },
+    {
+      "id": "crush-injury",
+      "title": "ถูกของหนักทับ ติดใต้ซาก",
+      "group": "อุบัติเหตุจราจรและตกจากที่สูง",
+      "signs": "ร่างกายถูกรถ ของหนัก หรือเศษซากทับ อาจไม่ปวดและไม่มีแผลให้เห็น",
+      "call": "โทร 1669 ทันที บอกว่ามีคนถูกทับหรือติดอยู่",
+      "steps": [
+        {
+          "text": "ดูว่าปลอดภัยสำหรับคุณและคนรอบข้าง แล้วโทร 1669",
+          "detail": "บอกว่ามีคนถูกทับหรือติดอยู่ เพื่อให้ส่งทีมกู้ภัยมาด้วย",
+          "src": [
+            "slsa-crush",
+            "sja-traffic"
+          ]
+        },
+        {
+          "text": "ถ้าปลอดภัยและทำได้ ให้เอาของที่ทับออกให้เร็วที่สุด",
+          "detail": "ของที่ทับศีรษะ คอ หน้าอก หรือท้อง ทำให้หายใจไม่ได้และหัวใจล้มเหลวจนเสียชีวิตได้ ต้องเอาออกทันที",
+          "src": [
+            "slsa-crush",
+            "sjnz-bleeding"
+          ]
+        },
+        {
+          "text": "เอาออกไม่ได้หรือไม่ปลอดภัย: อยู่กับผู้บาดเจ็บ รอทีมกู้ภัย",
+          "src": [
+            "slsa-crush",
+            "protectuk-fa"
+          ]
+        },
+        {
+          "text": "กดห้ามเลือดแผลที่เลือดออกด้วยผ้าสะอาด",
+          "src": [
+            "slsa-crush",
+            "sjnz-bleeding"
+          ]
+        },
+        {
+          "text": "ประคองส่วนที่บาดเจ็บด้วยผ้าห่มหรือเสื้อผ้า ห่มผ้าให้อุ่น",
+          "src": [
+            "sjnz-bleeding",
+            "slsa-crush"
+          ]
+        },
+        {
+          "text": "สงสัยคอหรือหลังบาดเจ็บ: ประคองศีรษะให้นิ่ง",
+          "src": [
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจและการรู้สึกตัวตลอดเวลา",
+          "src": [
+            "sjnz-bleeding",
+            "slsa-crush"
+          ]
+        },
+        {
+          "text": "ต้องไปโรงพยาบาลทุกราย แม้ไม่ปวดและไม่เห็นแผล",
+          "detail": "กล้ามเนื้อที่ถูกทับจะปล่อยสารที่ทำให้ไตและหัวใจมีปัญหาตามมาได้ รวมถึงคนที่ล้มนอนทับแขนขาตัวเองอยู่นาน",
+          "src": [
+            "slsa-crush"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าทิ้งผู้บาดเจ็บไว้คนเดียว เว้นแต่ต้องไปเรียกรถพยาบาล",
+          "src": [
+            "slsa-crush"
+          ]
+        },
+        {
+          "text": "อย่ารัดสายรัดห้ามเลือดเพียงเพราะแขนขาถูกทับ",
+          "detail": "ใช้สายรัดเฉพาะเมื่อแขนขาเลือดออกจนอันตรายถึงชีวิตและกดแผลแล้วไม่หยุด",
+          "src": [
+            "slsa-crush",
+            "erc-fa-2025"
+          ]
+        },
+        {
+          "text": "อย่าเสี่ยงเข้าไปถ้าที่เกิดเหตุยังไม่ปลอดภัย",
+          "src": [
+            "slsa-crush"
+          ]
+        },
+        {
+          "text": "อย่าคิดว่าไม่เป็นไรเพราะไม่ปวดหรือไม่มีแผล",
+          "src": [
+            "slsa-crush"
+          ]
+        }
+      ],
+      "src": [
+        "slsa-crush",
+        "sjnz-bleeding",
+        "erc-fa-2025"
+      ]
+    },
+    {
+      "id": "tooth-knocked-out",
+      "title": "ฟันหลุดจากอุบัติเหตุ",
+      "group": "แผลทั่วไป ตา จมูก ฟัน",
+      "signs": "ฟันหลุดออกมาทั้งซี่หลังถูกกระแทก มีเลือดออกจากเบ้าฟัน",
+      "call": "ไปพบทันตแพทย์ฉุกเฉินทันที โทร 1669 ถ้าเลือดออกมากหรือบวมจนหายใจลำบาก",
+      "steps": [
+        {
+          "text": "หาฟันให้เจอ จับที่ตัวฟันสีขาวเท่านั้น ไม่จับรากฟัน",
+          "src": [
+            "nhs-tooth",
+            "sjnz-tooth"
+          ]
+        },
+        {
+          "text": "ถ้าฟันสกปรก ล้างเบา ๆ ด้วยนม น้ำเกลือ หรือน้ำลาย",
+          "detail": "St John นิวซีแลนด์ให้ล้างด้วยน้ำสะอาดไหลผ่าน หรือให้เจ้าของอมให้สะอาดได้ โดยระวังอย่ากลืนฟัน",
+          "src": [
+            "nhs-tooth",
+            "sjnz-tooth"
+          ]
+        },
+        {
+          "text": "ฟันแท้: ลองใส่กลับเข้าเบ้าฟันเดิม",
+          "src": [
+            "nhs-tooth",
+            "sjnz-tooth"
+          ]
+        },
+        {
+          "text": "ใส่กลับได้ง่าย: กัดผ้าสะอาดเบา ๆ ให้ฟันอยู่กับที่",
+          "src": [
+            "nhs-tooth"
+          ]
+        },
+        {
+          "text": "ใส่กลับไม่ได้: แช่ฟันในนม หรือบ้วนน้ำลายใส่ภาชนะแล้วแช่ฟันไว้",
+          "src": [
+            "nhs-tooth",
+            "sjnz-tooth"
+          ]
+        },
+        {
+          "text": "ไปพบทันตแพทย์ทันทีพร้อมฟัน ดีที่สุดภายใน 30-60 นาที",
+          "src": [
+            "sjnz-tooth",
+            "nhs-tooth"
+          ]
+        },
+        {
+          "text": "เลือดออกมาก ปากบวมจนหายใจลำบาก หรือหมดสติ: โทร 1669",
+          "src": [
+            "sjnz-tooth"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าจับรากฟัน",
+          "src": [
+            "nhs-tooth",
+            "sjnz-tooth"
+          ]
+        },
+        {
+          "text": "อย่าใส่ฟันน้ำนมกลับเข้าไป",
+          "detail": "อาจทำให้ฟันแท้ที่กำลังขึ้นอยู่ข้างใต้เสียหาย ให้พาเด็กไปพบทันตแพทย์",
+          "src": [
+            "nhs-tooth"
+          ]
+        },
+        {
+          "text": "อย่าฝืนดันฟันถ้าใส่ไม่เข้า",
+          "src": [
+            "nhs-tooth"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-tooth",
+        "sjnz-tooth"
+      ]
+    },
+    {
+      "id": "deep-cut-stitches",
+      "title": "แผลฉีกขาด แผลลึก เศษแก้วบาด",
+      "group": "แผลทั่วไป ตา จมูก ฟัน",
+      "signs": "แผลลึกหรือยาว ปากแผลอ้า เลือดออกมาก หรือมีเศษแก้วค้างในแผล",
+      "call": "ไปห้องฉุกเฉิน โทร 1669 ถ้าเลือดไม่หยุด หรือเลือดสีแดงสดพุ่งเป็นจังหวะ",
+      "steps": [
+        {
+          "text": "ล้างมือ สวมถุงมือถ้ามี ดูว่ามีเศษแก้วหรือของค้างในแผลไหม",
+          "src": [
+            "nhs-cuts"
+          ]
+        },
+        {
+          "text": "ไม่มีของค้าง: ใช้ผ้าสะอาดกดบนแผลให้แน่น",
+          "src": [
+            "nhs-cuts",
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "มีเศษแก้วหรือของค้าง: อย่าดึงออก ให้กดที่สองข้างของแผลแทน",
+          "src": [
+            "nhs-cuts",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ยกแขนหรือขาที่เป็นแผลให้สูงกว่าระดับหัวใจ",
+          "src": [
+            "nhs-cuts",
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "พันผ้ายึดผ้าปิดแผลไว้ ตรวจปลายนิ้วทุก 10 นาทีว่าไม่แน่นเกิน",
+          "src": [
+            "nhs-cuts"
+          ]
+        },
+        {
+          "text": "ไปห้องฉุกเฉินถ้าแผลลึกหรือใหญ่มาก อยู่ที่หน้าหรือฝ่ามือ หรือมีของค้าง",
+          "detail": "รวมถึงเมื่อชา หรือขยับส่วนที่อยู่ใกล้แผลลำบาก",
+          "src": [
+            "nhs-cuts"
+          ]
+        },
+        {
+          "text": "พบแพทย์ถ้าแผลยาวเกินราว 5 ซม. แผลสกปรก หรือถูกคนหรือสัตว์กัด",
+          "src": [
+            "nhs-cuts"
+          ]
+        },
+        {
+          "text": "ถามเรื่องวัคซีนบาดทะยัก ถ้าฉีดไม่ครบหรือไม่แน่ใจ",
+          "src": [
+            "nhs-tetanus",
+            "sja-cuts"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าดึงเศษแก้วหรือของที่ฝังในแผลออกเอง",
+          "src": [
+            "nhs-cuts",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "อย่าล้างแผลที่กว้างหรือลึกและมีลิ่มเลือดอยู่",
+          "detail": "จะทำให้เลือดออกอีก ให้ห้ามเลือดแล้วไปโรงพยาบาล",
+          "src": [
+            "mu-tm-firstaid"
+          ]
+        },
+        {
+          "text": "อย่าทาครีมหรือขี้ผึ้งบนแผล",
+          "src": [
+            "who-cfar"
+          ]
+        },
+        {
+          "text": "อย่ารอ ถ้าแผลบวม แดง ปวดมากขึ้น มีหนอง หรือมีไข้",
+          "src": [
+            "nhs-cuts",
+            "nhs-tetanus"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-cuts",
+        "sja-bleeding",
+        "mu-tm-firstaid",
+        "nhs-tetanus"
+      ]
+    },
+    {
+      "id": "puncture-wound",
+      "title": "ตะปูตำ ของแหลมทิ่ม",
+      "group": "แผลทั่วไป ตา จมูก ฟัน",
+      "signs": "แผลรูเล็กแต่ลึก จากตะปู เข็ม หนาม หรือของแหลม",
+      "call": "ไปพบแพทย์ถ้าแผลลึก สกปรก หรือฉีดวัคซีนบาดทะยักไม่ครบ โทร 1669 ถ้าของยังปักคาลึก",
+      "steps": [
+        {
+          "text": "ของชิ้นเล็กอยู่ตื้น เช่น ตะปูเล็ก เสี้ยน: ดึงออกได้",
+          "detail": "ล้างรอบแผลด้วยสบู่และน้ำอุ่น ใช้แหนบจับให้ชิดผิว แล้วดึงออกตรง ๆ ตามแนวที่เข้า",
+          "src": [
+            "sjnz-bleeding",
+            "sja-splinter"
+          ]
+        },
+        {
+          "text": "ของชิ้นใหญ่หรือปักลึก: ห้ามดึง ดูหัวข้อ ของปักคาในแผล",
+          "src": [
+            "sjnz-bleeding",
+            "sja-splinter"
+          ]
+        },
+        {
+          "text": "บีบรอบแผลเบา ๆ ให้เลือดออกเล็กน้อย ช่วยไล่สิ่งสกปรก",
+          "src": [
+            "sja-splinter"
+          ]
+        },
+        {
+          "text": "ล้างแผลด้วยน้ำสะอาดไหลผ่าน ซับให้แห้ง ปิดผ้าปิดแผลสะอาด",
+          "src": [
+            "sja-splinter",
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "ไปพบแพทย์โดยเร็ว ถ้าฉีดวัคซีนบาดทะยักไม่ครบหรือไม่แน่ใจ",
+          "detail": "เชื้อบาดทะยักอยู่ในดินและมูลสัตว์ เข้าทางแผลได้ ผู้ที่ฉีดครบคือได้วัคซีนรวมอย่างน้อย 5 เข็ม",
+          "src": [
+            "nhs-tetanus"
+          ]
+        },
+        {
+          "text": "ไปพบแพทย์ถ้าแผลลึกหรือใหญ่ หรือล้างแล้วยังมีดินหรือเศษของค้าง",
+          "src": [
+            "nhs-tetanus"
+          ]
+        },
+        {
+          "text": "เฝ้าดูแผล: ร้อน บวม แดง มีหนอง หรือมีไข้หนาวสั่น ให้ไปพบแพทย์",
+          "src": [
+            "nhs-tetanus",
+            "sja-splinter"
+          ]
+        },
+        {
+          "text": "ขากรรไกรแข็ง กลืนลำบาก หรือกล้ามเนื้อเกร็งกระตุก: ไปห้องฉุกเฉินทันที",
+          "src": [
+            "nhs-tetanus"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าดึงของที่ปักลึกหรือชิ้นใหญ่ออกเอง",
+          "src": [
+            "sjnz-bleeding",
+            "sja-splinter"
+          ]
+        },
+        {
+          "text": "อย่าละเลยเรื่องวัคซีนบาดทะยัก แม้แผลจะเล็ก",
+          "src": [
+            "nhs-tetanus"
+          ]
+        },
+        {
+          "text": "อย่าทาครีมหรือขี้ผึ้งบนแผล",
+          "src": [
+            "who-cfar"
+          ]
+        }
+      ],
+      "src": [
+        "sja-splinter",
+        "nhs-tetanus",
+        "sjnz-bleeding"
+      ]
+    }
+  ]
+}
