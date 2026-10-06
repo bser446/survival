@@ -105,6 +105,7 @@ details.more{margin-top:6px;font-size:13.5px;color:var(--mute)}
 details.more summary{display:inline-block;list-style:none;cursor:pointer;padding:1px 10px;border:1px solid var(--line);border-radius:999px}
 details.more summary::-webkit-details-marker{display:none}
 details.more[open] summary{margin-bottom:4px}
+.backmain{display:block;text-align:center;text-decoration:none;margin:8px 0 12px}
 .callbox{display:flex;flex-direction:column;gap:2px;text-decoration:none;font-size:16px}
 .callbox b{font-size:19px}
 .card.aid{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
@@ -339,6 +340,7 @@ const syncAll = () => Promise.all(Object.values(DB.homes).map(syncHome));
 let syncTimer = 0;
 function queueSync(){ clearTimeout(syncTimer); syncTimer = setTimeout(syncAll, 2500); }
 const inviteLink = h => location.origin + location.pathname + "#join=" + h.sync.k;
+let RET = null;   // ตำแหน่งที่อ่านค้างไว้ในหัวข้อหลักของปฐมพยาบาล ก่อนกดลิงก์ไปหัวข้อย่อย {hash, y, go}
 let JOIN = null, NOTE = "";   // JOIN = บ้านจากลิงก์เชิญที่รอผู้ใช้ยืนยัน, NOTE = ข้อความแจ้งผลครั้งเดียว
 async function startJoin(text){
   const m = /([A-Za-z0-9_-]{43})\s*$/.exec(String(text).trim());
@@ -547,7 +549,7 @@ function vTerms(){
   <h2>ความรับผิดชอบของสมาชิกบ้าน</h2><div class="card">ทุกคนที่มีลิงก์เชิญเห็นและแก้ข้อมูลของบ้านได้ทั้งหมด รวมถึงข้อมูลสุขภาพที่บันทึกไว้ ส่งลิงก์ให้เฉพาะคนที่ไว้ใจ และเปลี่ยนรหัสบ้านเมื่อมีคนที่ไม่ควรเข้าถึงได้ลิงก์ไป</div>`;
 }
 /* ---------- ปฐมพยาบาล ---------- */
-function vAid(id){
+function vAid(id, from){
   const fa = DATA.firstaid || {}, t = AID.find(x=>x.id===id), src = Object.fromEntries((fa.sources||[]).map(x=>[x.id,x]));
   if(!t){
     // ลำดับหมวดตาม firstaid.groups (เรียงจากเรื่องที่เจอบ่อย) หมวดที่ไม่อยู่ในรายการต่อท้าย
@@ -568,13 +570,17 @@ function vAid(id){
   }
   // "ดูหัวข้อ <ชื่อย่อ>" ในเนื้อหา กลายเป็นลิงก์ไปหัวข้อนั้น (ชื่อย่อ = ชื่อหัวข้อก่อนวงเล็บหรือโคลอน)
   const refs = AID.filter(x=>x.id!==t.id).map(x=>[esc(x.title.split(/\s*[(:]/)[0]), x.id]).sort((a,b)=>b[0].length-a[0].length);
-  const xref = s => { let h = esc(s); for(const [name,id] of refs){ const k = "ดูหัวข้อ "+name; if(h.includes(k)){ h = h.replace(k, `ดูหัวข้อ <a href="#aid/${esc(id)}">${name}</a>`); break; } } return h; };
+  const xref = s => { let h = esc(s); for(const [name,id] of refs){ const k = "ดูหัวข้อ "+name; if(h.includes(k)){ h = h.replace(k, () => `ดูหัวข้อ <a href="#aid/${esc(id)}/${esc(t.id)}" data-xref="1">${name}</a>`); break; } } return h; };   // ใช้ฟังก์ชันแทนสตริง กัน $ ในชื่อหัวข้อถูกตีความเป็นรูปแบบแทนที่
   const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${xref(i.text)}</div>${i.detail?`<div class="d">${xref(i.detail)}</div>`:""}${srcMore(i.src, src)}</li>`).join("")}</ol>`;
-  return `<a class="back" href="#aid">‹ ปฐมพยาบาลทั้งหมด</a><h1>${esc(t.title)}</h1>
+  // มาจากลิงก์ "ดูหัวข้อ ..." ของหัวข้ออื่น: มีปุ่มย้อนกลับไปขั้นตอนหลักทั้งบนและล่าง
+  const main = AID.find(x=>x.id===from && x.id!==t.id);
+  const backMain = main ? `<a class="btn pri backmain" href="#aid/${esc(main.id)}" data-ret="1">‹ กลับไปขั้นตอนหลัก: ${esc(main.title.split(/\s*[(:]/)[0])}</a>` : "";
+  return `<a class="back" href="#aid">‹ ปฐมพยาบาลทั้งหมด</a>${backMain}<h1>${esc(t.title)}</h1>
   ${t.signs?`<p class="mute">${esc(t.signs)}</p>`:""}
   ${t.call?`<a class="alert bad callbox" href="tel:1669"><b>📞 โทร 1669</b><span>${esc(t.call)}</span></a>`:""}
   <h2>ทำตามลำดับ</h2>${list(t.steps, "")}
   ${(t.dont||[]).length?`<h2>ห้ามทำ</h2>${list(t.dont, "dont")}`:""}
+  ${backMain}
   <p class="mute">ข้อมูลนี้ไม่แทนการอบรมปฐมพยาบาลและคำสั่งของเจ้าหน้าที่ 1669</p>`;
 }
 // ค้นหาหัวข้อปฐมพยาบาล: กรองแถวในหน้าโดยไม่วาดหน้าใหม่ เพื่อไม่ให้ช่องค้นหาเสียโฟกัส
@@ -597,10 +603,11 @@ const TABS = [["home","🏠","หน้าแรก"],["list","☑️","เช�
 function render(keepScroll){
   const [v,a,b] = (location.hash.slice(1)||"home").split("/");
   const y = window.scrollY;
-  $("app").innerHTML = banner() + (v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : v==="terms" ? vTerms() : v==="aid" ? vAid(a) : vHome());
+  $("app").innerHTML = banner() + (v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : v==="terms" ? vTerms() : v==="aid" ? vAid(a,b) : vHome());
   const cur = v==="g" ? "home" : v==="terms" ? "set" : v==="aid" ? "sos" : v;
   $("tabs").innerHTML = TABS.map(t=>`<a href="#${t[0]}" class="${t[0]===cur?"on":""}"><b>${t[1]}</b>${t[2]}</a>`).join("");
   window.scrollTo(0, keepScroll ? y : 0);
+  if(RET && RET.go){ if(location.hash===RET.hash) window.scrollTo(0, RET.y); RET = null; }
   const off = $("off"); if(off) off.textContent = (navigator.serviceWorker && navigator.serviceWorker.controller) ? "พร้อมใช้ออฟไลน์" : "เปิดจากไฟล์หรือยังไม่ได้ติดตั้ง";
   const qr = $("qr"); if(qr && typeof qrSvg==="function" && H().sync) qr.innerHTML = qrSvg(inviteLink(H()));
 }
@@ -610,6 +617,8 @@ async function checkJoinHash(){
   history.replaceState(null, "", location.pathname + "#home");
   await startJoin(m[1]); render(false); return true;
 }
+document.addEventListener("click", e=>{ const a = e.target.closest && e.target.closest("[data-xref],[data-ret]"); if(!a) return;
+  if(a.dataset.xref) RET = {hash:location.hash.replace(/^(#aid\/[^/]+).*/, "$1"), y:window.scrollY, go:false}; else if(RET) RET.go = true; });
 addEventListener("hashchange", async ()=>{ if(!(await checkJoinHash())) render(false); });
 
 const kitNow = () => location.hash.split("/")[1] || "go";

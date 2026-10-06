@@ -1,5 +1,5 @@
-const CACHE = "survival-68f1efe94e";
-const INDEX_SHA256 = "68f1efe94e5d71b327917539ccc9e4d3c9f87c84731900acba57e4da2dd94828";
+const CACHE = "survival-7dc572835b";
+const INDEX_SHA256 = "7dc572835b4adabbd09f0890fe31afe9a62464d640ab7fef9b60edbf0e50754f";
 const ASSETS = ["manifest.webmanifest", "icon-192.png", "icon-512.png"];
 // ตอน deploy เซิร์ฟเวอร์อาจส่ง sw.js รุ่นใหม่ออกมาก่อน index.html รุ่นใหม่ (หรือเบราว์เซอร์ยังมี index.html เก่าในแคช HTTP)
 // ถ้าเก็บ index.html ที่ได้มาโดยไม่ตรวจ เครื่องจะค้างหน้าเก่าภายใต้ชื่อรุ่นใหม่ จึงต้องดึงแบบข้ามแคชและเทียบ hash

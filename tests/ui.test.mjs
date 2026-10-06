@@ -23,6 +23,15 @@ assert.equal((aid.match(/class="hrow arow"/g) || []).length, aidIds.length, "ท
 const topic = d.go("aid/burns");
 assert.equal(topic.includes('<span class="chip">'), false, "ไม่มีป้ายแหล่งที่มาโผล่ในขั้นตอน");
 assert.ok(topic.includes("<summary>ที่มา</summary><div>") && !topic.includes("ดูรายละเอียด"));
+// ลิงก์ไปหัวข้อย่อยจำหัวข้อหลักไว้ และหัวข้อย่อยมีปุ่มย้อนกลับไปขั้นตอนหลัก
+const gun = d.go("aid/gunshot-wound");
+assert.ok(gun.includes('href="#aid/tourniquet-howto/gunshot-wound" data-xref="1"'));
+assert.equal(gun.includes("กลับไปขั้นตอนหลัก"), false, "เปิดตรง ๆ ไม่มีปุ่มย้อนกลับ");
+const sub = d.go("aid/tourniquet-howto/gunshot-wound");
+assert.equal((sub.match(/class="btn pri backmain" href="#aid\/gunshot-wound" data-ret="1"/g) || []).length, 2, "ปุ่มย้อนกลับบนและล่าง");
+assert.ok(sub.includes("กลับไปขั้นตอนหลัก: ถูกยิง"));
+assert.equal(d.go("aid/tourniquet-howto/<img src=x>").includes("กลับไปขั้นตอนหลัก"), false, "ต้นทางที่ไม่ใช่หัวข้อจริงถูกเมิน");
+assert.equal(d.go("aid/tourniquet-howto/tourniquet-howto").includes("กลับไปขั้นตอนหลัก"), false);
 const guide = d.go("g/flood/during");
 assert.ok(guide.includes("<summary>ที่มา</summary><div>") && !guide.includes("ดูรายละเอียด"));
 assert.equal(/<span class="chip">(?!คอนโด|บ้าน)/.test(guide), false, "ป้ายที่เหลือในคู่มือมีแต่ประเภทที่อยู่");
