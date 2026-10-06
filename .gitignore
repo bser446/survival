@@ -1,0 +1,5 @@
+# เอกสารอ้างอิงที่มีลิขสิทธิ์ ไม่เผยแพร่
+ref/
+__pycache__/
+*.masked.txt
+survival-backup-*.json

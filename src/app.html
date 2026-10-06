@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>คู่มือเอาตัวรอด</title>
+<meta name="theme-color" content="#b3261e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="เอาตัวรอด">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+:root{
+  --bg:#f6f4ef; --card:#ffffff; --ink:#1c1b19; --mute:#66625b; --line:#e2ded5;
+  --accent:#b3261e; --accent-ink:#ffffff; --ok:#1f7a4d; --warn:#9a5b00; --warn-bg:#fff3d6;
+  --bad:#b3261e; --bad-bg:#fde4e1; --chip:#ece8df;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#141413; --card:#1f1e1c; --ink:#f1eee8; --mute:#a8a299; --line:#34322e;
+    --accent:#ff6b5e; --accent-ink:#1a0806; --ok:#5fd39a; --warn:#ffc65c; --warn-bg:#3a2c0c;
+    --bad:#ff8a80; --bad-bg:#3d1613; --chip:#2b2926;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Sarabun","Noto Sans Thai","Thonburi","Leelawadee UI",system-ui,sans-serif;
+  font-size:17px;line-height:1.6;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:26px;line-height:1.3;margin:8px 0 4px}
+h2{font-size:19px;margin:24px 0 8px}
+p{margin:6px 0}
+.mute{color:var(--mute);font-size:15px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:var(--accent)}
+
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);
+  display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom);z-index:5}
+nav.tabs a{flex:1;max-width:160px;text-align:center;padding:10px 4px;text-decoration:none;color:var(--mute);font-size:14px;min-height:56px}
+nav.tabs a b{display:block;font-size:20px;line-height:1.2;font-weight:400}
+nav.tabs a.on{color:var(--accent);font-weight:700}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.haz{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:104px;padding:14px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:var(--ink);font-weight:700;font-size:19px}
+.haz span{font-size:32px;line-height:1}
+.haz:active{border-color:var(--accent)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0}
+.bar{height:10px;background:var(--chip);border-radius:6px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--ok)}
+.row{display:flex;align-items:center;gap:10px}
+.row .grow{flex:1;min-width:0}
+.alert{background:var(--warn-bg);color:var(--warn);border-radius:12px;padding:10px 12px;margin:10px 0;font-size:15px}
+.alert.bad{background:var(--bad-bg);color:var(--bad)}
+
+.seg{display:flex;gap:6px;overflow-x:auto;margin:12px -16px;padding:0 16px 4px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg a{flex:none;padding:8px 14px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;font-size:16px;white-space:nowrap}
+.seg a.on{background:var(--accent);color:var(--accent-ink);font-weight:700}
+
+ol.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+ol.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 14px 12px 54px;margin:8px 0;position:relative}
+ol.steps li::before{content:counter(s);position:absolute;left:12px;top:12px;width:30px;height:30px;border-radius:50%;
+  background:var(--accent);color:var(--accent-ink);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px}
+ol.steps.dont li::before{content:"✕";background:var(--bad)}
+ol.steps .t{font-size:19px;font-weight:700;line-height:1.45}
+ol.steps .d{color:var(--mute);font-size:15.5px;margin-top:4px}
+.chip{display:inline-block;background:var(--chip);color:var(--mute);border-radius:6px;padding:0 7px;font-size:12.5px;margin:4px 4px 0 0;font-weight:400}
+.back{display:inline-block;padding:8px 0;text-decoration:none;font-size:16px}
+ul.plain{padding-left:20px;margin:6px 0}
+ul.plain li{margin:4px 0}
+
+details.cat{background:var(--card);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+details.cat summary{list-style:none;padding:12px 14px;font-weight:700;display:flex;justify-content:space-between;gap:8px;cursor:pointer}
+details.cat summary::-webkit-details-marker{display:none}
+details.cat summary small{font-weight:400;color:var(--mute)}
+.item{display:flex;gap:12px;padding:10px 14px;border-top:1px solid var(--line);align-items:flex-start}
+.item input[type=checkbox]{flex:none;width:28px;height:28px;margin:2px 0 0;accent-color:var(--ok)}
+.item .n{font-weight:600;line-height:1.45}
+.item.done .n{color:var(--mute);text-decoration:line-through}
+.item .q{display:inline-block;background:var(--chip);border-radius:6px;padding:0 8px;font-size:14px;font-weight:700;margin-top:3px}
+.item .d{color:var(--mute);font-size:14.5px}
+.item .w{color:var(--bad);font-size:14.5px;font-weight:600}
+.item .x{margin-top:6px;font-size:14px;color:var(--mute);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.item .x input{padding:4px 6px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font-size:14px}
+.item .del{background:none;border:0;color:var(--mute);font-size:20px;padding:0 4px}
+.add{display:flex;gap:8px;padding:10px 14px;border-top:1px solid var(--line)}
+.add input{flex:1;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--bg)}
+.btn{padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-weight:600;min-height:44px}
+.btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+
+.tel{display:flex;align-items:center;gap:12px;padding:12px 14px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.tel:first-child{border-top:0}
+.tel b{font-size:22px;color:var(--accent);min-width:64px}
+label.f{display:block;margin:10px 0 4px;font-weight:600;font-size:15px}
+.in{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+textarea.in{min-height:76px;resize:vertical}
+.step{display:flex;align-items:center;gap:8px}
+.step button{width:44px;height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:22px;line-height:1}
+.step output{min-width:32px;text-align:center;font-weight:700;font-size:20px}
+.src a{word-break:break-all;font-size:14px}
+
+@media print{
+  nav.tabs,.seg,.btns,.add,.del,.back{display:none!important}
+  body{background:#fff;color:#000;padding:0;font-size:12pt}
+  details.cat{break-inside:avoid;border-color:#999}
+}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav class="tabs" id="tabs"></nav>
+<script>
+const DATA = /*__DATA__*/{"guides":[],"checklist":{"kits":[],"categories":[],"items":[]},"built":""}/*__END__*/;
+
+const ICON = {flood:"🌊", fire:"🔥", earthquake:"🏚️", war:"🚨", blackout:"🔦", storm:"🌀", pm25:"😷"};
+const ORDER = ["flood","fire","earthquake","storm","blackout","pm25","war"];
+const PHASES = [["during","ขณะเกิดเหตุ"],["before","เตรียมก่อน"],["after","หลังเกิดเหตุ"],["dont","ห้ามทำ"],["more","ตัดสินใจและที่มา"]];
+const CTX = {condo:"คอนโด", house:"บ้านชั้นเดียว"};
+const NUMBERS = [
+  ["191","เหตุด่วนเหตุร้าย ตำรวจ"],["199","ดับเพลิง กู้ภัย"],["1669","เจ็บป่วยฉุกเฉิน รถพยาบาล"],
+  ["1784","สายด่วนสาธารณภัย ปภ."],["1646","ศูนย์เอราวัณ กทม. (แพทย์ฉุกเฉิน)"],["1555","ศูนย์ กทม."],
+  ["1130","การไฟฟ้านครหลวง"],["1129","การไฟฟ้าส่วนภูมิภาค"],["1125","การประปานครหลวง"],["1662","การประปาส่วนภูมิภาค"],
+  ["1182","กรมอุตุนิยมวิทยา"],["1193","ตำรวจทางหลวง"],["1367","ศูนย์พิษวิทยา รามาธิบดี"],["1323","สายด่วนสุขภาพจิต"]
+];
+
+const KEY = "survival.v1";
+const DEF = {profile:{adults:2,children:0,elders:0,pets:0,days:7,home:"both"},checks:{},exp:{},custom:[],plan:{},showAll:false};
+let S = load();
+function load(){
+  try{ const o = JSON.parse(localStorage.getItem(KEY)||"null"); if(o) return Object.assign({},DEF,o,{profile:Object.assign({},DEF.profile,o.profile)}); }catch(e){}
+  return JSON.parse(JSON.stringify(DEF));
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const $ = id => document.getElementById(id);
+const guides = () => DATA.guides.slice().sort((a,b)=>(ORDER.indexOf(a.id)+99)%99-(ORDER.indexOf(b.id)+99)%99);
+const ctxOK = c => !c || c==="all" || S.profile.home==="both" || S.showAll || c===S.profile.home;
+const persons = () => S.profile.adults + S.profile.children + S.profile.elders;
+const whenOK = w => !w || (w==="child"&&S.profile.children>0) || (w==="elder"&&S.profile.elders>0) || (w==="pet"&&S.profile.pets>0);
+
+function kitDays(kit){ const k = DATA.checklist.kits.find(k=>k.id===kit); return k && k.days ? k.days : S.profile.days; }
+function qty(item, kit){
+  const c = item.c && item.c[kit];
+  if(!c) return item.q || "";
+  const n = {person:persons(), child:S.profile.children, elder:S.profile.elders, pet:S.profile.pets}[c.per] ?? 1;
+  const v = c.a * n * (c.day ? kitDays(kit) : 1);
+  const r = v < 10 ? Math.ceil(v*10)/10 : Math.ceil(v);
+  return r.toLocaleString("th-TH") + " " + c.u;
+}
+function hazardItems(){
+  const out = [];
+  for(const g of guides()) (g.kit||[]).forEach((k,i)=>{ if(k && k.name) out.push({id:"hz-"+g.id+"-"+i, cat:"hz-"+g.id, n:k.name, d:k.why, q:k.qty, ctx:k.ctx, k:["home"]}); });
+  return out;
+}
+function kitItems(kit){
+  const base = DATA.checklist.items.filter(i => i.k.includes(kit) && ctxOK(i.ctx) && whenOK(i.when));
+  const custom = S.custom.filter(i => i.kit===kit).map(i => ({id:i.id, cat:i.cat, n:i.n, custom:true, k:[kit]}));
+  return base.concat(kit==="home" ? hazardItems().filter(i=>ctxOK(i.ctx)) : [], custom);
+}
+function progress(kit){ const it = kitItems(kit); const done = it.filter(i=>S.checks[kit+":"+i.id]).length; return {done, total:it.length, pct: it.length?Math.round(done*100/it.length):0}; }
+function expiring(){
+  const out = [], now = Date.now();
+  for(const k in S.exp){ const d = S.exp[k]; if(!d) continue;
+    const days = Math.floor((new Date(d).getTime()-now)/864e5); if(days>60) continue;
+    const [kit,id] = [k.slice(0,k.indexOf(":")), k.slice(k.indexOf(":")+1)];
+    const item = kitItems(kit).find(i=>i.id===id); if(item) out.push({kit, item, days, date:d});
+  }
+  return out.sort((a,b)=>a.days-b.days);
+}
+const kitName = id => (DATA.checklist.kits.find(k=>k.id===id)||{}).name || id;
+
+/* ---------- views ---------- */
+function vHome(){
+  const gs = guides();
+  const exp = expiring();
+  return `<h1>เกิดอะไรขึ้น?</h1><p class="mute">แตะภัยที่เจอ เพื่อดูสิ่งที่ต้องทำทันที</p>
+  <div class="grid">${gs.map(g=>`<a class="haz" href="#g/${esc(g.id)}/during"><span>${ICON[g.id]||"⚠️"}</span>${esc(g.title)}</a>`).join("")}</div>
+  ${gs.length?"":`<div class="alert">ยังไม่มีข้อมูลคู่มือในไฟล์นี้</div>`}
+  ${exp.length?`<div class="alert ${exp[0].days<0?"bad":""}"><b>ของใกล้หมดอายุ ${exp.length} รายการ</b><br>${exp.slice(0,5).map(e=>`${esc(e.item.n)} (${esc(kitName(e.kit))}) ${e.days<0?"หมดอายุแล้ว":"อีก "+e.days+" วัน"}`).join("<br>")}</div>`:""}
+  <h2>ความพร้อมของบ้านเรา</h2>
+  ${DATA.checklist.kits.map(k=>{const p=progress(k.id);return `<a class="card" href="#list/${k.id}" style="display:block;text-decoration:none;color:inherit">
+    <div class="row"><b class="grow">${esc(k.name)}</b><span>${p.done}/${p.total}</span></div><div class="bar"><i style="width:${p.pct}%"></i></div>
+    <div class="mute">${esc(k.desc)}</div></a>`}).join("")}
+  <p class="mute">ตั้งค่าไว้ ${persons()} คน สำรอง ${S.profile.days} วัน <a href="#set">แก้ไข</a></p>`;
+}
+
+function stepList(items, g, cls){
+  const src = Object.fromEntries((g.sources||[]).map(s=>[s.id,s]));
+  const list = (items||[]).filter(i=>i && ctxOK(i.ctx));
+  if(!list.length) return `<p class="mute">ไม่มีรายการ</p>`;
+  return `<ol class="steps ${cls||""}">${list.map(i=>`<li><div class="t">${esc(i.text)}</div>${i.detail?`<div class="d">${esc(i.detail)}</div>`:""}
+    ${i.ctx&&CTX[i.ctx]?`<span class="chip">${CTX[i.ctx]}</span>`:""}${(i.src||[]).filter(id=>src[id]).map(id=>`<span class="chip">${esc(src[id].org)}</span>`).join("")}</li>`).join("")}</ol>`;
+}
+function vGuide(id, phase){
+  const g = DATA.guides.find(g=>g.id===id); if(!g) return vHome();
+  phase = PHASES.some(p=>p[0]===phase) ? phase : "during";
+  let body;
+  if(phase==="dont") body = stepList(g.dont, g, "dont");
+  else if(phase==="more"){
+    const d = g.decide||{};
+    body = `${d.question?`<h2>${esc(d.question)}</h2><div class="card"><b>ออกทันทีเมื่อ</b><ul class="plain">${(d.go||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+      <div class="card"><b>อยู่ในที่ปลอดภัยเมื่อ</b><ul class="plain">${(d.stay||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+      ${(g.kit||[]).length?`<h2>ของที่ควรมีเพิ่มสำหรับภัยนี้</h2><div class="card"><ul class="plain">${g.kit.filter(k=>ctxOK(k.ctx)).map(k=>`<li><b>${esc(k.name)}</b>${k.qty?" · "+esc(k.qty):""}${k.why?`<div class="mute">${esc(k.why)}</div>`:""}</li>`).join("")}</ul>
+      <a href="#list/home">ไปที่เช็กลิสต์</a></div>`:""}
+      ${(g.cases||[]).length?`<h2>บทเรียนจากเหตุการณ์จริง</h2>${g.cases.map(c=>`<div class="card"><b>${esc(c.title)}</b><p>${esc(c.lesson)}</p></div>`).join("")}`:""}
+      ${(g.sources||[]).length?`<h2>แหล่งที่มา</h2><div class="card src"><ul class="plain">${g.sources.map(s=>`<li>${esc(s.org)}: ${esc(s.title)}${/^https?:\/\//.test(s.url||"")?`<br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a>`:""}</li>`).join("")}</ul></div>`:""}`;
+  } else body = stepList((g.phases||{})[phase], g);
+  return `<a class="back" href="#home">‹ กลับ</a><h1>${ICON[g.id]||""} ${esc(g.title)}</h1><p class="mute">${esc(g.summary)}</p>
+  <div class="seg">${PHASES.map(p=>`<a href="#g/${esc(g.id)}/${p[0]}" class="${p[0]===phase?"on":""}">${p[1]}</a>`).join("")}</div>
+  ${body}
+  ${S.profile.home!=="both"?`<p class="mute">แสดงเฉพาะ${CTX[S.profile.home]} <a href="#" data-act="showall">${S.showAll?"กรองตามบ้านเรา":"แสดงทั้งหมด"}</a></p>`:""}`;
+}
+
+function vList(kit){
+  const k = DATA.checklist.kits.find(x=>x.id===kit) || DATA.checklist.kits[0]; if(!k) return "<p>ไม่มีข้อมูล</p>";
+  kit = k.id;
+  const items = kitItems(kit), p = progress(kit);
+  const cats = DATA.checklist.categories.concat(kit==="home" ? guides().filter(g=>(g.kit||[]).length).map(g=>({id:"hz-"+g.id,name:"ของเสริม: "+g.title})) : []);
+  const today = new Date().toISOString().slice(0,10);
+  const row = i => { const key = kit+":"+i.id, on = !!S.checks[key], q = qty(i,kit), e = S.exp[key]||"";
+    const dleft = e ? Math.floor((new Date(e).getTime()-Date.now())/864e5) : null;
+    return `<div class="item ${on?"done":""}"><input type="checkbox" data-chk="${esc(key)}" ${on?"checked":""} aria-label="${esc(i.n)}">
+      <div class="grow"><div class="n">${esc(i.n)}</div>${q?`<span class="q">${esc(q)}</span>`:""}
+      ${i.d?`<div class="d">${esc(i.d)}</div>`:""}${i.w?`<div class="w">${esc(i.w)}</div>`:""}
+      ${i.x?`<div class="x">หมดอายุ <input type="date" data-exp="${esc(key)}" value="${esc(e)}" min="${today}">${dleft!=null&&dleft<=60?`<b style="color:var(--${dleft<0?"bad":"warn"})">${dleft<0?"หมดอายุแล้ว":"อีก "+dleft+" วัน"}</b>`:""}</div>`:""}</div>
+      ${i.custom?`<button class="del" data-del="${esc(i.id)}" aria-label="ลบ">×</button>`:""}</div>`; };
+  return `<h1>เช็กลิสต์</h1>
+  <div class="seg">${DATA.checklist.kits.map(x=>`<a href="#list/${x.id}" class="${x.id===kit?"on":""}">${esc(x.name)}</a>`).join("")}</div>
+  <p class="mute">${esc(k.desc)} · คำนวณสำหรับ ${persons()} คน ${kitDays(kit)} วัน <a href="#set">แก้ไข</a></p>
+  <div class="row"><b class="grow">พร้อมแล้ว ${p.pct}%</b><span>${p.done}/${p.total}</span></div><div class="bar"><i style="width:${p.pct}%"></i></div>
+  ${cats.map(c=>{ const li = items.filter(i=>i.cat===c.id); if(!li.length && c.id.startsWith("hz-")) return "";
+    const dn = li.filter(i=>S.checks[kit+":"+i.id]).length;
+    return `<details class="cat" data-cat="${esc(c.id)}" ${S.open&&S.open[kit+":"+c.id]?"open":""}><summary>${esc(c.name)}<small>${dn}/${li.length}</small></summary>
+      ${li.map(row).join("")}
+      ${c.id.startsWith("hz-")?"":`<form class="add" data-add="${esc(c.id)}"><input name="n" placeholder="เพิ่มรายการเอง" maxlength="80"><button class="btn">เพิ่ม</button></form>`}</details>`; }).join("")}
+  <div class="btns"><button class="btn" data-act="print">พิมพ์รายการนี้</button></div>`;
+}
+
+function vSos(){
+  const P = S.plan||{};
+  const f = (k,label,ta) => `<label class="f" for="p-${k}">${label}</label>${ta?`<textarea class="in" id="p-${k}" data-plan="${k}">${esc(P[k])}</textarea>`:`<input class="in" id="p-${k}" data-plan="${k}" value="${esc(P[k])}">`}`;
+  return `<h1>ฉุกเฉิน</h1><p class="mute">แตะเพื่อโทรออก</p>
+  <div class="card" style="padding:0">${NUMBERS.map(n=>`<a class="tel" href="tel:${n[0]}"><b>${n[0]}</b><span>${n[1]}</span></a>`).join("")}</div>
+  <h2>แผนครอบครัว</h2><p class="mute">เก็บในเครื่องนี้เท่านั้น ควรพิมพ์หรือจดลงกระดาษใส่กระเป๋าฉุกเฉินด้วย</p>
+  ${f("meet1","จุดนัดพบใกล้บ้าน")}${f("meet2","จุดนัดพบนอกพื้นที่")}${f("hub","ญาติที่เป็นศูนย์กลางรับข่าว (ชื่อและเบอร์)")}
+  ${f("refuge","ที่พักสำรอง")}${f("people","เบอร์คนในครอบครัวและคนสำคัญ",1)}${f("health","โรคประจำตัว ยาที่ใช้ กรุ๊ปเลือด การแพ้ยา",1)}${f("notes","บันทึกอื่น ๆ (เบรกเกอร์ วาล์วแก๊ส ที่เก็บกุญแจ)",1)}`;
+}
+
+function vSet(){
+  const st = (k,label) => `<div class="row" style="margin:8px 0"><span class="grow">${label}</span><span class="step"><button data-step="${k}:-1" aria-label="ลด">−</button><output>${S.profile[k]}</output><button data-step="${k}:1" aria-label="เพิ่ม">+</button></span></div>`;
+  return `<h1>ตั้งค่า</h1>
+  <h2>คนในบ้าน</h2><div class="card">${st("adults","ผู้ใหญ่")}${st("children","เด็กเล็ก")}${st("elders","ผู้สูงอายุ / ผู้ป่วย")}${st("pets","สัตว์เลี้ยง")}</div>
+  <h2>จำนวนวันที่ต้องอยู่เองได้</h2>
+  <div class="seg">${[3,7,14,30,90].map(d=>`<a href="#" data-days="${d}" class="${S.profile.days===d?"on":""}">${d} วัน</a>`).join("")}</div>
+  <p class="mute">แนะนำอย่างน้อย 7 วัน น้ำท่วมหาดใหญ่ปี 2568 มีคนติดอยู่ในบ้าน 6 วัน</p>
+  <h2>ที่อยู่อาศัย</h2>
+  <div class="seg">${[["both","ทั้งสองแบบ"],["condo","คอนโดสูง"],["house","บ้านชั้นเดียว"]].map(h=>`<a href="#" data-home="${h[0]}" class="${S.profile.home===h[0]?"on":""}">${h[1]}</a>`).join("")}</div>
+  <h2>สำรองข้อมูล</h2><p class="mute">ข้อมูลเช็กลิสต์และแผนครอบครัวอยู่ในเครื่องนี้เท่านั้น ส่งออกเก็บไว้เผื่อเปลี่ยนเครื่อง</p>
+  <div class="btns"><button class="btn" data-act="export">ส่งออกเป็นไฟล์</button><label class="btn">นำเข้าจากไฟล์<input type="file" id="imp" accept="application/json,.json" hidden></label><button class="btn" data-act="reset">ล้างข้อมูลทั้งหมด</button></div>
+  <h2>เกี่ยวกับ</h2><div class="card mute">คู่มือนี้รวบรวมจากหน่วยงานด้านภัยพิบัติของไทยและต่างประเทศ แล้วปรับให้เข้ากับคอนโดสูงในกรุงเทพฯ และบ้านชั้นเดียวในต่างจังหวัด ดูแหล่งที่มาได้ในแต่ละคู่มือ
+  ใช้เพื่อเตรียมตัวในครอบครัว ไม่แทนคำสั่งของเจ้าหน้าที่ในพื้นที่หรือคำแนะนำของแพทย์<br>ข้อมูล ณ ${esc(DATA.built)} · <span id="off"></span></div>`;
+}
+
+/* ---------- router & events ---------- */
+const TABS = [["home","🏠","หน้าแรก"],["list","☑️","เช็กลิสต์"],["sos","📞","ฉุกเฉิน"],["set","⚙️","ตั้งค่า"]];
+function render(keepScroll){
+  const [v,a,b] = (location.hash.slice(1)||"home").split("/");
+  const y = window.scrollY;
+  $("app").innerHTML = v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : vHome();
+  const cur = v==="g" ? "home" : v;
+  $("tabs").innerHTML = TABS.map(t=>`<a href="#${t[0]}" class="${t[0]===cur?"on":""}"><b>${t[1]}</b>${t[2]}</a>`).join("");
+  window.scrollTo(0, keepScroll ? y : 0);
+  const off = $("off"); if(off) off.textContent = (navigator.serviceWorker && navigator.serviceWorker.controller) ? "พร้อมใช้ออฟไลน์" : "เปิดจากไฟล์หรือยังไม่ได้ติดตั้ง";
+}
+addEventListener("hashchange", ()=>render(false));
+
+document.addEventListener("change", e=>{
+  const t = e.target;
+  if(t.dataset.chk){ if(t.checked) S.checks[t.dataset.chk]=true; else delete S.checks[t.dataset.chk]; save(); render(true); }
+  else if(t.dataset.exp){ if(t.value) S.exp[t.dataset.exp]=t.value; else delete S.exp[t.dataset.exp]; save(); render(true); }
+  else if(t.id==="imp" && t.files[0]){ const r = new FileReader(); r.onload = ()=>{ try{ const o = JSON.parse(r.result); if(!o || typeof o.profile!=="object") throw 0;
+      S = Object.assign({},DEF,o,{profile:Object.assign({},DEF.profile,o.profile)}); save(); render(false); }catch(_){ t.value=""; $("app").insertAdjacentHTML("afterbegin",`<div class="alert bad">ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป</div>`); } }; r.readAsText(t.files[0]); }
+});
+document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k){ S.plan = S.plan||{}; S.plan[k] = e.target.value; save(); } });
+let printing = false;
+addEventListener("beforeprint", ()=>{ printing = true; document.querySelectorAll("details.cat").forEach(d=>d.open = true); });
+addEventListener("afterprint", ()=>{ printing = false; render(true); });
+document.addEventListener("toggle", e=>{ const d = e.target; if(!printing && d.dataset && d.dataset.cat){ const kit = (location.hash.split("/")[1]||"go"); S.open = S.open||{}; S.open[kit+":"+d.dataset.cat] = d.open; save(); } }, true);
+document.addEventListener("submit", e=>{ const c = e.target.dataset.add; if(!c) return; e.preventDefault();
+  const n = e.target.n.value.trim(); if(!n) return; const kit = location.hash.split("/")[1]||"go";
+  S.custom.push({id:"u"+Date.now().toString(36), kit, cat:c, n}); save(); render(true); });
+document.addEventListener("click", e=>{
+  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del]"); if(!t) return;
+  const d = t.dataset;
+  if(d.step){ const [k,n] = d.step.split(":"); S.profile[k] = Math.max(k==="adults"?1:0, Math.min(20, S.profile[k]+Number(n))); }
+  else if(d.days){ e.preventDefault(); S.profile.days = Number(d.days); }
+  else if(d.home){ e.preventDefault(); S.profile.home = d.home; S.showAll = false; }
+  else if(d.del){ S.custom = S.custom.filter(i=>i.id!==d.del); }
+  else if(d.act==="showall"){ e.preventDefault(); S.showAll = !S.showAll; }
+  else if(d.act==="print"){ window.print(); return; }
+  else if(d.act==="export"){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:"application/json"}));
+    a.download = "survival-backup-"+new Date().toISOString().slice(0,10)+".json"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),5000); return; }
+  else if(d.act==="reset"){ if(t.dataset.sure){ S = JSON.parse(JSON.stringify(DEF)); } else { t.dataset.sure = 1; t.textContent = "แตะอีกครั้งเพื่อยืนยันการล้าง"; return; } }
+  save(); render(true);
+});
+
+render(false);
+if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
+  // เมื่อมีเวอร์ชันใหม่เข้ามาแทน ให้โหลดหน้าใหม่หนึ่งครั้งเพื่อไม่ค้างเนื้อหาเก่า
+  const had = !!navigator.serviceWorker.controller; let reloaded = false;
+  navigator.serviceWorker.addEventListener("controllerchange", ()=>{ if(had && !reloaded){ reloaded = true; location.reload(); } });
+  navigator.serviceWorker.register("sw.js").then(()=>navigator.serviceWorker.ready).then(()=>{ const off = $("off"); if(off) off.textContent = "พร้อมใช้ออฟไลน์"; }).catch(()=>{});
+}
+</script>
+</body>
+</html>
