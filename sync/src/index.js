@@ -3,7 +3,8 @@
 const ID = /^[A-Za-z0-9_-]{22}$/, TOKEN = /^[A-Za-z0-9_-]{43}$/, DATA = /^[A-Za-z0-9_-]{24,}$/;
 const MAX_BODY = 400_000;          // ไบต์ต่อบ้าน
 const MIN_WRITE_GAP = 800;         // มิลลิวินาทีระหว่างการเขียนของบ้านเดียวกัน
-const MAX_NEW_PER_IP_DAY = 30;     // จำนวนบ้านใหม่ต่อ IP ต่อวัน
+const MAX_NEW_PER_IP_DAY = 30;     // จำนวนบ้านใหม่ต่อ IP ต่อวัน (IPv6 นับรวมทั้ง /64)
+const MAX_NEW_PER_DAY = 3000;      // เพดานรวมทั้งระบบต่อวัน กันการปั๊มบ้านจาก IP จำนวนมากจนพื้นที่เต็ม
 const KEEP_DAYS = 365;             // ลบบ้านที่ไม่มีเครื่องไหนเปิดเกินนี้
 const DAY = 864e5;
 
@@ -54,6 +55,7 @@ export default {
       }
 
       if (req.method === "PUT") {
+        if (Number(req.headers.get("Content-Length")) > MAX_BODY) return reply(413, { error: "too large" });   // ปฏิเสธก่อนอ่านเนื้อหา
         const text = await req.text();
         if (text.length > MAX_BODY) return reply(413, { error: "too large" });
         let body; try { body = JSON.parse(text); } catch { return reply(400, { error: "bad json" }); }
@@ -62,9 +64,11 @@ export default {
 
         if (!row) {
           const day = new Date(now).toISOString().slice(0, 10);
-          const key = day + ":" + (await hex(day + (req.headers.get("CF-Connecting-IP") || "local"))).slice(0, 32);
-          const q = await env.DB.prepare("INSERT INTO quota (k, n) VALUES (?, 1) ON CONFLICT(k) DO UPDATE SET n = n + 1 RETURNING n").bind(key).first();
-          if (q.n > MAX_NEW_PER_IP_DAY) return reply(429, { error: "too many new homes today" });
+          const bump = k => env.DB.prepare("INSERT INTO quota (k, n) VALUES (?, 1) ON CONFLICT(k) DO UPDATE SET n = n + 1 RETURNING n").bind(k).first();
+          const perIp = await bump(day + ":" + (await hex(day + ipBucket(req))).slice(0, 32));
+          if (perIp.n > MAX_NEW_PER_IP_DAY) return reply(429, { error: "too many new homes today" });
+          if ((await bump(day + ":all")).n > MAX_NEW_PER_DAY) return reply(429, { error: "service busy, try tomorrow" });
+          if (perIp.n === 1) await cleanup(env, now);   // เก็บกวาดตอนมีการสร้างบ้าน ไม่ต้องพึ่ง cron อย่างเดียว
           const ins = await env.DB.prepare("INSERT OR IGNORE INTO homes (id, token_hash, ver, data, updated, seen, created) VALUES (?, ?, 1, ?, ?, ?, ?)")
             .bind(id, tokenHash, data, now, now, now).run();
           if (ins.meta.changes === 1) return reply(200, { ver: 1 });
@@ -84,12 +88,20 @@ export default {
     }
   },
 
-  async scheduled(_event, env) {
-    const now = Date.now();
-    await env.DB.prepare("DELETE FROM homes WHERE seen < ?").bind(now - KEEP_DAYS * DAY).run();
-    await env.DB.prepare("DELETE FROM quota WHERE k < ?").bind(new Date(now - 2 * DAY).toISOString().slice(0, 10)).run();
-  },
+  async scheduled(_event, env) { await cleanup(env, Date.now()); },
 };
+
+// ลบบ้านที่ไม่มีเครื่องไหนเปิดเกินกำหนด และโควตา (แฮชของ IP) ที่เก่ากว่า 2 วัน
+async function cleanup(env, now) {
+  await env.DB.prepare("DELETE FROM homes WHERE seen < ?").bind(now - KEEP_DAYS * DAY).run();
+  await env.DB.prepare("DELETE FROM quota WHERE k < ?").bind(new Date(now - 2 * DAY).toISOString().slice(0, 10)).run();
+}
+
+// IPv6 หนึ่งบ้านมักได้ทั้ง /64 จึงนับโควตารวมทั้งช่วง ไม่งั้นเปลี่ยนเลขท้ายเพื่อหลบโควตาได้ไม่จำกัด
+function ipBucket(req) {
+  const ip = req.headers.get("CF-Connecting-IP") || "local";
+  return ip.includes(":") ? ip.split(":").slice(0, 4).join(":") : ip;
+}
 
 async function current(env, id) {
   const r = await env.DB.prepare("SELECT ver, data FROM homes WHERE id = ?").bind(id).first();
