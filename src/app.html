@@ -97,6 +97,8 @@ details.cat summary small{font-weight:400;color:var(--mute)}
 .btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 
+.card.aid{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.card.aid>span:first-child{font-size:32px;line-height:1}
 .hrow{display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
 .hrow:first-child{border-top:0}
 #qr svg{display:block;width:220px;max-width:70%;height:auto;margin:10px auto;background:#fff;border-radius:8px}
@@ -124,10 +126,16 @@ textarea.in{min-height:76px;resize:vertical}
 <script>
 const DATA = /*__DATA__*/{"guides":[],"checklist":{"kits":[],"categories":[],"items":[]},"built":""}/*__END__*/;
 
-const ICON = {flood:"🌊", fire:"🔥", earthquake:"🏚️", war:"🚨", blackout:"🔦", storm:"🌀", pm25:"😷", pandemic:"🦠"};
-const ORDER = ["flood","fire","earthquake","storm","blackout","pm25","pandemic","war"];
+const ICON = {flood:"🌊", fire:"🔥", earthquake:"🏚️", war:"🚨", blackout:"🔦", storm:"🌀", pm25:"😷", pandemic:"🦠",
+  heat:"🥵", drought:"🚱", landslide:"⛰️", chemical:"☣️", violence:"🚷", tsunami:"🏝️", radiation:"☢️"};
+// PRIMARY = ภัยที่ครัวเรือนไทยมีโอกาสเจอมากกว่า แสดงเด่นในหน้าแรก ที่เหลืออยู่ใต้ "ภัยอื่น ๆ"
+const PRIMARY = ["flood","storm","fire","heat","pm25","blackout","pandemic","earthquake"];
+const ORDER = PRIMARY.concat(["drought","landslide","chemical","violence","tsunami","radiation","war"]);
 const PHASES = [["during","ขณะเกิดเหตุ"],["before","เตรียมก่อน"],["after","หลังเกิดเหตุ"],["dont","ห้ามทำ"],["more","ตัดสินใจและที่มา"]];
-const CTX = {condo:"คอนโด", house:"บ้านชั้นเดียว"};
+const CTX = {condo:"คอนโด", house:"บ้านชั้นเดียว", town:"บ้านสองชั้น/ทาวน์เฮาส์"};
+// ctx ของรายการเป็นค่าเดียวหรือ array ก็ได้ เช่น ["house","town"]
+const ctxList = c => (Array.isArray(c) ? c : [c]).filter(x => CTX[x]);
+const ctxLabel = c => ctxList(c).map(x => CTX[x]).join(" · ");
 const NUMBERS = [
   ["191","เหตุด่วนเหตุร้าย ตำรวจ"],["199","ดับเพลิง กู้ภัย"],["1669","เจ็บป่วยฉุกเฉิน รถพยาบาล"],
   ["1784","สายด่วนสาธารณภัย ปภ."],["1646","ศูนย์เอราวัณ กทม. (แพทย์ฉุกเฉิน)"],["1555","ศูนย์ กทม."],
@@ -150,7 +158,7 @@ function fieldValue(k, v){
   if(k==="name") return typeof v==="string" && v.trim() ? v.slice(0,40) : undefined;
   const m = /^([a-z])\.(.+)$/.exec(k); if(!m) return undefined;
   const t = m[1], r = m[2];
-  if(t==="p"){ if(r==="home") return ["both","condo","house"].includes(v) ? v : undefined;
+  if(t==="p"){ if(r==="home") return ["both","condo","house","town"].includes(v) ? v : undefined;
     if(!(r in PDEF) || !Number.isFinite(Number(v))) return undefined;
     return Math.max(r==="adults"||r==="days" ? 1 : 0, Math.min(r==="days" ? 365 : 20, Math.round(Number(v)))); }
   if(t==="c") return IDK.test(r) ? (v ? 1 : 0) : undefined;
@@ -222,8 +230,9 @@ function put(k, v){
 }
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $ = id => document.getElementById(id);
+const AID = (DATA.firstaid && DATA.firstaid.topics) || [];
 const guides = () => DATA.guides.slice().sort((a,b)=>(ORDER.indexOf(a.id)+99)%99-(ORDER.indexOf(b.id)+99)%99);
-const ctxOK = c => !c || c==="all" || S.profile.home==="both" || S.showAll || c===S.profile.home;
+const ctxOK = c => !ctxList(c).length || S.profile.home==="both" || S.showAll || ctxList(c).includes(S.profile.home);
 const persons = () => S.profile.adults + S.profile.children + S.profile.elders;
 const whenOK = w => !w || (w==="child"&&S.profile.children>0) || (w==="elder"&&S.profile.elders>0) || (w==="pet"&&S.profile.pets>0);
 
@@ -246,7 +255,8 @@ function kitItems(kit){
   const custom = S.custom.filter(i => i.kit===kit).map(i => ({id:i.id, cat:i.cat, n:i.n, custom:true, k:[kit]}));
   return base.concat(kit==="home" ? hazardItems().filter(i=>ctxOK(i.ctx)) : [], custom);
 }
-function progress(kit){ const it = kitItems(kit); const done = it.filter(i=>S.checks[kit+":"+i.id]).length; return {done, total:it.length, pct: it.length?Math.round(done*100/it.length):0}; }
+// ความพร้อมนับเฉพาะรายการหลักและที่เพิ่มเอง ของเสริมรายภัยมีตัวนับของแต่ละหมวดแยก
+function progress(kit){ const it = kitItems(kit).filter(i=>!i.id.startsWith("hz-")); const done = it.filter(i=>S.checks[kit+":"+i.id]).length; return {done, total:it.length, pct: it.length?Math.round(done*100/it.length):0}; }
 function expiring(){
   const out = [], now = Date.now();
   for(const k in S.exp){ const d = S.exp[k]; if(!d) continue;
@@ -394,11 +404,14 @@ function qrSvg(text){
 
 /* ---------- views ---------- */
 function vHome(){
-  const gs = guides();
+  const gs = guides(), main = gs.filter(g=>PRIMARY.includes(g.id)), rest = gs.filter(g=>!PRIMARY.includes(g.id));
+  const tile = g => `<a class="haz" href="#g/${esc(g.id)}/during"><span>${ICON[g.id]||"⚠️"}</span>${esc(g.title)}</a>`;
   const exp = expiring();
   return `<h1>เกิดอะไรขึ้น?</h1><p class="mute">แตะภัยที่เจอ เพื่อดูสิ่งที่ต้องทำทันที</p>
-  <div class="grid">${gs.map(g=>`<a class="haz" href="#g/${esc(g.id)}/during"><span>${ICON[g.id]||"⚠️"}</span>${esc(g.title)}</a>`).join("")}</div>
+  <div class="grid">${main.map(tile).join("")}</div>
   ${gs.length?"":`<div class="alert">ยังไม่มีข้อมูลคู่มือในไฟล์นี้</div>`}
+  ${rest.length?`<details class="cat" data-cat="more-hazards" ${S.open["home:more-hazards"]?"open":""}><summary>ภัยอื่น ๆ ที่เกิดได้น้อยกว่า<small>${rest.length} เล่ม</small></summary><div class="grid" style="margin:0;padding:0 12px 12px">${rest.map(tile).join("")}</div></details>`:""}
+  ${AID.length?`<a class="card aid" href="#aid"><span>⛑️</span><span class="grow"><b>ปฐมพยาบาล</b><br><span class="mute">ปั๊มหัวใจ สำลัก เลือดออก แผลไหม้ งูกัด และอื่น ๆ รวม ${AID.length} เรื่อง</span></span></a>`:""}
   ${exp.length?`<div class="alert ${exp[0].days<0?"bad":""}"><b>ของใกล้หมดอายุ ${exp.length} รายการ</b><br>${exp.slice(0,5).map(e=>`${esc(e.item.n)} (${esc(kitName(e.kit))}) ${e.days<0?"หมดอายุแล้ว":"อีก "+e.days+" วัน"}`).join("<br>")}</div>`:""}
   <h2>ความพร้อมของ ${esc(S.name)}</h2>
   ${DATA.checklist.kits.map(k=>{const p=progress(k.id);return `<a class="card" href="#list/${k.id}" style="display:block;text-decoration:none;color:inherit">
@@ -412,7 +425,7 @@ function stepList(items, g, cls){
   const list = (items||[]).filter(i=>i && ctxOK(i.ctx));
   if(!list.length) return `<p class="mute">ไม่มีรายการ</p>`;
   return `<ol class="steps ${cls||""}">${list.map(i=>`<li><div class="t">${esc(i.text)}</div>${i.detail?`<div class="d">${esc(i.detail)}</div>`:""}
-    ${i.ctx&&CTX[i.ctx]?`<span class="chip">${CTX[i.ctx]}</span>`:""}${(i.src||[]).filter(id=>src[id]).map(id=>`<span class="chip">${esc(src[id].org)}</span>`).join("")}</li>`).join("")}</ol>`;
+    ${ctxLabel(i.ctx)?`<span class="chip">${ctxLabel(i.ctx)}</span>`:""}${(i.src||[]).filter(id=>src[id]).map(id=>`<span class="chip">${esc(src[id].org)}</span>`).join("")}</li>`).join("")}</ol>`;
 }
 function vGuide(id, phase){
   const g = DATA.guides.find(g=>g.id===id); if(!g) return vHome();
@@ -431,7 +444,7 @@ function vGuide(id, phase){
   return `<a class="back" href="#home">‹ กลับ</a><h1>${ICON[g.id]||""} ${esc(g.title)}</h1><p class="mute">${esc(g.summary)}</p>
   <div class="seg">${PHASES.map(p=>`<a href="#g/${esc(g.id)}/${p[0]}" class="${p[0]===phase?"on":""}">${p[1]}</a>`).join("")}</div>
   ${body}
-  ${S.profile.home!=="both"?`<p class="mute">แสดงเฉพาะ${CTX[S.profile.home]} <a href="#" data-act="showall">${S.showAll?"กรองตามบ้านเรา":"แสดงทั้งหมด"}</a></p>`:""}`;
+  ${S.profile.home!=="both"?`<p class="mute">แสดงเฉพาะ${esc(CTX[S.profile.home])} <a href="#" data-act="showall">${S.showAll?"กรองตามบ้านเรา":"แสดงทั้งหมด"}</a></p>`:""}`;
 }
 
 function vList(kit){
@@ -462,7 +475,7 @@ function vList(kit){
 function vSos(){
   const P = S.plan||{};
   const f = (k,label,ta) => `<label class="f" for="p-${k}">${label}</label>${ta?`<textarea class="in" id="p-${k}" data-plan="${k}">${esc(P[k])}</textarea>`:`<input class="in" id="p-${k}" data-plan="${k}" value="${esc(P[k])}">`}`;
-  return `<h1>ฉุกเฉิน</h1><p class="mute">แตะเพื่อโทรออก</p>
+  return `<h1>ฉุกเฉิน</h1>${AID.length?`<a class="card aid" href="#aid"><span>⛑️</span><span class="grow"><b>ปฐมพยาบาล</b><br><span class="mute">ขั้นตอนช่วยเหลือเบื้องต้น ${AID.length} เรื่อง</span></span></a>`:""}<p class="mute">แตะเพื่อโทรออก</p>
   <div class="card" style="padding:0">${NUMBERS.map(n=>`<a class="tel" href="tel:${n[0]}"><b>${n[0]}</b><span>${n[1]}</span></a>`).join("")}</div>
   <h2>แผนครอบครัว: ${esc(S.name)}</h2><p class="mute">${H().sync?"ทุกคนที่อยู่ในบ้านนี้เห็นและแก้ได้ ข้อมูลถูกเข้ารหัสก่อนออกจากเครื่อง":"เก็บในเครื่องนี้เท่านั้น"} ควรพิมพ์หรือจดลงกระดาษใส่กระเป๋าฉุกเฉินด้วย</p>
   ${f("meet1","จุดนัดพบใกล้บ้าน")}${f("meet2","จุดนัดพบนอกพื้นที่")}${f("hub","ญาติที่เป็นศูนย์กลางรับข่าว (ชื่อและเบอร์)")}
@@ -498,7 +511,7 @@ function vSet(){
   <div class="seg">${[3,7,14,30,90].map(d=>`<a href="#" data-days="${d}" class="${S.profile.days===d?"on":""}">${d} วัน</a>`).join("")}</div>
   <p class="mute">แนะนำอย่างน้อย 7 วัน น้ำท่วมหาดใหญ่ปี 2568 มีคนติดอยู่ในบ้าน 6 วัน</p>
   <h2>ที่อยู่อาศัย</h2>
-  <div class="seg">${[["both","ทั้งสองแบบ"],["condo","คอนโดสูง"],["house","บ้านชั้นเดียว"]].map(h=>`<a href="#" data-home="${h[0]}" class="${S.profile.home===h[0]?"on":""}">${h[1]}</a>`).join("")}</div>
+  <div class="seg">${[["both","ทุกแบบ"],["condo","คอนโดสูง"],["town","บ้านสองชั้น / ทาวน์เฮาส์"],["house","บ้านชั้นเดียว"]].map(h=>`<a href="#" data-home="${h[0]}" class="${S.profile.home===h[0]?"on":""}">${h[1]}</a>`).join("")}</div>
   <h2>สำรองข้อมูล</h2><p class="mute">ส่งออกข้อมูลของ "${esc(S.name)}" เก็บเป็นไฟล์ไว้เผื่อเปลี่ยนเครื่อง การนำเข้าจะรวมเข้ากับบ้านที่กำลังใช้</p>
   <div class="btns"><button class="btn" data-act="export">ส่งออกเป็นไฟล์</button><label class="btn">นำเข้าจากไฟล์<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
   <div class="btns"><button class="btn" data-act="reset">ล้างข้อมูลของบ้านนี้</button>${one?"":`<button class="btn" data-act="delhome">ลบบ้านนี้ออกจากเครื่อง</button>`}</div>
@@ -520,6 +533,25 @@ function vTerms(){
   <li>ผู้ดูแลกู้ข้อมูลหรือรหัสบ้านให้ไม่ได้ ถ้าลิงก์เชิญหายจากทุกเครื่อง ข้อมูลที่ฝากไว้จะเปิดไม่ได้อีก</li></ul></div>
   <h2>ความรับผิดชอบของสมาชิกบ้าน</h2><div class="card">ทุกคนที่มีลิงก์เชิญเห็นและแก้ข้อมูลของบ้านได้ทั้งหมด รวมถึงข้อมูลสุขภาพที่บันทึกไว้ ส่งลิงก์ให้เฉพาะคนที่ไว้ใจ และเปลี่ยนรหัสบ้านเมื่อมีคนที่ไม่ควรเข้าถึงได้ลิงก์ไป</div>`;
 }
+/* ---------- ปฐมพยาบาล ---------- */
+function vAid(id){
+  const fa = DATA.firstaid || {}, t = AID.find(x=>x.id===id), src = Object.fromEntries((fa.sources||[]).map(x=>[x.id,x]));
+  const chips = ids => (ids||[]).filter(i=>src[i]).map(i=>`<span class="chip">${esc(src[i].org)}</span>`).join("");
+  if(!t){
+    const groups = []; for(const x of AID) if(!groups.includes(x.group)) groups.push(x.group);
+    return `<a class="back" href="#sos">‹ กลับ</a><h1>⛑️ ปฐมพยาบาล</h1><p class="mute">${esc(fa.intro)}</p>
+    <a class="btn pri" style="display:block;text-align:center;text-decoration:none" href="tel:1669">โทร 1669 เจ็บป่วยฉุกเฉิน</a>
+    ${groups.map(g=>`<h2>${esc(g)}</h2><div class="card" style="padding:0">${AID.filter(x=>x.group===g).map(x=>`<a class="hrow" style="text-decoration:none;color:inherit" href="#aid/${esc(x.id)}"><span class="grow">${esc(x.title)}</span><span class="mute">›</span></a>`).join("")}</div>`).join("")}
+    ${(fa.sources||[]).length?`<h2>แหล่งที่มา</h2><div class="card src"><ul class="plain">${fa.sources.map(x=>`<li>${esc(x.org)}: ${esc(x.title)}${/^https?:\/\//.test(x.url||"")?`<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a>`:""}</li>`).join("")}</ul></div>`:""}`;
+  }
+  const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${esc(i.text)}</div>${i.detail?`<div class="d">${esc(i.detail)}</div>`:""}${chips(i.src)}</li>`).join("")}</ol>`;
+  return `<a class="back" href="#aid">‹ ปฐมพยาบาลทั้งหมด</a><h1>${esc(t.title)}</h1>
+  ${t.signs?`<p class="mute">${esc(t.signs)}</p>`:""}
+  ${t.call?`<div class="alert bad"><b>โทร 1669:</b> ${esc(t.call)} <a href="tel:1669">แตะเพื่อโทร</a></div>`:""}
+  <h2>ทำตามลำดับ</h2>${list(t.steps, "")}
+  ${(t.dont||[]).length?`<h2>ห้ามทำ</h2>${list(t.dont, "dont")}`:""}
+  <p class="mute">ข้อมูลนี้ไม่แทนการอบรมปฐมพยาบาลและคำสั่งของเจ้าหน้าที่ 1669 ${chips(t.src)}</p>`;
+}
 function banner(){
   const note = NOTE ? `<div class="alert">${esc(NOTE)}</div>` : ""; NOTE = "";
   return note + (JOIN ? `<div class="card"><b>เข้าร่วมบ้าน "${esc(JOIN.name)}"?</b>
@@ -532,8 +564,8 @@ const TABS = [["home","🏠","หน้าแรก"],["list","☑️","เช�
 function render(keepScroll){
   const [v,a,b] = (location.hash.slice(1)||"home").split("/");
   const y = window.scrollY;
-  $("app").innerHTML = banner() + (v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : v==="terms" ? vTerms() : vHome());
-  const cur = v==="g" ? "home" : v==="terms" ? "set" : v;
+  $("app").innerHTML = banner() + (v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : v==="terms" ? vTerms() : v==="aid" ? vAid(a) : vHome());
+  const cur = v==="g" ? "home" : v==="terms" ? "set" : v==="aid" ? "sos" : v;
   $("tabs").innerHTML = TABS.map(t=>`<a href="#${t[0]}" class="${t[0]===cur?"on":""}"><b>${t[1]}</b>${t[2]}</a>`).join("");
   window.scrollTo(0, keepScroll ? y : 0);
   const off = $("off"); if(off) off.textContent = (navigator.serviceWorker && navigator.serviceWorker.controller) ? "พร้อมใช้ออฟไลน์" : "เปิดจากไฟล์หรือยังไม่ได้ติดตั้ง";
@@ -568,7 +600,7 @@ document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k) p
 let printing = false;
 addEventListener("beforeprint", ()=>{ printing = true; document.querySelectorAll("details.cat").forEach(d=>d.open = true); });
 addEventListener("afterprint", ()=>{ printing = false; render(true); });
-document.addEventListener("toggle", e=>{ const d = e.target; if(!printing && d.dataset && d.dataset.cat){ DB.ui.open[kitNow()+":"+d.dataset.cat] = d.open; save(); } }, true);
+document.addEventListener("toggle", e=>{ const d = e.target; if(!printing && d.dataset && d.dataset.cat){ DB.ui.open[(location.hash.startsWith("#list") ? kitNow() : "home")+":"+d.dataset.cat] = d.open; save(); } }, true);
 document.addEventListener("submit", async e=>{
   const d = e.target.dataset; if(!d.add && !d.newhome && !d.join) return; e.preventDefault();
   const n = e.target.n.value.trim(); if(!n) return;

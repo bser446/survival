@@ -3,86 +3,612 @@
   "title": "โรคระบาด",
   "summary": "โรคระบาดใหญ่ทำให้คนตายทั้งจากตัวโรคและจากโรงพยาบาลเต็ม ยาและของใช้ขาด ข่าวลือ และการรักษาผิดวิธี หลักคือรู้ว่าโรคติดทางไหนแล้วตัดทางนั้น อยู่บ้านได้หลายสัปดาห์โดยไม่ขาดของ และรู้สัญญาณอันตรายที่ต้องไปโรงพยาบาลทันที",
   "sources": [
-    {"id": "ready-pandemic", "org": "Ready.gov (FEMA)", "title": "Pandemics", "url": "https://www.ready.gov/pandemic", "country": "US"},
-    {"id": "cdc-handsan", "org": "CDC", "title": "Hand Sanitizer Guidelines and Recommendations", "url": "https://www.cdc.gov/clean-hands/about/hand-sanitizer.html", "country": "US"},
-    {"id": "cdc-bleach", "org": "CDC", "title": "Cleaning and Disinfecting with Bleach", "url": "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html", "country": "US"},
-    {"id": "who-disinfect", "org": "WHO", "title": "Coronavirus disease (COVID-19): Cleaning and disinfecting surfaces in non-health care settings", "url": "https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-cleaning-and-disinfecting-surfaces-in-non-health-care-settings", "country": "INT"},
-    {"id": "cdc-resp-prevent", "org": "CDC", "title": "Preventing Respiratory Illnesses", "url": "https://www.cdc.gov/respiratory-viruses/prevention/index.html", "country": "US"},
-    {"id": "cdc-masks", "org": "CDC", "title": "Masks and Respiratory Viruses Prevention", "url": "https://www.cdc.gov/respiratory-viruses/prevention/masks.html", "country": "US"},
-    {"id": "cdc-air", "org": "CDC", "title": "Taking Steps for Cleaner Air for Respiratory Virus Prevention", "url": "https://www.cdc.gov/respiratory-viruses/prevention/air-quality.html", "country": "US"},
-    {"id": "cdc-sick", "org": "CDC", "title": "Preventing Spread of Respiratory Viruses When You're Sick", "url": "https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html", "country": "US"},
-    {"id": "who-afro-home", "org": "WHO Regional Office for Africa", "title": "5 Steps for Managing patients with COVID-19 at home", "url": "https://www.afro.who.int/sites/default/files/Covid-19/Techinical%20documents/5%20Steps%20for%20Managing%20patients%20with%20COVID-19%20at%20home%20ENG.pdf", "country": "INT"},
-    {"id": "moph-atk-timeout", "org": "กระทรวงสาธารณสุข (รายงานโดย Time Out Bangkok)", "title": "อัปเดตแนวทางปฏิบัติ เมื่อผล ATK เป็นบวก", "url": "https://www.timeout.com/bangkok/th/news/อัปเดตแนวทางปฏิบัติ-เมื่อผล-atk-เป็นบวก-011122", "country": "TH"},
-    {"id": "nhs-paracetamol", "org": "NHS (สหราชอาณาจักร)", "title": "How and when to take paracetamol for adults", "url": "https://www.nhs.uk/medicines/paracetamol-for-adults/how-and-when-to-take-paracetamol-for-adults/", "country": "UK"},
-    {"id": "thaipublica-beds", "org": "ศบค./กระทรวงสาธารณสุข/สปสช. (รายงานโดย ThaiPublica)", "title": "ผู้ติดเชื้อโควิด-19 ไม่มีเตียงมากกว่า 25,000 ราย ศบค.-สธ. ใช้แผน 'กักตัวที่บ้าน'", "url": "https://thaipublica.org/2021/07/covid-19-2-07-2564/", "country": "TH"},
-    {"id": "thaipbs-waitbed", "org": "Thai PBS", "title": "ติดโควิดทั้งบ้าน ผู้สูงอายุเสียชีวิตระหว่างรอเตียง เร่งช่วยอีก 2 คน", "url": "https://www.thaipbs.or.th/news/content/303597", "country": "TH"},
-    {"id": "thaipbs-alcohol", "org": "Thai PBS", "title": "ตื่น COVID-19 ลามถึงแอลกอฮอล์ฆ่าเชื้อ 70% ขาดตลาด", "url": "https://www.thaipbs.or.th/news/content/289708", "country": "TH"},
-    {"id": "fda-ivermectin-mgr", "org": "สำนักงานคณะกรรมการอาหารและยา (รายงานโดย MGR Online)", "title": "อย. ชี้แจงยาไอเวอร์เม็คตินยังไม่ได้รับการรับรองให้ใช้ป้องกันหรือรักษาโควิด-19", "url": "https://mgronline.com/qol/detail/9640000063496", "country": "TH"},
-    {"id": "nhso-flu-thaipbs", "org": "สปสช./กรมควบคุมโรค (รายงานโดย Thai PBS)", "title": "7 กลุ่มเสี่ยงฉีดวัคซีน \"ไข้หวัดใหญ่\" ฟรี 1 พ.ค.-31 ส.ค.นี้", "url": "https://www.thaipbs.or.th/news/content/339516", "country": "TH"},
-    {"id": "ddc-nipah-thansettakij", "org": "กรมควบคุมโรค (รายงานโดย ฐานเศรษฐกิจ)", "title": "กรมควบคุมโรคเฝ้าระวังสถานการณ์ไวรัสนิปาห์ ย้ำติดตามข้อมูลจากแหล่งที่เชื่อถือได้", "url": "https://www.thansettakij.com/health-wellness/health/650743", "country": "TH"},
-    {"id": "wiki-covid-th", "org": "Wikipedia", "title": "COVID-19 pandemic in Thailand", "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Thailand", "country": "INT"},
-    {"id": "wiki-1918", "org": "Wikipedia", "title": "Spanish flu", "url": "https://en.wikipedia.org/wiki/Spanish_flu", "country": "INT"},
-    {"id": "wiki-sars", "org": "Wikipedia", "title": "2002–2004 SARS outbreak", "url": "https://en.wikipedia.org/wiki/2002%E2%80%932004_SARS_outbreak", "country": "INT"},
-    {"id": "wiki-mers-kr", "org": "Wikipedia", "title": "2015 MERS outbreak in South Korea", "url": "https://en.wikipedia.org/wiki/2015_MERS_outbreak_in_South_Korea", "country": "INT"},
-    {"id": "wiki-ebola", "org": "Wikipedia", "title": "Western African Ebola epidemic", "url": "https://en.wikipedia.org/wiki/Western_African_Ebola_epidemic", "country": "INT"},
-    {"id": "wiki-h1n1", "org": "Wikipedia", "title": "2009 swine flu pandemic", "url": "https://en.wikipedia.org/wiki/2009_swine_flu_pandemic", "country": "INT"},
-    {"id": "who-ebola", "org": "WHO", "title": "Ebola disease (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/ebola-disease", "country": "INT"},
-    {"id": "who-nipah", "org": "WHO", "title": "Nipah virus (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/nipah-virus", "country": "INT"},
-    {"id": "who-avian", "org": "WHO", "title": "Influenza (avian and other zoonotic) (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(avian-and-other-zoonotic)", "country": "INT"},
-    {"id": "cdc-h5", "org": "CDC", "title": "A(H5) Bird Flu: Current Situation", "url": "https://www.cdc.gov/bird-flu/situation-summary/index.html", "country": "US"},
-    {"id": "cidrap-h5n1-th", "org": "CIDRAP (University of Minnesota)", "title": "WHO confirms Thai avian flu death; Indonesia reports fatality", "url": "https://www.cidrap.umn.edu/cidrap/content/influenza/avianflu/news/aug0706thailand.html", "country": "US"},
-    {"id": "who-mpox", "org": "WHO", "title": "Mpox (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/mpox", "country": "INT"},
-    {"id": "who-cholera", "org": "WHO", "title": "Cholera (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/cholera", "country": "INT"},
-    {"id": "who-dengue", "org": "WHO", "title": "Dengue (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue", "country": "INT"},
-    {"id": "who-measles", "org": "WHO", "title": "Measles (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/measles", "country": "INT"},
-    {"id": "who-amr", "org": "WHO", "title": "Antimicrobial resistance (fact sheet)", "url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance", "country": "INT"},
-    {"id": "who-blueprint", "org": "WHO", "title": "Prioritizing diseases for research and development in emergency contexts", "url": "https://www.who.int/activities/prioritizing-diseases-for-research-and-development-in-emergency-contexts", "country": "INT"}
+    {
+      "id": "ready-pandemic",
+      "org": "Ready.gov (FEMA)",
+      "title": "Pandemics",
+      "url": "https://www.ready.gov/pandemic",
+      "country": "US"
+    },
+    {
+      "id": "cdc-handsan",
+      "org": "CDC",
+      "title": "Hand Sanitizer Guidelines and Recommendations",
+      "url": "https://www.cdc.gov/clean-hands/about/hand-sanitizer.html",
+      "country": "US"
+    },
+    {
+      "id": "cdc-bleach",
+      "org": "CDC",
+      "title": "Cleaning and Disinfecting with Bleach",
+      "url": "https://www.cdc.gov/hygiene/about/cleaning-and-disinfecting-with-bleach.html",
+      "country": "US"
+    },
+    {
+      "id": "who-disinfect",
+      "org": "WHO",
+      "title": "Coronavirus disease (COVID-19): Cleaning and disinfecting surfaces in non-health care settings",
+      "url": "https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-covid-19-cleaning-and-disinfecting-surfaces-in-non-health-care-settings",
+      "country": "INT"
+    },
+    {
+      "id": "cdc-resp-prevent",
+      "org": "CDC",
+      "title": "Preventing Respiratory Illnesses",
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/index.html",
+      "country": "US"
+    },
+    {
+      "id": "cdc-masks",
+      "org": "CDC",
+      "title": "Masks and Respiratory Viruses Prevention",
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/masks.html",
+      "country": "US"
+    },
+    {
+      "id": "cdc-air",
+      "org": "CDC",
+      "title": "Taking Steps for Cleaner Air for Respiratory Virus Prevention",
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/air-quality.html",
+      "country": "US"
+    },
+    {
+      "id": "cdc-sick",
+      "org": "CDC",
+      "title": "Preventing Spread of Respiratory Viruses When You're Sick",
+      "url": "https://www.cdc.gov/respiratory-viruses/prevention/precautions-when-sick.html",
+      "country": "US"
+    },
+    {
+      "id": "who-afro-home",
+      "org": "WHO Regional Office for Africa",
+      "title": "5 Steps for Managing patients with COVID-19 at home",
+      "url": "https://www.afro.who.int/sites/default/files/Covid-19/Techinical%20documents/5%20Steps%20for%20Managing%20patients%20with%20COVID-19%20at%20home%20ENG.pdf",
+      "country": "INT"
+    },
+    {
+      "id": "moph-atk-timeout",
+      "org": "กระทรวงสาธารณสุข (รายงานโดย Time Out Bangkok)",
+      "title": "อัปเดตแนวทางปฏิบัติ เมื่อผล ATK เป็นบวก",
+      "url": "https://www.timeout.com/bangkok/th/news/อัปเดตแนวทางปฏิบัติ-เมื่อผล-atk-เป็นบวก-011122",
+      "country": "TH"
+    },
+    {
+      "id": "nhs-paracetamol",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "How and when to take paracetamol for adults",
+      "url": "https://www.nhs.uk/medicines/paracetamol-for-adults/how-and-when-to-take-paracetamol-for-adults/",
+      "country": "UK"
+    },
+    {
+      "id": "thaipublica-beds",
+      "org": "ศบค./กระทรวงสาธารณสุข/สปสช. (รายงานโดย ThaiPublica)",
+      "title": "ผู้ติดเชื้อโควิด-19 ไม่มีเตียงมากกว่า 25,000 ราย ศบค.-สธ. ใช้แผน 'กักตัวที่บ้าน'",
+      "url": "https://thaipublica.org/2021/07/covid-19-2-07-2564/",
+      "country": "TH"
+    },
+    {
+      "id": "thaipbs-waitbed",
+      "org": "Thai PBS",
+      "title": "ติดโควิดทั้งบ้าน ผู้สูงอายุเสียชีวิตระหว่างรอเตียง เร่งช่วยอีก 2 คน",
+      "url": "https://www.thaipbs.or.th/news/content/303597",
+      "country": "TH"
+    },
+    {
+      "id": "thaipbs-alcohol",
+      "org": "Thai PBS",
+      "title": "ตื่น COVID-19 ลามถึงแอลกอฮอล์ฆ่าเชื้อ 70% ขาดตลาด",
+      "url": "https://www.thaipbs.or.th/news/content/289708",
+      "country": "TH"
+    },
+    {
+      "id": "fda-ivermectin-mgr",
+      "org": "สำนักงานคณะกรรมการอาหารและยา (รายงานโดย MGR Online)",
+      "title": "อย. ชี้แจงยาไอเวอร์เม็คตินยังไม่ได้รับการรับรองให้ใช้ป้องกันหรือรักษาโควิด-19",
+      "url": "https://mgronline.com/qol/detail/9640000063496",
+      "country": "TH"
+    },
+    {
+      "id": "nhso-flu-thaipbs",
+      "org": "สปสช./กรมควบคุมโรค (รายงานโดย Thai PBS)",
+      "title": "7 กลุ่มเสี่ยงฉีดวัคซีน \"ไข้หวัดใหญ่\" ฟรี 1 พ.ค.-31 ส.ค.นี้",
+      "url": "https://www.thaipbs.or.th/news/content/339516",
+      "country": "TH"
+    },
+    {
+      "id": "ddc-nipah-thansettakij",
+      "org": "กรมควบคุมโรค (รายงานโดย ฐานเศรษฐกิจ)",
+      "title": "กรมควบคุมโรคเฝ้าระวังสถานการณ์ไวรัสนิปาห์ ย้ำติดตามข้อมูลจากแหล่งที่เชื่อถือได้",
+      "url": "https://www.thansettakij.com/health-wellness/health/650743",
+      "country": "TH"
+    },
+    {
+      "id": "wiki-covid-th",
+      "org": "Wikipedia",
+      "title": "COVID-19 pandemic in Thailand",
+      "url": "https://en.wikipedia.org/wiki/COVID-19_pandemic_in_Thailand",
+      "country": "INT"
+    },
+    {
+      "id": "wiki-1918",
+      "org": "Wikipedia",
+      "title": "Spanish flu",
+      "url": "https://en.wikipedia.org/wiki/Spanish_flu",
+      "country": "INT"
+    },
+    {
+      "id": "wiki-sars",
+      "org": "Wikipedia",
+      "title": "2002–2004 SARS outbreak",
+      "url": "https://en.wikipedia.org/wiki/2002%E2%80%932004_SARS_outbreak",
+      "country": "INT"
+    },
+    {
+      "id": "wiki-mers-kr",
+      "org": "Wikipedia",
+      "title": "2015 MERS outbreak in South Korea",
+      "url": "https://en.wikipedia.org/wiki/2015_MERS_outbreak_in_South_Korea",
+      "country": "INT"
+    },
+    {
+      "id": "wiki-ebola",
+      "org": "Wikipedia",
+      "title": "Western African Ebola epidemic",
+      "url": "https://en.wikipedia.org/wiki/Western_African_Ebola_epidemic",
+      "country": "INT"
+    },
+    {
+      "id": "wiki-h1n1",
+      "org": "Wikipedia",
+      "title": "2009 swine flu pandemic",
+      "url": "https://en.wikipedia.org/wiki/2009_swine_flu_pandemic",
+      "country": "INT"
+    },
+    {
+      "id": "who-ebola",
+      "org": "WHO",
+      "title": "Ebola disease (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/ebola-disease",
+      "country": "INT"
+    },
+    {
+      "id": "who-nipah",
+      "org": "WHO",
+      "title": "Nipah virus (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/nipah-virus",
+      "country": "INT"
+    },
+    {
+      "id": "who-avian",
+      "org": "WHO",
+      "title": "Influenza (avian and other zoonotic) (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/influenza-(avian-and-other-zoonotic)",
+      "country": "INT"
+    },
+    {
+      "id": "cdc-h5",
+      "org": "CDC",
+      "title": "A(H5) Bird Flu: Current Situation",
+      "url": "https://www.cdc.gov/bird-flu/situation-summary/index.html",
+      "country": "US"
+    },
+    {
+      "id": "cidrap-h5n1-th",
+      "org": "CIDRAP (University of Minnesota)",
+      "title": "WHO confirms Thai avian flu death; Indonesia reports fatality",
+      "url": "https://www.cidrap.umn.edu/cidrap/content/influenza/avianflu/news/aug0706thailand.html",
+      "country": "US"
+    },
+    {
+      "id": "who-mpox",
+      "org": "WHO",
+      "title": "Mpox (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/mpox",
+      "country": "INT"
+    },
+    {
+      "id": "who-cholera",
+      "org": "WHO",
+      "title": "Cholera (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/cholera",
+      "country": "INT"
+    },
+    {
+      "id": "who-dengue",
+      "org": "WHO",
+      "title": "Dengue (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/dengue-and-severe-dengue",
+      "country": "INT"
+    },
+    {
+      "id": "who-measles",
+      "org": "WHO",
+      "title": "Measles (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/measles",
+      "country": "INT"
+    },
+    {
+      "id": "who-amr",
+      "org": "WHO",
+      "title": "Antimicrobial resistance (fact sheet)",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance",
+      "country": "INT"
+    },
+    {
+      "id": "who-blueprint",
+      "org": "WHO",
+      "title": "Prioritizing diseases for research and development in emergency contexts",
+      "url": "https://www.who.int/activities/prioritizing-diseases-for-research-and-development-in-emergency-contexts",
+      "country": "INT"
+    },
+    {
+      "id": "cdc-care-home",
+      "org": "US CDC (CDC Stacks)",
+      "title": "Caring for someone sick at home (COVID-19 guidance document)",
+      "url": "https://stacks.cdc.gov/view/cdc/96232/cdc_96232_DS1.pdf",
+      "country": "US"
+    }
   ],
   "phases": {
     "before": [
-      {"text": "ฉีดวัคซีนให้ครบทุกคนในบ้าน และฉีดไข้หวัดใหญ่ปีละครั้ง โดยเฉพาะกลุ่มเสี่ยง", "detail": "หญิงตั้งครรภ์ เด็กเล็ก ผู้สูงอายุ 65 ปีขึ้นไป ผู้มีโรคเรื้อรัง ภูมิคุ้มกันต่ำ และคนอ้วนมาก ฉีดไข้หวัดใหญ่ฟรีตามช่วงที่ สปสช. ประกาศ เช็กสมุดวัคซีนเด็กให้ครบ โดยเฉพาะหัด", "ctx": "all", "src": ["nhso-flu-thaipbs", "cdc-resp-prevent", "who-measles"]},
-      {"text": "สำรองอาหาร น้ำดื่ม และของใช้จำเป็นให้อยู่บ้านได้อย่างน้อย 2 สัปดาห์", "detail": "ซื้อเพิ่มทีละน้อยทุกครั้งที่ไปตลาด ไม่ต้องกว้านซื้อ เลือกของที่กินอยู่แล้วและเก็บได้นาน รวมนมผง อาหารเด็ก ผ้าอ้อม ผ้าอนามัย และอาหารสัตว์เลี้ยง", "ctx": "all", "src": ["ready-pandemic"]},
-      {"text": "ยาโรคประจำตัวต้องมีสำรองอย่างน้อย 1 เดือน อย่ารอให้หมดก่อนไปรับ", "detail": "ช่วงระบาดโรงพยาบาลอาจเลื่อนนัดหรือรับเฉพาะผู้ป่วยฉุกเฉิน ถามแพทย์เรื่องรับยาล่วงหน้า รับยาที่ร้านยาใกล้บ้าน หรือส่งยาทางไปรษณีย์ จดชื่อยาและขนาดไว้บนกระดาษ", "ctx": "all", "src": ["ready-pandemic"]},
-      {"text": "เตรียมชุดดูแลผู้ป่วยที่บ้าน: ปรอทวัดไข้ เครื่องวัดออกซิเจนปลายนิ้ว พาราเซตามอล ผงเกลือแร่", "detail": "ช่วงเดลตาปี 2564 ผู้ติดเชื้อจำนวนมากต้องรักษาตัวที่บ้านระหว่างรอเตียง ของพวกนี้ขาดตลาดเร็วเมื่อเกิดระบาด ซื้อไว้ก่อนและลองใช้ให้เป็น", "ctx": "all", "src": ["thaipublica-beds", "who-afro-home"]},
-      {"text": "มีหน้ากาก สบู่ เจลแอลกอฮอล์ และน้ำยาฟอกขาวติดบ้านไว้เสมอ", "detail": "มี.ค. 2563 แอลกอฮอล์ 70% และหน้ากากขาดตลาด ร้านยาต้องจำกัดคนละ 1 ขวดและหน้ากากคนละ 5 ชิ้น คนที่จำเป็นจริงอย่างผู้ป่วยเบาหวานและโรคไตหาซื้อไม่ได้", "ctx": "all", "src": ["thaipbs-alcohol"]},
-      {"text": "ลองใส่หน้ากาก N95 หรือ KF94 ให้แนบหน้า เลือกขนาดที่ไม่รั่วข้างแก้มและจมูก", "detail": "เอามือป้องขอบหน้ากากแล้วหายใจออก ถ้ารู้สึกลมรั่วให้ปรับสายหรือเปลี่ยนรุ่น หน้ากากกรองอนุภาคป้องกันได้ดีกว่าหน้ากากอนามัย และหน้ากากผ้าป้องกันได้น้อยที่สุด", "ctx": "all", "src": ["cdc-masks"]},
-      {"text": "ตกลงกันไว้ก่อน: ถ้ามีคนป่วย ใครดูแล ใช้ห้องไหน และใครดูแลแทนถ้าผู้ดูแลป่วย", "detail": "เลือกผู้ดูแลคนเดียวที่แข็งแรงและไม่ใช่กลุ่มเสี่ยง เลือกห้องที่เปิดหน้าต่างได้ ระบุญาติหรือเพื่อนบ้าน 2 คนเป็นตัวสำรอง จดตารางยาและอาหารของเด็ก ผู้สูงอายุ ผู้ป่วยติดเตียงไว้ให้คนอื่นทำแทนได้", "ctx": "all", "src": ["who-afro-home", "thaipublica-beds", "ready-pandemic"]},
-      {"text": "รู้ศัพท์: กักตัวคือคนที่สัมผัสเชื้อแต่ยังไม่ป่วย แยกตัวคือคนที่ป่วยหรือติดเชื้อแล้ว", "detail": "ผู้สัมผัสใกล้ชิดคือคนในบ้าน ผู้ดูแล หรือคนที่อยู่ใกล้ผู้ป่วยโดยไม่ป้องกัน ตามนิยามที่ทางการประกาศของโรคนั้น ชุดตรวจ ATK ผลลบครั้งเดียวยังไม่ตัดโรค มีอาการให้ตรวจซ้ำและทำตามคำสั่งเจ้าพนักงานควบคุมโรค", "ctx": "all", "src": ["moph-atk-timeout", "ready-pandemic"]},
-      {"text": "รู้สิทธิการรักษาของทุกคนในบ้าน และบันทึกสายด่วนลงกระดาษ", "detail": "บัตรทอง สปสช. 1330, ประกันสังคม 1506, กรมควบคุมโรค 1422, เจ็บป่วยฉุกเฉิน 1669, สุขภาพจิต 1323 ติดไว้ที่ตู้เย็นพร้อมเลขบัตรประชาชนและโรงพยาบาลตามสิทธิ", "ctx": "all", "src": []},
-      {"text": "เตรียมทำงานและเรียนจากบ้าน ลองใช้แอปพบแพทย์ทางไกลให้เป็นก่อน", "detail": "ถามที่ทำงานและโรงเรียนว่ามีแผนอย่างไร ตั้งค่าแอปธนาคารและการจ่ายเงินออนไลน์ให้ผู้สูงอายุ เก็บเงินสดไว้บ้างเผื่อระบบล่มหรือต้องจ่ายคนส่งของ", "ctx": "all", "src": ["ready-pandemic"]},
-      {"text": "ถามนิติฯ ถึงแผนโรคระบาด: ลิฟต์ จุดรับพัสดุ ระบบแอร์ส่วนกลาง และการกักตัวทั้งตึก", "detail": "ถ้าตึกถูกสั่งปิดหรือมีผู้ติดเชื้อจำนวนมาก ใครส่งอาหารและยาขึ้นห้อง ขยะติดเชื้อทิ้งที่ไหน ระบบแอร์ส่วนกลางเติมอากาศจากภายนอกหรือหมุนเวียนในตึก", "ctx": "condo", "src": []},
-      {"text": "รู้จัก อสม. และ รพ.สต. ใกล้บ้าน จดเบอร์ไว้ และวางแผนรถไปโรงพยาบาล", "detail": "บ้านไกลโรงพยาบาลต้องตัดสินใจเร็วกว่าคนเมือง รู้ว่าใครขับรถได้ตอนกลางคืน ใช้เวลาเดินทางเท่าไร อสม. คือคนแรกที่ช่วยประสานยา การตรวจ และการส่งต่อ", "ctx": "house", "src": []},
-      {"text": "เลี้ยงไก่ เป็ด หมู ให้มีคอกแยกจากตัวบ้าน และกันค้างคาวกับนกป่าเข้าถึงอาหารสัตว์", "detail": "ไข้หวัดนกติดจากการสัมผัสสัตว์ปีกป่วยหรือตาย ไวรัสนิปาห์มาจากค้างคาวผลไม้ผ่านหมูหรือผลไม้ที่ปนเปื้อน อย่าปลูกไม้ผลคลุมคอกหมู ล้างมือด้วยสบู่ทุกครั้งหลังจับสัตว์", "ctx": "house", "src": ["who-avian", "who-nipah"]},
-      {"text": "ปิดฝาโอ่งและภาชนะเก็บน้ำ คว่ำของที่ขังน้ำได้ทุกสัปดาห์ กันยุงลาย", "detail": "ไข้เลือดออกระบาดในไทยทุกปี ยุงลายกัดตอนกลางวันและวางไข่ในน้ำใสนิ่งรอบบ้าน ติดมุ้งลวด เก็บบ้านให้โปร่ง เก็บขยะที่ขังน้ำได้", "ctx": "house", "src": ["who-dengue"]}
+      {
+        "text": "ฉีดวัคซีนให้ครบทุกคนในบ้าน และฉีดไข้หวัดใหญ่ปีละครั้ง โดยเฉพาะกลุ่มเสี่ยง",
+        "detail": "หญิงตั้งครรภ์ เด็กเล็ก ผู้สูงอายุ 65 ปีขึ้นไป ผู้มีโรคเรื้อรัง ภูมิคุ้มกันต่ำ และคนอ้วนมาก ฉีดไข้หวัดใหญ่ฟรีตามช่วงที่ สปสช. ประกาศ เช็กสมุดวัคซีนเด็กให้ครบ โดยเฉพาะหัด",
+        "ctx": "all",
+        "src": [
+          "nhso-flu-thaipbs",
+          "cdc-resp-prevent",
+          "who-measles"
+        ]
+      },
+      {
+        "text": "สำรองอาหาร น้ำดื่ม และของใช้จำเป็นให้อยู่บ้านได้อย่างน้อย 2 สัปดาห์",
+        "detail": "ซื้อเพิ่มทีละน้อยทุกครั้งที่ไปตลาด ไม่ต้องกว้านซื้อ เลือกของที่กินอยู่แล้วและเก็บได้นาน รวมนมผง อาหารเด็ก ผ้าอ้อม ผ้าอนามัย และอาหารสัตว์เลี้ยง",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "ยาโรคประจำตัวต้องมีสำรองอย่างน้อย 1 เดือน อย่ารอให้หมดก่อนไปรับ",
+        "detail": "ช่วงระบาดโรงพยาบาลอาจเลื่อนนัดหรือรับเฉพาะผู้ป่วยฉุกเฉิน ถามแพทย์เรื่องรับยาล่วงหน้า รับยาที่ร้านยาใกล้บ้าน หรือส่งยาทางไปรษณีย์ จดชื่อยาและขนาดไว้บนกระดาษ",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "เตรียมชุดดูแลผู้ป่วยที่บ้าน: ปรอทวัดไข้ เครื่องวัดออกซิเจนปลายนิ้ว พาราเซตามอล ผงเกลือแร่",
+        "detail": "ช่วงเดลตาปี 2564 ผู้ติดเชื้อจำนวนมากต้องรักษาตัวที่บ้านระหว่างรอเตียง ของพวกนี้ขาดตลาดเร็วเมื่อเกิดระบาด ซื้อไว้ก่อนและลองใช้ให้เป็น",
+        "ctx": "all",
+        "src": [
+          "thaipublica-beds",
+          "who-afro-home"
+        ]
+      },
+      {
+        "text": "มีหน้ากาก สบู่ เจลแอลกอฮอล์ และน้ำยาฟอกขาวติดบ้านไว้เสมอ",
+        "detail": "มี.ค. 2563 แอลกอฮอล์ 70% และหน้ากากขาดตลาด ร้านยาต้องจำกัดคนละ 1 ขวดและหน้ากากคนละ 5 ชิ้น คนที่จำเป็นจริงอย่างผู้ป่วยเบาหวานและโรคไตหาซื้อไม่ได้",
+        "ctx": "all",
+        "src": [
+          "thaipbs-alcohol"
+        ]
+      },
+      {
+        "text": "ลองใส่หน้ากาก N95 หรือ KF94 ให้แนบหน้า เลือกขนาดที่ไม่รั่วข้างแก้มและจมูก",
+        "detail": "เอามือป้องขอบหน้ากากแล้วหายใจออก ถ้ารู้สึกลมรั่วให้ปรับสายหรือเปลี่ยนรุ่น หน้ากากกรองอนุภาคป้องกันได้ดีกว่าหน้ากากอนามัย และหน้ากากผ้าป้องกันได้น้อยที่สุด",
+        "ctx": "all",
+        "src": [
+          "cdc-masks"
+        ]
+      },
+      {
+        "text": "ตกลงกันไว้ก่อน: ถ้ามีคนป่วย ใครดูแล ใช้ห้องไหน และใครดูแลแทนถ้าผู้ดูแลป่วย",
+        "detail": "เลือกผู้ดูแลคนเดียวที่แข็งแรงและไม่ใช่กลุ่มเสี่ยง เลือกห้องที่เปิดหน้าต่างได้ ระบุญาติหรือเพื่อนบ้าน 2 คนเป็นตัวสำรอง จดตารางยาและอาหารของเด็ก ผู้สูงอายุ ผู้ป่วยติดเตียงไว้ให้คนอื่นทำแทนได้",
+        "ctx": "all",
+        "src": [
+          "who-afro-home",
+          "thaipublica-beds",
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "รู้ศัพท์: กักตัวคือคนที่สัมผัสเชื้อแต่ยังไม่ป่วย แยกตัวคือคนที่ป่วยหรือติดเชื้อแล้ว",
+        "detail": "ผู้สัมผัสใกล้ชิดคือคนในบ้าน ผู้ดูแล หรือคนที่อยู่ใกล้ผู้ป่วยโดยไม่ป้องกัน ตามนิยามที่ทางการประกาศของโรคนั้น ชุดตรวจ ATK ผลลบครั้งเดียวยังไม่ตัดโรค มีอาการให้ตรวจซ้ำและทำตามคำสั่งเจ้าพนักงานควบคุมโรค",
+        "ctx": "all",
+        "src": [
+          "moph-atk-timeout",
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "รู้สิทธิการรักษาของทุกคนในบ้าน และบันทึกสายด่วนลงกระดาษ",
+        "detail": "บัตรทอง สปสช. 1330, ประกันสังคม 1506, กรมควบคุมโรค 1422, เจ็บป่วยฉุกเฉิน 1669, สุขภาพจิต 1323 ติดไว้ที่ตู้เย็นพร้อมเลขบัตรประชาชนและโรงพยาบาลตามสิทธิ",
+        "ctx": "all",
+        "src": []
+      },
+      {
+        "text": "เตรียมทำงานและเรียนจากบ้าน ลองใช้แอปพบแพทย์ทางไกลให้เป็นก่อน",
+        "detail": "ถามที่ทำงานและโรงเรียนว่ามีแผนอย่างไร ตั้งค่าแอปธนาคารและการจ่ายเงินออนไลน์ให้ผู้สูงอายุ เก็บเงินสดไว้บ้างเผื่อระบบล่มหรือต้องจ่ายคนส่งของ",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "ถามนิติฯ ถึงแผนโรคระบาด: ลิฟต์ จุดรับพัสดุ ระบบแอร์ส่วนกลาง และการกักตัวทั้งตึก",
+        "detail": "ถ้าตึกถูกสั่งปิดหรือมีผู้ติดเชื้อจำนวนมาก ใครส่งอาหารและยาขึ้นห้อง ขยะติดเชื้อทิ้งที่ไหน ระบบแอร์ส่วนกลางเติมอากาศจากภายนอกหรือหมุนเวียนในตึก",
+        "ctx": "condo",
+        "src": []
+      },
+      {
+        "text": "รู้จัก อสม. และ รพ.สต. ใกล้บ้าน จดเบอร์ไว้ และวางแผนรถไปโรงพยาบาล",
+        "detail": "บ้านไกลโรงพยาบาลต้องตัดสินใจเร็วกว่าคนเมือง รู้ว่าใครขับรถได้ตอนกลางคืน ใช้เวลาเดินทางเท่าไร อสม. คือคนแรกที่ช่วยประสานยา การตรวจ และการส่งต่อ",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": []
+      },
+      {
+        "text": "เลี้ยงไก่ เป็ด หมู ให้มีคอกแยกจากตัวบ้าน และกันค้างคาวกับนกป่าเข้าถึงอาหารสัตว์",
+        "detail": "ไข้หวัดนกติดจากการสัมผัสสัตว์ปีกป่วยหรือตาย ไวรัสนิปาห์มาจากค้างคาวผลไม้ผ่านหมูหรือผลไม้ที่ปนเปื้อน อย่าปลูกไม้ผลคลุมคอกหมู ล้างมือด้วยสบู่ทุกครั้งหลังจับสัตว์",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": [
+          "who-avian",
+          "who-nipah"
+        ]
+      },
+      {
+        "text": "ปิดฝาโอ่งและภาชนะเก็บน้ำ คว่ำของที่ขังน้ำได้ทุกสัปดาห์ กันยุงลาย",
+        "detail": "ไข้เลือดออกระบาดในไทยทุกปี ยุงลายกัดตอนกลางวันและวางไข่ในน้ำใสนิ่งรอบบ้าน ติดมุ้งลวด เก็บบ้านให้โปร่ง เก็บขยะที่ขังน้ำได้",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": [
+          "who-dengue"
+        ]
+      },
+      {
+        "text": "วางแผนแยกผู้ป่วยไว้ชั้นเดียว: ห้องนอนกับห้องน้ำชั้นนั้นให้ผู้ป่วยใช้คนเดียว",
+        "detail": "CDC แนะให้ผู้ป่วยใช้ห้องนอนและห้องน้ำแยกถ้าทำได้ บ้านสองชั้นทำได้ง่ายกว่าบ้านชั้นเดียว คนอื่นย้ายไปนอนและใช้ห้องน้ำอีกชั้น เลือกชั้นที่ผู้ป่วยไม่ต้องเดินผ่านห้องนั่งเล่นหรือครัว",
+        "ctx": "town",
+        "src": [
+          "cdc-care-home"
+        ]
+      }
     ],
     "during": [
-      {"text": "ถามก่อนว่าโรคนี้ติดทางไหน: หายใจ สัมผัส น้ำและอาหาร ยุง สัตว์ หรือเลือดและสารคัดหลั่ง", "detail": "ฟังจากกรมควบคุมโรคแล้วตัดทางนั้นให้ขาด ถ้ายังไม่มีใครรู้ ให้ป้องกันแบบโรคทางเดินหายใจไว้ก่อน คือใส่หน้ากาก ระบายอากาศ ล้างมือ และเลี่ยงที่แออัด", "ctx": "all", "src": ["ready-pandemic", "who-blueprint"]},
-      {"text": "โรคติดทางหายใจ: ใส่หน้ากากให้แนบหน้าในที่ปิด ที่แออัด และเมื่ออยู่ใกล้คนป่วย", "detail": "ใช้ N95 หรือ KF94 เมื่อดูแลผู้ป่วย เข้าโรงพยาบาล หรืออยู่ในที่ปิดคนแน่น หน้ากากอนามัยใช้ได้ในงานทั่วไปและให้คนป่วยใส่ เปลี่ยนเมื่อชื้นหรือสกปรก", "ctx": "all", "src": ["cdc-masks", "who-afro-home"]},
-      {"text": "เปิดหน้าต่างและประตูให้ลมผ่าน เปิดพัดลมดูดอากาศ ทำกิจกรรมนอกอาคารถ้าทำได้", "detail": "เชื้อทางเดินหายใจสะสมในอากาศของห้องปิด ห้องแอร์ให้แง้มหน้าต่างเป็นระยะ เครื่องฟอกอากาศแบบ HEPA ช่วยลดเชื้อในอากาศได้ วางไว้ในห้องที่คนอยู่รวมกัน", "ctx": "all", "src": ["cdc-air"]},
-      {"text": "ล้างมือด้วยสบู่และน้ำอย่างน้อย 20 วินาที ไม่มีน้ำใช้เจลแอลกอฮอล์อย่างน้อย 60%", "detail": "ล้างเมื่อกลับถึงบ้าน ก่อนกินอาหาร หลังเข้าห้องน้ำ หลังดูแลผู้ป่วย เจลที่ขายในไทยมักเป็น 70% มือเปื้อนหรือโรคท้องร่วงต้องใช้สบู่กับน้ำ เพราะเจลฆ่าเชื้อบางชนิดไม่ได้", "ctx": "all", "src": ["ready-pandemic", "cdc-handsan"]},
-      {"text": "มีคนป่วย: แยกห้องนอนและห้องน้ำถ้าทำได้ ให้ผู้ดูแลมีคนเดียว และใส่หน้ากากทั้งคู่", "detail": "ถ้าแยกห้องไม่ได้ให้อยู่ห่างกันเกิน 1 เมตร เปิดหน้าต่าง แยกจานชามช้อนแก้ว ส่งอาหารโดยวางไว้หน้าห้อง คนอื่นในบ้านไม่เข้าห้องผู้ป่วย", "ctx": "all", "src": ["who-afro-home", "who-mpox"]},
-      {"text": "วัดไข้และออกซิเจนปลายนิ้ววันละ 3 ครั้ง จดไว้ ต่ำกว่า 94% ต้องไปโรงพยาบาล", "detail": "นั่งพัก มืออุ่น ไม่ทาเล็บ รอจนตัวเลขนิ่ง ต่ำกว่า 94% ให้ติดต่อโรงพยาบาลหรือ 1330 ทันที ต่ำกว่า 90% เป็นภาวะฉุกเฉิน โทร 1669 ผู้สูงอายุและผู้มีโรคประจำตัวต้องวัดสม่ำเสมอ", "ctx": "all", "src": ["who-afro-home", "moph-atk-timeout"]},
-      {"text": "มีไข้ให้ดื่มน้ำมาก พักผ่อน กินพาราเซตามอลตามฉลาก ไม่เกิน 4,000 มก. ต่อวัน", "detail": "ผู้ใหญ่ครั้งละ 500-1,000 มก. ห่างกันอย่างน้อย 4-6 ชั่วโมง นับรวมยาแก้หวัดสูตรผสมด้วย คนน้ำหนักไม่ถึง 50 กก. โรคตับ หรือเด็ก ให้ถามเภสัชกรเรื่องขนาดยาก่อน", "ctx": "all", "src": ["nhs-paracetamol", "who-afro-home"]},
-      {"text": "ท้องร่วงหรืออาเจียน: จิบน้ำเกลือแร่ ORS ทีละน้อยแต่บ่อย ตั้งแต่ถ่ายครั้งแรก", "detail": "อหิวาตกโรคทำให้เสียชีวิตได้ในไม่กี่ชั่วโมงจากการขาดน้ำ ผู้ป่วยส่วนใหญ่รักษาได้ด้วย ORS ถ้าถ่ายเป็นน้ำไม่หยุด ซึม ปัสสาวะน้อย หรือดื่มไม่ได้ ให้ไปโรงพยาบาลทันที", "ctx": "all", "src": ["who-cholera"]},
-      {"text": "เช็ดจุดที่มือจับบ่อยด้วยผงซักฟอกก่อน แล้วตามด้วยน้ำยาฟอกขาวเจือจาง", "detail": "น้ำยาฟอกขาว 5% จำนวน 1 ส่วนต่อน้ำ 49 ส่วน หรือราว 20 มล. (4 ช้อนชา) ต่อน้ำ 1 ลิตร ทิ้งให้เปียกอย่างน้อย 1 นาที ผสมใหม่ทุกวัน สวมถุงมือและเปิดหน้าต่าง", "ctx": "all", "src": ["who-disinfect", "cdc-bleach"]},
-      {"text": "ผ้า จานชาม และขยะของผู้ป่วย: แยกซัก แยกล้างด้วยน้ำยาล้างจาน มัดถุงขยะสองชั้น", "detail": "ใส่ถุงมือและหน้ากากตอนเก็บ อย่าสะบัดผ้า ล้างมือทันทีหลังถอดถุงมือ ทิชชูและหน้ากากใช้แล้วทิ้งลงถุงในห้องผู้ป่วย มัดปากให้แน่นก่อนนำออก", "ctx": "all", "src": ["who-afro-home"]},
-      {"text": "กันผู้สูงอายุ หญิงตั้งครรภ์ ทารก และผู้ภูมิคุ้มกันต่ำ ออกจากผู้ป่วยให้ไกลที่สุด", "detail": "กลุ่มนี้อาการหนักได้เร็ว ให้อยู่ห้องที่อากาศถ่ายเทดีที่สุด งดรับแขก คนที่ออกไปทำงานนอกบ้านใส่หน้ากากเมื่ออยู่ใกล้ และกินข้าวแยกวง", "ctx": "all", "src": ["who-afro-home", "cdc-resp-prevent"]},
-      {"text": "ใส่หน้ากากในลิฟต์และทางเดิน รอลิฟต์รอบถัดไปถ้าคนแน่น ล้างมือหลังกดปุ่ม", "detail": "ให้ส่งของแบบวางหน้าห้องหรือรับที่ล็อบบี้ช่วงคนน้อย เปิดหน้าต่างห้องให้อากาศนอกเข้า และเติมน้ำในท่อระบายน้ำพื้นห้องน้ำไม่ให้แห้ง กันอากาศจากท่อรวมย้อนเข้าห้อง", "ctx": "condo", "src": ["wiki-sars", "cdc-air"]},
-      {"text": "พบสัตว์ปีก หมู หรือสัตว์ป่วยตายผิดปกติ ห้ามจับ แจ้งปศุสัตว์ อสม. หรือโทร 1422", "detail": "กันเด็กออกห่าง อย่าชำแหละหรือนำมากิน ผู้ป่วยไข้หวัดนกรายหนึ่งในไทยเริ่มป่วยหลังฝังไก่ที่ตายในบ้านด้วยมือเปล่า มีไข้หลังสัมผัสสัตว์ให้บอกแพทย์ทันที", "ctx": "house", "src": ["who-avian", "cidrap-h5n1-th"]},
-      {"text": "โรคติดทางน้ำ: ต้มน้ำบ่อและน้ำฝนให้เดือดก่อนดื่ม กินอาหารสุกใหม่ ใช้ช้อนกลาง", "detail": "อหิวาตกโรคและโรคท้องร่วงติดจากน้ำและอาหารที่ปนเปื้อนอุจจาระ ล้างมือด้วยสบู่ก่อนทำอาหารและหลังเข้าส้วม ดูแลส้วมไม่ให้น้ำเสียไหลเข้าใกล้บ่อน้ำ", "ctx": "house", "src": ["who-cholera"]}
+      {
+        "text": "ถามก่อนว่าโรคนี้ติดทางไหน: หายใจ สัมผัส น้ำและอาหาร ยุง สัตว์ หรือเลือดและสารคัดหลั่ง",
+        "detail": "ฟังจากกรมควบคุมโรคแล้วตัดทางนั้นให้ขาด ถ้ายังไม่มีใครรู้ ให้ป้องกันแบบโรคทางเดินหายใจไว้ก่อน คือใส่หน้ากาก ระบายอากาศ ล้างมือ และเลี่ยงที่แออัด",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic",
+          "who-blueprint"
+        ]
+      },
+      {
+        "text": "โรคติดทางหายใจ: ใส่หน้ากากให้แนบหน้าในที่ปิด ที่แออัด และเมื่ออยู่ใกล้คนป่วย",
+        "detail": "ใช้ N95 หรือ KF94 เมื่อดูแลผู้ป่วย เข้าโรงพยาบาล หรืออยู่ในที่ปิดคนแน่น หน้ากากอนามัยใช้ได้ในงานทั่วไปและให้คนป่วยใส่ เปลี่ยนเมื่อชื้นหรือสกปรก",
+        "ctx": "all",
+        "src": [
+          "cdc-masks",
+          "who-afro-home"
+        ]
+      },
+      {
+        "text": "เปิดหน้าต่างและประตูให้ลมผ่าน เปิดพัดลมดูดอากาศ ทำกิจกรรมนอกอาคารถ้าทำได้",
+        "detail": "เชื้อทางเดินหายใจสะสมในอากาศของห้องปิด ห้องแอร์ให้แง้มหน้าต่างเป็นระยะ เครื่องฟอกอากาศแบบ HEPA ช่วยลดเชื้อในอากาศได้ วางไว้ในห้องที่คนอยู่รวมกัน",
+        "ctx": "all",
+        "src": [
+          "cdc-air"
+        ]
+      },
+      {
+        "text": "ล้างมือด้วยสบู่และน้ำอย่างน้อย 20 วินาที ไม่มีน้ำใช้เจลแอลกอฮอล์อย่างน้อย 60%",
+        "detail": "ล้างเมื่อกลับถึงบ้าน ก่อนกินอาหาร หลังเข้าห้องน้ำ หลังดูแลผู้ป่วย เจลที่ขายในไทยมักเป็น 70% มือเปื้อนหรือโรคท้องร่วงต้องใช้สบู่กับน้ำ เพราะเจลฆ่าเชื้อบางชนิดไม่ได้",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic",
+          "cdc-handsan"
+        ]
+      },
+      {
+        "text": "ส่งอาหารและยาโดยวางที่หัวบันไดหรือหน้าห้อง ผู้ดูแลคนเดียวเท่านั้นที่ขึ้นลง",
+        "detail": "ใส่หน้ากากทั้งคู่ ไม่สวนกันบนบันไดแคบ เปิดหน้าต่างห้องผู้ป่วยและปิดประตูห้องไว้ เช็ดราวบันได สวิตช์ไฟบันได และลูกบิด ด้วยน้ำยาฆ่าเชื้อเมื่อมีการใช้ร่วมกัน",
+        "ctx": "town",
+        "src": [
+          "cdc-care-home"
+        ]
+      },
+      {
+        "text": "ผู้ป่วยอยู่คนละชั้น: ให้มีมือถือหรือกริ่ง และนัดเวลาถามอาการวันละหลายครั้ง",
+        "detail": "อยู่คนละชั้นแล้วจะไม่มีใครเห็นถ้าอาการทรุด จดค่าไข้และออกซิเจนตามที่คู่มือแนะนำ ถ้าเหนื่อยจนลงบันไดเองไม่ไหว ให้โทร 1669 และบอกว่าผู้ป่วยอยู่ชั้นบน บันไดแคบ",
+        "ctx": "town",
+        "src": []
+      },
+      {
+        "text": "มีคนป่วย: แยกห้องนอนและห้องน้ำถ้าทำได้ ให้ผู้ดูแลมีคนเดียว และใส่หน้ากากทั้งคู่",
+        "detail": "ถ้าแยกห้องไม่ได้ให้อยู่ห่างกันเกิน 1 เมตร เปิดหน้าต่าง แยกจานชามช้อนแก้ว ส่งอาหารโดยวางไว้หน้าห้อง คนอื่นในบ้านไม่เข้าห้องผู้ป่วย",
+        "ctx": "all",
+        "src": [
+          "who-afro-home",
+          "who-mpox"
+        ]
+      },
+      {
+        "text": "วัดไข้และออกซิเจนปลายนิ้ววันละ 3 ครั้ง จดไว้ ต่ำกว่า 94% ต้องไปโรงพยาบาล",
+        "detail": "นั่งพัก มืออุ่น ไม่ทาเล็บ รอจนตัวเลขนิ่ง ต่ำกว่า 94% ให้ติดต่อโรงพยาบาลหรือ 1330 ทันที ต่ำกว่า 90% เป็นภาวะฉุกเฉิน โทร 1669 ผู้สูงอายุและผู้มีโรคประจำตัวต้องวัดสม่ำเสมอ",
+        "ctx": "all",
+        "src": [
+          "who-afro-home",
+          "moph-atk-timeout"
+        ]
+      },
+      {
+        "text": "มีไข้ให้ดื่มน้ำมาก พักผ่อน กินพาราเซตามอลตามฉลาก ไม่เกิน 4,000 มก. ต่อวัน",
+        "detail": "ผู้ใหญ่ครั้งละ 500-1,000 มก. ห่างกันอย่างน้อย 4-6 ชั่วโมง นับรวมยาแก้หวัดสูตรผสมด้วย คนน้ำหนักไม่ถึง 50 กก. โรคตับ หรือเด็ก ให้ถามเภสัชกรเรื่องขนาดยาก่อน",
+        "ctx": "all",
+        "src": [
+          "nhs-paracetamol",
+          "who-afro-home"
+        ]
+      },
+      {
+        "text": "ท้องร่วงหรืออาเจียน: จิบน้ำเกลือแร่ ORS ทีละน้อยแต่บ่อย ตั้งแต่ถ่ายครั้งแรก",
+        "detail": "อหิวาตกโรคทำให้เสียชีวิตได้ในไม่กี่ชั่วโมงจากการขาดน้ำ ผู้ป่วยส่วนใหญ่รักษาได้ด้วย ORS ถ้าถ่ายเป็นน้ำไม่หยุด ซึม ปัสสาวะน้อย หรือดื่มไม่ได้ ให้ไปโรงพยาบาลทันที",
+        "ctx": "all",
+        "src": [
+          "who-cholera"
+        ]
+      },
+      {
+        "text": "เช็ดจุดที่มือจับบ่อยด้วยผงซักฟอกก่อน แล้วตามด้วยน้ำยาฟอกขาวเจือจาง",
+        "detail": "น้ำยาฟอกขาว 5% จำนวน 1 ส่วนต่อน้ำ 49 ส่วน หรือราว 20 มล. (4 ช้อนชา) ต่อน้ำ 1 ลิตร ทิ้งให้เปียกอย่างน้อย 1 นาที ผสมใหม่ทุกวัน สวมถุงมือและเปิดหน้าต่าง",
+        "ctx": "all",
+        "src": [
+          "who-disinfect",
+          "cdc-bleach"
+        ]
+      },
+      {
+        "text": "ผ้า จานชาม และขยะของผู้ป่วย: แยกซัก แยกล้างด้วยน้ำยาล้างจาน มัดถุงขยะสองชั้น",
+        "detail": "ใส่ถุงมือและหน้ากากตอนเก็บ อย่าสะบัดผ้า ล้างมือทันทีหลังถอดถุงมือ ทิชชูและหน้ากากใช้แล้วทิ้งลงถุงในห้องผู้ป่วย มัดปากให้แน่นก่อนนำออก",
+        "ctx": "all",
+        "src": [
+          "who-afro-home"
+        ]
+      },
+      {
+        "text": "กันผู้สูงอายุ หญิงตั้งครรภ์ ทารก และผู้ภูมิคุ้มกันต่ำ ออกจากผู้ป่วยให้ไกลที่สุด",
+        "detail": "กลุ่มนี้อาการหนักได้เร็ว ให้อยู่ห้องที่อากาศถ่ายเทดีที่สุด งดรับแขก คนที่ออกไปทำงานนอกบ้านใส่หน้ากากเมื่ออยู่ใกล้ และกินข้าวแยกวง",
+        "ctx": "all",
+        "src": [
+          "who-afro-home",
+          "cdc-resp-prevent"
+        ]
+      },
+      {
+        "text": "ใส่หน้ากากในลิฟต์และทางเดิน รอลิฟต์รอบถัดไปถ้าคนแน่น ล้างมือหลังกดปุ่ม",
+        "detail": "ให้ส่งของแบบวางหน้าห้องหรือรับที่ล็อบบี้ช่วงคนน้อย เปิดหน้าต่างห้องให้อากาศนอกเข้า และเติมน้ำในท่อระบายน้ำพื้นห้องน้ำไม่ให้แห้ง กันอากาศจากท่อรวมย้อนเข้าห้อง",
+        "ctx": "condo",
+        "src": [
+          "wiki-sars",
+          "cdc-air"
+        ]
+      },
+      {
+        "text": "พบสัตว์ปีก หมู หรือสัตว์ป่วยตายผิดปกติ ห้ามจับ แจ้งปศุสัตว์ อสม. หรือโทร 1422",
+        "detail": "กันเด็กออกห่าง อย่าชำแหละหรือนำมากิน ผู้ป่วยไข้หวัดนกรายหนึ่งในไทยเริ่มป่วยหลังฝังไก่ที่ตายในบ้านด้วยมือเปล่า มีไข้หลังสัมผัสสัตว์ให้บอกแพทย์ทันที",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": [
+          "who-avian",
+          "cidrap-h5n1-th"
+        ]
+      },
+      {
+        "text": "โรคติดทางน้ำ: ต้มน้ำบ่อและน้ำฝนให้เดือดก่อนดื่ม กินอาหารสุกใหม่ ใช้ช้อนกลาง",
+        "detail": "อหิวาตกโรคและโรคท้องร่วงติดจากน้ำและอาหารที่ปนเปื้อนอุจจาระ ล้างมือด้วยสบู่ก่อนทำอาหารและหลังเข้าส้วม ดูแลส้วมไม่ให้น้ำเสียไหลเข้าใกล้บ่อน้ำ",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": [
+          "who-cholera"
+        ]
+      }
     ],
     "after": [
-      {"text": "หายป่วยแล้วยังแพร่เชื้อได้ ออกจากการแยกตัวตามเกณฑ์ที่ทางการกำหนดสำหรับโรคนั้น", "detail": "แต่ละโรคใช้เวลาไม่เท่ากัน สำหรับไข้หวัดทั่วไป CDC ให้รอจนอาการดีขึ้นและไม่มีไข้โดยไม่ใช้ยาลดไข้ครบ 24 ชั่วโมง แล้วใส่หน้ากากและเลี่ยงกลุ่มเสี่ยงต่ออีก 5 วัน", "ctx": "all", "src": ["cdc-sick"]},
-      {"text": "ทำความสะอาดห้องผู้ป่วย: เปิดหน้าต่าง ซักผ้าปูที่นอน เช็ดพื้นผิวด้วยน้ำยาฟอกขาวเจือจาง", "detail": "เช็ดด้วยผงซักฟอกก่อนแล้วจึงฆ่าเชื้อ เน้นลูกบิด สวิตช์ รีโมต ก๊อกน้ำ ชักโครก สวมถุงมือ ไม่ต้องพ่นหมอกยาฆ่าเชื้อทั้งห้อง", "ctx": "all", "src": ["who-disinfect", "cdc-bleach"]},
-      {"text": "อาการไม่หายขาดหลายสัปดาห์ เช่น เหนื่อยง่าย ไอ ใจสั่น หลงลืม ให้ไปพบแพทย์", "detail": "อาการที่ค้างอยู่นานหลังติดเชื้อเป็นเรื่องที่พบได้ และแพทย์ต้องแยกจากโรคอื่น อย่าซื้อยาหรืออาหารเสริมมากินเอง จดอาการและวันที่เริ่มเป็นไปให้แพทย์ดู", "ctx": "all", "src": []},
-      {"text": "กลับไปตามนัดที่เลื่อนไว้: โรคเรื้อรัง ฝากครรภ์ ทำฟัน ตรวจคัดกรอง และวัคซีนเด็ก", "detail": "หลังระบาดใหญ่ เด็กจำนวนมากตกวัคซีนและโรคเก่าอย่างหัดกลับมา หัดติดง่ายมาก เชื้อลอยค้างในอากาศได้ถึง 2 ชั่วโมง ป้องกันด้วยวัคซีน 2 เข็ม", "ctx": "all", "src": ["who-measles"]},
-      {"text": "อย่าเลิกป้องกันเร็วเกินไป โรคระบาดมักกลับมาเป็นระลอก", "detail": "ไข้หวัดใหญ่ปี 1918 ระลอกสองรุนแรงกว่าระลอกแรกมาก และเมืองที่ยกเลิกการห้ามชุมนุมแล้วบางแห่งกลับมาระบาดซ้ำ ฟังประกาศกรมควบคุมโรคก่อนผ่อนมาตรการในบ้าน", "ctx": "all", "src": ["wiki-1918"]},
-      {"text": "ดูใจคนในบ้าน นอนไม่หลับ เศร้า กังวลนานเกิน 2 สัปดาห์ ให้ปรึกษา 1323", "detail": "การสูญเสีย ตกงาน และการถูกกักตัวนานส่งผลต่อจิตใจ เด็กอาจแสดงออกเป็นงอแง ฝันร้าย หรือติดพ่อแม่ กลับมาทำกิจวัตรและพบปะคนอย่างค่อยเป็นค่อยไป", "ctx": "all", "src": []},
-      {"text": "เติมของที่ใช้ไป เช็กวันหมดอายุของยา หน้ากาก เจล และน้ำยาฟอกขาว", "detail": "จดว่าครั้งนี้อะไรหมดก่อน อะไรซื้อไม่ได้ แล้วปรับรายการสำรอง ซื้อตอนของกลับมาเต็มชั้น ไม่ใช่ตอนมีข่าวระบาดรอบใหม่", "ctx": "all", "src": ["ready-pandemic"]},
-      {"text": "ทบทวนแผนของบ้าน: ห้องแยก ผู้ดูแลสำรอง การทำงาน การเรียน และเงินสำรอง", "detail": "คุยกันว่าอะไรได้ผล อะไรติดขัด ปรับแผนและบอกทุกคนในบ้าน รวมถึงญาติที่ต้องพึ่งพากัน", "ctx": "all", "src": ["ready-pandemic"]},
-      {"text": "ไม่รังเกียจคนที่หายป่วยหรือครอบครัวผู้ป่วย เมื่อพ้นระยะแพร่เชื้อแล้วอยู่ร่วมกันได้ตามปกติ", "detail": "การตีตราทำให้คนปิดบังอาการและไม่ยอมตรวจ ซึ่งทำให้โรคแพร่มากขึ้น ช่วยส่งอาหารและถามไถ่เพื่อนบ้านที่ยังแยกตัวอยู่", "ctx": "all", "src": []},
-      {"text": "ถามนิติฯ ว่าทำความสะอาดลิฟต์ ราวบันได และล้างระบบแอร์ส่วนกลางแล้วหรือยัง", "detail": "ถ้าตึกเคยมีผู้ติดเชื้อจำนวนมาก ให้ตรวจการระบายอากาศของทางเดินและท่อระบายน้ำด้วย เสนอให้ตึกเขียนแผนโรคระบาดไว้ใช้ครั้งหน้า", "ctx": "condo", "src": []},
-      {"text": "ผู้สูงอายุและผู้ป่วยติดเตียงที่ขาดการติดตาม ให้แจ้ง อสม. หรือ รพ.สต. มาเยี่ยมบ้าน", "detail": "ตรวจความดัน น้ำตาล แผลกดทับ และยาที่ขาดช่วง ล้างคอกสัตว์ เก็บภาชนะขังน้ำรอบบ้านที่ถูกปล่อยทิ้งช่วงกักตัว", "ctx": "house", "src": []}
+      {
+        "text": "หายป่วยแล้วยังแพร่เชื้อได้ ออกจากการแยกตัวตามเกณฑ์ที่ทางการกำหนดสำหรับโรคนั้น",
+        "detail": "แต่ละโรคใช้เวลาไม่เท่ากัน สำหรับไข้หวัดทั่วไป CDC ให้รอจนอาการดีขึ้นและไม่มีไข้โดยไม่ใช้ยาลดไข้ครบ 24 ชั่วโมง แล้วใส่หน้ากากและเลี่ยงกลุ่มเสี่ยงต่ออีก 5 วัน",
+        "ctx": "all",
+        "src": [
+          "cdc-sick"
+        ]
+      },
+      {
+        "text": "ทำความสะอาดห้องผู้ป่วย: เปิดหน้าต่าง ซักผ้าปูที่นอน เช็ดพื้นผิวด้วยน้ำยาฟอกขาวเจือจาง",
+        "detail": "เช็ดด้วยผงซักฟอกก่อนแล้วจึงฆ่าเชื้อ เน้นลูกบิด สวิตช์ รีโมต ก๊อกน้ำ ชักโครก สวมถุงมือ ไม่ต้องพ่นหมอกยาฆ่าเชื้อทั้งห้อง",
+        "ctx": "all",
+        "src": [
+          "who-disinfect",
+          "cdc-bleach"
+        ]
+      },
+      {
+        "text": "อาการไม่หายขาดหลายสัปดาห์ เช่น เหนื่อยง่าย ไอ ใจสั่น หลงลืม ให้ไปพบแพทย์",
+        "detail": "อาการที่ค้างอยู่นานหลังติดเชื้อเป็นเรื่องที่พบได้ และแพทย์ต้องแยกจากโรคอื่น อย่าซื้อยาหรืออาหารเสริมมากินเอง จดอาการและวันที่เริ่มเป็นไปให้แพทย์ดู",
+        "ctx": "all",
+        "src": []
+      },
+      {
+        "text": "กลับไปตามนัดที่เลื่อนไว้: โรคเรื้อรัง ฝากครรภ์ ทำฟัน ตรวจคัดกรอง และวัคซีนเด็ก",
+        "detail": "หลังระบาดใหญ่ เด็กจำนวนมากตกวัคซีนและโรคเก่าอย่างหัดกลับมา หัดติดง่ายมาก เชื้อลอยค้างในอากาศได้ถึง 2 ชั่วโมง ป้องกันด้วยวัคซีน 2 เข็ม",
+        "ctx": "all",
+        "src": [
+          "who-measles"
+        ]
+      },
+      {
+        "text": "อย่าเลิกป้องกันเร็วเกินไป โรคระบาดมักกลับมาเป็นระลอก",
+        "detail": "ไข้หวัดใหญ่ปี 1918 ระลอกสองรุนแรงกว่าระลอกแรกมาก และเมืองที่ยกเลิกการห้ามชุมนุมแล้วบางแห่งกลับมาระบาดซ้ำ ฟังประกาศกรมควบคุมโรคก่อนผ่อนมาตรการในบ้าน",
+        "ctx": "all",
+        "src": [
+          "wiki-1918"
+        ]
+      },
+      {
+        "text": "ดูใจคนในบ้าน นอนไม่หลับ เศร้า กังวลนานเกิน 2 สัปดาห์ ให้ปรึกษา 1323",
+        "detail": "การสูญเสีย ตกงาน และการถูกกักตัวนานส่งผลต่อจิตใจ เด็กอาจแสดงออกเป็นงอแง ฝันร้าย หรือติดพ่อแม่ กลับมาทำกิจวัตรและพบปะคนอย่างค่อยเป็นค่อยไป",
+        "ctx": "all",
+        "src": []
+      },
+      {
+        "text": "เติมของที่ใช้ไป เช็กวันหมดอายุของยา หน้ากาก เจล และน้ำยาฟอกขาว",
+        "detail": "จดว่าครั้งนี้อะไรหมดก่อน อะไรซื้อไม่ได้ แล้วปรับรายการสำรอง ซื้อตอนของกลับมาเต็มชั้น ไม่ใช่ตอนมีข่าวระบาดรอบใหม่",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "ทบทวนแผนของบ้าน: ห้องแยก ผู้ดูแลสำรอง การทำงาน การเรียน และเงินสำรอง",
+        "detail": "คุยกันว่าอะไรได้ผล อะไรติดขัด ปรับแผนและบอกทุกคนในบ้าน รวมถึงญาติที่ต้องพึ่งพากัน",
+        "ctx": "all",
+        "src": [
+          "ready-pandemic"
+        ]
+      },
+      {
+        "text": "ไม่รังเกียจคนที่หายป่วยหรือครอบครัวผู้ป่วย เมื่อพ้นระยะแพร่เชื้อแล้วอยู่ร่วมกันได้ตามปกติ",
+        "detail": "การตีตราทำให้คนปิดบังอาการและไม่ยอมตรวจ ซึ่งทำให้โรคแพร่มากขึ้น ช่วยส่งอาหารและถามไถ่เพื่อนบ้านที่ยังแยกตัวอยู่",
+        "ctx": "all",
+        "src": []
+      },
+      {
+        "text": "ถามนิติฯ ว่าทำความสะอาดลิฟต์ ราวบันได และล้างระบบแอร์ส่วนกลางแล้วหรือยัง",
+        "detail": "ถ้าตึกเคยมีผู้ติดเชื้อจำนวนมาก ให้ตรวจการระบายอากาศของทางเดินและท่อระบายน้ำด้วย เสนอให้ตึกเขียนแผนโรคระบาดไว้ใช้ครั้งหน้า",
+        "ctx": "condo",
+        "src": []
+      },
+      {
+        "text": "ผู้สูงอายุและผู้ป่วยติดเตียงที่ขาดการติดตาม ให้แจ้ง อสม. หรือ รพ.สต. มาเยี่ยมบ้าน",
+        "detail": "ตรวจความดัน น้ำตาล แผลกดทับ และยาที่ขาดช่วง ล้างคอกสัตว์ เก็บภาชนะขังน้ำรอบบ้านที่ถูกปล่อยทิ้งช่วงกักตัว",
+        "ctx": [
+          "house",
+          "town"
+        ],
+        "src": []
+      }
     ]
   },
   "decide": {
@@ -107,50 +633,300 @@
     ]
   },
   "dont": [
-    {"text": "ห้ามกินยาปฏิชีวนะ ยาต้านไวรัส หรือสเตียรอยด์เอง โดยแพทย์ไม่ได้สั่ง", "detail": "ยาปฏิชีวนะฆ่าไวรัสไม่ได้ การใช้ผิดทำให้เชื้อดื้อยา ซึ่งเกี่ยวข้องกับการเสียชีวิตหลายล้านคนต่อปีทั่วโลก อย่าใช้ยาเหลือของคนอื่น", "src": ["who-amr"]},
-    {"text": "ห้ามใช้ยาหรือสมุนไพรที่อ้างว่ารักษาหรือป้องกันโรคระบาดได้ ถ้าทางการยังไม่รับรอง", "detail": "ปี 2564 อย. เตือนว่ายาฆ่าพยาธิไอเวอร์เม็คตินไม่ได้รับรองให้ใช้กับโควิด-19 และขนาดสูงทำให้ความดันตก ชัก หรือโคม่าได้ สมุนไพรไม่ใช่สิ่งทดแทนการพบแพทย์", "src": ["fda-ivermectin-mgr"]},
-    {"text": "ห้ามผสมน้ำยาฟอกขาวกับน้ำยาล้างห้องน้ำ แอมโมเนีย หรือน้ำยาอื่นใด", "detail": "เกิดก๊าซพิษที่ทำให้ปอดอักเสบและเสียชีวิตได้ ใช้ทีละอย่าง ผสมกับน้ำเปล่าอุณหภูมิห้องเท่านั้น และเปิดหน้าต่างทุกครั้ง", "src": ["cdc-bleach", "who-disinfect"]},
-    {"text": "ห้ามพ่นหรือฉีดน้ำยาฆ่าเชื้อใส่ตัวคน และห้ามดื่มหรือสูดดมน้ำยาฆ่าเชื้อ", "detail": "WHO ไม่แนะนำในทุกกรณี ไม่ฆ่าเชื้อที่อยู่ในร่างกาย แต่ระคายเคืองตา ผิวหนัง และทางเดินหายใจ น้ำยาฆ่าเชื้อมีไว้ใช้กับพื้นผิวเท่านั้น", "src": ["who-disinfect"]},
-    {"text": "ไข้สูงในพื้นที่ที่มีไข้เลือดออก ห้ามกินแอสไพริน ไอบูโพรเฟน หรือยากลุ่มเอ็นเสด", "detail": "ยากลุ่มนี้เพิ่มความเสี่ยงเลือดออก ใช้พาราเซตามอลแทน ถ้าไข้สูงเกิน 2 วันโดยไม่มีน้ำมูกหรือไอ ให้ไปตรวจ", "src": ["who-dengue"]},
-    {"text": "ห้ามไปเยี่ยมผู้สูงอายุ ทารก หรือผู้ป่วยในโรงพยาบาล ขณะที่ตัวเองมีไข้ ไอ หรือท้องร่วง", "detail": "เมอร์สในเกาหลีใต้แพร่ในโรงพยาบาลเป็นหลัก ทั้งระหว่างผู้ป่วยและผู้มาเยี่ยม โทรหรือวิดีโอคอลแทน", "src": ["wiki-mers-kr", "cdc-sick"]},
-    {"text": "ห้ามจับ ชำแหละ หรือกินสัตว์ปีกและหมูที่ป่วยตาย และห้ามจับค้างคาวด้วยมือเปล่า", "detail": "ไม่กินผลไม้ที่มีรอยสัตว์กัดแทะ ล้างและปอกเปลือกผลไม้ ไม่ดื่มน้ำตาลสดดิบที่รองไว้ข้ามคืนโดยไม่ปิด ปรุงเนื้อสัตว์และไข่ให้สุก ไม่ดื่มนมดิบ", "src": ["who-avian", "who-nipah", "cdc-h5"]},
-    {"text": "ห้ามแชร์ข่าวโรคระบาดที่ยังไม่ได้ตรวจกับกรมควบคุมโรค WHO หรือศูนย์ต่อต้านข่าวปลอม", "detail": "ข่าวลือเรื่องยา วิธีรักษา หรือการปิดเมืองทำให้คนแห่ซื้อของและรักษาผิดวิธี ไม่แน่ใจให้โทรถาม 1422", "src": ["ddc-nipah-thansettakij", "ready-pandemic"]},
-    {"text": "ห้ามกักตุนหน้ากาก ยา แอลกอฮอล์ และอาหารเกินที่บ้านต้องใช้", "detail": "ของขาดตลาดทำให้ผู้ป่วย ผู้สูงอายุ และบุคลากรแพทย์ไม่มีใช้ ซึ่งทำให้โรคระบาดยืดเยื้อกว่าเดิม ทยอยซื้อไว้ตั้งแต่ก่อนเกิดเหตุ", "src": ["thaipbs-alcohol", "ready-pandemic"]},
-    {"text": "ห้ามปิดบังอาการ ประวัติเดินทาง หรือประวัติสัมผัสผู้ป่วยกับแพทย์และเจ้าหน้าที่", "detail": "การปิดบังทำให้วินิจฉัยช้าและบุคลากรแพทย์ติดเชื้อ การฝ่าฝืนคำสั่งกักตัวตามกฎหมายโรคติดต่อมีโทษ และทำให้เชื้อข้ามพื้นที่", "src": ["wiki-mers-kr"]},
-    {"text": "ห้ามอาบน้ำศพหรือสัมผัสศพผู้เสียชีวิตจากโรคติดต่ออันตรายด้วยตัวเอง", "detail": "อีโบลาในแอฟริกาตะวันตกแพร่จากพิธีศพที่มีการล้างและสัมผัสร่างเป็นจำนวนมาก ให้เจ้าหน้าที่จัดการตามขั้นตอน", "src": ["wiki-ebola", "who-ebola"]},
-    {"text": "ห้ามไปแออัดที่โรงพยาบาลเมื่ออาการน้อยและทางการให้โทรสายด่วนก่อน", "detail": "ห้องฉุกเฉินที่แน่นทำให้คนอาการหนักเข้าไม่ถึงเตียง และตัวเองเสี่ยงรับเชื้อเพิ่ม แต่ถ้ามีสัญญาณอันตราย ให้ไปทันทีโดยไม่ต้องรอสาย", "src": ["thaipbs-waitbed", "thaipublica-beds"]}
+    {
+      "text": "ห้ามกินยาปฏิชีวนะ ยาต้านไวรัส หรือสเตียรอยด์เอง โดยแพทย์ไม่ได้สั่ง",
+      "detail": "ยาปฏิชีวนะฆ่าไวรัสไม่ได้ การใช้ผิดทำให้เชื้อดื้อยา ซึ่งเกี่ยวข้องกับการเสียชีวิตหลายล้านคนต่อปีทั่วโลก อย่าใช้ยาเหลือของคนอื่น",
+      "src": [
+        "who-amr"
+      ]
+    },
+    {
+      "text": "ห้ามใช้ยาหรือสมุนไพรที่อ้างว่ารักษาหรือป้องกันโรคระบาดได้ ถ้าทางการยังไม่รับรอง",
+      "detail": "ปี 2564 อย. เตือนว่ายาฆ่าพยาธิไอเวอร์เม็คตินไม่ได้รับรองให้ใช้กับโควิด-19 และขนาดสูงทำให้ความดันตก ชัก หรือโคม่าได้ สมุนไพรไม่ใช่สิ่งทดแทนการพบแพทย์",
+      "src": [
+        "fda-ivermectin-mgr"
+      ]
+    },
+    {
+      "text": "ห้ามผสมน้ำยาฟอกขาวกับน้ำยาล้างห้องน้ำ แอมโมเนีย หรือน้ำยาอื่นใด",
+      "detail": "เกิดก๊าซพิษที่ทำให้ปอดอักเสบและเสียชีวิตได้ ใช้ทีละอย่าง ผสมกับน้ำเปล่าอุณหภูมิห้องเท่านั้น และเปิดหน้าต่างทุกครั้ง",
+      "src": [
+        "cdc-bleach",
+        "who-disinfect"
+      ]
+    },
+    {
+      "text": "ห้ามพ่นหรือฉีดน้ำยาฆ่าเชื้อใส่ตัวคน และห้ามดื่มหรือสูดดมน้ำยาฆ่าเชื้อ",
+      "detail": "WHO ไม่แนะนำในทุกกรณี ไม่ฆ่าเชื้อที่อยู่ในร่างกาย แต่ระคายเคืองตา ผิวหนัง และทางเดินหายใจ น้ำยาฆ่าเชื้อมีไว้ใช้กับพื้นผิวเท่านั้น",
+      "src": [
+        "who-disinfect"
+      ]
+    },
+    {
+      "text": "ไข้สูงในพื้นที่ที่มีไข้เลือดออก ห้ามกินแอสไพริน ไอบูโพรเฟน หรือยากลุ่มเอ็นเสด",
+      "detail": "ยากลุ่มนี้เพิ่มความเสี่ยงเลือดออก ใช้พาราเซตามอลแทน ถ้าไข้สูงเกิน 2 วันโดยไม่มีน้ำมูกหรือไอ ให้ไปตรวจ",
+      "src": [
+        "who-dengue"
+      ]
+    },
+    {
+      "text": "ห้ามไปเยี่ยมผู้สูงอายุ ทารก หรือผู้ป่วยในโรงพยาบาล ขณะที่ตัวเองมีไข้ ไอ หรือท้องร่วง",
+      "detail": "เมอร์สในเกาหลีใต้แพร่ในโรงพยาบาลเป็นหลัก ทั้งระหว่างผู้ป่วยและผู้มาเยี่ยม โทรหรือวิดีโอคอลแทน",
+      "src": [
+        "wiki-mers-kr",
+        "cdc-sick"
+      ]
+    },
+    {
+      "text": "ห้ามจับ ชำแหละ หรือกินสัตว์ปีกและหมูที่ป่วยตาย และห้ามจับค้างคาวด้วยมือเปล่า",
+      "detail": "ไม่กินผลไม้ที่มีรอยสัตว์กัดแทะ ล้างและปอกเปลือกผลไม้ ไม่ดื่มน้ำตาลสดดิบที่รองไว้ข้ามคืนโดยไม่ปิด ปรุงเนื้อสัตว์และไข่ให้สุก ไม่ดื่มนมดิบ",
+      "src": [
+        "who-avian",
+        "who-nipah",
+        "cdc-h5"
+      ]
+    },
+    {
+      "text": "ห้ามแชร์ข่าวโรคระบาดที่ยังไม่ได้ตรวจกับกรมควบคุมโรค WHO หรือศูนย์ต่อต้านข่าวปลอม",
+      "detail": "ข่าวลือเรื่องยา วิธีรักษา หรือการปิดเมืองทำให้คนแห่ซื้อของและรักษาผิดวิธี ไม่แน่ใจให้โทรถาม 1422",
+      "src": [
+        "ddc-nipah-thansettakij",
+        "ready-pandemic"
+      ]
+    },
+    {
+      "text": "ห้ามกักตุนหน้ากาก ยา แอลกอฮอล์ และอาหารเกินที่บ้านต้องใช้",
+      "detail": "ของขาดตลาดทำให้ผู้ป่วย ผู้สูงอายุ และบุคลากรแพทย์ไม่มีใช้ ซึ่งทำให้โรคระบาดยืดเยื้อกว่าเดิม ทยอยซื้อไว้ตั้งแต่ก่อนเกิดเหตุ",
+      "src": [
+        "thaipbs-alcohol",
+        "ready-pandemic"
+      ]
+    },
+    {
+      "text": "ห้ามปิดบังอาการ ประวัติเดินทาง หรือประวัติสัมผัสผู้ป่วยกับแพทย์และเจ้าหน้าที่",
+      "detail": "การปิดบังทำให้วินิจฉัยช้าและบุคลากรแพทย์ติดเชื้อ การฝ่าฝืนคำสั่งกักตัวตามกฎหมายโรคติดต่อมีโทษ และทำให้เชื้อข้ามพื้นที่",
+      "src": [
+        "wiki-mers-kr"
+      ]
+    },
+    {
+      "text": "ห้ามอาบน้ำศพหรือสัมผัสศพผู้เสียชีวิตจากโรคติดต่ออันตรายด้วยตัวเอง",
+      "detail": "อีโบลาในแอฟริกาตะวันตกแพร่จากพิธีศพที่มีการล้างและสัมผัสร่างเป็นจำนวนมาก ให้เจ้าหน้าที่จัดการตามขั้นตอน",
+      "src": [
+        "wiki-ebola",
+        "who-ebola"
+      ]
+    },
+    {
+      "text": "ห้ามไปแออัดที่โรงพยาบาลเมื่ออาการน้อยและทางการให้โทรสายด่วนก่อน",
+      "detail": "ห้องฉุกเฉินที่แน่นทำให้คนอาการหนักเข้าไม่ถึงเตียง และตัวเองเสี่ยงรับเชื้อเพิ่ม แต่ถ้ามีสัญญาณอันตราย ให้ไปทันทีโดยไม่ต้องรอสาย",
+      "src": [
+        "thaipbs-waitbed",
+        "thaipublica-beds"
+      ]
+    }
   ],
   "kit": [
-    {"name": "หน้ากาก N95 หรือ KF94 ขนาดพอดีหน้า", "qty": "10 ชิ้น/คน", "ctx": "all", "why": "ใช้เมื่อดูแลผู้ป่วย ไปโรงพยาบาล หรืออยู่ในที่ปิดคนแน่น ป้องกันได้ดีกว่าหน้ากากอนามัย"},
-    {"name": "หน้ากากอนามัยทางการแพทย์", "qty": "1 กล่อง 50 ชิ้น/คน", "ctx": "all", "why": "ใช้ประจำวันและให้ผู้ป่วยใส่ มีขนาดเด็กแยกสำหรับเด็ก"},
-    {"name": "สบู่ก้อนหรือสบู่เหลว", "qty": "พอใช้ 1 เดือน/บ้าน", "ctx": "all", "why": "ล้างมือ 20 วินาทีคือวิธีหลัก และจำเป็นสำหรับโรคท้องร่วงที่เจลฆ่าเชื้อไม่ได้"},
-    {"name": "เจลหรือสเปรย์แอลกอฮอล์ 70%", "qty": "ขวดพกพา 1 ขวด/คน + ขวดใหญ่ 1 ขวด/บ้าน", "ctx": "all", "why": "ใช้เมื่อไม่มีน้ำและสบู่ ต้องมีแอลกอฮอล์อย่างน้อย 60% เก็บห่างไฟและมือเด็ก"},
-    {"name": "น้ำยาฟอกขาวชนิดไม่มีกลิ่น (โซเดียมไฮโปคลอไรต์ 5-9%)", "qty": "1-2 ขวด/บ้าน", "ctx": "all", "why": "เจือจางราว 20 มล. ต่อน้ำ 1 ลิตร เช็ดพื้นผิวและห้องน้ำของผู้ป่วย เช็กวันหมดอายุ"},
-    {"name": "ปรอทวัดไข้ดิจิทัล", "qty": "1-2 อัน/บ้าน", "ctx": "all", "why": "ติดตามไข้เป็นตัวเลข ถ้ามีผู้ป่วยให้แยกอันของผู้ป่วย"},
-    {"name": "เครื่องวัดออกซิเจนปลายนิ้วและถ่านสำรอง", "qty": "1 เครื่อง/บ้าน", "ctx": "all", "why": "จับภาวะออกซิเจนต่ำที่ผู้ป่วยยังไม่รู้สึกเหนื่อย ต่ำกว่า 94% ต้องไปโรงพยาบาล"},
-    {"name": "พาราเซตามอล 500 มก. (และชนิดน้ำสำหรับเด็ก)", "qty": "20 เม็ด/ผู้ใหญ่ 1 คน", "ctx": "all", "why": "ลดไข้และปวด ผู้ใหญ่ไม่เกิน 4,000 มก. ต่อวัน เด็กให้ตามน้ำหนักตัวตามฉลาก"},
-    {"name": "ผงเกลือแร่ ORS", "qty": "10 ซอง/คน", "ctx": "all", "why": "ทดแทนน้ำจากท้องร่วง อาเจียน และไข้สูง ผสมตามฉลาก ใช้ให้หมดใน 24 ชั่วโมง"},
-    {"name": "ยาโรคประจำตัวสำรอง", "qty": "อย่างน้อย 1 เดือน/คน", "ctx": "all", "why": "โรงพยาบาลอาจเลื่อนนัดหรือเข้าถึงยาก ขาดยาอันตรายกว่าตัวโรคระบาด"},
-    {"name": "ถุงมือยางใช้แล้วทิ้ง และถุงมือแม่บ้าน", "qty": "1 กล่อง + 2 คู่/บ้าน", "ctx": "all", "why": "ใช้เก็บผ้า ขยะ และทำความสะอาดห้องผู้ป่วย ล้างมือหลังถอดทุกครั้ง"},
-    {"name": "ถุงขยะหนา ทิชชู และถังขยะมีฝาปิด", "qty": "ถุง 30 ใบ + ทิชชู 6 ม้วน/บ้าน", "ctx": "all", "why": "มัดขยะผู้ป่วยสองชั้น ลดการสัมผัสของคนในบ้านและคนเก็บขยะ"},
-    {"name": "ชุดตรวจ ATK ของโรคที่กำลังระบาด (ถ้ามี)", "qty": "2 ชุด/คน", "ctx": "all", "why": "ตรวจเมื่อมีอาการหรือสัมผัสผู้ป่วย ผลลบครั้งเดียวยังไม่ตัดโรค ให้ตรวจซ้ำตามคำแนะนำ"},
-    {"name": "อาหารแห้ง น้ำดื่ม และของใช้ประจำวัน", "qty": "พอ 2 สัปดาห์/บ้าน", "ctx": "all", "why": "อยู่บ้านได้ตลอดช่วงกักตัวโดยไม่ต้องออกไปที่แออัด"},
-    {"name": "เครื่องฟอกอากาศแบบ HEPA", "qty": "1 เครื่อง สำหรับห้องที่อยู่รวมกัน", "ctx": "condo", "why": "ห้องคอนโดเปิดหน้าต่างได้น้อย ช่วยลดเชื้อในอากาศเมื่อมีผู้ป่วยในห้อง"},
-    {"name": "มุ้ง ยาทากันยุง และทรายกำจัดลูกน้ำ", "qty": "มุ้งครบทุกที่นอน + ยาทา 1 ขวด/คน", "ctx": "house", "why": "ไข้เลือดออกระบาดซ้อนได้ทุกปี ผู้ป่วยไข้เลือดออกต้องนอนในมุ้งเพื่อไม่ให้ยุงนำเชื้อต่อ"},
-    {"name": "รองเท้าบูต ถุงมือยางหนา และถุงดำ สำหรับงานคอกสัตว์", "qty": "1 ชุด/คนที่ดูแลสัตว์", "ctx": "house", "why": "ลดการสัมผัสมูลและสารคัดหลั่งของสัตว์ปีกและหมู แยกเก็บนอกตัวบ้าน"}
+    {
+      "name": "หน้ากาก N95 หรือ KF94 ขนาดพอดีหน้า",
+      "qty": "10 ชิ้น/คน",
+      "ctx": "all",
+      "why": "ใช้เมื่อดูแลผู้ป่วย ไปโรงพยาบาล หรืออยู่ในที่ปิดคนแน่น ป้องกันได้ดีกว่าหน้ากากอนามัย"
+    },
+    {
+      "name": "หน้ากากอนามัยทางการแพทย์",
+      "qty": "1 กล่อง 50 ชิ้น/คน",
+      "ctx": "all",
+      "why": "ใช้ประจำวันและให้ผู้ป่วยใส่ มีขนาดเด็กแยกสำหรับเด็ก"
+    },
+    {
+      "name": "สบู่ก้อนหรือสบู่เหลว",
+      "qty": "พอใช้ 1 เดือน/บ้าน",
+      "ctx": "all",
+      "why": "ล้างมือ 20 วินาทีคือวิธีหลัก และจำเป็นสำหรับโรคท้องร่วงที่เจลฆ่าเชื้อไม่ได้"
+    },
+    {
+      "name": "เจลหรือสเปรย์แอลกอฮอล์ 70%",
+      "qty": "ขวดพกพา 1 ขวด/คน + ขวดใหญ่ 1 ขวด/บ้าน",
+      "ctx": "all",
+      "why": "ใช้เมื่อไม่มีน้ำและสบู่ ต้องมีแอลกอฮอล์อย่างน้อย 60% เก็บห่างไฟและมือเด็ก"
+    },
+    {
+      "name": "น้ำยาฟอกขาวชนิดไม่มีกลิ่น (โซเดียมไฮโปคลอไรต์ 5-9%)",
+      "qty": "1-2 ขวด/บ้าน",
+      "ctx": "all",
+      "why": "เจือจางราว 20 มล. ต่อน้ำ 1 ลิตร เช็ดพื้นผิวและห้องน้ำของผู้ป่วย เช็กวันหมดอายุ"
+    },
+    {
+      "name": "ปรอทวัดไข้ดิจิทัล",
+      "qty": "1-2 อัน/บ้าน",
+      "ctx": "all",
+      "why": "ติดตามไข้เป็นตัวเลข ถ้ามีผู้ป่วยให้แยกอันของผู้ป่วย"
+    },
+    {
+      "name": "เครื่องวัดออกซิเจนปลายนิ้วและถ่านสำรอง",
+      "qty": "1 เครื่อง/บ้าน",
+      "ctx": "all",
+      "why": "จับภาวะออกซิเจนต่ำที่ผู้ป่วยยังไม่รู้สึกเหนื่อย ต่ำกว่า 94% ต้องไปโรงพยาบาล"
+    },
+    {
+      "name": "พาราเซตามอล 500 มก. (และชนิดน้ำสำหรับเด็ก)",
+      "qty": "20 เม็ด/ผู้ใหญ่ 1 คน",
+      "ctx": "all",
+      "why": "ลดไข้และปวด ผู้ใหญ่ไม่เกิน 4,000 มก. ต่อวัน เด็กให้ตามน้ำหนักตัวตามฉลาก"
+    },
+    {
+      "name": "ผงเกลือแร่ ORS",
+      "qty": "10 ซอง/คน",
+      "ctx": "all",
+      "why": "ทดแทนน้ำจากท้องร่วง อาเจียน และไข้สูง ผสมตามฉลาก ใช้ให้หมดใน 24 ชั่วโมง"
+    },
+    {
+      "name": "ยาโรคประจำตัวสำรอง",
+      "qty": "อย่างน้อย 1 เดือน/คน",
+      "ctx": "all",
+      "why": "โรงพยาบาลอาจเลื่อนนัดหรือเข้าถึงยาก ขาดยาอันตรายกว่าตัวโรคระบาด"
+    },
+    {
+      "name": "ถุงมือยางใช้แล้วทิ้ง และถุงมือแม่บ้าน",
+      "qty": "1 กล่อง + 2 คู่/บ้าน",
+      "ctx": "all",
+      "why": "ใช้เก็บผ้า ขยะ และทำความสะอาดห้องผู้ป่วย ล้างมือหลังถอดทุกครั้ง"
+    },
+    {
+      "name": "ถุงขยะหนา ทิชชู และถังขยะมีฝาปิด",
+      "qty": "ถุง 30 ใบ + ทิชชู 6 ม้วน/บ้าน",
+      "ctx": "all",
+      "why": "มัดขยะผู้ป่วยสองชั้น ลดการสัมผัสของคนในบ้านและคนเก็บขยะ"
+    },
+    {
+      "name": "ชุดตรวจ ATK ของโรคที่กำลังระบาด (ถ้ามี)",
+      "qty": "2 ชุด/คน",
+      "ctx": "all",
+      "why": "ตรวจเมื่อมีอาการหรือสัมผัสผู้ป่วย ผลลบครั้งเดียวยังไม่ตัดโรค ให้ตรวจซ้ำตามคำแนะนำ"
+    },
+    {
+      "name": "อาหารแห้ง น้ำดื่ม และของใช้ประจำวัน",
+      "qty": "พอ 2 สัปดาห์/บ้าน",
+      "ctx": "all",
+      "why": "อยู่บ้านได้ตลอดช่วงกักตัวโดยไม่ต้องออกไปที่แออัด"
+    },
+    {
+      "name": "เครื่องฟอกอากาศแบบ HEPA",
+      "qty": "1 เครื่อง สำหรับห้องที่อยู่รวมกัน",
+      "ctx": "condo",
+      "why": "ห้องคอนโดเปิดหน้าต่างได้น้อย ช่วยลดเชื้อในอากาศเมื่อมีผู้ป่วยในห้อง"
+    },
+    {
+      "name": "มุ้ง ยาทากันยุง และทรายกำจัดลูกน้ำ",
+      "qty": "มุ้งครบทุกที่นอน + ยาทา 1 ขวด/คน",
+      "ctx": [
+        "house",
+        "town"
+      ],
+      "why": "ไข้เลือดออกระบาดซ้อนได้ทุกปี ผู้ป่วยไข้เลือดออกต้องนอนในมุ้งเพื่อไม่ให้ยุงนำเชื้อต่อ"
+    },
+    {
+      "name": "รองเท้าบูต ถุงมือยางหนา และถุงดำ สำหรับงานคอกสัตว์",
+      "qty": "1 ชุด/คนที่ดูแลสัตว์",
+      "ctx": [
+        "house",
+        "town"
+      ],
+      "why": "ลดการสัมผัสมูลและสารคัดหลั่งของสัตว์ปีกและหมู แยกเก็บนอกตัวบ้าน"
+    }
   ],
   "cases": [
-    {"title": "โควิด-19 ระลอกเดลตา กรุงเทพฯ และปริมณฑล พ.ศ. 2564", "lesson": "ปลาย มิ.ย. 2564 ผู้ติดเชื้อกว่า 25,000 รายไม่มีเตียง รัฐต้องใช้การแยกกักตัวที่บ้าน มีผู้สูงอายุเสียชีวิตระหว่างรอเตียงและสายด่วนโทรไม่ติด บ้านที่มีปรอท เครื่องวัดออกซิเจน ยา และห้องแยกอยู่แล้ว รับมือได้ดีกว่ามาก", "src": ["thaipublica-beds", "thaipbs-waitbed"]},
-    {"title": "โควิด-19 ช่วงแรกในไทย มี.ค.-เม.ย. 2563", "lesson": "ประกาศสถานการณ์ฉุกเฉิน 26 มี.ค. และเคอร์ฟิว 3 เม.ย. หน้ากากและแอลกอฮอล์ 70% ขาดตลาดจนร้านยาจำกัดการซื้อ ของป้องกันต้องมีติดบ้านก่อนเกิดเหตุ เพราะเมื่อข่าวออกทุกคนซื้อพร้อมกัน", "src": ["wiki-covid-th", "thaipbs-alcohol"]},
-    {"title": "ไข้หวัดใหญ่ระบาดทั่วโลก ค.ศ. 1918", "lesson": "ติดเชื้อราวหนึ่งในสามของประชากรโลก เสียชีวิตหลายสิบล้านคน คนหนุ่มสาวตายมากผิดปกติ ระลอกสองรุนแรงกว่าระลอกแรก เมืองที่ผ่อนมาตรการเร็วกลับมาระบาดซ้ำ อย่าวางใจหลังระลอกแรก", "src": ["wiki-1918"]},
-    {"title": "ซาร์ส ฮ่องกง พ.ศ. 2546 (อาคารอะมอยการ์เดนส์)", "lesson": "ผู้ติดเชื้อกว่า 200 รายในอาคารชุดเดียว ส่วนใหญ่อยู่ห้องแนวเดียวกันที่ใช้ท่อน้ำทิ้งร่วม และแขกโรงแรมคนเดียวแพร่เชื้อให้อีกอย่างน้อย 23 คน ในตึกสูง ท่อ ลิฟต์ และทางเดินคือทางแพร่เชื้อที่ต้องดูแล", "src": ["wiki-sars"]},
-    {"title": "ไข้หวัดนก H5N1 ในไทย พ.ศ. 2547-2549", "lesson": "ไทยมีผู้ป่วยยืนยันราว 25 ราย เสียชีวิตเกินครึ่ง ส่วนใหญ่สัมผัสสัตว์ปีกป่วยตายในบ้าน เช่น รายที่ฝังไก่ตายด้วยมือเปล่า ไก่เป็ดตายผิดปกติต้องแจ้งปศุสัตว์ ไม่จับ ไม่กิน", "src": ["cidrap-h5n1-th", "who-avian"]},
-    {"title": "ไข้หวัดใหญ่สายพันธุ์ใหม่ H1N1 พ.ศ. 2552", "lesson": "WHO ประกาศเป็นโรคระบาดใหญ่ในเดือน มิ.ย. 2552 เชื้อกระจายทั่วโลกภายในไม่กี่เดือนและป่วยมากในเด็กและวัยเรียน ไม่ใช่ผู้สูงอายุเหมือนไข้หวัดใหญ่ปกติ โรคใหม่อาจไม่เลือกกลุ่มเสี่ยงแบบเดิม", "src": ["wiki-h1n1"]},
-    {"title": "เมอร์ส เกาหลีใต้ พ.ศ. 2558", "lesson": "เริ่มจากผู้เดินทางกลับจากตะวันออกกลางเพียงคนเดียว แล้วแพร่ในโรงพยาบาลสู่ผู้ป่วยและผู้มาเยี่ยม การปิดข้อมูลช่วงแรกทำให้คุมยากขึ้น ลดการเยี่ยมไข้ และบอกประวัติเดินทางกับแพทย์เสมอ", "src": ["wiki-mers-kr"]},
-    {"title": "อีโบลา แอฟริกาตะวันตก พ.ศ. 2557-2559", "lesson": "เสียชีวิตกว่า 11,000 คน เชื้อติดทางเลือดและสารคัดหลั่ง แพร่มากจากการดูแลผู้ป่วยที่บ้านและการอาบน้ำศพ โรคที่ติดทางสารคัดหลั่งต้องให้เจ้าหน้าที่ดูแล ไม่ใช่คนในบ้าน", "src": ["wiki-ebola", "who-ebola"]},
-    {"title": "ไวรัสนิปาห์: มาเลเซีย พ.ศ. 2541 และบังกลาเทศ-อินเดียที่พบซ้ำเกือบทุกปี", "lesson": "เชื้อจากค้างคาวผลไม้ผ่านหมูและน้ำตาลสดดิบสู่คน แล้วติดต่อถึงคนในครอบครัวที่ดูแลผู้ป่วย อัตราตายประมาณ 40-75% ไทยมีค้างคาวผลไม้และกรมควบคุมโรคเฝ้าระวังอยู่ ล้างและปอกผลไม้ ทิ้งผลที่มีรอยกัด", "src": ["who-nipah", "ddc-nipah-thansettakij"]},
-    {"title": "อหิวาตกโรคและไข้เลือดออก: โรคระบาดเก่าที่ยังไม่หายไป", "lesson": "ปี 2568 WHO รับรายงานอหิวาตกโรคจาก 47 ประเทศ ส่วนไข้เลือดออกระบาดในไทยทุกปี น้ำสะอาด ส้วมถูกสุขลักษณะ ORS และการกำจัดลูกน้ำยุงลายยังเป็นเรื่องช่วยชีวิต", "src": ["who-cholera", "who-dengue"]},
-    {"title": "ไข้หวัดนก H5N1 ในโคนมและคนในสหรัฐฯ: ความเสี่ยงที่ทั่วโลกเฝ้าระวัง", "lesson": "ตั้งแต่ปี 2567 เชื้อข้ามมาสู่โคนมและคนงานฟาร์ม CDC รายงานผู้ป่วย 71 ราย (ข้อมูล มี.ค. 2569) ยังไม่พบการติดต่อจากคนสู่คนอย่างต่อเนื่อง แต่เป็นสัญญาณที่ต้องจับตา เลี่ยงสัตว์ป่วยและนมดิบ", "src": ["cdc-h5", "who-avian"]},
-    {"title": "Disease X: โรคที่ยังไม่มีใครรู้จัก ซึ่ง WHO ให้เตรียมรับมือ", "lesson": "WHO จัดเชื้อที่ยังไม่รู้จักไว้ในบัญชีโรคสำคัญ ร่วมกับโควิด-19 เมอร์ส ซาร์ส นิปาห์ อีโบลา บ้านเตรียมรับโรคที่ไม่รู้ชื่อได้ด้วยหลักเดียวกัน คือรู้ทางติดต่อ มีของใช้ อยู่บ้านได้ และฟังข้อมูลทางการ", "src": ["who-blueprint"]}
+    {
+      "title": "โควิด-19 ระลอกเดลตา กรุงเทพฯ และปริมณฑล พ.ศ. 2564",
+      "lesson": "ปลาย มิ.ย. 2564 ผู้ติดเชื้อกว่า 25,000 รายไม่มีเตียง รัฐต้องใช้การแยกกักตัวที่บ้าน มีผู้สูงอายุเสียชีวิตระหว่างรอเตียงและสายด่วนโทรไม่ติด บ้านที่มีปรอท เครื่องวัดออกซิเจน ยา และห้องแยกอยู่แล้ว รับมือได้ดีกว่ามาก",
+      "src": [
+        "thaipublica-beds",
+        "thaipbs-waitbed"
+      ]
+    },
+    {
+      "title": "โควิด-19 ช่วงแรกในไทย มี.ค.-เม.ย. 2563",
+      "lesson": "ประกาศสถานการณ์ฉุกเฉิน 26 มี.ค. และเคอร์ฟิว 3 เม.ย. หน้ากากและแอลกอฮอล์ 70% ขาดตลาดจนร้านยาจำกัดการซื้อ ของป้องกันต้องมีติดบ้านก่อนเกิดเหตุ เพราะเมื่อข่าวออกทุกคนซื้อพร้อมกัน",
+      "src": [
+        "wiki-covid-th",
+        "thaipbs-alcohol"
+      ]
+    },
+    {
+      "title": "ไข้หวัดใหญ่ระบาดทั่วโลก ค.ศ. 1918",
+      "lesson": "ติดเชื้อราวหนึ่งในสามของประชากรโลก เสียชีวิตหลายสิบล้านคน คนหนุ่มสาวตายมากผิดปกติ ระลอกสองรุนแรงกว่าระลอกแรก เมืองที่ผ่อนมาตรการเร็วกลับมาระบาดซ้ำ อย่าวางใจหลังระลอกแรก",
+      "src": [
+        "wiki-1918"
+      ]
+    },
+    {
+      "title": "ซาร์ส ฮ่องกง พ.ศ. 2546 (อาคารอะมอยการ์เดนส์)",
+      "lesson": "ผู้ติดเชื้อกว่า 200 รายในอาคารชุดเดียว ส่วนใหญ่อยู่ห้องแนวเดียวกันที่ใช้ท่อน้ำทิ้งร่วม และแขกโรงแรมคนเดียวแพร่เชื้อให้อีกอย่างน้อย 23 คน ในตึกสูง ท่อ ลิฟต์ และทางเดินคือทางแพร่เชื้อที่ต้องดูแล",
+      "src": [
+        "wiki-sars"
+      ]
+    },
+    {
+      "title": "ไข้หวัดนก H5N1 ในไทย พ.ศ. 2547-2549",
+      "lesson": "ไทยมีผู้ป่วยยืนยันราว 25 ราย เสียชีวิตเกินครึ่ง ส่วนใหญ่สัมผัสสัตว์ปีกป่วยตายในบ้าน เช่น รายที่ฝังไก่ตายด้วยมือเปล่า ไก่เป็ดตายผิดปกติต้องแจ้งปศุสัตว์ ไม่จับ ไม่กิน",
+      "src": [
+        "cidrap-h5n1-th",
+        "who-avian"
+      ]
+    },
+    {
+      "title": "ไข้หวัดใหญ่สายพันธุ์ใหม่ H1N1 พ.ศ. 2552",
+      "lesson": "WHO ประกาศเป็นโรคระบาดใหญ่ในเดือน มิ.ย. 2552 เชื้อกระจายทั่วโลกภายในไม่กี่เดือนและป่วยมากในเด็กและวัยเรียน ไม่ใช่ผู้สูงอายุเหมือนไข้หวัดใหญ่ปกติ โรคใหม่อาจไม่เลือกกลุ่มเสี่ยงแบบเดิม",
+      "src": [
+        "wiki-h1n1"
+      ]
+    },
+    {
+      "title": "เมอร์ส เกาหลีใต้ พ.ศ. 2558",
+      "lesson": "เริ่มจากผู้เดินทางกลับจากตะวันออกกลางเพียงคนเดียว แล้วแพร่ในโรงพยาบาลสู่ผู้ป่วยและผู้มาเยี่ยม การปิดข้อมูลช่วงแรกทำให้คุมยากขึ้น ลดการเยี่ยมไข้ และบอกประวัติเดินทางกับแพทย์เสมอ",
+      "src": [
+        "wiki-mers-kr"
+      ]
+    },
+    {
+      "title": "อีโบลา แอฟริกาตะวันตก พ.ศ. 2557-2559",
+      "lesson": "เสียชีวิตกว่า 11,000 คน เชื้อติดทางเลือดและสารคัดหลั่ง แพร่มากจากการดูแลผู้ป่วยที่บ้านและการอาบน้ำศพ โรคที่ติดทางสารคัดหลั่งต้องให้เจ้าหน้าที่ดูแล ไม่ใช่คนในบ้าน",
+      "src": [
+        "wiki-ebola",
+        "who-ebola"
+      ]
+    },
+    {
+      "title": "ไวรัสนิปาห์: มาเลเซีย พ.ศ. 2541 และบังกลาเทศ-อินเดียที่พบซ้ำเกือบทุกปี",
+      "lesson": "เชื้อจากค้างคาวผลไม้ผ่านหมูและน้ำตาลสดดิบสู่คน แล้วติดต่อถึงคนในครอบครัวที่ดูแลผู้ป่วย อัตราตายประมาณ 40-75% ไทยมีค้างคาวผลไม้และกรมควบคุมโรคเฝ้าระวังอยู่ ล้างและปอกผลไม้ ทิ้งผลที่มีรอยกัด",
+      "src": [
+        "who-nipah",
+        "ddc-nipah-thansettakij"
+      ]
+    },
+    {
+      "title": "อหิวาตกโรคและไข้เลือดออก: โรคระบาดเก่าที่ยังไม่หายไป",
+      "lesson": "ปี 2568 WHO รับรายงานอหิวาตกโรคจาก 47 ประเทศ ส่วนไข้เลือดออกระบาดในไทยทุกปี น้ำสะอาด ส้วมถูกสุขลักษณะ ORS และการกำจัดลูกน้ำยุงลายยังเป็นเรื่องช่วยชีวิต",
+      "src": [
+        "who-cholera",
+        "who-dengue"
+      ]
+    },
+    {
+      "title": "ไข้หวัดนก H5N1 ในโคนมและคนในสหรัฐฯ: ความเสี่ยงที่ทั่วโลกเฝ้าระวัง",
+      "lesson": "ตั้งแต่ปี 2567 เชื้อข้ามมาสู่โคนมและคนงานฟาร์ม CDC รายงานผู้ป่วย 71 ราย (ข้อมูล มี.ค. 2569) ยังไม่พบการติดต่อจากคนสู่คนอย่างต่อเนื่อง แต่เป็นสัญญาณที่ต้องจับตา เลี่ยงสัตว์ป่วยและนมดิบ",
+      "src": [
+        "cdc-h5",
+        "who-avian"
+      ]
+    },
+    {
+      "title": "Disease X: โรคที่ยังไม่มีใครรู้จัก ซึ่ง WHO ให้เตรียมรับมือ",
+      "lesson": "WHO จัดเชื้อที่ยังไม่รู้จักไว้ในบัญชีโรคสำคัญ ร่วมกับโควิด-19 เมอร์ส ซาร์ส นิปาห์ อีโบลา บ้านเตรียมรับโรคที่ไม่รู้ชื่อได้ด้วยหลักเดียวกัน คือรู้ทางติดต่อ มีของใช้ อยู่บ้านได้ และฟังข้อมูลทางการ",
+      "src": [
+        "who-blueprint"
+      ]
+    }
   ]
 }

@@ -1,0 +1,3103 @@
+{
+  "intro": "ดูความปลอดภัยของตัวเองก่อนเข้าช่วยทุกครั้ง และโทร 1669 ให้เร็วที่สุด คู่มือนี้ช่วยให้ลงมือได้ระหว่างรอทีมกู้ชีพ แต่ไม่ทดแทนการอบรมปฐมพยาบาลและคำแนะนำของเจ้าหน้าที่",
+  "sources": [
+    {
+      "id": "niems-1669",
+      "org": "สถาบันการแพทย์ฉุกเฉินแห่งชาติ (สพฉ.) เผยแพร่ผ่านกรมประชาสัมพันธ์",
+      "title": "สพฉ. แนะข้อควรรู้ก่อนโทรแจ้งสายด่วน 1669",
+      "url": "https://www.prd.go.th/th/content/category/detail/id/35/iid/244285",
+      "country": "TH"
+    },
+    {
+      "id": "ddc-drowning",
+      "org": "กรมควบคุมโรค เผยแพร่ผ่านกรมประชาสัมพันธ์",
+      "title": "ห่วงหน้าร้อน เด็กจมน้ำช่วงปิดเทอม (มาตรการ ตะโกน โยน ยื่น)",
+      "url": "https://www.prd.go.th/th/content/category/detail/id/9/iid/262402",
+      "country": "TH"
+    },
+    {
+      "id": "ddc-stroke",
+      "org": "กรมควบคุมโรค (ข่าวจากฐานเศรษฐกิจ)",
+      "title": "วันหลอดเลือดสมองโลก 2568: สังเกตอาการด้วยหลัก B.E.F.A.S.T",
+      "url": "https://www.thansettakij.com/health-wellness/wellbeing/642634",
+      "country": "TH"
+    },
+    {
+      "id": "ddc-jellyfish",
+      "org": "กรมควบคุมโรค (ข่าวจากฐานเศรษฐกิจ)",
+      "title": "สธ. เตือนอันตรายจากแมงกะพรุนพิษ และขั้นตอนปฐมพยาบาล",
+      "url": "https://www.thansettakij.com/health-wellness/health/641777",
+      "country": "TH"
+    },
+    {
+      "id": "niems-jellyfish",
+      "org": "สถาบันการแพทย์ฉุกเฉินแห่งชาติ (ข่าวจากมติชน)",
+      "title": "สพฉ.เตือนระวังแมงกะพรุนกล่อง โดนพิษห้ามใช้น้ำจืดล้าง",
+      "url": "https://www.matichon.co.th/lifestyle/news_608553",
+      "country": "TH"
+    },
+    {
+      "id": "moph-snake",
+      "org": "กระทรวงสาธารณสุข (ข่าวจาก Thai PBS)",
+      "title": "4 ข้อห้ามถูกงูกัด ห้ามดูดพิษ-กรีดแผล-ขันชะเนาะ-ไฟจี้",
+      "url": "https://www.thaipbs.or.th/news/content/280457",
+      "country": "TH"
+    },
+    {
+      "id": "ddc-snake",
+      "org": "กรมควบคุมโรค (ข่าวจากกรุงเทพธุรกิจ)",
+      "title": "กรมควบคุมโรคเตือนพื้นที่น้ำท่วมระวังสัตว์มีพิษ และการปฐมพยาบาลเมื่อถูกงูกัด",
+      "url": "https://www.bangkokbiznews.com/health/1032490",
+      "country": "TH"
+    },
+    {
+      "id": "qsmi-snake",
+      "org": "สถานเสาวภา สภากาชาดไทย และกรมการแพทย์ (บทความจาก Sanook Health)",
+      "title": "ทำความเข้าใจให้ถูกต้อง งูกัดต้องทำอย่างไร",
+      "url": "https://www.sanook.com/health/7913/",
+      "country": "TH"
+    },
+    {
+      "id": "doh-venomous",
+      "org": "กรมอนามัย (ข่าวจาก PPTV HD36)",
+      "title": "ฤดูฝนต้องระวัง 4 แมลง-สัตว์มีพิษ",
+      "url": "https://www.pptvhd36.com/health/news/762",
+      "country": "TH"
+    },
+    {
+      "id": "rabies-th",
+      "org": "แพทย์โรคติดเชื้อ โรงพยาบาลเวชธานี (ข่าวจากแนวหน้า)",
+      "title": "พิษสุนัขบ้า ถูกกัด-ข่วนต้องรีบล้างแผลพบแพทย์ทันที",
+      "url": "https://www.naewna.com/n/?p=71736",
+      "country": "TH"
+    },
+    {
+      "id": "cpr-th",
+      "org": "PPTV HD36 สุขภาพ (อ้างห่วงโซ่การรอดชีวิตของ สพฉ.)",
+      "title": "วิธีทำ CPR 4 นาทีแห่งการต่อชีวิต",
+      "url": "https://www.pptvhd36.com/health/care/2213",
+      "country": "TH"
+    },
+    {
+      "id": "rama-poison",
+      "org": "ศูนย์พิษวิทยารามาธิบดี คณะแพทยศาสตร์โรงพยาบาลรามาธิบดี",
+      "title": "ศูนย์พิษวิทยารามาธิบดี สายด่วน 1367 ตลอด 24 ชั่วโมง",
+      "url": "https://www.rama.mahidol.ac.th/poisoncenter/th",
+      "country": "TH"
+    },
+    {
+      "id": "erc-2025",
+      "org": "European Resuscitation Council (ERC)",
+      "title": "ERC Guidelines 2025 for Everyone (ฉบับประชาชน)",
+      "url": "https://www.erc.edu/media/p5ymaeej/gl2025_layperson_book_ipdf-v11-e.pdf",
+      "country": "EU"
+    },
+    {
+      "id": "aha-2025-news",
+      "org": "American Heart Association 2025 (สรุปโดย Contemporary Pediatrics)",
+      "title": "AHA issues 2025 CPR and ECC updates for choking, opioid overdose, and pediatric care",
+      "url": "https://www.contemporarypediatrics.com/view/aha-issues-2025-cpr-and-ecc-updates-for-choking-opioid-overdose-and-pediatric-care",
+      "country": "US"
+    },
+    {
+      "id": "aha-2025-summary",
+      "org": "American Heart Association 2025 (สรุปโดย ProTrainings)",
+      "title": "What's New in CPR and First Aid? Understanding the 2025 Guideline Updates",
+      "url": "https://www.protrainings.com/blog/?p=14150",
+      "country": "US"
+    },
+    {
+      "id": "aha-2025-laerdal",
+      "org": "American Heart Association 2025 (สรุปโดย Laerdal)",
+      "title": "2025 AHA Guidelines",
+      "url": "https://laerdal.com/information/2025-aha-guidelines/",
+      "country": "US"
+    },
+    {
+      "id": "medlineplus-choking",
+      "org": "MedlinePlus, U.S. National Library of Medicine (อ้าง AHA 2025)",
+      "title": "Choking - adult or child over 1 year",
+      "url": "https://medlineplus.gov/ency/article/000049.htm",
+      "country": "US"
+    },
+    {
+      "id": "brc-choking",
+      "org": "British Red Cross",
+      "title": "First aid for someone who is choking (adult)",
+      "url": "https://www.redcross.org.uk/first-aid/learn-first-aid/choking",
+      "country": "GB"
+    },
+    {
+      "id": "stb-tourniquet",
+      "org": "Stop the Bleed / Uniformed Services University (NCDMPH)",
+      "title": "Stop the Bleed: just-in-time tourniquet instructions",
+      "url": "https://stopthebleed.usuhs.edu/pdf/jit.pdf",
+      "country": "US"
+    },
+    {
+      "id": "nhs-burns",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Burns and scalds - Treatment",
+      "url": "https://www.nhs.uk/conditions/burns-and-scalds/treatment/",
+      "country": "GB"
+    },
+    {
+      "id": "nhs-heat",
+      "org": "NHS (สหราชอาณาจักร)",
+      "title": "Heat exhaustion and heatstroke",
+      "url": "https://www.nhs.uk/conditions/heat-exhaustion-heatstroke/",
+      "country": "GB"
+    },
+    {
+      "id": "who-snakebite",
+      "org": "องค์การอนามัยโลก (WHO)",
+      "title": "Snakebite envenoming - Treatment (Box 1: First aid for snakebites)",
+      "url": "https://www.who.int/teams/control-of-neglected-tropical-diseases/snakebite-envenoming/treatment",
+      "country": "INT"
+    },
+    {
+      "id": "who-rabies",
+      "org": "องค์การอนามัยโลก (WHO)",
+      "title": "Rabies fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/rabies",
+      "country": "INT"
+    },
+    {
+      "id": "who-diarrhoea",
+      "org": "องค์การอนามัยโลก (WHO)",
+      "title": "Diarrhoeal disease fact sheet",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease",
+      "country": "INT"
+    },
+    {
+      "id": "sja-primary",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to do the primary survey (DR ABC)",
+      "url": "https://www.sja.org.uk/first-aid-advice/primary-survey/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-cpr",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to do CPR",
+      "url": "https://www.sja.org.uk/first-aid-advice/cpr/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-child-cpr",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to do child CPR",
+      "url": "https://www.sja.org.uk/first-aid-advice/child-cpr/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-baby-cpr",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to do baby CPR (under one year old)",
+      "url": "https://www.sja.org.uk/first-aid-advice/baby-cpr/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-aed",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to use a defibrillator (AED)",
+      "url": "https://www.sja.org.uk/first-aid-advice/how-to-use-a-defibrillator/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-recovery",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "How to put someone in the recovery position",
+      "url": "https://www.sja.org.uk/first-aid-advice/recovery-position/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-choking",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Choking (adult)",
+      "url": "https://www.sja.org.uk/first-aid-advice/choking/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-child-choking",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Child choking",
+      "url": "https://www.sja.org.uk/first-aid-advice/child-choking/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-baby-choking",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Baby choking",
+      "url": "https://www.sja.org.uk/first-aid-advice/baby-choking/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-drowning",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Drowning",
+      "url": "https://www.sja.org.uk/first-aid-advice/drowning/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-bleeding",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Severe bleeding",
+      "url": "https://www.sja.org.uk/first-aid-advice/severe-bleeding/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-life-bleed",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Life-threatening bleeding (dressings and tourniquets)",
+      "url": "https://www.sja.org.uk/first-aid-advice/life-threatening-bleed/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-shock",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Shock",
+      "url": "https://www.sja.org.uk/first-aid-advice/shock/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-spinal",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Spinal injury",
+      "url": "https://www.sja.org.uk/first-aid-advice/spinal-injury/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-head",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Head injury",
+      "url": "https://www.sja.org.uk/first-aid-advice/head-injury/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-fracture",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Fractures and broken bones",
+      "url": "https://www.sja.org.uk/first-aid-advice/fractures-and-broken-bones/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-sprain",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Sprains and strains",
+      "url": "https://www.sja.org.uk/first-aid-advice/sprains-and-strains/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-cuts",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Cuts and grazes",
+      "url": "https://www.sja.org.uk/first-aid-advice/cuts-and-grazes/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-nosebleed",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Nosebleed",
+      "url": "https://www.sja.org.uk/first-aid-advice/nosebleed/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-eye",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Eye injury",
+      "url": "https://www.sja.org.uk/first-aid-advice/eye-injury/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-burns",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Burns and scalds",
+      "url": "https://www.sja.org.uk/first-aid-advice/burns-and-scalds/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-severe-burn",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Severe burn",
+      "url": "https://www.sja.org.uk/first-aid-advice/severe-burn/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-chemical-burn",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Chemical burn",
+      "url": "https://www.sja.org.uk/first-aid-advice/chemical-burn/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-electric",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Electric shock",
+      "url": "https://www.sja.org.uk/first-aid-advice/electrocution/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-heatstroke",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Heatstroke",
+      "url": "https://www.sja.org.uk/first-aid-advice/heatstroke/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-heat-exhaustion",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Heat exhaustion",
+      "url": "https://www.sja.org.uk/first-aid-advice/heat-exhaustion/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-co",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Carbon monoxide poisoning",
+      "url": "https://www.sja.org.uk/first-aid-advice/carbon-monoxide-poisoning/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-poisoning",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Poisoning",
+      "url": "https://www.sja.org.uk/first-aid-advice/poisoning/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-stroke",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Stroke",
+      "url": "https://www.sja.org.uk/first-aid-advice/stroke/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-heart-attack",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Heart attack",
+      "url": "https://www.sja.org.uk/first-aid-advice/heart-attack/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-seizure",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Seizure",
+      "url": "https://www.sja.org.uk/first-aid-advice/seizure/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-fainting",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Fainting",
+      "url": "https://www.sja.org.uk/first-aid-advice/fainting/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-anaphylaxis",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Anaphylaxis",
+      "url": "https://www.sja.org.uk/first-aid-advice/anaphylaxis/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-diabetes",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Diabetic emergency",
+      "url": "https://www.sja.org.uk/first-aid-advice/diabetes/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-asthma",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Asthma attack",
+      "url": "https://www.sja.org.uk/first-aid-advice/asthma-attack/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-dehydration",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Dehydration",
+      "url": "https://www.sja.org.uk/first-aid-advice/dehydration/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-bites",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Human and animal bites",
+      "url": "https://www.sja.org.uk/first-aid-advice/human-and-animal-bites/",
+      "country": "GB"
+    },
+    {
+      "id": "sja-stings",
+      "org": "St John Ambulance (สหราชอาณาจักร)",
+      "title": "Insect bites and stings",
+      "url": "https://www.sja.org.uk/first-aid-advice/insect-bites-and-stings/",
+      "country": "GB"
+    }
+  ],
+  "topics": [
+    {
+      "id": "scene-call-1669",
+      "title": "ดูความปลอดภัย แล้วโทร 1669",
+      "group": "ช่วยชีวิต",
+      "signs": "พบคนหมดสติ บาดเจ็บหนัก หรือเจ็บป่วยฉุกเฉิน",
+      "call": "โทร 1669 ทันทีที่ตัวคุณปลอดภัย แล้วเปิดลำโพงไว้",
+      "steps": [
+        {
+          "text": "มองหาอันตรายก่อนเข้าไป เช่น รถ สายไฟ สารเคมี ไฟ น้ำ",
+          "detail": "ถ้ายังไม่ปลอดภัย อย่าเข้าไป ให้โทร 1669 แล้วรอเจ้าหน้าที่",
+          "src": [
+            "erc-2025",
+            "sja-primary"
+          ]
+        },
+        {
+          "text": "ตั้งสติ โทร 1669 เปิดลำโพง วางโทรศัพท์ไว้ข้างตัว",
+          "detail": "เปิดลำโพงเพื่อให้มือว่างช่วยผู้ป่วยไปพร้อมกับฟังคำแนะนำ",
+          "src": [
+            "niems-1669",
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "บอกว่าเกิดเหตุอะไร มีผู้ป่วยกี่คน เพศ ช่วงอายุ และอาการ",
+          "src": [
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "บอกสถานที่เกิดเหตุและเส้นทางเข้าให้ชัดเจน",
+          "src": [
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "บอกว่าผู้ป่วยรู้สึกตัวหรือไม่ หายใจหรือไม่",
+          "src": [
+            "niems-1669",
+            "sja-primary"
+          ]
+        },
+        {
+          "text": "บอกอันตรายที่อาจเกิดซ้ำ เช่น อยู่กลางถนน หรือรถติดแก๊ส",
+          "src": [
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "บอกชื่อผู้แจ้งและเบอร์โทรที่ติดต่อกลับได้",
+          "src": [
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "ช่วยเหลือเบื้องต้นตามที่เจ้าหน้าที่บอก และรอทีมกู้ชีพ",
+          "src": [
+            "niems-1669"
+          ]
+        },
+        {
+          "text": "ถ้ามีคนอื่นอยู่ด้วย ให้เขาไปเอาเครื่องกระตุกหัวใจอัตโนมัติ (AED) มา",
+          "detail": "เจ้าหน้าที่รับสายอาจบอกได้ว่าเครื่องที่ใกล้ที่สุดอยู่ที่ไหน",
+          "src": [
+            "sja-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเข้าไปช่วยถ้าที่เกิดเหตุยังอันตราย",
+          "detail": "ผู้ช่วยเหลือที่บาดเจ็บจะกลายเป็นผู้ป่วยอีกคน",
+          "src": [
+            "erc-2025",
+            "sja-primary"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งผู้ป่วยที่หมดสติเพื่อไปหาเครื่อง AED ด้วยตัวเอง",
+          "detail": "ให้คนอื่นไปเอา ส่วนคุณอยู่ช่วยผู้ป่วย",
+          "src": [
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้ายผู้บาดเจ็บ เว้นแต่ที่ตรงนั้นอันตราย",
+          "src": [
+            "erc-2025",
+            "sja-spinal"
+          ]
+        }
+      ],
+      "src": [
+        "niems-1669",
+        "erc-2025",
+        "sja-primary"
+      ]
+    },
+    {
+      "id": "cpr-adult",
+      "title": "หมดสติ ไม่หายใจ: ปั๊มหัวใจผู้ใหญ่",
+      "group": "ช่วยชีวิต",
+      "signs": "เรียกไม่ตอบ ไม่หายใจ หรือหายใจเฮือกเป็นพัก ๆ",
+      "call": "โทร 1669 ทันที เปิดลำโพง แล้วเริ่มปั๊มหัวใจ (CPR) เลย",
+      "steps": [
+        {
+          "text": "ดูว่าปลอดภัย แล้วเขย่าไหล่เบา ๆ เรียกดัง ๆ ว่าเป็นอะไรไหม",
+          "src": [
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "ไม่ตอบสนอง: ตะโกนขอความช่วยเหลือ โทร 1669 เปิดลำโพง",
+          "detail": "ให้คนอื่นไปเอาเครื่องกระตุกหัวใจอัตโนมัติ (AED) มา",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เงยหน้า เชยคาง ดูการหายใจไม่เกิน 10 วินาที",
+          "detail": "หายใจเฮือกนาน ๆ ครั้งไม่ใช่การหายใจปกติ ให้ถือว่าหัวใจหยุดเต้น",
+          "src": [
+            "sja-cpr",
+            "sja-primary"
+          ]
+        },
+        {
+          "text": "ให้นอนหงายบนพื้นแข็ง วางส้นมือกลางหน้าอก มืออีกข้างทับ ประสานนิ้ว",
+          "detail": "คุกเข่าชิดตัวผู้ป่วย ไหล่อยู่เหนือมือ แขนเหยียดตรง",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "กดลึกอย่างน้อย 5 ซม. (ไม่เกิน 6 ซม.) เร็ว 100-120 ครั้งต่อนาที",
+          "detail": "ราว 2 ครั้งต่อวินาที ปล่อยให้หน้าอกคืนตัวจนสุดทุกครั้งโดยมือไม่ลอยจากอก",
+          "src": [
+            "sja-cpr",
+            "erc-2025",
+            "cpr-th"
+          ]
+        },
+        {
+          "text": "กดต่อเนื่องอย่าหยุด ถ้าไม่เคยฝึกเป่าปากให้กดหน้าอกอย่างเดียว",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้าเคยฝึกมา: กด 30 ครั้ง สลับเป่าปาก 2 ครั้ง",
+          "detail": "เงยหน้า บีบจมูก ประกบปาก เป่าไม่เกิน 1 วินาทีจนอกยกขึ้น เป่าไม่เข้าก็กลับไปกดต่อ",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้ามีคนช่วย ผลัดกันกดทุก 1-2 นาที โดยหยุดให้สั้นที่สุด",
+          "src": [
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "ทำต่อจนกู้ชีพมารับช่วง เครื่อง AED พร้อมใช้ หรือผู้ป่วยหายใจปกติ",
+          "src": [
+            "sja-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ารอดูอาการเพราะเห็นหายใจเฮือก",
+          "detail": "การหายใจเฮือกพบได้บ่อยในนาทีแรกที่หัวใจหยุดเต้น",
+          "src": [
+            "sja-cpr",
+            "sja-primary"
+          ]
+        },
+        {
+          "text": "อย่าหยุดกดหน้าอกนาน",
+          "detail": "เป่าปากแต่ละรอบพยายามได้แค่ 2 ครั้ง แล้วกลับมากดทันที",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่ากดบนที่นอนนุ่ม ถ้าย้ายลงพื้นได้อย่างปลอดภัย",
+          "detail": "พื้นนุ่มทำให้กดได้ไม่ลึกพอ",
+          "src": [
+            "sja-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งผู้ป่วยไปหาเครื่อง AED เอง",
+          "src": [
+            "sja-cpr"
+          ]
+        }
+      ],
+      "src": [
+        "sja-cpr",
+        "erc-2025",
+        "cpr-th"
+      ]
+    },
+    {
+      "id": "cpr-child",
+      "title": "เด็กหมดสติ ไม่หายใจ: ปั๊มหัวใจเด็ก (อายุ 1-12 ปี)",
+      "group": "ช่วยชีวิต",
+      "signs": "เรียกไม่ตอบ ไม่หายใจ หรือหายใจเฮือก",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงแล้วเริ่มช่วยเลย",
+      "steps": [
+        {
+          "text": "วางเด็กนอนหงายบนพื้นแข็ง โทร 1669 เปิดลำโพง ทำตามเจ้าหน้าที่",
+          "src": [
+            "sja-child-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เปิดทางเดินหายใจ: มือหนึ่งกดหน้าผาก อีกมือใช้สองนิ้วเชยคาง",
+          "src": [
+            "sja-child-cpr"
+          ]
+        },
+        {
+          "text": "ถ้าเป่าปากได้ ให้เป่าช่วยหายใจ 5 ครั้งก่อน",
+          "detail": "บีบจมูก ประกบปาก เป่าเบา ๆ สม่ำเสมอไม่เกิน 1 วินาทีจนอกยกขึ้น",
+          "src": [
+            "sja-child-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "กดกลางหน้าอกด้วยส้นมือข้างเดียว เด็กตัวโตใช้สองมือ",
+          "src": [
+            "sja-child-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "กดลึก 1 ใน 3 ของความหนาอก (ราว 5 ซม.) เร็ว 100-120 ครั้งต่อนาที",
+          "detail": "ปล่อยให้หน้าอกคืนตัวจนสุดทุกครั้ง",
+          "src": [
+            "sja-child-cpr",
+            "cpr-th"
+          ]
+        },
+        {
+          "text": "กด 30 ครั้ง สลับเป่าปาก 2 ครั้ง ทำต่อเนื่อง",
+          "src": [
+            "sja-child-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้าเป่าปากไม่ได้ ให้กดหน้าอกอย่างเดียวตามที่เจ้าหน้าที่ 1669 บอก",
+          "src": [
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เมื่อเครื่อง AED มาถึง เปิดเครื่องแล้วทำตามเสียงทันที",
+          "src": [
+            "sja-child-cpr"
+          ]
+        },
+        {
+          "text": "เด็กเริ่มหายใจปกติ: จัดท่านอนตะแคงพักฟื้น เฝ้าดูต่อ",
+          "detail": "เตรียมปั๊มหัวใจใหม่ถ้าหยุดหายใจอีก",
+          "src": [
+            "sja-child-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าข้ามการเป่าปากถ้าทำได้",
+          "detail": "หัวใจหยุดเต้นในเด็กมักเกิดจากปัญหาการหายใจ การเป่าปากจึงสำคัญมาก",
+          "src": [
+            "sja-child-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งเด็กไปโทรศัพท์หรือหาเครื่อง AED",
+          "detail": "ถ้าไม่มีโทรศัพท์และไม่มีใครช่วย ให้ปั๊มหัวใจ 1 นาทีก่อนไปตามคน",
+          "src": [
+            "sja-child-cpr"
+          ]
+        },
+        {
+          "text": "อย่าเป่าลมแรง",
+          "detail": "เป่าเบา ๆ แค่ให้เห็นอกยกขึ้น",
+          "src": [
+            "sja-child-cpr"
+          ]
+        }
+      ],
+      "src": [
+        "sja-child-cpr",
+        "erc-2025",
+        "cpr-th"
+      ]
+    },
+    {
+      "id": "cpr-infant",
+      "title": "ทารกหมดสติ ไม่หายใจ: ปั๊มหัวใจทารก (ต่ำกว่า 1 ปี)",
+      "group": "ช่วยชีวิต",
+      "signs": "เรียกแล้วไม่ตอบสนอง ไม่หายใจหรือหายใจเฮือก",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงแล้วเริ่มช่วยเลย",
+      "steps": [
+        {
+          "text": "วางทารกนอนหงายบนพื้นแข็ง โทร 1669 เปิดลำโพง",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "เงยศีรษะเพียงเล็กน้อยให้หน้าหงายขนานพื้น ใช้ปลายนิ้วเชยคาง",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "ประกบปากครอบทั้งปากและจมูกทารก เป่าเบา ๆ 5 ครั้ง",
+          "detail": "ครั้งละไม่เกิน 1 วินาทีจนอกยกขึ้น ถ้าอกไม่ยกให้จัดศีรษะใหม่แล้วเป่าครั้งถัดไป",
+          "src": [
+            "sja-baby-cpr",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ใช้สองมือโอบรอบอก วางนิ้วหัวแม่มือสองข้างกลางหน้าอก",
+          "detail": "ถ้าโอบไม่ได้ ใช้ส้นมือข้างเดียวกดแทน",
+          "src": [
+            "erc-2025",
+            "aha-2025-summary"
+          ]
+        },
+        {
+          "text": "กดลึก 1 ใน 3 ของความหนาอก (ราว 4 ซม.) เร็ว 100-120 ครั้งต่อนาที",
+          "detail": "ปล่อยให้หน้าอกคืนตัวจนสุดทุกครั้ง",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "กด 30 ครั้ง สลับเป่าปาก 2 ครั้ง ทำต่อเนื่อง",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "ไม่มีโทรศัพท์: เป่า 5 ครั้ง ปั๊ม 1 นาที แล้วอุ้มทารกไปตามคนช่วย",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "ทำต่อจนกู้ชีพมาถึง หรือทารกหายใจ ไอ ขยับตัว แล้วเฝ้าดูต่อ",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าใช้สองนิ้วกดหน้าอก",
+          "detail": "แนวทางปี 2025 เลิกแนะนำแล้ว เพราะกดได้ไม่ลึกพอ",
+          "src": [
+            "aha-2025-summary",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าเงยศีรษะทารกมากเกินไป",
+          "detail": "เงยเบามากแค่ให้หน้าหงายขนานพื้น",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "อย่าเป่าลมแรง",
+          "detail": "เป่าเบา ๆ แค่ให้เห็นอกยกขึ้น",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        },
+        {
+          "text": "อย่าข้ามการเป่าปาก และอย่าวางทารกทิ้งไว้เพื่อไปโทรศัพท์",
+          "detail": "หัวใจหยุดเต้นในทารกมักเกิดจากปัญหาการหายใจ",
+          "src": [
+            "sja-baby-cpr"
+          ]
+        }
+      ],
+      "src": [
+        "sja-baby-cpr",
+        "erc-2025",
+        "aha-2025-summary"
+      ]
+    },
+    {
+      "id": "aed",
+      "title": "ใช้เครื่องกระตุกหัวใจอัตโนมัติ (AED)",
+      "group": "ช่วยชีวิต",
+      "signs": "ผู้ป่วยหมดสติ ไม่หายใจ และมีเครื่อง AED มาถึง",
+      "call": "โทร 1669 ไปแล้วตั้งแต่เริ่มปั๊มหัวใจ ถ้ายังไม่ได้โทรให้โทรทันที",
+      "steps": [
+        {
+          "text": "ปั๊มหัวใจต่อไป ให้อีกคนเปิดเครื่อง AED แล้วทำตามเสียงของเครื่อง",
+          "detail": "บางรุ่นมีปุ่มเปิด บางรุ่นเปิดเองเมื่อเปิดฝา ใช้ได้แม้ไม่เคยฝึก",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ถอดหรือตัดเสื้อให้เห็นหน้าอกเปล่า เช็ดอกให้แห้ง",
+          "src": [
+            "sja-aed",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ลอกแผ่นรองออก ติดแผ่นแรกใต้ไหปลาร้าขวา",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ติดแผ่นที่สองที่สีข้างซ้าย ใต้รักแร้",
+          "detail": "ดูรูปบนแผ่นประกอบ",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ทารกหรือเด็กเล็ก: ติดแผ่นหนึ่งกลางหน้าอก อีกแผ่นกลางหลัง",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "เมื่อเครื่องบอกให้หยุดเพื่อวิเคราะห์ ห้ามทุกคนแตะตัวผู้ป่วย",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ถ้าเครื่องสั่งช็อก บอกทุกคนถอยออก แล้วกดปุ่มช็อกตามที่เครื่องบอก",
+          "detail": "เครื่องบางรุ่นช็อกเองโดยไม่มีปุ่มกด",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ปั๊มหัวใจต่อทันที 2 นาที จนเครื่องวิเคราะห์อีกครั้ง",
+          "detail": "ทำเหมือนกันแม้เครื่องบอกว่าไม่ต้องช็อก",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "ถ้าผู้ป่วยหายใจปกติ จัดท่านอนตะแคงพักฟื้น คงแผ่นติดไว้",
+          "src": [
+            "sja-aed"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าหยุดปั๊มหัวใจระหว่างเตรียมเครื่องและติดแผ่น",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "อย่าแตะตัวผู้ป่วยขณะเครื่องวิเคราะห์หรือช็อก",
+          "src": [
+            "sja-aed"
+          ]
+        },
+        {
+          "text": "อย่าดึงแผ่นออกหรือปิดเครื่อง แม้ผู้ป่วยฟื้นแล้ว",
+          "src": [
+            "sja-aed"
+          ]
+        }
+      ],
+      "src": [
+        "sja-aed",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "choking-adult-child",
+      "title": "อาหารหรือของติดคอ: ผู้ใหญ่และเด็กโต",
+      "group": "ช่วยชีวิต",
+      "signs": "เอามือกุมคอ พูดไม่ออก ไอไม่มีเสียง หายใจไม่ได้",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวและของยังไม่ออก โทรเปิดลำโพง",
+      "steps": [
+        {
+          "text": "ถามว่าสำลักใช่ไหม ถ้ายังไอหรือพูดได้ ให้ไอแรง ๆ ต่อไป",
+          "src": [
+            "sja-choking",
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "ถ้าไอไม่ออก พูดไม่ได้: ให้โน้มตัวไปข้างหน้า มือหนึ่งประคองหน้าอก",
+          "src": [
+            "sja-choking"
+          ]
+        },
+        {
+          "text": "ใช้ส้นมือตบแรง ๆ กลางหลังระหว่างสะบัก 5 ครั้ง",
+          "detail": "ดูในปากหลังตบแต่ละครั้ง ถ้าเห็นของชัดเจนค่อยหยิบออก",
+          "src": [
+            "sja-choking",
+            "aha-2025-news",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ยังไม่ออก: ยืนด้านหลัง โอบเอว กำหมัดวางเหนือสะดือ ใต้ลิ้นปี่",
+          "src": [
+            "sja-choking",
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "มืออีกข้างจับหมัด กระตุกเข้าหาตัวและขึ้นบนแรง ๆ 5 ครั้ง",
+          "src": [
+            "sja-choking",
+            "aha-2025-news"
+          ]
+        },
+        {
+          "text": "ทำสลับ ตบหลัง 5 รัดกระตุกหน้าท้อง 5 จนของออกหรือหมดสติ",
+          "src": [
+            "sja-choking",
+            "aha-2025-news",
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "คนท้องหรืออ้วนมาก: กระตุกที่กลางกระดูกหน้าอกแทนหน้าท้อง",
+          "detail": "วางหมัดกลางกระดูกหน้าอกระดับราวนม แล้วกระตุกเข้าหาตัว 5 ครั้ง",
+          "src": [
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "ถ้าหมดสติ: วางนอนลง โทร 1669 เริ่มปั๊มหัวใจทันที",
+          "detail": "ก่อนเป่าปากให้ดูในปาก หยิบออกเฉพาะของที่เห็นและหลุดง่าย",
+          "src": [
+            "sja-choking",
+            "erc-2025",
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "เด็กที่ถูกรัดกระตุกหน้าท้องควรไปโรงพยาบาล แม้ของออกแล้ว",
+          "src": [
+            "sja-child-choking"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าตบหลังหรือรัดท้องคนที่ยังไอแรงและพูดได้",
+          "detail": "ให้ไอเองต่อไป แต่เฝ้าดูใกล้ชิดเผื่ออาการแย่ลง",
+          "src": [
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "อย่าเอานิ้วล้วงหรือกวาดในปากโดยมองไม่เห็นของ",
+          "detail": "อาจดันของให้ลึกลงไปอีก",
+          "src": [
+            "sja-child-choking",
+            "medlineplus-choking"
+          ]
+        },
+        {
+          "text": "อย่ารัดกระตุกหน้าท้องทารกอายุต่ำกว่า 1 ปี",
+          "detail": "เสี่ยงบาดเจ็บ ให้ใช้วิธีสำหรับทารก",
+          "src": [
+            "aha-2025-news"
+          ]
+        }
+      ],
+      "src": [
+        "sja-choking",
+        "sja-child-choking",
+        "aha-2025-news",
+        "medlineplus-choking",
+        "erc-2025",
+        "brc-choking"
+      ]
+    },
+    {
+      "id": "choking-infant",
+      "title": "ของติดคอ: ทารกต่ำกว่า 1 ปี",
+      "group": "ช่วยชีวิต",
+      "signs": "ร้องไม่มีเสียง ไอไม่ออก หายใจไม่ได้",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวและของยังไม่ออก โทรโดยอุ้มทารกไปด้วย",
+      "steps": [
+        {
+          "text": "ถ้าทารกยังร้องหรือไอมีเสียง ให้ไอเองต่อไป เฝ้าดูใกล้ชิด",
+          "src": [
+            "sja-baby-choking"
+          ]
+        },
+        {
+          "text": "วางทารกคว่ำไปตามต้นขาของคุณ ใช้มือประคองศีรษะ",
+          "src": [
+            "sja-baby-choking"
+          ]
+        },
+        {
+          "text": "ใช้ส้นมือตบกลางหลังระหว่างสะบัก 5 ครั้ง",
+          "src": [
+            "sja-baby-choking",
+            "aha-2025-news"
+          ]
+        },
+        {
+          "text": "พลิกหงายบนต้นขา ดูในปาก หยิบออกเฉพาะของที่เห็นชัด",
+          "src": [
+            "sja-baby-choking"
+          ]
+        },
+        {
+          "text": "ยังไม่ออก: กดกลางหน้าอก 5 ครั้ง แต่ละครั้งกดให้หนักแน่นกว่าตอนปั๊มหัวใจ",
+          "detail": "ใช้ส้นมือข้างเดียว หรือสองมือโอบอกแล้วกดด้วยนิ้วหัวแม่มือสองข้าง ดูในปากทุกครั้ง",
+          "src": [
+            "aha-2025-news",
+            "sja-baby-choking"
+          ]
+        },
+        {
+          "text": "ทำสลับ ตบหลัง 5 กดหน้าอก 5 จนของออกหรือทารกหมดสติ",
+          "src": [
+            "sja-baby-choking",
+            "aha-2025-news"
+          ]
+        },
+        {
+          "text": "ถ้าทารกหมดสติ: เริ่มปั๊มหัวใจทารกทันที",
+          "src": [
+            "sja-baby-choking",
+            "aha-2025-news"
+          ]
+        },
+        {
+          "text": "ทารกที่ถูกกดหน้าอกต้องไปโรงพยาบาลตรวจทุกราย",
+          "src": [
+            "sja-baby-choking"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ารัดกระตุกหน้าท้องทารก",
+          "detail": "เสี่ยงทำให้อวัยวะภายในบาดเจ็บ",
+          "src": [
+            "aha-2025-news"
+          ]
+        },
+        {
+          "text": "อย่าเอานิ้วกวาดในปาก",
+          "detail": "อาจดันของให้ลึกลงไปอีก",
+          "src": [
+            "sja-baby-choking"
+          ]
+        },
+        {
+          "text": "อย่าวางทารกทิ้งไว้เพื่อไปโทรศัพท์",
+          "detail": "ให้อุ้มไปด้วย",
+          "src": [
+            "sja-baby-choking"
+          ]
+        }
+      ],
+      "src": [
+        "sja-baby-choking",
+        "aha-2025-news",
+        "aha-2025-laerdal"
+      ]
+    },
+    {
+      "id": "drowning",
+      "title": "จมน้ำ",
+      "group": "ช่วยชีวิต",
+      "signs": "คนตกน้ำ ดิ้นหรือนิ่งเงียบในน้ำ หรือขึ้นจากน้ำแล้วไม่รู้สึกตัว",
+      "call": "ตะโกนขอความช่วยเหลือ และโทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "ตะโกน: เรียกคนมาช่วย และโทร 1669",
+          "src": [
+            "ddc-drowning",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "โยน: โยนของลอยน้ำให้เกาะ เช่น ถังแกลลอนเปล่าปิดฝา ขวดน้ำเปล่า ห่วงยาง",
+          "src": [
+            "ddc-drowning",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ยื่น: ยื่นไม้ เชือก เสื้อ หรือผ้าขาวม้าให้จับ แล้วดึงเข้าฝั่ง",
+          "src": [
+            "ddc-drowning",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เมื่อขึ้นจากน้ำแล้ว: เรียกดู ถ้าไม่ตอบและไม่หายใจ เริ่มช่วยทันที",
+          "src": [
+            "sja-drowning",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เปิดทางเดินหายใจ เป่าปากช่วยหายใจ 5 ครั้งก่อน",
+          "detail": "คนจมน้ำขาดอากาศ การเป่าปากก่อนจึงให้ผลดีกว่า",
+          "src": [
+            "erc-2025",
+            "sja-drowning"
+          ]
+        },
+        {
+          "text": "แล้วปั๊มหัวใจ กด 30 ครั้ง สลับเป่าปาก 2 ครั้ง ต่อเนื่อง",
+          "detail": "ถ้าเป่าปากไม่ได้ ให้กดหน้าอกต่อเนื่องและทำตามเจ้าหน้าที่ 1669",
+          "src": [
+            "erc-2025",
+            "sja-drowning"
+          ]
+        },
+        {
+          "text": "มีเครื่อง AED: เช็ดหน้าอกให้แห้งก่อนติดแผ่น แล้วทำตามเสียง",
+          "src": [
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้าอาเจียน พลิกตะแคงให้ไหลออก แล้วช่วยต่อ",
+          "src": [
+            "sja-drowning"
+          ]
+        },
+        {
+          "text": "ถ้าหายใจได้: จัดท่าพักฟื้น เปลี่ยนเสื้อผ้าเปียก ห่มให้อุ่น ส่งโรงพยาบาล",
+          "detail": "ต้องให้แพทย์ตรวจทุกราย แม้ดูเป็นปกติ",
+          "src": [
+            "sja-drowning"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ากระโดดลงไปช่วยเอง",
+          "detail": "อาจถูกกอดรัดจนจมน้ำไปด้วยกัน ลงน้ำได้เฉพาะผู้ที่ฝึกช่วยชีวิตทางน้ำมา",
+          "src": [
+            "ddc-drowning",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งผู้ป่วยไปหาเครื่อง AED เอง",
+          "src": [
+            "sja-drowning"
+          ]
+        },
+        {
+          "text": "อย่าปล่อยกลับบ้านโดยไม่พบแพทย์ แม้รู้สึกตัวดีแล้ว",
+          "src": [
+            "sja-drowning"
+          ]
+        }
+      ],
+      "src": [
+        "ddc-drowning",
+        "erc-2025",
+        "sja-drowning"
+      ]
+    },
+    {
+      "id": "recovery-position",
+      "title": "หมดสติแต่ยังหายใจ: ท่านอนตะแคงพักฟื้น",
+      "group": "ช่วยชีวิต",
+      "signs": "เรียกไม่ตอบ แต่หายใจปกติ",
+      "call": "โทร 1669 ทันที แล้วเฝ้าดูการหายใจตลอด",
+      "steps": [
+        {
+          "text": "คุกเข่าข้างตัว เหยียดขาผู้ป่วยให้ตรง ถอดแว่นและของชิ้นใหญ่ในกระเป๋า",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "กางแขนข้างใกล้ตัวคุณให้ตั้งฉากกับลำตัว งอศอก หงายฝ่ามือ",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "ดึงแขนอีกข้างพาดอก ให้หลังมือแนบแก้มด้านใกล้ตัวคุณ จับค้างไว้",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "มืออีกข้างดึงเข่าด้านไกลให้ตั้งขึ้น เท้าวางราบกับพื้น",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "ดึงเข่านั้นให้ตัวพลิกตะแคงมาหาคุณ จัดขาบนให้งอตั้งฉาก",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "เงยหน้าและเชยคางเล็กน้อยให้ทางเดินหายใจเปิด",
+          "detail": "ท่านี้ช่วยให้ทางเดินหายใจเปิดและอาเจียนไหลออกได้",
+          "src": [
+            "sja-recovery"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจตลอด ถ้าหยุดหายใจ พลิกหงายแล้วปั๊มหัวใจทันที",
+          "src": [
+            "sja-recovery",
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "ถ้านอนท่านี้นานถึง 30 นาที ให้พลิกไปตะแคงอีกข้าง",
+          "src": [
+            "sja-recovery"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าปล่อยให้นอนหงายถ้าหมดสติแต่ยังหายใจ",
+          "detail": "อาเจียนอาจอุดทางเดินหายใจ",
+          "src": [
+            "sja-recovery",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ถ้าสงสัยคอหรือหลังบาดเจ็บ อย่าขยับ เว้นแต่ทางเดินหายใจไม่โล่ง",
+          "detail": "ถ้าต้องพลิก ให้ศีรษะ คอ และหลังเป็นแนวเดียวกัน",
+          "src": [
+            "sja-recovery",
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งผู้ป่วยไว้คนเดียว",
+          "src": [
+            "sja-recovery"
+          ]
+        }
+      ],
+      "src": [
+        "sja-recovery",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "severe-bleeding",
+      "title": "เลือดออกมาก",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "เลือดพุ่ง ไหลไม่หยุด หรือชุ่มผ้าอย่างรวดเร็ว",
+      "call": "ให้คนอื่นโทร 1669 ทันที ถ้าอยู่คนเดียวโทรเปิดลำโพงขณะกดแผล",
+      "steps": [
+        {
+          "text": "สวมถุงมือถ้ามี เพื่อลดการติดเชื้อ",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ถอดหรือตัดเสื้อผ้าให้เห็นแผล แล้วใช้ผ้าสะอาดกดลงบนแผลตรง ๆ ให้แน่น",
+          "detail": "กดค้างไว้ต่อเนื่อง ผู้บาดเจ็บช่วยกดเองได้ถ้ายังมีแรง",
+          "src": [
+            "sja-bleeding",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "พันผ้าทับให้แน่นพอคงแรงกด แต่ปลายมือปลายเท้ายังมีเลือดไหลเวียน",
+          "detail": "กดเล็บ 5 วินาที ถ้าสีไม่กลับใน 2 วินาที แปลว่าพันแน่นเกิน",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "เลือดซึมทะลุ: เปลี่ยนผ้าผืนใหม่แล้วกดให้แน่นอีกครั้ง",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "แผลลึกที่กดแล้วไม่หยุด: อัดผ้าสะอาดลงในแผลให้แน่น แล้วกดทับต่อ",
+          "detail": "กดค้างไว้อย่างน้อย 5 นาที",
+          "src": [
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "แขนขาเลือดพุ่งไม่หยุด: รัดสายรัดห้ามเลือดเหนือแผล 5-7 ซม. (2-3 นิ้ว)",
+          "detail": "รัดระหว่างแผลกับลำตัว ถ้าตรงกับข้อให้เลื่อนขึ้นเหนือข้อ ขันจนเลือดหยุด จะเจ็บมาก",
+          "src": [
+            "stb-tourniquet",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "จดเวลาที่รัดสายรัด แล้วบอกทีมกู้ชีพ",
+          "detail": "ถ้าไม่มีสายรัด เจ้าหน้าที่ 1669 จะบอกวิธีใช้ผ้าสามเหลี่ยม ผ้าพันคอ หรือเข็มขัดแทน",
+          "src": [
+            "sja-life-bleed",
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ยกขาสูง ห่มผ้าให้อุ่น เฝ้าดูการรู้สึกตัว",
+          "detail": "ป้องกันภาวะช็อกจากการเสียเลือด",
+          "src": [
+            "sja-bleeding"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าดึงของที่ปักคาแผลออก",
+          "detail": "ของนั้นอาจอุดเลือดอยู่ ให้กดสองข้างของแผลแทน",
+          "src": [
+            "sja-bleeding"
+          ]
+        },
+        {
+          "text": "อย่าคลายหรือถอดสายรัดห้ามเลือดเอง",
+          "detail": "เลือดจะกลับมาออกอีก ให้ทีมแพทย์เป็นผู้ถอด",
+          "src": [
+            "stb-tourniquet",
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่ารัดสายรัดห้ามเลือดทับข้อศอก ข้อเข่า หรือข้ออื่น",
+          "src": [
+            "sja-life-bleed"
+          ]
+        },
+        {
+          "text": "อย่าใช้สายรัดถ้ากดแผลแล้วเลือดหยุดได้",
+          "detail": "เลือดออกส่วนใหญ่หยุดได้ด้วยการกดตรงแผล",
+          "src": [
+            "sja-life-bleed"
+          ]
+        }
+      ],
+      "src": [
+        "sja-bleeding",
+        "sja-life-bleed",
+        "stb-tourniquet",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "shock",
+      "title": "ภาวะช็อก (เลือดไปเลี้ยงร่างกายไม่พอ)",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "ซีด ตัวเย็นชื้น เหงื่อแตก ชีพจรเร็ว หายใจเร็วตื้น กระสับกระส่าย",
+      "call": "โทร 1669 ทันที บอกว่าสงสัยภาวะช็อกและสาเหตุที่เห็น",
+      "steps": [
+        {
+          "text": "แก้สาเหตุที่เห็นก่อน เช่น กดห้ามเลือด",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "ให้นอนราบบนผ้าหรือเสื่อ ยกขาสูงพาดเก้าอี้",
+          "detail": "ช่วยให้เลือดกลับไปเลี้ยงอวัยวะสำคัญ",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "โทร 1669 บอกว่าสงสัยภาวะช็อก",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "คลายเสื้อผ้าที่รัดคอ อก และเอว",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "ห่มผ้าหรือเสื้อคลุมให้อุ่น พูดปลอบให้สงบ",
+          "detail": "ความกลัวและความเจ็บปวดทำให้ช็อกแย่ลง",
+          "src": [
+            "sja-shock"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการรู้สึกตัวและการหายใจ ถ้าไม่หายใจให้ปั๊มหัวใจ",
+          "src": [
+            "sja-shock",
+            "sja-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ายกขาถ้าสงสัยขาหัก สะโพกหรือเชิงกรานบาดเจ็บ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่ารอให้อาการดีขึ้นเอง",
+          "detail": "ภาวะช็อกอันตรายถึงชีวิต ต้องถึงมือแพทย์โดยเร็ว",
+          "src": [
+            "sja-shock"
+          ]
+        }
+      ],
+      "src": [
+        "sja-shock"
+      ]
+    },
+    {
+      "id": "spinal-head-injury",
+      "title": "สงสัยคอ หลัง หรือศีรษะบาดเจ็บรุนแรง",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "ตกจากที่สูง รถชน ของหนักทับ ปวดคอหรือหลัง แขนขาชาหรืออ่อนแรง ซึมลง",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "บอกให้อยู่นิ่ง อย่าขยับ และโทร 1669",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "คุกเข่าเหนือศีรษะ ใช้สองมือประคองศีรษะให้อยู่แนวตรงกับคอและหลัง",
+          "detail": "วางศอกบนพื้นให้มั่น กางนิ้วไม่ปิดหูผู้บาดเจ็บ ประคองไว้จนกู้ชีพมารับช่วง",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ให้คนช่วยเอาผ้าม้วนหรือเสื้อวางขนาบสองข้างศีรษะ",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ถ้าหมดสติ: เปิดทางเดินหายใจโดยยกขากรรไกร ไม่เงยคอ",
+          "detail": "วางปลายนิ้วที่มุมขากรรไกรสองข้างแล้วยกขึ้นเบา ๆ",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ถ้าไม่หายใจ: ปั๊มหัวใจทันที และให้คนไปเอาเครื่อง AED",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "ศีรษะมีแผลเลือดออก: ใช้ผ้าสะอาดกดบนแผล",
+          "src": [
+            "sja-head"
+          ]
+        },
+        {
+          "text": "หลังศีรษะกระแทก ถ้าซึม สับสน อาเจียนซ้ำ ชัก ปวดหัวมาก: โทร 1669",
+          "detail": "รวมถึงมีเลือดหรือน้ำใสไหลจากหูหรือจมูก รูม่านตาสองข้างไม่เท่ากัน",
+          "src": [
+            "sja-head"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเคลื่อนย้าย เว้นแต่ที่ตรงนั้นอันตรายถึงชีวิต",
+          "src": [
+            "sja-spinal",
+            "sja-head",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "อย่าเงยคอหรือบิดศีรษะ",
+          "src": [
+            "sja-spinal"
+          ]
+        },
+        {
+          "text": "อย่าให้กลับไปเล่นกีฬาจนกว่าบุคลากรทางการแพทย์จะตรวจแล้ว",
+          "src": [
+            "sja-head",
+            "erc-2025"
+          ]
+        }
+      ],
+      "src": [
+        "sja-spinal",
+        "sja-head",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "fracture-sprain",
+      "title": "กระดูกหัก ข้อเคล็ด ข้อแพลง",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "ปวด บวม ช้ำ ผิดรูป ขยับไม่ได้ หรือเห็นกระดูกโผล่",
+      "call": "โทร 1669 ถ้ากระดูกโผล่ ต้นขา สะโพก เชิงกราน คอ หรือหลังหัก",
+      "steps": [
+        {
+          "text": "ให้อยู่นิ่ง ประคองส่วนที่เจ็บโดยจับข้อเหนือและใต้จุดที่เจ็บ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ถอดแหวน นาฬิกา ของรัดออกก่อนบวม",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "มีแผลหรือกระดูกโผล่: คลุมด้วยผ้าสะอาด กดรอบแผลเพื่อห้ามเลือด",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ใช้ผ้านุ่มหรือหมอนหนุนรอบส่วนที่เจ็บให้อยู่นิ่ง",
+          "detail": "แขนใช้ผ้าคล้องคอ ขาใช้ผ้าพับกว้างพันประคอง",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ถามว่าชา เย็น หรือไม่รู้สึกที่ปลายมือปลายเท้าหรือไม่ แล้วบอกกู้ชีพ",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "ข้อเคล็ด: พักส่วนที่เจ็บ และยกสูง",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "ข้อเคล็ด: ประคบเย็นด้วยน้ำแข็งห่อผ้า ครั้งละไม่เกิน 20 นาที",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "ปวดมากหรือขยับไม่ได้ ให้ไปพบแพทย์",
+          "src": [
+            "sja-sprain"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ากดลงบนกระดูกที่โผล่หรือจุดที่สงสัยว่าหัก",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้ายก่อนส่วนที่เจ็บถูกประคองให้นิ่ง เว้นแต่อันตราย",
+          "src": [
+            "sja-fracture"
+          ]
+        },
+        {
+          "text": "อย่าวางน้ำแข็งบนผิวหนังโดยตรง",
+          "detail": "ห่อด้วยผ้าก่อนเสมอ",
+          "src": [
+            "sja-sprain"
+          ]
+        },
+        {
+          "text": "อย่าให้ยาแอสไพรินแก่เด็กอายุต่ำกว่า 16 ปี",
+          "src": [
+            "sja-sprain"
+          ]
+        }
+      ],
+      "src": [
+        "sja-fracture",
+        "sja-sprain"
+      ]
+    },
+    {
+      "id": "eye-injury",
+      "title": "ตาบาดเจ็บ หรือสารเคมีเข้าตา",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "ปวดตา แสบตา น้ำตาไหล ลืมตาไม่ขึ้น ตามัว หรือมีของปักคา",
+      "call": "โทร 1669 หรือไปห้องฉุกเฉินทันที ถ้าสารเคมีเข้าตา มีแผล หรือมีของปักคา",
+      "steps": [
+        {
+          "text": "สารเคมีเข้าตา: ล้างด้วยน้ำสะอาดไหลเบา ๆ ทันที อย่างน้อย 20 นาที",
+          "detail": "ล้างทั้งด้านในและด้านนอกเปลือกตา สวมถุงมือถ้ามี",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ระวังไม่ให้น้ำที่ล้างกระเด็นเข้าตาอีกข้าง หรือโดนตัวคุณ",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ถ้าใส่คอนแทคเลนส์และถอดได้ ให้ถอดออก",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ฝุ่นผง: เงยหน้า เทน้ำสะอาดจากหัวตาให้ไหลออก",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ของปักคาหรือมีแผลที่ตา: ปิดตาด้วยผ้าปิดแผลสะอาด แล้วไปโรงพยาบาล",
+          "detail": "ให้พักในท่าสบาย หลับตาไว้",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "ถ้าล้างแล้วยังปวดมากหรือของไม่ออก ไปพบแพทย์",
+          "src": [
+            "sja-eye"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าขยี้ตา",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "อย่าพยายามดึงของที่ปักคาอยู่ในตาออก",
+          "src": [
+            "sja-eye"
+          ]
+        },
+        {
+          "text": "อย่าเสียเวลาหาน้ำยาพิเศษ ใช้น้ำสะอาดที่มีล้างทันที",
+          "src": [
+            "sja-eye",
+            "sja-chemical-burn"
+          ]
+        }
+      ],
+      "src": [
+        "sja-eye"
+      ]
+    },
+    {
+      "id": "nosebleed",
+      "title": "เลือดกำเดาไหล",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "เลือดไหลจากจมูก",
+      "call": "โทร 1669 ถ้าเลือดออกมาก หรือไหลนานเกิน 30 นาที",
+      "steps": [
+        {
+          "text": "ให้นั่งลง ก้มหน้าไปข้างหน้าเล็กน้อย หายใจทางปาก",
+          "src": [
+            "sja-nosebleed"
+          ]
+        },
+        {
+          "text": "บีบส่วนนุ่มของจมูกค้างไว้ 10 นาที",
+          "detail": "ใช้กระดาษทิชชูสะอาดรองเลือด",
+          "src": [
+            "sja-nosebleed"
+          ]
+        },
+        {
+          "text": "ครบ 10 นาทีแล้วปล่อย ถ้ายังไหล บีบต่ออีก 10 นาที ทำได้อีก 2 รอบ",
+          "src": [
+            "sja-nosebleed"
+          ]
+        },
+        {
+          "text": "เลือดหยุดแล้ว: เช็ดรอบจมูกด้วยน้ำอุ่นเล็กน้อย แล้วพัก",
+          "src": [
+            "sja-nosebleed"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเงยหน้า",
+          "detail": "เลือดจะไหลลงคอและอาจอุดทางเดินหายใจ",
+          "src": [
+            "sja-nosebleed"
+          ]
+        },
+        {
+          "text": "อย่าสั่งน้ำมูก แคะจมูก หรือออกแรงหลังเลือดหยุด",
+          "detail": "จะทำให้ลิ่มเลือดหลุด",
+          "src": [
+            "sja-nosebleed"
+          ]
+        }
+      ],
+      "src": [
+        "sja-nosebleed"
+      ]
+    },
+    {
+      "id": "minor-wound",
+      "title": "แผลถลอก แผลบาดเล็กน้อย",
+      "group": "เลือดออกและบาดเจ็บ",
+      "signs": "แผลตื้น เลือดออกไม่มาก",
+      "call": "ไม่ต้องโทร 1669 เว้นแต่เลือดไม่หยุด ให้ดูหัวข้อเลือดออกมาก",
+      "steps": [
+        {
+          "text": "ล้างแผลด้วยน้ำสะอาดที่ไหลผ่าน",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "ซับให้แห้งด้วยผ้าก๊อซหรือผ้าสะอาดที่ไม่มีขุย อย่าถูแผล",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "แผลบาด: ยกส่วนที่เป็นแผลให้สูงกว่าหัวใจ",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "ล้างผิวรอบแผลด้วยสบู่และน้ำ เช็ดออกจากแผล",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "ปิดแผลด้วยพลาสเตอร์หรือผ้าปิดแผลสะอาด",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "ไปพบแพทย์ถ้าเลือดไม่หยุด มีของฝังในแผล ถูกคนหรือสัตว์กัด หรือแผลติดเชื้อ",
+          "detail": "แผลติดเชื้อ: ร้อน บวม แดงขึ้น มีหนอง มีกลิ่น หรือมีไข้",
+          "src": [
+            "sja-cuts",
+            "sja-bites"
+          ]
+        },
+        {
+          "text": "ถามเรื่องวัคซีนบาดทะยัก ถ้าแผลสกปรกหรือไม่แน่ใจว่าเคยฉีดใน 10 ปี",
+          "src": [
+            "sja-cuts",
+            "sja-bites"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าจับแผลโดยไม่จำเป็น",
+          "src": [
+            "sja-cuts"
+          ]
+        },
+        {
+          "text": "อย่าใช้ผ้าที่เป็นขุยซับหรือปิดแผล",
+          "src": [
+            "sja-cuts"
+          ]
+        }
+      ],
+      "src": [
+        "sja-cuts",
+        "sja-bites"
+      ]
+    },
+    {
+      "id": "burns",
+      "title": "ไฟไหม้ น้ำร้อนลวก",
+      "group": "ความร้อน ไฟ และสารเคมี",
+      "signs": "ผิวแดง ปวดแสบ พอง หรือไหม้ลึก",
+      "call": "โทร 1669 ถ้าแผลใหญ่หรือลึก โดนหน้า อวัยวะเพศ หรือเกิดจากไฟฟ้าหรือสารเคมี",
+      "steps": [
+        {
+          "text": "เปิดน้ำเย็นธรรมดาให้ไหลผ่านแผลอย่างน้อย 20 นาที เริ่มให้เร็วที่สุด",
+          "detail": "ยังได้ผลถ้าเริ่มภายใน 3 ชั่วโมง ถ้าไม่มีน้ำไหล ใช้น้ำดื่มขวดหรือผ้าเปียกแทน",
+          "src": [
+            "nhs-burns",
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "ถอดเครื่องประดับและเสื้อผ้าใกล้แผลก่อนบวม ยกเว้นส่วนที่ติดแผล",
+          "src": [
+            "nhs-burns",
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "เมื่อแผลเย็นแล้ว วางฟิล์มถนอมอาหารคลุมแผลหลวม ๆ ตามแนวยาว",
+          "detail": "มือหรือเท้าใช้ถุงพลาสติกสะอาดสวมได้ ถ้าไม่มีใช้ผ้าสะอาดไม่มีขุย",
+          "src": [
+            "sja-burns",
+            "sja-severe-burn",
+            "nhs-burns"
+          ]
+        },
+        {
+          "text": "แผลใหญ่: ให้นั่งหรือนอน และระวังอย่าให้ทั้งตัวเย็นเกินไป",
+          "detail": "อุณหภูมิกายอาจต่ำจนอันตราย โดยเฉพาะทารกและผู้สูงอายุ",
+          "src": [
+            "sja-severe-burn"
+          ]
+        },
+        {
+          "text": "ไปโรงพยาบาลถ้าแผลใหญ่ ลึก โดนหน้าหรืออวัยวะเพศ หรือไม่แน่ใจ",
+          "src": [
+            "nhs-burns",
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "สารเคมีถูกผิว: ปัดผงออก ถอดเสื้อผ้าที่เปื้อน ราดน้ำมาก ๆ จนกู้ชีพมา",
+          "detail": "สวมถุงมือ ให้น้ำไหลออกห่างจากตัวคุณและผู้ป่วย",
+          "src": [
+            "sja-chemical-burn"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามใช้น้ำแข็ง",
+          "detail": "อาจทำให้แผลเสียหายเพิ่ม",
+          "src": [
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "ห้ามทาครีม เจล น้ำมัน เนย หรือของอื่นใดบนแผล",
+          "detail": "รวมถึงยาสีฟัน เพราะเพิ่มความเสี่ยงติดเชื้อ",
+          "src": [
+            "nhs-burns",
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "ห้ามเจาะตุ่มพอง",
+          "src": [
+            "nhs-burns",
+            "sja-burns"
+          ]
+        },
+        {
+          "text": "ห้ามดึงเสื้อผ้าที่ติดแผลออก และห้ามพันฟิล์มรัดรอบแขนขา",
+          "detail": "แผลต้องมีที่ให้บวม",
+          "src": [
+            "sja-burns",
+            "nhs-burns"
+          ]
+        },
+        {
+          "text": "ห้ามพยายามใช้สารอื่นล้างฤทธิ์กรดหรือด่าง",
+          "src": [
+            "sja-chemical-burn"
+          ]
+        }
+      ],
+      "src": [
+        "nhs-burns",
+        "sja-burns",
+        "sja-severe-burn",
+        "sja-chemical-burn"
+      ]
+    },
+    {
+      "id": "electric-shock",
+      "title": "ไฟฟ้าดูด",
+      "group": "ความร้อน ไฟ และสารเคมี",
+      "signs": "หมดสติหรือเกร็งใกล้สายไฟหรือเครื่องใช้ไฟฟ้า อาจมีแผลไหม้",
+      "call": "โทร 1669 ทันที",
+      "steps": [
+        {
+          "text": "หยุดก่อน อย่าแตะตัวผู้ป่วยถ้ายังสัมผัสไฟอยู่",
+          "src": [
+            "sja-electric"
+          ]
+        },
+        {
+          "text": "ตัดไฟที่ต้นทาง: ปิดสวิตช์ ถอดปลั๊ก หรือสับเบรกเกอร์",
+          "src": [
+            "sja-electric"
+          ]
+        },
+        {
+          "text": "ตัดไฟไม่ได้: ยืนบนของแห้งที่เป็นฉนวน ใช้ไม้แห้งเขี่ยแขนขาออกจากไฟ",
+          "detail": "เช่น ยืนบนแผ่นพลาสติกหรือลังไม้ ใช้ด้ามไม้กวาด",
+          "src": [
+            "sja-electric"
+          ]
+        },
+        {
+          "text": "เมื่อแน่ใจว่าพ้นไฟแล้ว: เรียกดู ตรวจการหายใจ โทร 1669",
+          "src": [
+            "sja-electric"
+          ]
+        },
+        {
+          "text": "ไม่หายใจ: ปั๊มหัวใจทันที และใช้เครื่อง AED ถ้ามี",
+          "src": [
+            "sja-electric",
+            "sja-cpr"
+          ]
+        },
+        {
+          "text": "มีแผลไหม้: เปิดน้ำไหลผ่าน 20 นาที แล้วไปโรงพยาบาลทุกราย",
+          "src": [
+            "nhs-burns"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าแตะผู้ป่วยด้วยมือเปล่าก่อนตัดไฟ",
+          "src": [
+            "sja-electric"
+          ]
+        },
+        {
+          "text": "อย่าใช้ของเปียกหรือโลหะเขี่ย",
+          "detail": "น้ำนำไฟฟ้าได้ดีมาก",
+          "src": [
+            "sja-electric"
+          ]
+        }
+      ],
+      "src": [
+        "sja-electric",
+        "nhs-burns"
+      ]
+    },
+    {
+      "id": "smoke-co",
+      "title": "สำลักควัน หรือก๊าซคาร์บอนมอนอกไซด์",
+      "group": "ความร้อน ไฟ และสารเคมี",
+      "signs": "ปวดหัว เวียนหัว คลื่นไส้ สับสน อ่อนแรง หายใจลำบาก หรือหมดสติในที่อับ",
+      "call": "โทร 1669 ทันที บอกว่าสงสัยสูดควันหรือก๊าซพิษ",
+      "steps": [
+        {
+          "text": "โทร 1669 บอกว่าสงสัยสูดควันหรือก๊าซพิษ",
+          "src": [
+            "sja-co"
+          ]
+        },
+        {
+          "text": "พาผู้ป่วยออกมาที่อากาศบริสุทธิ์ ถ้าทำได้โดยตัวคุณไม่ต้องเข้าไปในควัน",
+          "src": [
+            "sja-co"
+          ]
+        },
+        {
+          "text": "ให้นั่งพัก หายใจตามปกติ อยู่เป็นเพื่อนจนกู้ชีพมา",
+          "src": [
+            "sja-co"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจและการรู้สึกตัว",
+          "detail": "หมดสติแต่หายใจ: จัดท่านอนตะแคงพักฟื้น ไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-co"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าเข้าไปในห้องที่เต็มไปด้วยควันหรือก๊าซ",
+          "detail": "รอเจ้าหน้าที่ดับเพลิงหรือกู้ภัย",
+          "src": [
+            "sja-co"
+          ]
+        },
+        {
+          "text": "อย่าจุดเตาถ่าน เตาแก๊ส หรือเดินเครื่องปั่นไฟในที่ปิด",
+          "detail": "ก๊าซคาร์บอนมอนอกไซด์ไม่มีกลิ่นและไม่มีรส จึงรู้ตัวได้ยาก",
+          "src": [
+            "sja-co"
+          ]
+        }
+      ],
+      "src": [
+        "sja-co"
+      ]
+    },
+    {
+      "id": "heat-stroke",
+      "title": "ลมแดด (ฮีทสโตรก) และเพลียแดด",
+      "group": "ความร้อน ไฟ และสารเคมี",
+      "signs": "ลมแดด: ตัวร้อนจัดเกิน 40 องศา ผิวแห้งร้อน สับสน ชัก หมดสติ",
+      "call": "โทร 1669 ทันทีถ้าสงสัยลมแดด หรือเพลียแดดที่ไม่ดีขึ้นใน 30 นาที",
+      "steps": [
+        {
+          "text": "พาเข้าที่ร่มและเย็น ถอดเสื้อผ้าชั้นนอกออก",
+          "src": [
+            "sja-heatstroke",
+            "nhs-heat"
+          ]
+        },
+        {
+          "text": "ลมแดด: โทร 1669 แล้วลดความร้อนทันทีด้วยทุกวิธีที่มี",
+          "src": [
+            "sja-heatstroke",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ห่อตัวด้วยผ้าเปียกเย็น หรือเช็ดตัวด้วยน้ำเย็นแล้วพัดให้ลมโกรก",
+          "detail": "วางของเย็นห่อผ้าที่รักแร้และรอบคอ",
+          "src": [
+            "sja-heatstroke",
+            "nhs-heat"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจและการรู้สึกตัว ถ้าตัวกลับร้อนอีกให้ทำซ้ำ",
+          "detail": "หมดสติ: จัดท่านอนตะแคงพักฟื้น อาจมีอาการชัก",
+          "src": [
+            "sja-heatstroke"
+          ]
+        },
+        {
+          "text": "เพลียแดด (เหงื่อออกมาก ซีด ตะคริว): ให้นอนในที่เย็น ยกขาสูง",
+          "src": [
+            "sja-heat-exhaustion"
+          ]
+        },
+        {
+          "text": "เพลียแดดที่รู้สึกตัวดี: ให้จิบน้ำมาก ๆ หรือผงน้ำตาลเกลือแร่ (ORS)",
+          "detail": "ควรดีขึ้นภายใน 30 นาที",
+          "src": [
+            "sja-heat-exhaustion",
+            "nhs-heat"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าทิ้งผู้ป่วยไว้คนเดียว",
+          "detail": "ถ้าเพลียแดดแล้วยังไม่ดีขึ้นหลังพักในที่เย็นและดื่มน้ำ 30 นาที ให้โทร 1669",
+          "src": [
+            "nhs-heat"
+          ]
+        },
+        {
+          "text": "อย่ารอดูอาการถ้าสับสน ตัวร้อนจัด หรือผิวแห้งไม่มีเหงื่อ",
+          "detail": "ลมแดดเป็นภาวะฉุกเฉินถึงชีวิต",
+          "src": [
+            "nhs-heat",
+            "sja-heatstroke"
+          ]
+        }
+      ],
+      "src": [
+        "sja-heatstroke",
+        "sja-heat-exhaustion",
+        "nhs-heat",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "poison-chemical",
+      "title": "กลืนสารพิษ ยาเกินขนาด หรือสารเคมี",
+      "group": "ความร้อน ไฟ และสารเคมี",
+      "signs": "พบขวดยาหรือสารเคมี ปากคอแสบร้อน คลื่นไส้ อาเจียน ปวดท้อง ซึม ชัก",
+      "call": "โทร 1669 ทันที ปรึกษาศูนย์พิษวิทยารามาธิบดีได้ที่ 1367 ตลอด 24 ชั่วโมง",
+      "steps": [
+        {
+          "text": "ถ้ารู้สึกตัว ถามว่ากินอะไร เมื่อไร มากแค่ไหน",
+          "src": [
+            "sja-poisoning"
+          ]
+        },
+        {
+          "text": "โทร 1669 บอกข้อมูลให้มากที่สุด",
+          "detail": "ปรึกษาเรื่องสารพิษเพิ่มเติมได้ที่ศูนย์พิษวิทยารามาธิบดี โทร 1367",
+          "src": [
+            "sja-poisoning",
+            "rama-poison"
+          ]
+        },
+        {
+          "text": "เก็บขวด ฉลาก หรือซองยา ไว้ให้เจ้าหน้าที่ดู",
+          "detail": "ถ้าอาเจียนเอง เก็บตัวอย่างใส่ถุงไปด้วย",
+          "src": [
+            "sja-poisoning"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจและการรู้สึกตัวตลอด",
+          "detail": "หมดสติแต่หายใจ: จัดท่านอนตะแคงพักฟื้น ไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-poisoning"
+          ]
+        },
+        {
+          "text": "สารเคมีถูกผิวหนัง: ถอดเสื้อผ้าที่เปื้อน ราดน้ำสะอาดมาก ๆ ต่อเนื่อง",
+          "detail": "สวมถุงมือ ผงเคมีให้ปัดออกก่อนล้าง",
+          "src": [
+            "sja-chemical-burn"
+          ]
+        },
+        {
+          "text": "ถ้ามีไอสารเคมี เปิดประตูหน้าต่างระบายอากาศ พาออกไปที่โล่ง",
+          "src": [
+            "sja-chemical-burn"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามทำให้อาเจียน",
+          "src": [
+            "sja-poisoning"
+          ]
+        },
+        {
+          "text": "ห้ามให้กินหรือดื่มอะไร เว้นแต่เจ้าหน้าที่สั่ง",
+          "src": [
+            "sja-poisoning"
+          ]
+        },
+        {
+          "text": "ห้ามเสียเวลาหายาแก้พิษ หรือใช้สารอื่นล้างฤทธิ์กรดด่าง",
+          "src": [
+            "sja-chemical-burn"
+          ]
+        }
+      ],
+      "src": [
+        "sja-poisoning",
+        "sja-chemical-burn",
+        "rama-poison"
+      ]
+    },
+    {
+      "id": "heart-attack",
+      "title": "เจ็บแน่นหน้าอก สงสัยหัวใจขาดเลือด",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "แน่นหรือเจ็บกลางอก อาจร้าวไปกราม คอ แขน เหงื่อแตก หายใจไม่อิ่ม ซีด",
+      "call": "โทร 1669 ทันที บอกว่าสงสัยหัวใจขาดเลือด",
+      "steps": [
+        {
+          "text": "โทร 1669 ทันที",
+          "src": [
+            "sja-heart-attack",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ช่วยให้นั่งพิงบนพื้นในท่าสบาย งอเข่า มีที่พิงศีรษะและไหล่",
+          "detail": "ใช้หมอนหนุนหลังและใต้เข่า",
+          "src": [
+            "sja-heart-attack"
+          ]
+        },
+        {
+          "text": "พูดปลอบให้สงบ และอยู่ด้วยจนกู้ชีพมาถึง",
+          "src": [
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้าผู้ป่วยมียาโรคหัวใจของตัวเอง (ยาอมหรือพ่นใต้ลิ้น) ช่วยให้ใช้",
+          "src": [
+            "sja-heart-attack",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ผู้ใหญ่ที่ไม่แพ้ยาแอสไพริน: เคี้ยวแอสไพริน 1 เม็ด (300 มก.) ช้า ๆ",
+          "detail": "ถามเจ้าหน้าที่ 1669 ก่อนถ้าทำได้ ถ้าไม่มียาในบ้าน ไม่ต้องออกไปหา",
+          "src": [
+            "sja-heart-attack",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "เฝ้าดูตลอด ถ้าหมดสติและไม่หายใจ: ปั๊มหัวใจและใช้เครื่อง AED",
+          "src": [
+            "sja-heart-attack",
+            "erc-2025"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามให้แอสไพรินแก่ผู้ที่แพ้ยานี้ หรืออายุต่ำกว่า 16 ปี",
+          "src": [
+            "sja-heart-attack"
+          ]
+        },
+        {
+          "text": "อย่ารอดูอาการ",
+          "detail": "โทร 1669 ทันทีที่สงสัย",
+          "src": [
+            "sja-heart-attack"
+          ]
+        },
+        {
+          "text": "อย่าปล่อยผู้ป่วยไว้คนเดียว",
+          "detail": "อาจหมดสติและหัวใจหยุดเต้นได้ทุกเมื่อ",
+          "src": [
+            "erc-2025"
+          ]
+        }
+      ],
+      "src": [
+        "sja-heart-attack",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "stroke",
+      "title": "โรคหลอดเลือดสมอง (อัมพฤกษ์ อัมพาตเฉียบพลัน)",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "จู่ ๆ เดินเซ ตามัวหรือเห็นภาพซ้อน ปากเบี้ยว แขนขาอ่อนแรงครึ่งซีก พูดไม่ชัด",
+      "call": "โทร 1669 ทันที ต้องถึงโรงพยาบาลภายใน 4 ชั่วโมงครึ่งนับจากเริ่มมีอาการ",
+      "steps": [
+        {
+          "text": "ตรวจด้วยหลัก BEFAST (บีฟาสต์) ทีละข้อ",
+          "detail": "ย่อจากคำอังกฤษ 6 คำ: ทรงตัว ตา หน้า แขน พูด เวลา",
+          "src": [
+            "ddc-stroke"
+          ]
+        },
+        {
+          "text": "B ทรงตัว: เสียการทรงตัว เวียนหัว เดินเซ",
+          "src": [
+            "ddc-stroke"
+          ]
+        },
+        {
+          "text": "E ตา: มองไม่เห็น ตามัว หรือเห็นภาพซ้อน",
+          "src": [
+            "ddc-stroke"
+          ]
+        },
+        {
+          "text": "F หน้า: ให้ยิ้ม ดูว่าปากหรือหน้าเบี้ยวหรือไม่",
+          "src": [
+            "ddc-stroke",
+            "sja-stroke"
+          ]
+        },
+        {
+          "text": "A แขน: ให้ยกแขนสองข้าง ดูว่าข้างใดตกหรืออ่อนแรง ชาครึ่งซีก",
+          "src": [
+            "ddc-stroke",
+            "sja-stroke"
+          ]
+        },
+        {
+          "text": "S พูด: ถามชื่อ ดูว่าพูดไม่ชัด พูดอ้อแอ้ หรือไม่เข้าใจคำพูด",
+          "src": [
+            "ddc-stroke",
+            "sja-stroke"
+          ]
+        },
+        {
+          "text": "T เวลา: มีข้อใดข้อหนึ่ง โทร 1669 ทันที",
+          "detail": "ต้องถึงโรงพยาบาลภายใน 4 ชั่วโมง 30 นาทีนับจากเริ่มมีอาการ",
+          "src": [
+            "ddc-stroke"
+          ]
+        },
+        {
+          "text": "จดเวลาที่เริ่มมีอาการ แล้วบอกทีมกู้ชีพ",
+          "src": [
+            "ddc-stroke"
+          ]
+        },
+        {
+          "text": "ให้พักในท่าสบาย ปลอบให้สงบ เฝ้าดูการรู้สึกตัว",
+          "detail": "หมดสติแต่หายใจ: จัดท่านอนตะแคงพักฟื้น",
+          "src": [
+            "sja-stroke"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามให้กินหรือดื่มอะไรทั้งสิ้น",
+          "detail": "ผู้ป่วยอาจกลืนลำบาก",
+          "src": [
+            "sja-stroke"
+          ]
+        },
+        {
+          "text": "อย่ารอดูอาการ",
+          "detail": "ยิ่งถึงโรงพยาบาลเร็ว โอกาสพิการและเสียชีวิตยิ่งลดลง",
+          "src": [
+            "ddc-stroke"
+          ]
+        }
+      ],
+      "src": [
+        "ddc-stroke",
+        "sja-stroke"
+      ]
+    },
+    {
+      "id": "anaphylaxis",
+      "title": "แพ้รุนแรงเฉียบพลัน",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "หลังกินอาหาร ยา หรือถูกแมลงต่อย: ปากคอบวม หายใจมีเสียงหวีด ผื่นทั่วตัว หน้ามืด",
+      "call": "โทร 1669 ทันที บอกว่าสงสัยแพ้รุนแรง",
+      "steps": [
+        {
+          "text": "ถามว่ามีปากกาฉีดยาอะดรีนาลีนแก้แพ้ของตัวเองหรือไม่",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "ถ้ามี ช่วยให้ผู้ป่วยฉีดทันทีตามวิธีที่เขียนบนปากกา",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "โทร 1669 บอกว่าสงสัยแพ้รุนแรง",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "ให้นอนราบ ยกขาสูง",
+          "detail": "ถ้าหายใจลำบาก ให้นั่งพิงแทน",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "ถ้าไม่ดีขึ้นหรืออาการกลับมาใน 5 นาที และมีปากกาอีกแท่ง ฉีดซ้ำได้",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจ ถ้าหมดสติและไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-anaphylaxis",
+            "erc-2025"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ารอดูอาการ",
+          "detail": "อาการลุกลามได้ภายในไม่กี่วินาทีถึงนาที และถึงตายได้",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        },
+        {
+          "text": "อย่าให้นอนราบถ้าหายใจลำบาก",
+          "detail": "ให้นั่งแทน",
+          "src": [
+            "sja-anaphylaxis"
+          ]
+        }
+      ],
+      "src": [
+        "sja-anaphylaxis",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "asthma-attack",
+      "title": "หอบหืดกำเริบ",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "หายใจลำบาก มีเสียงหวีด ไอ แน่นหน้าอก พูดได้เป็นคำสั้น ๆ ริมฝีปากคล้ำ",
+      "call": "โทร 1669 ถ้าไม่มียาพ่น อาการไม่ดีขึ้น แย่ลง เหนื่อยจนหมดแรง หรือเป็นครั้งแรก",
+      "steps": [
+        {
+          "text": "ให้นั่งในท่าที่สบาย พูดปลอบ ให้หายใจช้า ๆ ลึก ๆ",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "ให้ใช้ยาพ่นขยายหลอดลมชนิดบรรเทาอาการของผู้ป่วยเองตามขนาดปกติ",
+          "detail": "มักเป็นหลอดสีฟ้า ถ้ามีกระบอกพ่น (สเปเซอร์) ให้ใช้ด้วย",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "ไม่ดีขึ้นในไม่กี่นาที: พ่น 1 ครั้งทุก 30-60 วินาที รวมไม่เกิน 10 ครั้ง",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "ยังไม่ดีขึ้น แย่ลง หรือไม่มียาพ่น: โทร 1669",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "ถ้ารถพยาบาลยังไม่มาใน 10 นาที พ่นซ้ำแบบเดิมได้อีกรอบ",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "เฝ้าดูการหายใจ ถ้าหมดสติและไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-asthma"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ารอ ถ้าไม่มียาพ่นให้โทร 1669 ทันที",
+          "src": [
+            "sja-asthma"
+          ]
+        },
+        {
+          "text": "ผู้ที่แพทย์ให้แผนใช้ยาพ่นเฉพาะตัว อย่าใช้วิธีนับ 10 ครั้งนี้",
+          "detail": "ให้ทำตามแผนฉุกเฉินที่แพทย์ให้ไว้",
+          "src": [
+            "sja-asthma"
+          ]
+        }
+      ],
+      "src": [
+        "sja-asthma"
+      ]
+    },
+    {
+      "id": "seizure",
+      "title": "ชัก",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "ล้มลง หมดสติ ตัวเกร็ง กระตุกทั้งตัว น้ำลายฟูมปาก",
+      "call": "โทร 1669 ถ้าชักนานเกิน 5 นาที ชักครั้งแรก ชักซ้ำ บาดเจ็บ หรือไม่ฟื้นใน 10 นาที",
+      "steps": [
+        {
+          "text": "จับเวลาตั้งแต่เริ่มชัก",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "เอาของแข็ง ของมีคม ของร้อน ออกห่างตัว ให้คนมุงถอยออก",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "รองศีรษะด้วยผ้านุ่มหรือหมอน คลายเสื้อที่รัดคอ",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "เมื่อหยุดกระตุก: เปิดทางเดินหายใจ ตรวจการหายใจ",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "ถ้าหายใจ จัดท่านอนตะแคงพักฟื้น อยู่ด้วยจนรู้ตัวดี",
+          "detail": "อาจใช้เวลา 15-30 นาทีกว่าจะฟื้นเต็มที่",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "ถ้าไม่หายใจ: โทร 1669 และปั๊มหัวใจ",
+          "src": [
+            "sja-seizure"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามใส่อะไรเข้าปาก ไม่ว่าช้อน ผ้า หรือนิ้วมือ",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "ห้ามกดหรือมัดตัวผู้ป่วย",
+          "src": [
+            "sja-seizure"
+          ]
+        },
+        {
+          "text": "อย่าเคลื่อนย้าย เว้นแต่ตรงนั้นอันตราย",
+          "src": [
+            "sja-seizure"
+          ]
+        }
+      ],
+      "src": [
+        "sja-seizure"
+      ]
+    },
+    {
+      "id": "low-blood-sugar",
+      "title": "น้ำตาลในเลือดต่ำในผู้ป่วยเบาหวาน",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "ผู้ป่วยเบาหวานมีอาการอ่อนแรง หิว เหงื่อแตกตัวเย็น ใจสั่น มือสั่น สับสน",
+      "call": "โทร 1669 ถ้าไม่ดีขึ้นเร็วหลังได้น้ำตาล หรือซึมลง ไม่รู้สึกตัว",
+      "steps": [
+        {
+          "text": "ให้นั่งลง",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "ถ้ามีเจลหรือเม็ดกลูโคสของผู้ป่วยเอง ช่วยให้กิน",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "ถ้าไม่มี ให้น้ำผลไม้หรือน้ำอัดลมไม่ใช่สูตรไร้น้ำตาล 150 มล.",
+          "detail": "หรือน้ำตาล 3 ช้อนชา หรือลูกอม 3 เม็ด",
+          "src": [
+            "sja-diabetes",
+            "erc-2025"
+          ]
+        },
+        {
+          "text": "ถ้าดีขึ้นเร็ว ให้ของหวานเพิ่ม พัก แล้วกินอาหารจริงตาม",
+          "detail": "ถ้ามีเครื่องตรวจน้ำตาล ช่วยให้ผู้ป่วยตรวจ",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "ถ้าไม่ดีขึ้นเร็ว: โทร 1669",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "หมดสติแต่หายใจ: จัดท่านอนตะแคงพักฟื้น ไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-diabetes"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามป้อนอาหารหรือน้ำถ้าไม่รู้สึกตัวดี",
+          "detail": "อาจสำลัก",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "อย่าใช้เครื่องดื่มสูตรไร้น้ำตาล",
+          "detail": "ไม่มีน้ำตาลจึงไม่ช่วย",
+          "src": [
+            "sja-diabetes"
+          ]
+        },
+        {
+          "text": "อย่าทิ้งผู้ป่วยไว้คนเดียวจนกว่าจะเป็นปกติ",
+          "src": [
+            "sja-diabetes"
+          ]
+        }
+      ],
+      "src": [
+        "sja-diabetes",
+        "erc-2025"
+      ]
+    },
+    {
+      "id": "fainting",
+      "title": "เป็นลม หน้ามืด",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "หน้าซีด ตัวเย็น เหงื่อออก เวียนหัว แล้วหมดสติชั่วครู่",
+      "call": "โทร 1669 ถ้าไม่ฟื้นอย่างรวดเร็ว หรือไม่หายใจ",
+      "steps": [
+        {
+          "text": "ให้นอนราบ",
+          "src": [
+            "sja-fainting"
+          ]
+        },
+        {
+          "text": "ยกขาสูงเล็กน้อย วางบนเก้าอี้เตี้ยหรือหมอน",
+          "src": [
+            "sja-fainting"
+          ]
+        },
+        {
+          "text": "ให้อากาศถ่ายเท ให้คนมุงถอยออก",
+          "src": [
+            "sja-fainting"
+          ]
+        },
+        {
+          "text": "เมื่อดีขึ้น ค่อย ๆ ช่วยให้ลุกนั่งช้า ๆ ใช้เวลาหลายนาที",
+          "src": [
+            "sja-fainting"
+          ]
+        },
+        {
+          "text": "ถ้าไม่ฟื้น: เปิดทางเดินหายใจ ตรวจการหายใจ โทร 1669",
+          "detail": "หายใจ: จัดท่านอนตะแคงพักฟื้น ไม่หายใจ: ปั๊มหัวใจ",
+          "src": [
+            "sja-fainting"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าให้ลุกยืนเร็ว",
+          "src": [
+            "sja-fainting"
+          ]
+        },
+        {
+          "text": "อย่ามุงล้อมจนอากาศไม่ถ่ายเท",
+          "src": [
+            "sja-fainting"
+          ]
+        }
+      ],
+      "src": [
+        "sja-fainting"
+      ]
+    },
+    {
+      "id": "diarrhoea-dehydration",
+      "title": "ท้องเสียและขาดน้ำ",
+      "group": "อาการป่วยเฉียบพลัน",
+      "signs": "ถ่ายเหลว 3 ครั้งขึ้นไปต่อวัน ปากแห้ง ปัสสาวะน้อยสีเข้ม เวียนหัว ตะคริว",
+      "call": "โทร 1669 ถ้าหมดสติ เด็กเล็กที่มีอาการขาดน้ำให้รีบพบแพทย์",
+      "steps": [
+        {
+          "text": "ให้นั่งหรือนอนพักในที่เย็น",
+          "src": [
+            "sja-dehydration"
+          ]
+        },
+        {
+          "text": "ให้จิบผงน้ำตาลเกลือแร่ (ORS/โออาร์เอส) ที่ละลายในน้ำสะอาด บ่อย ๆ",
+          "detail": "ผสมตามที่เขียนบนซองเท่านั้น ORS ทดแทนน้ำและเกลือแร่ที่เสียไปกับอุจจาระ",
+          "src": [
+            "who-diarrhoea",
+            "sja-dehydration"
+          ]
+        },
+        {
+          "text": "ถ้าไม่มี ORS ให้จิบน้ำสะอาดหรือน้ำใส ๆ ไปก่อน",
+          "src": [
+            "sja-dehydration"
+          ]
+        },
+        {
+          "text": "ให้กินอาหารที่มีประโยชน์ต่อไป ทารกให้กินนมแม่ต่อ",
+          "src": [
+            "who-diarrhoea"
+          ]
+        },
+        {
+          "text": "ล้างมือด้วยสบู่ ดื่มน้ำสะอาด",
+          "detail": "ช่วยป้องกันการติดต่อและการเป็นซ้ำ",
+          "src": [
+            "who-diarrhoea"
+          ]
+        },
+        {
+          "text": "ไปพบแพทย์ถ้าดื่มแล้วอาเจียนออกหมด หรือดื่มแล้วยังไม่ดีขึ้น",
+          "src": [
+            "sja-dehydration"
+          ]
+        },
+        {
+          "text": "เด็กเล็ก: รีบพบแพทย์ถ้าตาโหล ร้องไห้ไม่มีน้ำตา ปัสสาวะน้อยลงมาก",
+          "detail": "เด็กเล็กทรุดได้เร็ว ผู้สูงอายุและผู้มีโรคประจำตัวก็เสี่ยงสูง",
+          "src": [
+            "sja-dehydration"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าดื่มแอลกอฮอล์ หรือเครื่องดื่มมีกาเฟอีน",
+          "src": [
+            "sja-dehydration"
+          ]
+        },
+        {
+          "text": "อย่างดอาหาร และอย่าหยุดนมแม่",
+          "src": [
+            "who-diarrhoea"
+          ]
+        }
+      ],
+      "src": [
+        "who-diarrhoea",
+        "sja-dehydration"
+      ]
+    },
+    {
+      "id": "snake-bite",
+      "title": "งูกัด",
+      "group": "สัตว์และพิษ",
+      "signs": "ถูกงูกัดหรือสงสัยว่าถูกงูกัด แม้ยังไม่มีอาการ",
+      "call": "โทร 1669 หรือรีบไปโรงพยาบาลที่ใกล้ที่สุดทันที",
+      "steps": [
+        {
+          "text": "พาออกห่างจากงู ให้นั่งหรือนอนนิ่ง ๆ ปลอบให้สงบ",
+          "detail": "งูกัดจำนวนมากไม่ได้เกิดจากงูพิษ และแม้เป็นงูพิษก็มักไม่เสียชีวิตทันที",
+          "src": [
+            "who-snakebite",
+            "moph-snake"
+          ]
+        },
+        {
+          "text": "โทร 1669 หรือหารถไปโรงพยาบาลที่ใกล้ที่สุดโดยเร็ว",
+          "src": [
+            "moph-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ถอดแหวน กำไล และของรัดออกจากแขนขาข้างที่ถูกกัด",
+          "detail": "ถ้าบวมแล้วของรัดจะเป็นอันตราย",
+          "src": [
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ล้างแผลด้วยน้ำสะอาด ซับให้แห้ง",
+          "src": [
+            "moph-snake",
+            "ddc-snake"
+          ]
+        },
+        {
+          "text": "ดามแขนหรือขาข้างที่ถูกกัดด้วยไม้หรือของแข็ง ให้ขยับน้อยที่สุด",
+          "detail": "วางให้ต่ำกว่าระดับหัวใจ",
+          "src": [
+            "moph-snake",
+            "ddc-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ใช้ผ้ายืดหรือผ้าพันยึดไม้ดามให้กระชับพอให้อยู่นิ่ง",
+          "detail": "พันเพื่อให้อยู่นิ่งเท่านั้น ไม่ใช่รัดห้ามเลือด ห้ามรัดแน่นจนเลือดไม่เดิน",
+          "src": [
+            "moph-snake",
+            "qsmi-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "จำลักษณะงู หรือถ่ายรูปจากระยะปลอดภัย แล้วบอกแพทย์",
+          "src": [
+            "moph-snake",
+            "doh-venomous"
+          ]
+        },
+        {
+          "text": "พาไปโดยให้ผู้ป่วยเดินหรือขยับน้อยที่สุด ถ้าอาเจียนให้นอนตะแคงซ้าย",
+          "src": [
+            "who-snakebite",
+            "moph-snake"
+          ]
+        },
+        {
+          "text": "ถ้าหมดสติและไม่หายใจ: ปั๊มหัวใจตามหัวข้อปั๊มหัวใจ",
+          "detail": "พิษงูบางชนิดทำให้กล้ามเนื้อเป็นอัมพาตจนหายใจเองไม่ได้",
+          "src": [
+            "who-snakebite",
+            "sja-cpr"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "ห้ามขันชะเนาะ หรือใช้เชือกรัดแน่นเหนือแผล",
+          "detail": "ไม่ช่วยกันพิษ เสี่ยงเนื้อตายจนเสียอวัยวะ และอาการอาจทรุดทันทีเมื่อคลาย",
+          "src": [
+            "moph-snake",
+            "ddc-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ห้ามกรีดแผล ดูดพิษ หรือใช้ไฟจี้",
+          "detail": "ไม่ลดพิษ และทำให้แผลติดเชื้อ",
+          "src": [
+            "moph-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "ห้ามพอกยา สมุนไพร หรือใช้วิธีพื้นบ้าน",
+          "src": [
+            "moph-snake",
+            "who-snakebite"
+          ]
+        },
+        {
+          "text": "อย่าเสียเวลาตามจับหรือฆ่างู",
+          "detail": "แพทย์รักษาได้จากอาการและลักษณะงูที่เล่าให้ฟัง",
+          "src": [
+            "moph-snake"
+          ]
+        }
+      ],
+      "src": [
+        "moph-snake",
+        "ddc-snake",
+        "qsmi-snake",
+        "who-snakebite"
+      ]
+    },
+    {
+      "id": "animal-bite-rabies",
+      "title": "สุนัข แมว ลิง หรือสัตว์อื่นกัดข่วน (พิษสุนัขบ้า)",
+      "group": "สัตว์และพิษ",
+      "signs": "ถูกสัตว์เลี้ยงลูกด้วยนมกัด ข่วน หรือเลียแผล เยื่อบุตา หรือปาก",
+      "call": "ไม่ต้องโทร 1669 เว้นแต่เลือดออกมาก แต่ต้องไปโรงพยาบาลโดยเร็วเพื่อรับวัคซีน",
+      "steps": [
+        {
+          "text": "ล้างแผลทันทีด้วยสบู่และน้ำไหล ให้ทั่วแผล อย่างน้อย 15 นาที",
+          "src": [
+            "who-rabies",
+            "rabies-th"
+          ]
+        },
+        {
+          "text": "ล้างเสร็จแล้วใส่ยาฆ่าเชื้อ เช่น โพวิโดนไอโอดีน",
+          "src": [
+            "rabies-th"
+          ]
+        },
+        {
+          "text": "ถ้าเลือดออก ใช้ผ้าสะอาดกดห้ามเลือด แล้วปิดแผลด้วยผ้าสะอาด",
+          "src": [
+            "sja-bites"
+          ]
+        },
+        {
+          "text": "ไปโรงพยาบาลโดยเร็วที่สุด เพื่อประเมินและรับวัคซีน",
+          "detail": "แพทย์อาจให้อิมมูโนโกลบูลินร่วมด้วย และพิจารณาวัคซีนบาดทะยัก",
+          "src": [
+            "who-rabies",
+            "rabies-th",
+            "sja-bites"
+          ]
+        },
+        {
+          "text": "สุนัขหรือแมว: กักดูอาการ 10 วัน ถ้าป่วยหรือตายให้แจ้งเจ้าหน้าที่",
+          "src": [
+            "rabies-th"
+          ]
+        },
+        {
+          "text": "แม้เคยฉีดวัคซีนมาก่อน ถูกกัดใหม่ก็ต้องพบแพทย์ทุกครั้ง",
+          "src": [
+            "rabies-th",
+            "who-rabies"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่ารอให้ครบ 10 วันหรือรอให้มีอาการก่อนไปหาหมอ",
+          "detail": "เมื่อมีอาการแล้ว โรคนี้เสียชีวิตเกือบทุกราย",
+          "src": [
+            "who-rabies",
+            "rabies-th"
+          ]
+        },
+        {
+          "text": "อย่าคิดว่าแผลเล็กหรือแค่ข่วนไม่เป็นไร",
+          "detail": "รอยข่วนและการเลียแผลก็ติดเชื้อได้",
+          "src": [
+            "who-rabies"
+          ]
+        },
+        {
+          "text": "อย่าคิดว่าติดได้จากสุนัขเท่านั้น",
+          "detail": "สัตว์เลี้ยงลูกด้วยนมทุกชนิดแพร่เชื้อได้ เช่น แมว ค้างคาว",
+          "src": [
+            "rabies-th"
+          ]
+        }
+      ],
+      "src": [
+        "who-rabies",
+        "rabies-th",
+        "sja-bites"
+      ]
+    },
+    {
+      "id": "stings-jellyfish-centipede",
+      "title": "แมลงต่อย แมงกะพรุน ตะขาบ",
+      "group": "สัตว์และพิษ",
+      "signs": "ปวด บวม แดง คัน บริเวณที่ถูกต่อยหรือสัมผัส",
+      "call": "โทร 1669 ทันทีถ้าหายใจลำบาก ปากคอบวม หน้ามืด หรือโดนแมงกะพรุนกล่อง",
+      "steps": [
+        {
+          "text": "ผึ้งต่อย: ใช้ขอบบัตรหรือเล็บขูดเหล็กในออกทางด้านข้างโดยเร็ว",
+          "src": [
+            "sja-stings"
+          ]
+        },
+        {
+          "text": "ยกส่วนที่ถูกต่อยให้สูง ประคบเย็นด้วยน้ำแข็งห่อผ้า 15-20 นาที",
+          "detail": "ทำซ้ำได้ทุกชั่วโมง ครั้งละไม่เกิน 20 นาที",
+          "src": [
+            "sja-stings"
+          ]
+        },
+        {
+          "text": "ถูกต่อยในปากหรือคอ: ให้อมน้ำแข็งหรือจิบน้ำเย็น เฝ้าดูการหายใจ",
+          "src": [
+            "sja-stings"
+          ]
+        },
+        {
+          "text": "มีอาการแพ้รุนแรง: โทร 1669 แล้วทำตามหัวข้อแพ้รุนแรงเฉียบพลัน",
+          "src": [
+            "sja-stings"
+          ]
+        },
+        {
+          "text": "แมงกะพรุน: ขึ้นจากน้ำทันที ขอความช่วยเหลือ โทร 1669 ให้อยู่นิ่ง ๆ",
+          "src": [
+            "ddc-jellyfish",
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "ราดน้ำส้มสายชูที่ใช้ในครัวบนรอยสัมผัสต่อเนื่องอย่างน้อย 30 วินาที",
+          "detail": "ถ้าไม่มีน้ำส้มสายชู ใช้น้ำทะเลราดแทน",
+          "src": [
+            "ddc-jellyfish",
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "ใช้แหนบหรือถุงมือหนาคีบหนวดที่ติดอยู่ออก",
+          "src": [
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "โดนแมงกะพรุนแล้วหมดสติ ไม่หายใจ: ปั๊มหัวใจทันที",
+          "src": [
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "ตะขาบกัด: ล้างด้วยน้ำสะอาด ถ้าปวดบวมมากขึ้นให้ไปพบแพทย์",
+          "src": [
+            "doh-venomous"
+          ]
+        }
+      ],
+      "dont": [
+        {
+          "text": "อย่าใช้แหนบบีบดึงเหล็กในผึ้ง",
+          "detail": "อาจบีบพิษเข้าตัวเพิ่ม",
+          "src": [
+            "sja-stings"
+          ]
+        },
+        {
+          "text": "แมงกะพรุน: ห้ามราดน้ำจืด น้ำเปล่า หรือแอลกอฮอล์",
+          "detail": "จะกระตุ้นเข็มพิษให้ยิงพิษเพิ่ม",
+          "src": [
+            "ddc-jellyfish",
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "แมงกะพรุน: ห้ามถู ขยี้ หรือใช้มือเปล่าหยิบหนวด",
+          "src": [
+            "ddc-jellyfish",
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "แมงกะพรุน: ห้ามใช้แอมโมเนียล้างแผล",
+          "src": [
+            "niems-jellyfish"
+          ]
+        },
+        {
+          "text": "อย่าเกาหรือแกะแผลตะขาบกัด",
+          "detail": "ป้องกันการติดเชื้อ",
+          "src": [
+            "doh-venomous"
+          ]
+        }
+      ],
+      "src": [
+        "sja-stings",
+        "ddc-jellyfish",
+        "niems-jellyfish",
+        "doh-venomous"
+      ]
+    }
+  ]
+}

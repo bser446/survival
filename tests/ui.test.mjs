@@ -6,10 +6,11 @@ import { device } from "./harness.mjs";
 const d = device();
 await new Promise(r => setTimeout(r, 50));
 const guides = JSON.parse(JSON.stringify(d.run("DATA.guides.map(g => g.id)")));
-assert.equal(guides.length, 8);
+assert.ok(guides.length >= 8);
 
 // ทุกหน้าต้องวาดได้โดยไม่ล้ม
-const pages = ["home", "list/go", "list/home", "list/car", "sos", "set", "terms"];
+const pages = ["home", "list/go", "list/home", "list/car", "sos", "set", "terms", "aid"];
+for (const t of JSON.parse(JSON.stringify(d.run("AID.map(t => t.id)")))) pages.push("aid/" + t);
 for (const g of guides) for (const p of ["during", "before", "after", "dont", "more"]) pages.push(`g/${g}/${p}`);
 for (const p of pages) assert.ok(d.go(p).length > 200, "หน้า " + p);
 
@@ -34,6 +35,14 @@ await d.fire("change", { dataset: { name: "1" }, value: evil });
 await d.fire("submit", { dataset: { newhome: "1" }, n: { value: "บ้าน " + evil } });
 for (const p of ["home", "list/home", "sos", "set"]) assert.equal(d.go(p).includes("<img"), false, "ไม่มี <img> ดิบในหน้า " + p);
 assert.ok(d.go("set").includes("&lt;img"));
+
+// ประเภทที่อยู่: รายการเฉพาะบ้านแบบอื่นต้องถูกซ่อน และ ctx แบบ array ต้องใช้ได้
+d.run(`put("p.home", "town")`);
+assert.equal(d.run("S.profile.home"), "town");
+assert.equal(d.run(`ctxOK("condo")`), false); assert.equal(d.run(`ctxOK(["house","town"])`), true);
+assert.equal(d.run(`ctxOK("all")`), true); assert.equal(d.run(`ctxOK(undefined)`), true);
+assert.equal(d.run(`ctxLabel(["house","town"])`), "บ้านชั้นเดียว · บ้านสองชั้น/ทาวน์เฮาส์");
+d.run(`put("p.home", "both")`);
 
 // หลายบ้าน: ข้อมูลแยกกัน สลับได้ ลบได้
 assert.equal(d.run("Object.keys(DB.homes).length"), 2);

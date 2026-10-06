@@ -81,11 +81,21 @@ def main() -> int:
             problems.append(f"{path.name}: src ids not in sources: {unknown}")
         guides.append(g)
 
-    for p in problems:
-        print("WARN", p)
 
     checklist = json.loads((ROOT / "data" / "checklist.json").read_text(encoding="utf-8"))
-    data = {"guides": guides, "checklist": checklist, "built": date.today().isoformat()}
+    firstaid, fa_path = None, ROOT / "data" / "firstaid.json"
+    if fa_path.exists():
+        firstaid = json.loads(fa_path.read_text(encoding="utf-8"))
+        known = {s.get("id") for s in firstaid.get("sources", [])}
+        used = {x for tp in firstaid["topics"] for i in tp.get("steps", []) + tp.get("dont", []) + [tp] for x in i.get("src", [])}
+        if used - known:
+            problems.append(f"firstaid.json: src ids not in sources: {sorted(used - known)}")
+    for g in guides:   # ctx ต้องเป็นค่าที่แอปรู้จัก ไม่งั้นรายการจะแสดงกับทุกบ้านโดยไม่ตั้งใจ
+        for i in [i for p in g["phases"].values() for i in p] + g.get("kit", []):
+            c = i.get("ctx", "all")
+            if not set(c if isinstance(c, list) else [c]) <= {"all", "condo", "house", "town"}:
+                problems.append(f"{g['id']}: unknown ctx {c!r}")
+    data = {"guides": guides, "checklist": checklist, "firstaid": firstaid, "built": date.today().isoformat()}
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 
     tpl = (ROOT / "src" / "app.html").read_text(encoding="utf-8")
@@ -112,6 +122,8 @@ def main() -> int:
         if not out.exists():
             out.write_bytes(icon(size))
 
+    for p in problems:
+        print("WARN", p)
     print(f"built index.html: {len(guides)} guides, {len(checklist['items'])} checklist items, {len(html) // 1024} KB, cache {ver}")
     return 1 if problems else 0
 
