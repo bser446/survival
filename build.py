@@ -2,6 +2,7 @@
 
 Usage:  python -X utf8 build.py
 """
+import base64
 import hashlib
 import json
 import struct
@@ -89,6 +90,13 @@ def main() -> int:
     tpl = (ROOT / "src" / "app.html").read_text(encoding="utf-8")
     start, end = tpl.index("/*__DATA__*/"), tpl.index("/*__END__*/") + len("/*__END__*/")
     html = tpl[:start] + blob + tpl[end:]
+
+    # CSP: อนุญาตเฉพาะสคริปต์ในไฟล์นี้ (ผูกด้วย hash) สคริปต์ที่ถูกฉีดเข้ามาจะไม่ทำงาน
+    script = html[html.index("<script>") + len("<script>"):html.rindex("</script>")]
+    digest = base64.b64encode(hashlib.sha256(script.encode("utf-8")).digest()).decode()
+    csp = ("default-src 'none'; script-src 'sha256-" + digest + "'; style-src 'unsafe-inline'; img-src 'self' data:; "
+           "manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'")
+    html = html.replace("<!--__CSP__-->", f'<meta http-equiv="Content-Security-Policy" content="{csp}">')
     (ROOT / "index.html").write_text(html, encoding="utf-8", newline="\n")
 
     ver = hashlib.sha256(html.encode("utf-8")).hexdigest()[:10]

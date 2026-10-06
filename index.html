@@ -2,6 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-BeoWau3+blWkMj7XE6iH5ejXzeZ6kQ+kmNu9lkkJWu8='; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>คู่มือเอาตัวรอด</title>
 <meta name="theme-color" content="#b3261e">
@@ -132,10 +133,28 @@ const NUMBERS = [
 
 const KEY = "survival.v1";
 const DEF = {profile:{adults:2,children:0,elders:0,pets:0,days:7,home:"both"},checks:{},exp:{},custom:[],plan:{},showAll:false};
+// ข้อมูลจาก localStorage และไฟล์นำเข้าถือว่าไม่น่าเชื่อถือ: สร้าง state ใหม่จากค่าที่ตรวจชนิดแล้วเท่านั้น
+function normalize(o){
+  const obj = v => v && typeof v==="object" && !Array.isArray(v) ? v : {};
+  const int = (v,d,min,max) => { v = Number(v); return Number.isFinite(v) ? Math.max(min, Math.min(max, Math.round(v))) : d; };
+  const str = (v,max) => typeof v==="string" ? v.slice(0,max) : "";
+  const keyOK = k => /^[a-z]+:[A-Za-z0-9-]{1,60}$/.test(k);
+  o = obj(o); const p = obj(o.profile), s = JSON.parse(JSON.stringify(DEF));
+  s.profile = {adults:int(p.adults,2,1,20), children:int(p.children,0,0,20), elders:int(p.elders,0,0,20), pets:int(p.pets,0,0,20),
+    days:int(p.days,7,1,365), home:["both","condo","house"].includes(p.home) ? p.home : "both"};
+  for(const k of Object.keys(obj(o.checks)).slice(0,2000)) if(keyOK(k) && o.checks[k]) s.checks[k] = true;
+  for(const k of Object.keys(obj(o.exp)).slice(0,2000)) if(keyOK(k) && /^\d{4}-\d{2}-\d{2}$/.test(o.exp[k])) s.exp[k] = o.exp[k];
+  for(const i of (Array.isArray(o.custom) ? o.custom : []).slice(0,500)){ const c = obj(i);
+    if(/^u[a-z0-9]{1,20}$/.test(c.id) && /^[a-z]{1,10}$/.test(c.kit) && /^[a-z-]{1,30}$/.test(c.cat) && str(c.n,80).trim()) s.custom.push({id:c.id, kit:c.kit, cat:c.cat, n:str(c.n,80)}); }
+  for(const k of ["meet1","meet2","hub","refuge","people","health","notes"]) if(str(obj(o.plan)[k],4000)) s.plan[k] = str(o.plan[k],4000);
+  s.open = {}; for(const k of Object.keys(obj(o.open)).slice(0,500)) if(keyOK(k)) s.open[k] = !!o.open[k];
+  s.showAll = o.showAll === true;
+  return s;
+}
 let S = load();
 function load(){
-  try{ const o = JSON.parse(localStorage.getItem(KEY)||"null"); if(o) return Object.assign({},DEF,o,{profile:Object.assign({},DEF.profile,o.profile)}); }catch(e){}
-  return JSON.parse(JSON.stringify(DEF));
+  try{ return normalize(JSON.parse(localStorage.getItem(KEY)||"null")); }catch(e){}
+  return normalize(null);
 }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -286,7 +305,7 @@ document.addEventListener("change", e=>{
   if(t.dataset.chk){ if(t.checked) S.checks[t.dataset.chk]=true; else delete S.checks[t.dataset.chk]; save(); render(true); }
   else if(t.dataset.exp){ if(t.value) S.exp[t.dataset.exp]=t.value; else delete S.exp[t.dataset.exp]; save(); render(true); }
   else if(t.id==="imp" && t.files[0]){ const r = new FileReader(); r.onload = ()=>{ try{ const o = JSON.parse(r.result); if(!o || typeof o.profile!=="object") throw 0;
-      S = Object.assign({},DEF,o,{profile:Object.assign({},DEF.profile,o.profile)}); save(); render(false); }catch(_){ t.value=""; $("app").insertAdjacentHTML("afterbegin",`<div class="alert bad">ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป</div>`); } }; r.readAsText(t.files[0]); }
+      S = normalize(o); save(); render(false); }catch(_){ t.value=""; $("app").insertAdjacentHTML("afterbegin",`<div class="alert bad">ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป</div>`); } }; r.readAsText(t.files[0]); }
 });
 document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k){ S.plan = S.plan||{}; S.plan[k] = e.target.value; save(); } });
 let printing = false;
@@ -307,7 +326,7 @@ document.addEventListener("click", e=>{
   else if(d.act==="print"){ window.print(); return; }
   else if(d.act==="export"){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:"application/json"}));
     a.download = "survival-backup-"+new Date().toISOString().slice(0,10)+".json"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),5000); return; }
-  else if(d.act==="reset"){ if(t.dataset.sure){ S = JSON.parse(JSON.stringify(DEF)); } else { t.dataset.sure = 1; t.textContent = "แตะอีกครั้งเพื่อยืนยันการล้าง"; return; } }
+  else if(d.act==="reset"){ if(t.dataset.sure){ S = normalize(null); } else { t.dataset.sure = 1; t.textContent = "แตะอีกครั้งเพื่อยืนยันการล้าง"; return; } }
   save(); render(true);
 });
 
