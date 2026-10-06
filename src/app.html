@@ -97,6 +97,16 @@ details.cat summary small{font-weight:400;color:var(--mute)}
 .btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 
+.grid.g3{grid-template-columns:1fr 1fr 1fr;gap:8px}
+.haz.sm{min-height:84px;padding:10px;font-size:15px;line-height:1.35;gap:2px}
+.haz.sm span{font-size:26px}
+.haz.urg{border-color:var(--bad);background:var(--bad-bg)}
+details.more{margin-top:6px;font-size:13.5px;color:var(--mute)}
+details.more summary{display:inline-block;list-style:none;cursor:pointer;padding:1px 10px;border:1px solid var(--line);border-radius:999px}
+details.more summary::-webkit-details-marker{display:none}
+details.more[open] summary{margin-bottom:4px}
+.callbox{display:flex;flex-direction:column;gap:2px;text-decoration:none;font-size:16px}
+.callbox b{font-size:19px}
 .card.aid{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
 .card.aid>span:first-child{font-size:32px;line-height:1}
 .hrow{display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
@@ -420,12 +430,15 @@ function vHome(){
   <p class="mute">${H().sync?"แชร์กับคนในบ้านอยู่ · ":""}ตั้งค่าไว้ ${persons()} คน สำรอง ${S.profile.days} วัน <a href="#set">แก้ไขหรือสลับบ้าน</a></p>`;
 }
 
+// แหล่งที่มาของแต่ละข้อซ่อนอยู่ใต้ปุ่ม "ดูรายละเอียด" เพื่อให้ขั้นตอนอ่านง่าย
+const srcMore = (ids, src) => { const l = (ids||[]).filter(i=>src[i]); return l.length ? `<details class="more"><summary>ดูรายละเอียด</summary><div>ที่มา: ${l.map(i=>esc(src[i].org)).join(" · ")}</div></details>` : ""; };
+const srcList = (list, label) => (list||[]).length ? `<details class="cat"><summary>${label}<small>${list.length} แหล่ง</small></summary><div class="hrow src" style="display:block"><ul class="plain">${list.map(x=>`<li>${esc(x.org)}: ${esc(x.title)}${/^https?:\/\//.test(x.url||"")?`<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a>`:""}</li>`).join("")}</ul></div></details>` : "";
 function stepList(items, g, cls){
   const src = Object.fromEntries((g.sources||[]).map(s=>[s.id,s]));
   const list = (items||[]).filter(i=>i && ctxOK(i.ctx));
   if(!list.length) return `<p class="mute">ไม่มีรายการ</p>`;
   return `<ol class="steps ${cls||""}">${list.map(i=>`<li><div class="t">${esc(i.text)}</div>${i.detail?`<div class="d">${esc(i.detail)}</div>`:""}
-    ${ctxLabel(i.ctx)?`<span class="chip">${ctxLabel(i.ctx)}</span>`:""}${(i.src||[]).filter(id=>src[id]).map(id=>`<span class="chip">${esc(src[id].org)}</span>`).join("")}</li>`).join("")}</ol>`;
+    ${ctxLabel(i.ctx)?`<span class="chip">${ctxLabel(i.ctx)}</span>`:""}${srcMore(i.src, src)}</li>`).join("")}</ol>`;
 }
 function vGuide(id, phase){
   const g = DATA.guides.find(g=>g.id===id); if(!g) return vHome();
@@ -439,7 +452,7 @@ function vGuide(id, phase){
       ${(g.kit||[]).length?`<h2>ของที่ควรมีเพิ่มสำหรับภัยนี้</h2><div class="card"><ul class="plain">${g.kit.filter(k=>ctxOK(k.ctx)).map(k=>`<li><b>${esc(k.name)}</b>${k.qty?" · "+esc(k.qty):""}${k.why?`<div class="mute">${esc(k.why)}</div>`:""}</li>`).join("")}</ul>
       <a href="#list/home">ไปที่เช็กลิสต์</a></div>`:""}
       ${(g.cases||[]).length?`<h2>บทเรียนจากเหตุการณ์จริง</h2>${g.cases.map(c=>`<div class="card"><b>${esc(c.title)}</b><p>${esc(c.lesson)}</p></div>`).join("")}`:""}
-      ${(g.sources||[]).length?`<h2>แหล่งที่มา</h2><div class="card src"><ul class="plain">${g.sources.map(s=>`<li>${esc(s.org)}: ${esc(s.title)}${/^https?:\/\//.test(s.url||"")?`<br><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.url)}</a>`:""}</li>`).join("")}</ul></div>`:""}`;
+      ${srcList(g.sources, "แหล่งที่มา")}`;
   } else body = stepList((g.phases||{})[phase], g);
   return `<a class="back" href="#home">‹ กลับ</a><h1>${ICON[g.id]||""} ${esc(g.title)}</h1><p class="mute">${esc(g.summary)}</p>
   <div class="seg">${PHASES.map(p=>`<a href="#g/${esc(g.id)}/${p[0]}" class="${p[0]===phase?"on":""}">${p[1]}</a>`).join("")}</div>
@@ -536,26 +549,41 @@ function vTerms(){
 /* ---------- ปฐมพยาบาล ---------- */
 function vAid(id){
   const fa = DATA.firstaid || {}, t = AID.find(x=>x.id===id), src = Object.fromEntries((fa.sources||[]).map(x=>[x.id,x]));
-  const chips = ids => (ids||[]).filter(i=>src[i]).map(i=>`<span class="chip">${esc(src[i].org)}</span>`).join("");
   if(!t){
-    // ลำดับหมวดตาม firstaid.groups ถ้ามี หมวดที่ไม่อยู่ในรายการต่อท้ายตามลำดับที่พบ
+    // ลำดับหมวดตาม firstaid.groups (เรียงจากเรื่องที่เจอบ่อย) หมวดที่ไม่อยู่ในรายการต่อท้าย
     const groups = (fa.groups||[]).filter(g=>AID.some(x=>x.group===g)); for(const x of AID) if(!groups.includes(x.group)) groups.push(x.group);
+    const tile = (e, cls) => AID.some(x=>x.id===e[0]) ? `<a class="haz ${cls}" href="#aid/${esc(e[0])}"><span>${esc(e[1])}</span>${esc(e[2])}</a>` : "";
     return `<a class="back" href="#sos">‹ กลับ</a><h1>⛑️ ปฐมพยาบาล</h1><p class="mute">${esc(fa.intro)}</p>
     <a class="btn pri" style="display:block;text-align:center;text-decoration:none" href="tel:1669">โทร 1669 เจ็บป่วยฉุกเฉิน</a>
-    <div class="seg">${groups.map((g,i)=>`<a href="#aid" data-jump="aidg${i}">${esc(g)}</a>`).join("")}</div>
-    ${groups.map((g,i)=>`<h2 id="aidg${i}">${esc(g)} <small class="mute">${AID.filter(x=>x.group===g).length} เรื่อง</small></h2><div class="card" style="padding:0">${AID.filter(x=>x.group===g).map(x=>`<a class="hrow" style="text-decoration:none;color:inherit" href="#aid/${esc(x.id)}"><span class="grow">${esc(x.title)}</span><span class="mute">›</span></a>`).join("")}</div>`).join("")}
-    ${(fa.sources||[]).length?`<h2>แหล่งที่มา</h2><div class="card src"><ul class="plain">${fa.sources.map(x=>`<li>${esc(x.org)}: ${esc(x.title)}${/^https?:\/\//.test(x.url||"")?`<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a>`:""}</li>`).join("")}</ul></div>`:""}`;
+    <input class="in" id="aidq" type="search" placeholder="ค้นหา เช่น แผลไหม้ งูกัด ชัก" aria-label="ค้นหาหัวข้อปฐมพยาบาล" style="margin-top:12px">
+    <div id="aidtop">
+      ${(fa.common||[]).length?`<h2>เจอบ่อย</h2><div class="grid g3">${fa.common.map(e=>tile(e,"sm")).join("")}</div>`:""}
+      ${(fa.urgent||[]).length?`<h2>ฉุกเฉินถึงชีวิต</h2><div class="grid g3">${fa.urgent.map(e=>tile(e,"sm urg")).join("")}</div>`:""}
+      <h2>ทุกหัวข้อตามหมวด</h2>
+    </div>
+    ${groups.map((g,i)=>`<details class="cat aidg" data-cat="aid-${i}" ${S.open["home:aid-"+i]?"open":""}><summary>${esc(g)}<small>${AID.filter(x=>x.group===g).length} เรื่อง</small></summary>
+      ${AID.filter(x=>x.group===g).map(x=>`<a class="hrow arow" data-t="${esc((x.title+" "+x.signs).toLowerCase())}" style="text-decoration:none;color:inherit" href="#aid/${esc(x.id)}"><span class="grow">${esc(x.title)}</span><span class="mute">›</span></a>`).join("")}</details>`).join("")}
+    <p class="mute" id="aidnone" hidden>ไม่พบหัวข้อที่ตรงกับคำค้น ลองคำอื่น หรือโทร 1669</p>
+    ${srcList(fa.sources, "แหล่งที่มาทั้งหมด")}`;
   }
   // "ดูหัวข้อ <ชื่อย่อ>" ในเนื้อหา กลายเป็นลิงก์ไปหัวข้อนั้น (ชื่อย่อ = ชื่อหัวข้อก่อนวงเล็บหรือโคลอน)
   const refs = AID.filter(x=>x.id!==t.id).map(x=>[esc(x.title.split(/\s*[(:]/)[0]), x.id]).sort((a,b)=>b[0].length-a[0].length);
   const xref = s => { let h = esc(s); for(const [name,id] of refs){ const k = "ดูหัวข้อ "+name; if(h.includes(k)){ h = h.replace(k, `ดูหัวข้อ <a href="#aid/${esc(id)}">${name}</a>`); break; } } return h; };
-  const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${xref(i.text)}</div>${i.detail?`<div class="d">${xref(i.detail)}</div>`:""}${chips(i.src)}</li>`).join("")}</ol>`;
+  const list = (items, cls) => `<ol class="steps ${cls}">${(items||[]).map(i=>`<li><div class="t">${xref(i.text)}</div>${i.detail?`<div class="d">${xref(i.detail)}</div>`:""}${srcMore(i.src, src)}</li>`).join("")}</ol>`;
   return `<a class="back" href="#aid">‹ ปฐมพยาบาลทั้งหมด</a><h1>${esc(t.title)}</h1>
   ${t.signs?`<p class="mute">${esc(t.signs)}</p>`:""}
-  ${t.call?`<div class="alert bad"><b>โทร 1669:</b> ${esc(t.call)} <a href="tel:1669">แตะเพื่อโทร</a></div>`:""}
+  ${t.call?`<a class="alert bad callbox" href="tel:1669"><b>📞 โทร 1669</b><span>${esc(t.call)}</span></a>`:""}
   <h2>ทำตามลำดับ</h2>${list(t.steps, "")}
   ${(t.dont||[]).length?`<h2>ห้ามทำ</h2>${list(t.dont, "dont")}`:""}
-  <p class="mute">ข้อมูลนี้ไม่แทนการอบรมปฐมพยาบาลและคำสั่งของเจ้าหน้าที่ 1669 ${chips(t.src)}</p>`;
+  <p class="mute">ข้อมูลนี้ไม่แทนการอบรมปฐมพยาบาลและคำสั่งของเจ้าหน้าที่ 1669</p>`;
+}
+// ค้นหาหัวข้อปฐมพยาบาล: กรองแถวในหน้าโดยไม่วาดหน้าใหม่ เพื่อไม่ให้ช่องค้นหาเสียโฟกัส
+function aidFilter(q){
+  q = q.trim().toLowerCase(); let hits = 0;
+  document.querySelectorAll("details.aidg").forEach(d=>{ let n = 0;
+    d.querySelectorAll(".arow").forEach(r=>{ const ok = !q || r.dataset.t.includes(q); r.style.display = ok ? "" : "none"; if(ok) n++; });
+    d.style.display = n ? "" : "none"; if(q) d.open = true; hits += n; });
+  const top = $("aidtop"), none = $("aidnone"); if(top) top.style.display = q ? "none" : ""; if(none) none.hidden = !!hits;
 }
 function banner(){
   const note = NOTE ? `<div class="alert">${esc(NOTE)}</div>` : ""; NOTE = "";
@@ -601,7 +629,7 @@ document.addEventListener("change", e=>{
     catch(_){ NOTE = "ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป"; }
     render(false); }; r.readAsText(t.files[0]); }
 });
-document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k) put("n."+k, e.target.value); });
+document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k) put("n."+k, e.target.value); else if(e.target.id==="aidq") aidFilter(e.target.value); });
 let printing = false;
 addEventListener("beforeprint", ()=>{ printing = true; document.querySelectorAll("details.cat").forEach(d=>d.open = true); });
 addEventListener("afterprint", ()=>{ printing = false; render(true); });
@@ -615,9 +643,8 @@ document.addEventListener("submit", async e=>{
   render(true);
 });
 document.addEventListener("click", async e=>{
-  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del],[data-use],[data-jump]"); if(!t) return;
+  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del],[data-use]"); if(!t) return;
   const d = t.dataset, h = H();
-  if(d.jump){ e.preventDefault(); const el = $(d.jump); if(el) el.scrollIntoView({behavior:"smooth", block:"start"}); return; }
   if(d.step){ const [k,n] = d.step.split(":"); put("p."+k, S.profile[k]+Number(n)); }
   else if(d.days){ e.preventDefault(); put("p.days", Number(d.days)); }
   else if(d.home){ e.preventDefault(); put("p.home", d.home); DB.ui.showAll = false; }

@@ -14,6 +14,19 @@ for (const t of JSON.parse(JSON.stringify(d.run("AID.map(t => t.id)")))) pages.p
 for (const g of guides) for (const p of ["during", "before", "after", "dont", "more"]) pages.push(`g/${g}/${p}`);
 for (const p of pages) assert.ok(d.go(p).length > 200, "หน้า " + p);
 
+// ปฐมพยาบาล: เรื่องที่เจอบ่อยอยู่บนสุด ทุกปุ่มลัดชี้ไปหัวข้อที่มีจริง และแหล่งที่มาซ่อนอยู่ใต้ปุ่ม "ดูรายละเอียด"
+const aid = d.go("aid"), aidIds = JSON.parse(JSON.stringify(d.run("AID.map(t => t.id)")));
+assert.ok(aid.indexOf("เจอบ่อย") > 0 && aid.indexOf("เจอบ่อย") < aid.indexOf("ฉุกเฉินถึงชีวิต") && aid.indexOf("ฉุกเฉินถึงชีวิต") < aid.indexOf("ทุกหัวข้อตามหมวด"));
+for (const m of aid.matchAll(/href="#aid\/([a-z0-9-]+)"/g)) assert.ok(aidIds.includes(m[1]), "ปุ่มลัดชี้หัวข้อที่ไม่มี: " + m[1]);
+assert.equal((aid.match(/class="haz sm"/g) || []).length, 12); assert.equal((aid.match(/class="haz sm urg"/g) || []).length, 6);
+assert.equal((aid.match(/class="hrow arow"/g) || []).length, aidIds.length, "ทุกหัวข้ออยู่ในรายการตามหมวด");
+const topic = d.go("aid/burns");
+assert.equal(topic.includes('<span class="chip">'), false, "ไม่มีป้ายแหล่งที่มาโผล่ในขั้นตอน");
+assert.ok(topic.includes("<summary>ดูรายละเอียด</summary>") && topic.includes("ที่มา: "));
+const guide = d.go("g/flood/during");
+assert.ok(guide.includes("<summary>ดูรายละเอียด</summary>"));
+assert.equal(/<span class="chip">(?!คอนโด|บ้าน)/.test(guide), false, "ป้ายที่เหลือในคู่มือมีแต่ประเภทที่อยู่");
+
 // ติ๊กรายการ วันหมดอายุ และตัวคำนวณ
 d.go("list/home");
 await d.fire("change", { dataset: { chk: "home:w-drink" }, checked: true });
