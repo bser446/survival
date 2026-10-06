@@ -684,7 +684,13 @@ if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
   // เมื่อมีเวอร์ชันใหม่เข้ามาแทน ให้โหลดหน้าใหม่หนึ่งครั้งเพื่อไม่ค้างเนื้อหาเก่า
   const had = !!navigator.serviceWorker.controller; let reloaded = false;
   navigator.serviceWorker.addEventListener("controllerchange", ()=>{ if(had && !reloaded){ reloaded = true; location.reload(); } });
-  navigator.serviceWorker.register("sw.js").then(()=>navigator.serviceWorker.ready).then(()=>{ const off = $("off"); if(off) off.textContent = "พร้อมใช้ออฟไลน์"; }).catch(()=>{});
+  navigator.serviceWorker.register("sw.js").then(reg=>{
+    // แอปที่ติดตั้งไว้มักถูกเปิดค้างเป็นวัน ไม่มีการโหลดหน้าใหม่ จึงต้องถามหารุ่นใหม่เองทุกครั้งที่กลับมาที่แอป
+    const check = () => { if(navigator.onLine) reg.update().catch(()=>{}); };
+    document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) check(); });
+    addEventListener("online", check);
+    return navigator.serviceWorker.ready;
+  }).then(()=>{ const off = $("off"); if(off) off.textContent = "พร้อมใช้ออฟไลน์"; }).catch(()=>{});
 }
 </script>
 </body>
