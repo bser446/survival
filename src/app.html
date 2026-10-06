@@ -430,8 +430,8 @@ function vHome(){
   <p class="mute">${H().sync?"แชร์กับคนในบ้านอยู่ · ":""}ตั้งค่าไว้ ${persons()} คน สำรอง ${S.profile.days} วัน <a href="#set">แก้ไขหรือสลับบ้าน</a></p>`;
 }
 
-// แหล่งที่มาของแต่ละข้อซ่อนอยู่ใต้ปุ่ม "ดูรายละเอียด" เพื่อให้ขั้นตอนอ่านง่าย
-const srcMore = (ids, src) => { const l = (ids||[]).filter(i=>src[i]); return l.length ? `<details class="more"><summary>ดูรายละเอียด</summary><div>ที่มา: ${l.map(i=>esc(src[i].org)).join(" · ")}</div></details>` : ""; };
+// แหล่งที่มาของแต่ละข้อซ่อนอยู่ใต้ปุ่ม "ที่มา" เพื่อให้ขั้นตอนอ่านง่าย
+const srcMore = (ids, src) => { const l = (ids||[]).filter(i=>src[i]); return l.length ? `<details class="more"><summary>ที่มา</summary><div>${l.map(i=>esc(src[i].org)).join(" · ")}</div></details>` : ""; };
 const srcList = (list, label) => (list||[]).length ? `<details class="cat"><summary>${label}<small>${list.length} แหล่ง</small></summary><div class="hrow src" style="display:block"><ul class="plain">${list.map(x=>`<li>${esc(x.org)}: ${esc(x.title)}${/^https?:\/\//.test(x.url||"")?`<br><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.url)}</a>`:""}</li>`).join("")}</ul></div></details>` : "";
 function stepList(items, g, cls){
   const src = Object.fromEntries((g.sources||[]).map(s=>[s.id,s]));
