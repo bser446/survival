@@ -14,8 +14,9 @@ const pinned = /INDEX_SHA256 = "([0-9a-f]{64})"/.exec(local("sw.js").toString())
 if (pinned !== want.index) { console.error("ในเครื่อง: sw.js ไม่ได้ build คู่กับ index.html นี้ ให้รัน build.py ใหม่"); process.exit(1); }
 if (/127\.0\.0\.1|localhost/.test(/<meta http-equiv[^>]*>/.exec(local("index.html").toString())?.[0] || "")) { console.error("ในเครื่อง: index.html เป็น build แบบ --dev ห้ามขึ้นเว็บจริง"); process.exit(1); }
 
-let last = "";
-for (let i = 0; i < 16; i++) {
+// ใช้ process.exitCode แทน process.exit() หลัง fetch: บน Windows การออกทันทีขณะ socket กำลังปิดทำให้ node ล้ม (libuv assertion)
+let last = "", ok = false;
+for (let i = 0; i < 16 && !ok; i++) {
   try {
     const [index, sw] = await Promise.all([get("index.html"), get("sw.js")]);
     const livePinned = /INDEX_SHA256 = "([0-9a-f]{64})"/.exec(sw.toString())?.[1];
@@ -23,10 +24,10 @@ for (let i = 0; i < 16; i++) {
     if (sha(sw) !== want.sw) problems.push("sw.js บนเว็บยังไม่ใช่รุ่นในเครื่อง");
     if (sha(index) !== want.index) problems.push("index.html บนเว็บยังไม่ใช่รุ่นในเครื่อง");
     if (livePinned !== sha(index)) problems.push("sw.js กับ index.html บนเว็บไม่เข้าคู่กัน (เครื่องผู้ใช้จะยังไม่อัปเดตจนกว่าจะเข้าคู่)");
-    if (!problems.length) { console.log("ผ่าน: เว็บจริงเสิร์ฟรุ่น " + want.index.slice(0, 10) + " ครบและเข้าคู่กัน"); process.exit(0); }
+    ok = !problems.length;
     last = problems.join("; ");
   } catch (e) { last = String(e.message || e); }
-  await new Promise(r => setTimeout(r, 15000));
+  if (!ok) await new Promise(r => setTimeout(r, 15000));
 }
-console.error("ไม่ผ่าน: " + last);
-process.exit(1);
+if (ok) console.log("ผ่าน: เว็บจริงเสิร์ฟรุ่น " + want.index.slice(0, 10) + " ครบและเข้าคู่กัน");
+else { console.error("ไม่ผ่าน: " + last); process.exitCode = 1; }
