@@ -1,0 +1,17 @@
+name = "survival-sync"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+
+# โดเมนของบริการซิงก์ (ชั้นเดียวใต้ thundererz.com เพื่อให้ใบรับรองของ Cloudflare ครอบคลุม)
+routes = [{ pattern = "survival-sync.thundererz.com", custom_domain = true }]
+
+[vars]
+ORIGINS = "https://survival.thundererz.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "survival-sync"
+database_id = "REPLACE_AFTER_D1_CREATE"
+
+[triggers]
+crons = ["17 19 * * *"]   # ลบบ้านที่ถูกทิ้งและโควตาเก่า วันละครั้ง

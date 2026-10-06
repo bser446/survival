@@ -3,3 +3,6 @@ ref/
 __pycache__/
 *.masked.txt
 survival-backup-*.json
+sync/.wrangler/
+node_modules/
+.dev.vars

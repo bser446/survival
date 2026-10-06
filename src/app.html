@@ -96,6 +96,9 @@ details.cat summary small{font-weight:400;color:var(--mute)}
 .btn.pri{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
 
+.hrow{display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}
+.hrow:first-child{border-top:0}
+#qr svg{display:block;width:220px;max-width:70%;height:auto;margin:10px auto;background:#fff;border-radius:8px}
 .tel{display:flex;align-items:center;gap:12px;padding:12px 14px;border-top:1px solid var(--line);text-decoration:none;color:var(--ink)}
 .tel:first-child{border-top:0}
 .tel b{font-size:22px;color:var(--accent);min-width:64px}
@@ -131,32 +134,91 @@ const NUMBERS = [
   ["1182","กรมอุตุนิยมวิทยา"],["1193","ตำรวจทางหลวง"],["1367","ศูนย์พิษวิทยา รามาธิบดี"],["1323","สายด่วนสุขภาพจิต"]
 ];
 
-const KEY = "survival.v1";
-const DEF = {profile:{adults:2,children:0,elders:0,pets:0,days:7,home:"both"},checks:{},exp:{},custom:[],plan:{},showAll:false};
-// ข้อมูลจาก localStorage และไฟล์นำเข้าถือว่าไม่น่าเชื่อถือ: สร้าง state ใหม่จากค่าที่ตรวจชนิดแล้วเท่านั้น
-function normalize(o){
-  const obj = v => v && typeof v==="object" && !Array.isArray(v) ? v : {};
-  const int = (v,d,min,max) => { v = Number(v); return Number.isFinite(v) ? Math.max(min, Math.min(max, Math.round(v))) : d; };
-  const str = (v,max) => typeof v==="string" ? v.slice(0,max) : "";
-  const keyOK = k => /^[a-z]+:[A-Za-z0-9-]{1,60}$/.test(k);
-  o = obj(o); const p = obj(o.profile), s = JSON.parse(JSON.stringify(DEF));
-  s.profile = {adults:int(p.adults,2,1,20), children:int(p.children,0,0,20), elders:int(p.elders,0,0,20), pets:int(p.pets,0,0,20),
-    days:int(p.days,7,1,365), home:["both","condo","house"].includes(p.home) ? p.home : "both"};
-  for(const k of Object.keys(obj(o.checks)).slice(0,2000)) if(keyOK(k) && o.checks[k]) s.checks[k] = true;
-  for(const k of Object.keys(obj(o.exp)).slice(0,2000)) if(keyOK(k) && /^\d{4}-\d{2}-\d{2}$/.test(o.exp[k])) s.exp[k] = o.exp[k];
-  for(const i of (Array.isArray(o.custom) ? o.custom : []).slice(0,500)){ const c = obj(i);
-    if(/^u[a-z0-9]{1,20}$/.test(c.id) && /^[a-z]{1,10}$/.test(c.kit) && /^[a-z-]{1,30}$/.test(c.cat) && str(c.n,80).trim()) s.custom.push({id:c.id, kit:c.kit, cat:c.cat, n:str(c.n,80)}); }
-  for(const k of ["meet1","meet2","hub","refuge","people","health","notes"]) if(str(obj(o.plan)[k],4000)) s.plan[k] = str(o.plan[k],4000);
-  s.open = {}; for(const k of Object.keys(obj(o.open)).slice(0,500)) if(keyOK(k)) s.open[k] = !!o.open[k];
-  s.showAll = o.showAll === true;
+/* ---------- state ----------
+   เก็บเป็น "บ้าน" หลายหลัง ข้อมูลของบ้านเป็น field แบบ key -> [ค่า, เวลาแก้] เพื่อรวมข้อมูลจากหลายเครื่อง
+   แบบข้อไหนแก้ทีหลังชนะ ข้อมูลจาก localStorage ไฟล์นำเข้า และเซิร์ฟเวอร์ถือว่าไม่น่าเชื่อถือ ต้องผ่าน cleanFields() เสมอ */
+const KEY = "survival.v2", OLD_KEY = "survival.v1";
+const PLAN = ["meet1","meet2","hub","refuge","people","health","notes"];
+const PDEF = {adults:2,children:0,elders:0,pets:0,days:7,home:"both"};
+const IDK = /^[a-z]+:[A-Za-z0-9-]{1,60}$/, SECRET = /^[A-Za-z0-9_-]{43}$/;
+const obj = v => v && typeof v==="object" && !Array.isArray(v) ? v : {};
+const rid = p => p + Date.now().toString(36) + Math.floor(Math.random()*1e6).toString(36);
+
+// ตรวจค่าตามชนิดของ key คืน undefined ถ้าไม่ผ่าน (field ใหม่ต้องเพิ่มที่นี่ ไม่งั้นจะถูกทิ้ง)
+function fieldValue(k, v){
+  if(k==="name") return typeof v==="string" && v.trim() ? v.slice(0,40) : undefined;
+  const m = /^([a-z])\.(.+)$/.exec(k); if(!m) return undefined;
+  const t = m[1], r = m[2];
+  if(t==="p"){ if(r==="home") return ["both","condo","house"].includes(v) ? v : undefined;
+    if(!(r in PDEF) || !Number.isFinite(Number(v))) return undefined;
+    return Math.max(r==="adults"||r==="days" ? 1 : 0, Math.min(r==="days" ? 365 : 20, Math.round(Number(v)))); }
+  if(t==="c") return IDK.test(r) ? (v ? 1 : 0) : undefined;
+  if(t==="e") return IDK.test(r) && (v==="" || /^\d{4}-\d{2}-\d{2}$/.test(v)) ? v : undefined;
+  if(t==="u"){ if(!/^u[a-z0-9]{1,24}$/.test(r)) return undefined; if(v===null) return null; const c = obj(v);
+    return /^[a-z]{1,10}$/.test(c.kit) && /^[a-z-]{1,30}$/.test(c.cat) && typeof c.n==="string" && c.n.trim() ? {kit:c.kit, cat:c.cat, n:c.n.slice(0,80)} : undefined; }
+  if(t==="n") return PLAN.includes(r) && typeof v==="string" ? v.slice(0,4000) : undefined;
+  return undefined;
+}
+function cleanFields(f){
+  const out = {}, max = Date.now() + 3e5;   // ไม่ยอมรับเวลาในอนาคต กันเครื่องที่ตั้งนาฬิกาผิดชนะตลอด
+  for(const k of Object.keys(obj(f)).slice(0,5000)){ const e = f[k]; if(!Array.isArray(e) || e.length!==2) continue;
+    const v = fieldValue(k, e[0]), ts = Number(e[1]); if(v===undefined || !Number.isFinite(ts) || ts<0) continue;
+    out[k] = [v, Math.min(Math.round(ts), max)]; }
+  return out;
+}
+function mergeFields(a, b){
+  let changed = false;
+  for(const k in b){ const x = a[k], y = b[k];
+    if(!x || y[1]>x[1] || (y[1]===x[1] && JSON.stringify(y[0])>JSON.stringify(x[0]))){ a[k] = y; changed = true; } }
+  return changed;
+}
+function v1Fields(o, ts){
+  const f = {}; o = obj(o);
+  for(const k in PDEF) if(k in obj(o.profile)) f["p."+k] = [o.profile[k], ts];
+  for(const k of Object.keys(obj(o.checks))) if(o.checks[k]) f["c."+k] = [1, ts];
+  for(const k of Object.keys(obj(o.exp))) f["e."+k] = [o.exp[k], ts];
+  for(const c of (Array.isArray(o.custom) ? o.custom : [])) f["u."+obj(c).id] = [c, ts];
+  for(const k of PLAN) if(obj(o.plan)[k]) f["n."+k] = [o.plan[k], ts];
+  return cleanFields(f);
+}
+function newHome(name, f){ return {id:rid("h"), f:Object.assign({name:[name, Date.now()]}, f||{}), sync:null}; }
+function cleanDB(o){
+  o = obj(o); const db = {cur:"", homes:{}, ui:{open:{}, showAll:obj(o.ui).showAll===true}};
+  for(const id of Object.keys(obj(o.homes)).slice(0,30)){ const h = obj(o.homes[id]); if(!/^h[a-z0-9]{1,24}$/.test(id)) continue;
+    const s = obj(h.sync), f = cleanFields(h.f); if(!f.name) f.name = ["บ้านของเรา", 0];
+    db.homes[id] = {id, f, sync: SECRET.test(s.k) ? {k:s.k, ver:Math.max(0, Math.round(Number(s.ver))||0), dirty:!!s.dirty, at:Number(s.at)||0, gone:!!s.gone} : null}; }
+  for(const k of Object.keys(obj(obj(o.ui).open)).slice(0,500)) if(IDK.test(k)) db.ui.open[k] = !!o.ui.open[k];
+  db.cur = db.homes[o.cur] ? o.cur : Object.keys(db.homes)[0] || "";
+  return db;
+}
+function loadDB(){
+  let db = cleanDB(null);
+  try{ db = cleanDB(JSON.parse(localStorage.getItem(KEY)||"null")); }catch(e){}
+  if(!db.cur){ let f = {};
+    try{ f = v1Fields(JSON.parse(localStorage.getItem(OLD_KEY)||"null"), Date.now()); }catch(e){}   // ย้ายข้อมูลจากเวอร์ชันบ้านเดียว
+    const h = newHome("บ้านของเรา", f); db.homes[h.id] = h; db.cur = h.id; }
+  return db;
+}
+let DB = loadDB();
+const H = () => DB.homes[DB.cur];
+function view(){
+  const s = {profile:Object.assign({}, PDEF), checks:{}, exp:{}, custom:[], plan:{}, open:DB.ui.open, showAll:DB.ui.showAll, name:"บ้านของเรา"}, f = H().f;
+  for(const k in f){ const v = f[k][0], t = k[0], r = k.slice(2);
+    if(k==="name") s.name = v; else if(t==="p") s.profile[r] = v; else if(t==="c"){ if(v) s.checks[r] = true; }
+    else if(t==="e"){ if(v) s.exp[r] = v; } else if(t==="u"){ if(v) s.custom.push({id:r, kit:v.kit, cat:v.cat, n:v.n}); } else if(t==="n") s.plan[r] = v; }
+  s.custom.sort((a,b)=>a.id<b.id?-1:1);
   return s;
 }
-let S = load();
-function load(){
-  try{ return normalize(JSON.parse(localStorage.getItem(KEY)||"null")); }catch(e){}
-  return normalize(null);
+let S = view();
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(DB)); }catch(e){} }
+// แก้ข้อมูลของบ้านปัจจุบัน: เวลาแก้ต้องมากกว่าค่าเดิมเสมอ เพื่อให้การแก้ล่าสุดในเครื่องนี้ชนะแม้นาฬิกาเครื่องช้า
+function put(k, v){
+  v = fieldValue(k, v); if(v===undefined) return;
+  const h = H(), old = h.f[k];
+  h.f[k] = [v, Math.max(Date.now(), old ? old[1]+1 : 0)];
+  if(h.sync){ h.sync.dirty = true; h.sync.rev = (h.sync.rev||0)+1; queueSync(); }
+  S = view(); save();
 }
-function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const $ = id => document.getElementById(id);
 const guides = () => DATA.guides.slice().sort((a,b)=>(ORDER.indexOf(a.id)+99)%99-(ORDER.indexOf(b.id)+99)%99);
@@ -195,6 +257,140 @@ function expiring(){
 }
 const kitName = id => (DATA.checklist.kits.find(k=>k.id===id)||{}).name || id;
 
+/* ---------- sync ----------
+   บ้านที่แชร์มีรหัสลับ 32 ไบต์ (อยู่ในลิงก์เชิญและในเครื่องสมาชิกเท่านั้น) จากรหัสนี้แตกเป็น id ของบ้าน โทเคน และกุญแจเข้ารหัส
+   เซิร์ฟเวอร์ได้รับแค่ id โทเคน และข้อมูลที่เข้ารหัสแล้ว จึงอ่านเนื้อหาไม่ได้ */
+const SYNC = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:8787" : "https://survival-sync.thundererz.com";
+const SYNC_ON = /*__SYNC_ON__*/true;   // build.py --no-sync ปิดการแชร์บ้านทั้งหมด
+const canSync = SYNC_ON && !!(window.crypto && crypto.subtle) && /^https?:$/.test(location.protocol);
+const enc = new TextEncoder();
+function b64(u8){ let s = ""; for(let i=0; i<u8.length; i+=0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i+0x8000)); return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }
+function unb64(s){ const b = atob(s.replace(/-/g,"+").replace(/_/g,"/")); const u = new Uint8Array(b.length); for(let i=0; i<b.length; i++) u[i] = b.charCodeAt(i); return u; }
+const KC = {};
+async function keysOf(secret){
+  if(KC[secret]) return KC[secret];
+  const raw = await crypto.subtle.importKey("raw", unb64(secret), "HKDF", false, ["deriveBits","deriveKey"]);
+  const hk = info => ({name:"HKDF", hash:"SHA-256", salt:new Uint8Array(0), info:enc.encode("survival/"+info)});
+  const bits = async (info, n) => b64(new Uint8Array(await crypto.subtle.deriveBits(hk(info), raw, n)));
+  const aes = await crypto.subtle.deriveKey(hk("enc"), raw, {name:"AES-GCM", length:256}, false, ["encrypt","decrypt"]);
+  return KC[secret] = {id:await bits("id",128), token:await bits("token",256), aes};
+}
+async function seal(aes, f){
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = new Uint8Array(await crypto.subtle.encrypt({name:"AES-GCM", iv}, aes, enc.encode(JSON.stringify({f}))));
+  const out = new Uint8Array(12 + ct.length); out.set(iv); out.set(ct, 12); return b64(out);
+}
+async function unseal(aes, data){
+  const u = unb64(data);
+  const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv:u.subarray(0,12)}, aes, u.subarray(12));
+  return cleanFields(JSON.parse(new TextDecoder().decode(pt)).f);
+}
+const api = (K, path, opt) => fetch(SYNC+"/v1/h/"+K.id+(path||""), Object.assign({}, opt, {headers:Object.assign({Authorization:"Bearer "+K.token}, opt && opt.body ? {"Content-Type":"application/json"} : {})}));
+async function syncHome(h){
+  const s = h.sync; if(!s || s.gone || s.busy || !canSync || !navigator.onLine) return;
+  s.busy = true; let changed = false;
+  try{
+    const K = await keysOf(s.k);
+    let r = await api(K, "?since="+s.ver);
+    if(r.status===404){ if(s.ver>0){ s.gone = true; return; } }   // เคยมีแล้วหาย = ถูกลบหรือเปลี่ยนรหัสจากเครื่องอื่น
+    else if(r.status===200){ const j = await r.json(); let remote = {};
+      try{ remote = await unseal(K.aes, j.data); }catch(_){}   // ของบนเซิร์ฟเวอร์เสียหรือถอดรหัสไม่ได้: ใช้ข้อมูลในเครื่องเขียนทับ
+      changed = mergeFields(h.f, remote); s.ver = j.ver; if(mergeFields(remote, h.f)) s.dirty = true; }
+    else if(r.status!==304) throw new Error("เซิร์ฟเวอร์ตอบ "+r.status);
+    for(let i=0; s.dirty && i<4; i++){
+      const rev = s.rev||0;
+      r = await api(K, "", {method:"PUT", body:JSON.stringify({base:s.ver, data:await seal(K.aes, h.f)})});
+      if(r.status===200){ s.ver = (await r.json()).ver; s.dirty = (s.rev||0)!==rev; }
+      else if(r.status===409){ const j = await r.json(); let remote = {}; try{ remote = await unseal(K.aes, j.data); }catch(_){}
+        if(mergeFields(h.f, remote)) changed = true; s.ver = j.ver; }
+      else if(r.status===429){ queueSync(); break; }
+      else throw new Error("เซิร์ฟเวอร์ตอบ "+r.status);
+    }
+    s.at = Date.now(); s.err = "";
+  }catch(e){ s.err = String(e && e.message || e).slice(0,80); }
+  finally{
+    s.busy = false; save();
+    if(h.id===DB.cur){ S = view(); const a = document.activeElement;
+      if((changed || location.hash==="#set") && !(a && /^(INPUT|TEXTAREA)$/.test(a.tagName) && a.type!=="checkbox")) render(true); }
+  }
+}
+const syncAll = () => Promise.all(Object.values(DB.homes).map(syncHome));
+let syncTimer = 0;
+function queueSync(){ clearTimeout(syncTimer); syncTimer = setTimeout(syncAll, 2500); }
+const inviteLink = h => location.origin + location.pathname + "#join=" + h.sync.k;
+let JOIN = null, NOTE = "";   // JOIN = บ้านจากลิงก์เชิญที่รอผู้ใช้ยืนยัน, NOTE = ข้อความแจ้งผลครั้งเดียว
+async function startJoin(text){
+  const m = /([A-Za-z0-9_-]{43})\s*$/.exec(String(text).trim());
+  if(!m){ NOTE = "ลิงก์เชิญไม่ถูกต้อง"; return; }
+  const mine = Object.values(DB.homes).find(h=>h.sync && h.sync.k===m[1]);
+  if(mine){ DB.cur = mine.id; S = view(); save(); NOTE = "เครื่องนี้อยู่ในบ้านนี้อยู่แล้ว"; return; }
+  if(!canSync){ NOTE = "เบราว์เซอร์นี้ใช้การแชร์บ้านไม่ได้ ต้องเปิดผ่าน https"; return; }
+  try{
+    const K = await keysOf(m[1]), r = await api(K, "");
+    if(r.status===404){ NOTE = "ไม่พบบ้านนี้ ลิงก์อาจถูกเปลี่ยนหรือลบแล้ว ขอลิงก์ใหม่จากคนในบ้าน"; return; }
+    if(r.status!==200) throw 0;
+    const j = await r.json(), f = await unseal(K.aes, j.data);
+    JOIN = {k:m[1], ver:j.ver, f, name:f.name ? f.name[0] : "บ้านที่แชร์"};
+  }catch(e){ NOTE = "เข้าร่วมไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วลองใหม่"; }
+}
+
+/* ---------- QR ของลิงก์เชิญ ----------
+   ตัวสร้าง QR แบบย่อ: โหมดไบต์ ระดับแก้ผิดพลาด L รุ่น 1-6 (ยาวสุด 134 ไบต์ พอสำหรับลิงก์เชิญ) คืน null ถ้ายาวเกิน */
+function qrMatrix(text, forceMask){
+  const data = [...enc.encode(text)], CAP = [0,19,34,55,80,108,136], ECL = [0,7,10,15,20,26,18], NB = [0,1,1,1,1,1,2];
+  let ver = 1; while(ver<=6 && data.length+2 > CAP[ver]) ver++;
+  if(ver>6) return null;
+  const size = ver*4+17, cap = CAP[ver], ecl = ECL[ver], nb = NB[ver], bl = cap/nb, bits = [];
+  const push = (v,n) => { for(let i=n-1; i>=0; i--) bits.push((v>>>i)&1); };
+  push(4,4); push(data.length,8); data.forEach(b=>push(b,8)); push(0, Math.min(4, cap*8-bits.length)); while(bits.length%8) bits.push(0);
+  const cw = []; for(let i=0; i<bits.length; i+=8) cw.push(parseInt(bits.slice(i,i+8).join(""),2));
+  for(let p=0xEC; cw.length<cap; p^=0xFD) cw.push(p);
+  // Reed-Solomon บน GF(256)
+  const ex = [], lg = []; for(let i=0,x=1; i<255; i++){ ex[i] = x; lg[x] = i; x <<= 1; if(x&256) x ^= 0x11d; }
+  const mul = (a,b) => a && b ? ex[(lg[a]+lg[b])%255] : 0;
+  let gen = [1]; for(let i=0; i<ecl; i++){ const g = gen.concat(0); for(let j=0; j<gen.length; j++) g[j+1] ^= mul(gen[j], ex[i]); gen = g; }
+  const rs = d => { const r = new Array(ecl).fill(0); for(const b of d){ const f = b ^ r.shift(); r.push(0); for(let j=0; j<ecl; j++) r[j] ^= mul(gen[j+1], f); } return r; };
+  const blocks = [], ecs = [], all = [];
+  for(let i=0; i<nb; i++){ const d = cw.slice(i*bl, (i+1)*bl); blocks.push(d); ecs.push(rs(d)); }
+  for(let i=0; i<bl; i++) for(const b of blocks) all.push(b[i]);
+  for(let i=0; i<ecl; i++) for(const e of ecs) all.push(e[i]);
+  // ลวดลายคงที่
+  const M = Array.from({length:size}, ()=>new Array(size).fill(0)), F = Array.from({length:size}, ()=>new Array(size).fill(false));
+  const set = (x,y,v) => { M[y][x] = v ? 1 : 0; F[y][x] = true; };
+  const finder = (cx,cy) => { for(let dy=-4; dy<=4; dy++) for(let dx=-4; dx<=4; dx++){ const x = cx+dx, y = cy+dy; if(x<0 || y<0 || x>=size || y>=size) continue;
+    const d = Math.max(Math.abs(dx), Math.abs(dy)); set(x, y, d!==2 && d!==4); } };
+  finder(3,3); finder(size-4,3); finder(3,size-4);
+  for(let i=0; i<size; i++){ if(!F[6][i]) set(i,6,i%2===0); if(!F[i][6]) set(6,i,i%2===0); }
+  if(ver>1){ const c = size-7; for(let dy=-2; dy<=2; dy++) for(let dx=-2; dx<=2; dx++) set(c+dx, c+dy, Math.max(Math.abs(dx),Math.abs(dy))!==1); }
+  const fmt = mask => { const d = 8|mask; let r = d; for(let i=0; i<10; i++) r = (r<<1) ^ ((r>>>9)*0x537);
+    const b = ((d<<10)|r) ^ 0x5412, g = i => (b>>>i)&1;
+    for(let i=0; i<=5; i++) set(8,i,g(i)); set(8,7,g(6)); set(8,8,g(7)); set(7,8,g(8)); for(let i=9; i<15; i++) set(14-i,8,g(i));
+    for(let i=0; i<8; i++) set(size-1-i,8,g(i)); for(let i=8; i<15; i++) set(8,size-15+i,g(i)); set(8,size-8,1); };
+  fmt(0);   // จองพื้นที่ก่อนวางข้อมูล
+  let n = 0;
+  for(let right=size-1; right>=1; right-=2){ if(right===6) right = 5;
+    for(let v=0; v<size; v++) for(let j=0; j<2; j++){ const x = right-j, y = ((right+1)&2)===0 ? size-1-v : v;
+      if(!F[y][x] && n<all.length*8){ M[y][x] = (all[n>>>3]>>>(7-(n&7)))&1; n++; } } }
+  const MASKS = [(x,y)=>(x+y)%2===0, (x,y)=>y%2===0, (x,y)=>x%3===0, (x,y)=>(x+y)%3===0, (x,y)=>(Math.floor(x/3)+Math.floor(y/2))%2===0,
+    (x,y)=>x*y%2+x*y%3===0, (x,y)=>(x*y%2+x*y%3)%2===0, (x,y)=>((x+y)%2+x*y%3)%2===0];
+  const apply = m => { for(let y=0; y<size; y++) for(let x=0; x<size; x++) if(!F[y][x] && MASKS[m](x,y)) M[y][x] ^= 1; };
+  const penalty = () => { let p = 0; for(let a=0; a<size; a++) for(const row of [true,false]){ let run = 1;
+      for(let b=1; b<size; b++){ const cur = row ? M[a][b] : M[b][a], prev = row ? M[a][b-1] : M[b-1][a];
+        if(cur===prev){ run++; if(run===5) p += 3; else if(run>5) p++; } else run = 1; } }
+    for(let y=0; y<size-1; y++) for(let x=0; x<size-1; x++) if(M[y][x]===M[y][x+1] && M[y][x]===M[y+1][x] && M[y][x]===M[y+1][x+1]) p += 3;
+    return p; };
+  let best = forceMask;
+  if(best===undefined){ let low = Infinity; for(let m=0; m<8; m++){ apply(m); fmt(m); const p = penalty(); if(p<low){ low = p; best = m; } apply(m); } }
+  apply(best); fmt(best);
+  return M;
+}
+function qrSvg(text){
+  const M = qrMatrix(text); if(!M) return "";
+  const q = 4, n = M.length + q*2; let d = "";
+  for(let y=0; y<M.length; y++) for(let x=0; x<M.length; x++) if(M[y][x]) d += "M"+(x+q)+" "+(y+q)+"h1v1h-1z";
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${n} ${n}" role="img" aria-label="QR ลิงก์เชิญ" shape-rendering="crispEdges"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="#000"/></svg>`;
+}
+
 /* ---------- views ---------- */
 function vHome(){
   const gs = guides();
@@ -203,11 +399,11 @@ function vHome(){
   <div class="grid">${gs.map(g=>`<a class="haz" href="#g/${esc(g.id)}/during"><span>${ICON[g.id]||"⚠️"}</span>${esc(g.title)}</a>`).join("")}</div>
   ${gs.length?"":`<div class="alert">ยังไม่มีข้อมูลคู่มือในไฟล์นี้</div>`}
   ${exp.length?`<div class="alert ${exp[0].days<0?"bad":""}"><b>ของใกล้หมดอายุ ${exp.length} รายการ</b><br>${exp.slice(0,5).map(e=>`${esc(e.item.n)} (${esc(kitName(e.kit))}) ${e.days<0?"หมดอายุแล้ว":"อีก "+e.days+" วัน"}`).join("<br>")}</div>`:""}
-  <h2>ความพร้อมของบ้านเรา</h2>
+  <h2>ความพร้อมของ ${esc(S.name)}</h2>
   ${DATA.checklist.kits.map(k=>{const p=progress(k.id);return `<a class="card" href="#list/${k.id}" style="display:block;text-decoration:none;color:inherit">
     <div class="row"><b class="grow">${esc(k.name)}</b><span>${p.done}/${p.total}</span></div><div class="bar"><i style="width:${p.pct}%"></i></div>
     <div class="mute">${esc(k.desc)}</div></a>`}).join("")}
-  <p class="mute">ตั้งค่าไว้ ${persons()} คน สำรอง ${S.profile.days} วัน <a href="#set">แก้ไข</a></p>`;
+  <p class="mute">${H().sync?"แชร์กับคนในบ้านอยู่ · ":""}ตั้งค่าไว้ ${persons()} คน สำรอง ${S.profile.days} วัน <a href="#set">แก้ไขหรือสลับบ้าน</a></p>`;
 }
 
 function stepList(items, g, cls){
@@ -267,24 +463,67 @@ function vSos(){
   const f = (k,label,ta) => `<label class="f" for="p-${k}">${label}</label>${ta?`<textarea class="in" id="p-${k}" data-plan="${k}">${esc(P[k])}</textarea>`:`<input class="in" id="p-${k}" data-plan="${k}" value="${esc(P[k])}">`}`;
   return `<h1>ฉุกเฉิน</h1><p class="mute">แตะเพื่อโทรออก</p>
   <div class="card" style="padding:0">${NUMBERS.map(n=>`<a class="tel" href="tel:${n[0]}"><b>${n[0]}</b><span>${n[1]}</span></a>`).join("")}</div>
-  <h2>แผนครอบครัว</h2><p class="mute">เก็บในเครื่องนี้เท่านั้น ควรพิมพ์หรือจดลงกระดาษใส่กระเป๋าฉุกเฉินด้วย</p>
+  <h2>แผนครอบครัว: ${esc(S.name)}</h2><p class="mute">${H().sync?"ทุกคนที่อยู่ในบ้านนี้เห็นและแก้ได้ ข้อมูลถูกเข้ารหัสก่อนออกจากเครื่อง":"เก็บในเครื่องนี้เท่านั้น"} ควรพิมพ์หรือจดลงกระดาษใส่กระเป๋าฉุกเฉินด้วย</p>
   ${f("meet1","จุดนัดพบใกล้บ้าน")}${f("meet2","จุดนัดพบนอกพื้นที่")}${f("hub","ญาติที่เป็นศูนย์กลางรับข่าว (ชื่อและเบอร์)")}
   ${f("refuge","ที่พักสำรอง")}${f("people","เบอร์คนในครอบครัวและคนสำคัญ",1)}${f("health","โรคประจำตัว ยาที่ใช้ กรุ๊ปเลือด การแพ้ยา",1)}${f("notes","บันทึกอื่น ๆ (เบรกเกอร์ วาล์วแก๊ส ที่เก็บกุญแจ)",1)}`;
 }
 
 function vSet(){
   const st = (k,label) => `<div class="row" style="margin:8px 0"><span class="grow">${label}</span><span class="step"><button data-step="${k}:-1" aria-label="ลด">−</button><output>${S.profile[k]}</output><button data-step="${k}:1" aria-label="เพิ่ม">+</button></span></div>`;
+  const hs = Object.values(DB.homes), h = H(), s = h.sync, one = hs.length<2;
+  const status = !s ? "" : s.gone ? `<div class="alert bad">บ้านนี้ถูกลบหรือเปลี่ยนรหัสจากเครื่องอื่น ข้อมูลยังอยู่ในเครื่องนี้ ขอลิงก์ใหม่จากคนในบ้านแล้วเข้าร่วมอีกครั้ง</div>`
+    : s.err ? `<div class="alert">ซิงก์ไม่สำเร็จ (${esc(s.err)}) แอปจะลองใหม่เอง ข้อมูลยังอยู่ในเครื่อง</div>`
+    : `<p class="mute">${s.at ? "ซิงก์ล่าสุด "+new Date(s.at).toLocaleString("th-TH",{dateStyle:"short",timeStyle:"short"}) : "กำลังซิงก์ครั้งแรก"}${s.dirty?" · มีการแก้ไขที่รอส่ง":""}</p>`;
+  const share = !SYNC_ON ? `<p class="mute">การแชร์บ้านกับคนในบ้านกำลังจะเปิดให้ใช้ ตอนนี้ข้อมูลอยู่ในเครื่องนี้เท่านั้น</p>`
+    : !canSync ? `<p class="mute">การแชร์บ้านใช้ได้เมื่อเปิดแอปผ่านเว็บ https เท่านั้น</p>`
+    : !s ? `<p class="mute">ให้คนในบ้านเห็นเช็กลิสต์และแผนครอบครัวชุดเดียวกัน ข้อมูลถูกเข้ารหัสในเครื่องก่อนส่ง ผู้ดูแลระบบอ่านไม่ได้</p>
+      <div class="btns"><button class="btn pri" data-act="share">แชร์ "${esc(S.name)}" กับคนในบ้าน</button></div>`
+    : `${status}${s.gone ? "" : `<label class="f" for="inv">ลิงก์เชิญ ส่งให้เฉพาะคนในบ้าน</label><input class="in" id="inv" readonly value="${esc(inviteLink(h))}">
+      <p class="mute">ใครมีลิงก์นี้จะเห็นและแก้ข้อมูลของบ้านนี้ได้ทั้งหมด อย่าโพสต์ในที่สาธารณะ และควรจดเก็บไว้ เพราะถ้าลิงก์หายจากทุกเครื่องจะกู้ข้อมูลจากเซิร์ฟเวอร์ไม่ได้</p>
+      <div id="qr"></div>
+      <div class="btns"><button class="btn pri" data-act="copy">คัดลอกลิงก์เชิญ</button>${navigator.share?`<button class="btn" data-act="send">ส่งลิงก์</button>`:""}<button class="btn" data-act="syncnow">ซิงก์ตอนนี้</button></div>`}
+      <details class="cat"><summary>หยุดแชร์ หรือเปลี่ยนรหัสบ้าน</summary><div class="hrow" style="display:block">
+      <p class="mute">หยุดแชร์ในเครื่องนี้: เครื่องนี้เลิกซิงก์ เครื่องอื่นยังใช้ต่อได้<br>เปลี่ยนรหัสบ้าน: ลิงก์เดิมใช้ไม่ได้อีก ต้องส่งลิงก์ใหม่ให้คนที่ยังอยู่ในบ้าน<br>ลบจากเซิร์ฟเวอร์: ลบข้อมูลที่ฝากไว้ ทุกเครื่องเลิกซิงก์ ข้อมูลในแต่ละเครื่องยังอยู่</p>
+      <div class="btns"><button class="btn" data-act="unsync">หยุดแชร์ในเครื่องนี้</button>${s.gone?"":`<button class="btn" data-act="rotate">เปลี่ยนรหัสบ้าน</button><button class="btn" data-act="wipe">ลบจากเซิร์ฟเวอร์</button>`}</div></div></details>`;
   return `<h1>ตั้งค่า</h1>
+  <h2>บ้าน</h2>
+  <div class="card" style="padding:0">${hs.map(x=>`<div class="hrow"><span class="grow"><b>${esc(x.f.name[0])}</b>${x.sync?` <span class="chip">แชร์อยู่</span>`:""}</span>${x.id===h.id?`<span class="chip">กำลังใช้</span>`:`<button class="btn" data-use="${esc(x.id)}">ใช้บ้านนี้</button>`}</div>`).join("")}
+    <form class="add" data-newhome="1"><input name="n" placeholder="เพิ่มบ้านอีกหลัง เช่น บ้านต่างจังหวัด" maxlength="40"><button class="btn">เพิ่ม</button></form></div>
+  <label class="f" for="hn">ชื่อบ้านที่กำลังใช้</label><input class="in" id="hn" data-name="1" maxlength="40" value="${esc(S.name)}">
+  <h2>แชร์กับคนในบ้าน</h2>${share}
+  ${canSync?`<form class="add" data-join="1" style="padding:10px 0;border:0"><input name="n" placeholder="วางลิงก์เชิญเพื่อเข้าร่วมบ้านอื่น"><button class="btn">เข้าร่วม</button></form>`:""}
   <h2>คนในบ้าน</h2><div class="card">${st("adults","ผู้ใหญ่")}${st("children","เด็กเล็ก")}${st("elders","ผู้สูงอายุ / ผู้ป่วย")}${st("pets","สัตว์เลี้ยง")}</div>
   <h2>จำนวนวันที่ต้องอยู่เองได้</h2>
   <div class="seg">${[3,7,14,30,90].map(d=>`<a href="#" data-days="${d}" class="${S.profile.days===d?"on":""}">${d} วัน</a>`).join("")}</div>
   <p class="mute">แนะนำอย่างน้อย 7 วัน น้ำท่วมหาดใหญ่ปี 2568 มีคนติดอยู่ในบ้าน 6 วัน</p>
   <h2>ที่อยู่อาศัย</h2>
   <div class="seg">${[["both","ทั้งสองแบบ"],["condo","คอนโดสูง"],["house","บ้านชั้นเดียว"]].map(h=>`<a href="#" data-home="${h[0]}" class="${S.profile.home===h[0]?"on":""}">${h[1]}</a>`).join("")}</div>
-  <h2>สำรองข้อมูล</h2><p class="mute">ข้อมูลเช็กลิสต์และแผนครอบครัวอยู่ในเครื่องนี้เท่านั้น ส่งออกเก็บไว้เผื่อเปลี่ยนเครื่อง</p>
-  <div class="btns"><button class="btn" data-act="export">ส่งออกเป็นไฟล์</button><label class="btn">นำเข้าจากไฟล์<input type="file" id="imp" accept="application/json,.json" hidden></label><button class="btn" data-act="reset">ล้างข้อมูลทั้งหมด</button></div>
+  <h2>สำรองข้อมูล</h2><p class="mute">ส่งออกข้อมูลของ "${esc(S.name)}" เก็บเป็นไฟล์ไว้เผื่อเปลี่ยนเครื่อง การนำเข้าจะรวมเข้ากับบ้านที่กำลังใช้</p>
+  <div class="btns"><button class="btn" data-act="export">ส่งออกเป็นไฟล์</button><label class="btn">นำเข้าจากไฟล์<input type="file" id="imp" accept="application/json,.json" hidden></label></div>
+  <div class="btns"><button class="btn" data-act="reset">ล้างข้อมูลของบ้านนี้</button>${one?"":`<button class="btn" data-act="delhome">ลบบ้านนี้ออกจากเครื่อง</button>`}</div>
   <h2>เกี่ยวกับ</h2><div class="card mute">คู่มือนี้รวบรวมจากหน่วยงานด้านภัยพิบัติของไทยและต่างประเทศ แล้วปรับให้เข้ากับคอนโดสูงในกรุงเทพฯ และบ้านชั้นเดียวในต่างจังหวัด ดูแหล่งที่มาได้ในแต่ละคู่มือ
-  ใช้เพื่อเตรียมตัวในครอบครัว ไม่แทนคำสั่งของเจ้าหน้าที่ในพื้นที่หรือคำแนะนำของแพทย์<br>ข้อมูล ณ ${esc(DATA.built)} · <span id="off"></span></div>`;
+  ใช้เพื่อเตรียมตัวในครอบครัว ไม่แทนคำสั่งของเจ้าหน้าที่ในพื้นที่หรือคำแนะนำของแพทย์<br><a href="#terms">ข้อตกลงและความเป็นส่วนตัว</a><br>ข้อมูล ณ ${esc(DATA.built)} · <span id="off"></span></div>`;
+}
+
+function vTerms(){
+  return `<a class="back" href="#set">‹ กลับ</a><h1>ข้อตกลงและความเป็นส่วนตัว</h1>
+  <h2>ข้อจำกัดของเนื้อหา</h2><div class="card">คู่มือนี้เป็นข้อมูลทั่วไปเพื่อการเตรียมตัว รวบรวมจากแหล่งที่ระบุไว้ในแต่ละคู่มือ ไม่ใช่คำแนะนำทางการแพทย์ กฎหมาย หรือวิศวกรรมเฉพาะกรณี ในเหตุจริงให้ทำตามคำสั่งของเจ้าหน้าที่ในพื้นที่ก่อนเสมอ ขนาดยาให้ยึดฉลากและคำแนะนำของแพทย์หรือเภสัชกร ผู้จัดทำไม่รับผิดชอบต่อความเสียหายจากการนำไปใช้</div>
+  <h2>ข้อมูลที่แอปเก็บ</h2><div class="card"><ul class="plain">
+  <li><b>ถ้าไม่ได้แชร์บ้าน:</b> เช็กลิสต์ วันหมดอายุ และแผนครอบครัวอยู่ในเครื่องของคุณเท่านั้น ไม่มีอะไรถูกส่งออก</li>
+  <li><b>ถ้าแชร์บ้าน:</b> ข้อมูลของบ้านนั้นถูกเข้ารหัสในเครื่องด้วยกุญแจที่อยู่ในลิงก์เชิญ แล้วฝากไว้ที่เซิร์ฟเวอร์ซิงก์ ผู้ดูแลระบบไม่มีกุญแจและอ่านเนื้อหาไม่ได้</li>
+  <li><b>สิ่งที่เซิร์ฟเวอร์เห็น:</b> รหัสอ้างอิงของบ้านแบบสุ่ม ขนาดข้อมูล เวลาที่ซิงก์ และค่าแฮชของที่อยู่ IP ที่ใช้จำกัดการสร้างบ้านต่อวัน (ลบภายในไม่กี่วัน)</li>
+  <li><b>ไม่มี:</b> บัญชีผู้ใช้ อีเมล เบอร์โทร คุกกี้ติดตาม หรือโฆษณา</li></ul></div>
+  <h2>การลบข้อมูล</h2><div class="card"><ul class="plain">
+  <li>ลบจากเซิร์ฟเวอร์ได้เองที่ ตั้งค่า → หยุดแชร์ หรือเปลี่ยนรหัสบ้าน → ลบจากเซิร์ฟเวอร์</li>
+  <li>บ้านที่ไม่มีเครื่องไหนเปิดเกิน 12 เดือนจะถูกลบจากเซิร์ฟเวอร์อัตโนมัติ</li>
+  <li>ผู้ดูแลกู้ข้อมูลหรือรหัสบ้านให้ไม่ได้ ถ้าลิงก์เชิญหายจากทุกเครื่อง ข้อมูลที่ฝากไว้จะเปิดไม่ได้อีก</li></ul></div>
+  <h2>ความรับผิดชอบของสมาชิกบ้าน</h2><div class="card">ทุกคนที่มีลิงก์เชิญเห็นและแก้ข้อมูลของบ้านได้ทั้งหมด รวมถึงข้อมูลสุขภาพที่บันทึกไว้ ส่งลิงก์ให้เฉพาะคนที่ไว้ใจ และเปลี่ยนรหัสบ้านเมื่อมีคนที่ไม่ควรเข้าถึงได้ลิงก์ไป</div>`;
+}
+function banner(){
+  const note = NOTE ? `<div class="alert">${esc(NOTE)}</div>` : ""; NOTE = "";
+  return note + (JOIN ? `<div class="card"><b>เข้าร่วมบ้าน "${esc(JOIN.name)}"?</b>
+    <p class="mute">บ้านนี้มีคนแชร์ลิงก์มาให้ ทุกคนที่มีลิงก์เดียวกันจะเห็นและแก้ข้อมูลที่บันทึกในบ้านนี้ได้ รวมถึงแผนครอบครัวและข้อมูลสุขภาพ เข้าร่วมเฉพาะบ้านของคนที่คุณรู้จัก</p>
+    <div class="btns"><button class="btn pri" data-act="joinok">เข้าร่วม</button><button class="btn" data-act="joinno">ยกเลิก</button></div></div>` : "");
 }
 
 /* ---------- router & events ---------- */
@@ -292,45 +531,89 @@ const TABS = [["home","🏠","หน้าแรก"],["list","☑️","เช�
 function render(keepScroll){
   const [v,a,b] = (location.hash.slice(1)||"home").split("/");
   const y = window.scrollY;
-  $("app").innerHTML = v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : vHome();
-  const cur = v==="g" ? "home" : v;
+  $("app").innerHTML = banner() + (v==="g" ? vGuide(a,b) : v==="list" ? vList(a||"go") : v==="sos" ? vSos() : v==="set" ? vSet() : v==="terms" ? vTerms() : vHome());
+  const cur = v==="g" ? "home" : v==="terms" ? "set" : v;
   $("tabs").innerHTML = TABS.map(t=>`<a href="#${t[0]}" class="${t[0]===cur?"on":""}"><b>${t[1]}</b>${t[2]}</a>`).join("");
   window.scrollTo(0, keepScroll ? y : 0);
   const off = $("off"); if(off) off.textContent = (navigator.serviceWorker && navigator.serviceWorker.controller) ? "พร้อมใช้ออฟไลน์" : "เปิดจากไฟล์หรือยังไม่ได้ติดตั้ง";
+  const qr = $("qr"); if(qr && typeof qrSvg==="function" && H().sync) qr.innerHTML = qrSvg(inviteLink(H()));
 }
-addEventListener("hashchange", ()=>render(false));
+// ลิงก์เชิญมาในรูป #join=<รหัสลับ>: เก็บรหัสแล้วลบออกจากแถบที่อยู่และประวัติทันที
+async function checkJoinHash(){
+  const m = /^#join=(.+)$/.exec(location.hash); if(!m) return false;
+  history.replaceState(null, "", location.pathname + "#home");
+  await startJoin(m[1]); render(false); return true;
+}
+addEventListener("hashchange", async ()=>{ if(!(await checkJoinHash())) render(false); });
+
+const kitNow = () => location.hash.split("/")[1] || "go";
+// ปุ่มที่ย้อนกลับไม่ได้ต้องแตะสองครั้ง
+function sure(t){ if(t.dataset.sure) return true; t.dataset.sure = 1; t.textContent = "แตะอีกครั้งเพื่อยืนยัน"; return false; }
 
 document.addEventListener("change", e=>{
   const t = e.target;
-  if(t.dataset.chk){ if(t.checked) S.checks[t.dataset.chk]=true; else delete S.checks[t.dataset.chk]; save(); render(true); }
-  else if(t.dataset.exp){ if(t.value) S.exp[t.dataset.exp]=t.value; else delete S.exp[t.dataset.exp]; save(); render(true); }
-  else if(t.id==="imp" && t.files[0]){ const r = new FileReader(); r.onload = ()=>{ try{ const o = JSON.parse(r.result); if(!o || typeof o.profile!=="object") throw 0;
-      S = normalize(o); save(); render(false); }catch(_){ t.value=""; $("app").insertAdjacentHTML("afterbegin",`<div class="alert bad">ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป</div>`); } }; r.readAsText(t.files[0]); }
+  if(t.dataset.chk){ put("c."+t.dataset.chk, t.checked ? 1 : 0); render(true); }
+  else if(t.dataset.exp){ put("e."+t.dataset.exp, t.value || ""); render(true); }
+  else if(t.dataset.name){ put("name", t.value.trim() || S.name); render(true); }
+  else if(t.id==="imp" && t.files[0]){ const r = new FileReader(); r.onload = ()=>{
+    try{ const o = JSON.parse(r.result); const f = o && o.v===2 ? cleanFields(o.f) : o && typeof o.profile==="object" ? v1Fields(o, Date.now()) : null;
+      if(!f) throw 0; delete f.name;
+      const h = H(); if(mergeFields(h.f, f) && h.sync){ h.sync.dirty = true; h.sync.rev = (h.sync.rev||0)+1; queueSync(); }
+      S = view(); save(); NOTE = "นำเข้าข้อมูลแล้ว"; }
+    catch(_){ NOTE = "ไฟล์นี้ไม่ใช่ไฟล์สำรองของแอป"; }
+    render(false); }; r.readAsText(t.files[0]); }
 });
-document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k){ S.plan = S.plan||{}; S.plan[k] = e.target.value; save(); } });
+document.addEventListener("input", e=>{ const k = e.target.dataset.plan; if(k) put("n."+k, e.target.value); });
 let printing = false;
 addEventListener("beforeprint", ()=>{ printing = true; document.querySelectorAll("details.cat").forEach(d=>d.open = true); });
 addEventListener("afterprint", ()=>{ printing = false; render(true); });
-document.addEventListener("toggle", e=>{ const d = e.target; if(!printing && d.dataset && d.dataset.cat){ const kit = (location.hash.split("/")[1]||"go"); S.open = S.open||{}; S.open[kit+":"+d.dataset.cat] = d.open; save(); } }, true);
-document.addEventListener("submit", e=>{ const c = e.target.dataset.add; if(!c) return; e.preventDefault();
-  const n = e.target.n.value.trim(); if(!n) return; const kit = location.hash.split("/")[1]||"go";
-  S.custom.push({id:"u"+Date.now().toString(36), kit, cat:c, n}); save(); render(true); });
-document.addEventListener("click", e=>{
-  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del]"); if(!t) return;
-  const d = t.dataset;
-  if(d.step){ const [k,n] = d.step.split(":"); S.profile[k] = Math.max(k==="adults"?1:0, Math.min(20, S.profile[k]+Number(n))); }
-  else if(d.days){ e.preventDefault(); S.profile.days = Number(d.days); }
-  else if(d.home){ e.preventDefault(); S.profile.home = d.home; S.showAll = false; }
-  else if(d.del){ S.custom = S.custom.filter(i=>i.id!==d.del); }
-  else if(d.act==="showall"){ e.preventDefault(); S.showAll = !S.showAll; }
+document.addEventListener("toggle", e=>{ const d = e.target; if(!printing && d.dataset && d.dataset.cat){ DB.ui.open[kitNow()+":"+d.dataset.cat] = d.open; save(); } }, true);
+document.addEventListener("submit", async e=>{
+  const d = e.target.dataset; if(!d.add && !d.newhome && !d.join) return; e.preventDefault();
+  const n = e.target.n.value.trim(); if(!n) return;
+  if(d.add) put("u."+rid("u"), {kit:kitNow(), cat:d.add, n});
+  else if(d.newhome){ const h = newHome(n.slice(0,40)); DB.homes[h.id] = h; DB.cur = h.id; S = view(); save(); }
+  else if(d.join){ await startJoin(n); render(false); return; }
+  render(true);
+});
+document.addEventListener("click", async e=>{
+  const t = e.target.closest("[data-act],[data-step],[data-days],[data-home],[data-del],[data-use]"); if(!t) return;
+  const d = t.dataset, h = H();
+  if(d.step){ const [k,n] = d.step.split(":"); put("p."+k, S.profile[k]+Number(n)); }
+  else if(d.days){ e.preventDefault(); put("p.days", Number(d.days)); }
+  else if(d.home){ e.preventDefault(); put("p.home", d.home); DB.ui.showAll = false; }
+  else if(d.del){ put("u."+d.del, null); }
+  else if(d.use){ if(DB.homes[d.use]) DB.cur = d.use; }
+  else if(d.act==="showall"){ e.preventDefault(); DB.ui.showAll = !DB.ui.showAll; }
   else if(d.act==="print"){ window.print(); return; }
-  else if(d.act==="export"){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(S,null,1)],{type:"application/json"}));
+  else if(d.act==="export"){ const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify({app:"survival", v:2, name:S.name, f:h.f},null,1)],{type:"application/json"}));
     a.download = "survival-backup-"+new Date().toISOString().slice(0,10)+".json"; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),5000); return; }
-  else if(d.act==="reset"){ if(t.dataset.sure){ S = normalize(null); } else { t.dataset.sure = 1; t.textContent = "แตะอีกครั้งเพื่อยืนยันการล้าง"; return; } }
-  save(); render(true);
+  else if(d.act==="reset"){ if(!sure(t)) return;
+    for(const k of Object.keys(h.f)){ const c = k[0]; if(k==="name") continue; put(k, c==="c" ? 0 : c==="u" ? null : c==="p" ? PDEF[k.slice(2)] : ""); } }
+  else if(d.act==="delhome"){ if(Object.keys(DB.homes).length<2 || !sure(t)) return; delete DB.homes[h.id]; DB.cur = Object.keys(DB.homes)[0]; }
+  else if(d.act==="share"){ h.sync = {k:b64(crypto.getRandomValues(new Uint8Array(32))), ver:0, dirty:true, at:0, gone:false}; save(); render(true); await syncHome(h); }
+  else if(d.act==="syncnow"){ t.textContent = "กำลังซิงก์"; await syncHome(h); }
+  else if(d.act==="copy"){ try{ await navigator.clipboard.writeText(inviteLink(h)); t.textContent = "คัดลอกแล้ว"; }catch(_){ const i = $("inv"); i.focus(); i.select(); t.textContent = "เลือกลิงก์ไว้แล้ว กดคัดลอกเอง"; } return; }
+  else if(d.act==="send"){ try{ await navigator.share({title:"คู่มือเอาตัวรอด: "+S.name, text:"ลิงก์เข้าร่วมบ้าน "+S.name, url:inviteLink(h)}); }catch(_){} return; }
+  else if(d.act==="unsync"){ if(!sure(t)) return; h.sync = null; }
+  else if(d.act==="wipe" || d.act==="rotate"){ if(!sure(t)) return;
+    try{ const old = await keysOf(h.sync.k);
+      if(d.act==="rotate"){ h.sync = {k:b64(crypto.getRandomValues(new Uint8Array(32))), ver:0, dirty:true, at:0, gone:false}; save(); await syncHome(h);
+        if(h.sync.dirty) throw 0; }   // ลบของเก่าเมื่อของใหม่ขึ้นเซิร์ฟเวอร์แล้วเท่านั้น
+      const r = await api(old, "", {method:"DELETE"}); if(r.status!==200 && r.status!==404) throw 0;
+      if(d.act==="wipe") h.sync = null;
+      NOTE = d.act==="wipe" ? "ลบข้อมูลของบ้านนี้จากเซิร์ฟเวอร์แล้ว" : "เปลี่ยนรหัสบ้านแล้ว ส่งลิงก์เชิญใหม่ให้คนในบ้าน";
+    }catch(_){ NOTE = "ทำไม่สำเร็จ ตรวจอินเทอร์เน็ตแล้วลองใหม่"; } }
+  else if(d.act==="joinok" && JOIN){ const nh = newHome(JOIN.name, JOIN.f); nh.sync = {k:JOIN.k, ver:JOIN.ver, dirty:false, at:Date.now(), gone:false};
+    DB.homes[nh.id] = nh; DB.cur = nh.id; JOIN = null; NOTE = "เข้าร่วมบ้านแล้ว"; }
+  else if(d.act==="joinno"){ JOIN = null; }
+  S = view(); save(); render(true);
 });
 
-render(false);
+(async ()=>{ if(!(await checkJoinHash())) render(false); syncAll(); })();
+addEventListener("online", syncAll);
+document.addEventListener("visibilitychange", ()=>{ if(!document.hidden) syncAll(); });
+setInterval(()=>{ if(!document.hidden) syncAll(); }, 60000);
 if("serviceWorker" in navigator && /^https?:$/.test(location.protocol)){
   // เมื่อมีเวอร์ชันใหม่เข้ามาแทน ให้โหลดหน้าใหม่หนึ่งครั้งเพื่อไม่ค้างเนื้อหาเก่า
   const had = !!navigator.serviceWorker.controller; let reloaded = false;
