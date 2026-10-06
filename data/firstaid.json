@@ -434,6 +434,20 @@
       "title": "Insect bites and stings",
       "url": "https://www.sja.org.uk/first-aid-advice/insect-bites-and-stings/",
       "country": "GB"
+    },
+    {
+      "id": "aha-2025-highlights",
+      "org": "American Heart Association",
+      "title": "Highlights of the 2025 American Heart Association Guidelines for CPR and ECC",
+      "url": "https://www.heart.org/-/media/CPR-Files/2025-documents-for-cpr-heart-edits-posting/Resuscitation-Science/252500_Hghlghts_2025ECCGuidelines.pdf",
+      "country": "US"
+    },
+    {
+      "id": "trc-bfa-2565",
+      "org": "สภากาชาดไทย ศูนย์ฝึกอบรมปฐมพยาบาลและสุขภาพอนามัย",
+      "title": "คู่มือปฐมพยาบาลขั้นพื้นฐาน (Basic First Aid) ฉบับปรับปรุง 2565 ตัวอย่างบางหน้า",
+      "url": "https://training.redcross.or.th/wp-content/uploads/2023/10/3.คู่มือ-BFA-ติ๋ว_removed.pdf",
+      "country": "TH"
     }
   ],
   "topics": [
@@ -570,7 +584,8 @@
           "detail": "คุกเข่าชิดตัวผู้ป่วย ไหล่อยู่เหนือมือ แขนเหยียดตรง",
           "src": [
             "sja-cpr",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -594,7 +609,8 @@
           "detail": "เงยหน้า บีบจมูก ประกบปาก เป่าไม่เกิน 1 วินาทีจนอกยกขึ้น เป่าไม่เข้าก็กลับไปกดต่อ",
           "src": [
             "sja-cpr",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -670,10 +686,11 @@
         },
         {
           "text": "ถ้าเป่าปากได้ ให้เป่าช่วยหายใจ 5 ครั้งก่อน",
-          "detail": "บีบจมูก ประกบปาก เป่าเบา ๆ สม่ำเสมอไม่เกิน 1 วินาทีจนอกยกขึ้น",
+          "detail": "บีบจมูก ประกบปาก เป่าเบา ๆ สม่ำเสมอไม่เกิน 1 วินาทีจนอกยกขึ้น ถ้าเคยอบรมแบบเริ่มด้วยกดหน้าอก 30 ครั้ง ให้ทำตามที่ฝึกมา ทุกแนวทางตรงกันว่าเด็กต้องได้ทั้งกดหน้าอกและเป่าปาก",
           "src": [
             "sja-child-cpr",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -695,7 +712,8 @@
           "text": "กด 30 ครั้ง สลับเป่าปาก 2 ครั้ง ทำต่อเนื่อง",
           "src": [
             "sja-child-cpr",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -769,10 +787,11 @@
         },
         {
           "text": "ประกบปากครอบทั้งปากและจมูกทารก เป่าเบา ๆ 5 ครั้ง",
-          "detail": "ครั้งละไม่เกิน 1 วินาทีจนอกยกขึ้น ถ้าอกไม่ยกให้จัดศีรษะใหม่แล้วเป่าครั้งถัดไป",
+          "detail": "ครั้งละไม่เกิน 1 วินาทีจนอกยกขึ้น ถ้าเคยอบรมแบบเริ่มด้วยกดหน้าอก 30 ครั้ง ให้ทำตามที่ฝึกมา ทุกแนวทางตรงกันว่าเด็กต้องได้ทั้งกดหน้าอกและเป่าปาก",
           "src": [
             "sja-baby-cpr",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -780,7 +799,8 @@
           "detail": "ถ้าโอบไม่ได้ ใช้ส้นมือข้างเดียวกดแทน",
           "src": [
             "erc-2025",
-            "aha-2025-summary"
+            "aha-2025-summary",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -815,7 +835,8 @@
           "detail": "แนวทางปี 2025 เลิกแนะนำแล้ว เพราะกดได้ไม่ลึกพอ",
           "src": [
             "aha-2025-summary",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -864,8 +885,11 @@
           "text": "ถอดหรือตัดเสื้อให้เห็นหน้าอกเปล่า เช็ดอกให้แห้ง",
           "src": [
             "sja-aed",
-            "erc-2025"
-          ]
+            "erc-2025",
+            "aha-2025-highlights",
+            "trc-bfa-2565"
+          ],
+          "detail": "แผ่นต้องแนบผิวสนิท เสื้อชั้นในเลื่อนให้พ้นตำแหน่งแผ่นได้โดยไม่ต้องถอด ถ้ามีเครื่องกระตุ้นหัวใจฝังใต้ผิวหนัง ติดแผ่นให้ห่างราว 1 นิ้ว และอย่าติดทับแผ่นยา"
         },
         {
           "text": "ลอกแผ่นรองออก ติดแผ่นแรกใต้ไหปลาร้าขวา",
@@ -964,7 +988,8 @@
           "src": [
             "sja-choking",
             "aha-2025-news",
-            "erc-2025"
+            "erc-2025",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -978,7 +1003,8 @@
           "text": "มืออีกข้างจับหมัด กระตุกเข้าหาตัวและขึ้นบนแรง ๆ 5 ครั้ง",
           "src": [
             "sja-choking",
-            "aha-2025-news"
+            "aha-2025-news",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -986,14 +1012,16 @@
           "src": [
             "sja-choking",
             "aha-2025-news",
-            "medlineplus-choking"
+            "medlineplus-choking",
+            "aha-2025-highlights"
           ]
         },
         {
           "text": "คนท้องหรืออ้วนมาก: กระตุกที่กลางกระดูกหน้าอกแทนหน้าท้อง",
           "detail": "วางหมัดกลางกระดูกหน้าอกระดับราวนม แล้วกระตุกเข้าหาตัว 5 ครั้ง",
           "src": [
-            "medlineplus-choking"
+            "medlineplus-choking",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -1002,7 +1030,8 @@
           "src": [
             "sja-choking",
             "erc-2025",
-            "medlineplus-choking"
+            "medlineplus-choking",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -1032,7 +1061,8 @@
           "text": "อย่ารัดกระตุกหน้าท้องทารกอายุต่ำกว่า 1 ปี",
           "detail": "เสี่ยงบาดเจ็บ ให้ใช้วิธีสำหรับทารก",
           "src": [
-            "aha-2025-news"
+            "aha-2025-news",
+            "aha-2025-highlights"
           ]
         }
       ],
@@ -1068,7 +1098,8 @@
           "text": "ใช้ส้นมือตบกลางหลังระหว่างสะบัก 5 ครั้ง",
           "src": [
             "sja-baby-choking",
-            "aha-2025-news"
+            "aha-2025-news",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -1082,14 +1113,16 @@
           "detail": "ใช้ส้นมือข้างเดียว หรือสองมือโอบอกแล้วกดด้วยนิ้วหัวแม่มือสองข้าง ดูในปากทุกครั้ง",
           "src": [
             "aha-2025-news",
-            "sja-baby-choking"
+            "sja-baby-choking",
+            "aha-2025-highlights"
           ]
         },
         {
           "text": "ทำสลับ ตบหลัง 5 กดหน้าอก 5 จนของออกหรือทารกหมดสติ",
           "src": [
             "sja-baby-choking",
-            "aha-2025-news"
+            "aha-2025-news",
+            "aha-2025-highlights"
           ]
         },
         {
@@ -1111,7 +1144,8 @@
           "text": "อย่ารัดกระตุกหน้าท้องทารก",
           "detail": "เสี่ยงทำให้อวัยวะภายในบาดเจ็บ",
           "src": [
-            "aha-2025-news"
+            "aha-2025-news",
+            "aha-2025-highlights"
           ]
         },
         {
