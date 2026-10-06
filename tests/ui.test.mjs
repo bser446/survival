@@ -6,7 +6,7 @@ import { device } from "./harness.mjs";
 const d = device();
 await new Promise(r => setTimeout(r, 50));
 const guides = JSON.parse(JSON.stringify(d.run("DATA.guides.map(g => g.id)")));
-assert.equal(guides.length, 7);
+assert.equal(guides.length, 8);
 
 // ทุกหน้าต้องวาดได้โดยไม่ล้ม
 const pages = ["home", "list/go", "list/home", "list/car", "sos", "set", "terms"];
