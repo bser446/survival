@@ -5,6 +5,8 @@
 import assert from "node:assert/strict";
 import { device } from "./harness.mjs";
 
+// ค่าเริ่มต้นคือบริการในเครื่อง ตั้ง SYNC_URL เพื่อทดสอบกับบริการจริง (สร้างบ้านทดสอบ 1 หลังแล้วลบทิ้งตอนจบ)
+const BASE = process.env.SYNC_URL || "http://127.0.0.1:8787";
 const wait = ms => new Promise(r => setTimeout(r, ms));
 const plain = v => JSON.parse(JSON.stringify(v));
 // ซิงก์สลับกันจนนิ่ง (เซิร์ฟเวอร์จำกัดความถี่การเขียนต่อบ้าน จึงต้องเว้นจังหวะ)
@@ -39,7 +41,7 @@ assert.match(link, /#join=[A-Za-z0-9_-]{43}$/);
 
 // เซิร์ฟเวอร์ต้องไม่เห็นเนื้อหา
 const K = plain(await A.run("keysOf(H().sync.k).then(k => ({id:k.id, token:k.token}))"));
-const raw = await (await fetch(`http://127.0.0.1:8787/v1/h/${K.id}`, { headers: { Authorization: "Bearer " + K.token } })).json();
+const raw = await (await fetch(`${BASE}/v1/h/${K.id}`, { headers: { Authorization: "Bearer " + K.token } })).json();
 const decoded = Buffer.from(raw.data, "base64url").toString("latin1");
 for (const s of ["health", "w-drink", "คอนโด", "ถังน้ำ", "name"]) assert.equal(decoded.includes(s) || raw.data.includes(s), false, "ข้อมูลบนเซิร์ฟเวอร์ต้องอ่านไม่ออก: " + s);
 
@@ -67,19 +69,19 @@ await wait(900); await settle(A, B);
 for (const d of [A, B]) { assert.equal(d.run("S.profile.days"), 30); assert.equal(d.run("S.custom.length"), 0); assert.equal(d.run("!!S.checks['home:w-drink']"), false); }
 
 // --- คนนอกที่ไม่มีรหัส ---
-const bad = await fetch(`http://127.0.0.1:8787/v1/h/${K.id}`, { headers: { Authorization: "Bearer " + "x".repeat(43) } });
+const bad = await fetch(`${BASE}/v1/h/${K.id}`, { headers: { Authorization: "Bearer " + "x".repeat(43) } });
 assert.equal(bad.status, 403);
 // ข้อมูลปลอมที่ถอดรหัสไม่ได้ต้องไม่ทำให้ข้อมูลในเครื่องเสีย
 const before = JSON.stringify(plain(B.run("H().f")));
 await wait(900);
 const ver = B.run("H().sync.ver");
-assert.equal((await fetch(`http://127.0.0.1:8787/v1/h/${K.id}`, { method: "PUT", headers: { Authorization: "Bearer " + K.token }, body: JSON.stringify({ base: ver, data: "A".repeat(80) }) })).status, 200);
+assert.equal((await fetch(`${BASE}/v1/h/${K.id}`, { method: "PUT", headers: { Authorization: "Bearer " + K.token }, body: JSON.stringify({ base: ver, data: "A".repeat(80) }) })).status, 200);
 await B.run("syncHome(H())");
 assert.equal(JSON.stringify(plain(B.run("H().f"))), before, "ข้อมูลในเครื่องไม่เปลี่ยนเมื่อเซิร์ฟเวอร์ส่งของที่ถอดรหัสไม่ได้");
 assert.equal(B.run("H().sync.err || ''"), "", "เครื่องเขียนข้อมูลที่ถูกต้องกลับขึ้นไปแทน");
 
 // --- เปลี่ยนรหัสบ้าน: ลิงก์เดิมใช้ไม่ได้ เครื่องที่ยังถือรหัสเดิมถูกแจ้งว่าบ้านหาย ---
-await fetch(`http://127.0.0.1:8787/v1/h/${K.id}`, { method: "DELETE", headers: { Authorization: "Bearer " + K.token } });
+await fetch(`${BASE}/v1/h/${K.id}`, { method: "DELETE", headers: { Authorization: "Bearer " + K.token } });
 await B.run("syncHome(H())");
 assert.equal(B.run("H().sync.gone"), true);
 assert.equal(JSON.stringify(plain(B.run("H().f"))), before, "ข้อมูลในเครื่องยังอยู่หลังบ้านถูกลบจากเซิร์ฟเวอร์");

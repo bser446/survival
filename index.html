@@ -2,7 +2,7 @@
 <html lang="th">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-Z+vLVl038vBROAiYS9C2i1NV7vXWE51ae28xXfybIfA='; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; connect-src 'self' https://survival-sync.thundererz.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-4Lmvi7fTnGrwA2zhj8dYy+bC19XHUVo7LTZ6IIJFtNg='; style-src 'unsafe-inline'; img-src 'self' data:; manifest-src 'self'; worker-src 'self'; connect-src 'self' https://survival-sync.thundererz.com; base-uri 'none'; form-action 'none'">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>คู่มือเอาตัวรอด</title>
 <meta name="theme-color" content="#b3261e">
@@ -261,7 +261,7 @@ const kitName = id => (DATA.checklist.kits.find(k=>k.id===id)||{}).name || id;
    บ้านที่แชร์มีรหัสลับ 32 ไบต์ (อยู่ในลิงก์เชิญและในเครื่องสมาชิกเท่านั้น) จากรหัสนี้แตกเป็น id ของบ้าน โทเคน และกุญแจเข้ารหัส
    เซิร์ฟเวอร์ได้รับแค่ id โทเคน และข้อมูลที่เข้ารหัสแล้ว จึงอ่านเนื้อหาไม่ได้ */
 const SYNC = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) ? "http://127.0.0.1:8787" : "https://survival-sync.thundererz.com";
-const SYNC_ON = /*__SYNC_ON__*/false;   // build.py --no-sync ปิดการแชร์บ้านทั้งหมด
+const SYNC_ON = /*__SYNC_ON__*/true;   // build.py --no-sync ปิดการแชร์บ้านทั้งหมด
 const canSync = SYNC_ON && !!(window.crypto && crypto.subtle) && /^https?:$/.test(location.protocol);
 const enc = new TextEncoder();
 function b64(u8){ let s = ""; for(let i=0; i<u8.length; i+=0x8000) s += String.fromCharCode.apply(null, u8.subarray(i, i+0x8000)); return btoa(s).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,""); }

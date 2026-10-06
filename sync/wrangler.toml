@@ -11,7 +11,7 @@ ORIGINS = "https://survival.thundererz.com"
 [[d1_databases]]
 binding = "DB"
 database_name = "survival-sync"
-database_id = "REPLACE_AFTER_D1_CREATE"
+database_id = "323612a1-e4fa-4c07-8ba5-8cc23e595bd7"
 
 [triggers]
 crons = ["17 19 * * *"]   # ลบบ้านที่ถูกทิ้งและโควตาเก่า วันละครั้ง

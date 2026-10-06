@@ -32,7 +32,7 @@ python -m http.server 8765 --bind 127.0.0.1   # แล้วเปิด http://
 `build.py` เตือนถ้าไฟล์คู่มืออ่านไม่ได้ ขาดฟิลด์ หรืออ้าง `src` ที่ไม่มีใน `sources`
 
 ตัวเลือกของ `build.py`:
-- `--no-sync` ปิดการแชร์บ้านทั้งหมด (ใช้ขึ้นเว็บจริงจนกว่าบริการซิงก์จะ deploy)
+- `--no-sync` ปิดการแชร์บ้านทั้งหมด (สวิตช์ฉุกเฉิน ถ้าบริการซิงก์มีปัญหา)
 - `--dev` อนุญาตให้แอปคุยกับบริการซิงก์ที่รันในเครื่อง **ห้ามใช้ขึ้นเว็บจริง**
 
 ## ทดสอบ
@@ -41,7 +41,10 @@ python -m http.server 8765 --bind 127.0.0.1   # แล้วเปิด http://
 python -X utf8 build.py --dev
 node tests/ui.test.mjs
 
-# ทดสอบซิงก์: เปิดบริการในเครื่องก่อน (อีกหน้าต่าง)
+# ทดสอบซิงก์กับบริการจริง (สร้างบ้านทดสอบ 1 หลังแล้วลบทิ้ง): build แบบปกติ แล้ว
+SYNC_URL=https://survival-sync.thundererz.com node tests/sync.test.mjs
+
+# ทดสอบซิงก์ในเครื่อง: เปิดบริการก่อน (อีกหน้าต่าง)
 cd sync && npx wrangler d1 execute survival-sync --local --file=schema.sql
 cd sync && npx wrangler dev --local --port 8787 --ip 127.0.0.1
 node tests/sync.test.mjs
@@ -66,7 +69,23 @@ node tests/sync.test.mjs
 เนื้อหารวบรวมจากหน่วยงานไทยและต่างประเทศ ใช้เตรียมตัวในครอบครัว ไม่แทนคำสั่งเจ้าหน้าที่หรือคำแนะนำแพทย์
 คำแนะนำของหน่วยงานไทยหลายข้ออ้างผ่านข่าวที่รายงานต่อ ไม่ใช่เว็บหน่วยงานโดยตรง
 
+## Deploy บริการซิงก์
+
+```
+cd sync
+npx wrangler deploy                                                  # ต้อง wrangler login ก่อน
+npx wrangler d1 execute survival-sync --remote --file=schema.sql      # เมื่อแก้ schema
+```
+
+- Worker `survival-sync` ที่ https://survival-sync.thundererz.com (custom domain บนโซน thundererz.com) ฐานข้อมูล D1 `survival-sync`
+- deploy Worker ก่อนเสมอ แล้วจึง push แอปที่ต้องใช้ความสามารถใหม่ของ Worker
+
 ## การเปลี่ยนแปลง
+
+### 2026-10-06 — เปิดการแชร์บ้านกับคนในบ้าน
+- deploy บริการซิงก์ขึ้น Cloudflare (Worker + D1) และ build แอปแบบเปิดการแชร์ ทดสอบสองเครื่องจำลองกับบริการจริงผ่าน
+- ชุดทดสอบรับ `SYNC_URL` เพื่อทดสอบกับบริการจริง
+- **ค้าง:** ตารางลบบ้านที่ถูกทิ้งอัตโนมัติ (cron) ยังตั้งไม่ได้ เพราะบัญชี Cloudflare ยังไม่มี workers.dev subdomain ต้องเปิดหน้า Workers ในแดชบอร์ดหนึ่งครั้งแล้วรัน `npx wrangler triggers deploy`
 
 ### 2026-10-06 — หลายบ้าน และเตรียมการแชร์บ้าน
 - **หลายบ้านในเครื่องเดียว:** เพิ่ม สลับ ตั้งชื่อ และลบบ้านได้ที่หน้าตั้งค่า เช็กลิสต์ วันหมดอายุ จำนวนคน และแผนครอบครัวแยกกันรายบ้าน ข้อมูลเดิม (`survival.v1`) ถูกย้ายเข้าบ้านแรกอัตโนมัติ

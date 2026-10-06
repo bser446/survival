@@ -12,7 +12,9 @@ export function device(hash = "") {
   const ctx = {
     console, setTimeout, clearTimeout, setInterval() {}, fetch, btoa, atob, TextEncoder, TextDecoder, crypto, URL, Blob,
     localStorage: { getItem: k => store.get(k) ?? null, setItem: (k, v) => store.set(k, String(v)), removeItem: k => store.delete(k) },
-    location: { hash, hostname: "127.0.0.1", protocol: "http:", origin: "http://127.0.0.1:8766", pathname: "/" },
+    // SYNC_URL=https://survival-sync.thundererz.com ทำให้เครื่องจำลองคุยกับบริการจริง (แอปเลือกปลายทางจาก hostname)
+    location: process.env.SYNC_URL ? { hash, hostname: "survival.thundererz.com", protocol: "https:", origin: "https://survival.thundererz.com", pathname: "/" }
+      : { hash, hostname: "127.0.0.1", protocol: "http:", origin: "http://127.0.0.1:8766", pathname: "/" },
     navigator: { onLine: true },
     history: { replaceState(_a, _b, url) { ctx.location.hash = url.slice(url.indexOf("#")); } },
     document: { getElementById: id => (els[id] ??= el()), addEventListener: on, querySelectorAll: () => [], activeElement: null, hidden: false },
