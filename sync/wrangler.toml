@@ -4,6 +4,8 @@ compatibility_date = "2025-09-01"
 
 # โดเมนของบริการซิงก์ (ชั้นเดียวใต้ thundererz.com เพื่อให้ใบรับรองของ Cloudflare ครอบคลุม)
 routes = [{ pattern = "survival-sync.thundererz.com", custom_domain = true }]
+workers_dev = false          # ให้บริการทางโดเมนของเราทางเดียว ไม่เปิดที่ *.workers.dev
+preview_urls = false
 
 [vars]
 ORIGINS = "https://survival.thundererz.com"
